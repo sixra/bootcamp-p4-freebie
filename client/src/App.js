@@ -3,8 +3,8 @@ import "./App.scss"
 
 const App = () => {
   return (
-    <div>
-      Hello feature
+    <div className="App">
+      App
     </div>
   )
 }
