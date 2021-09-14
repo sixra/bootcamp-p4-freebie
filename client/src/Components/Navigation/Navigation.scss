@@ -3,6 +3,10 @@
   justify-content: space-around;
   align-items: center;
   color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 1rem 0;
 
   .navLogo {
     font-size: 2rem;
@@ -25,7 +29,7 @@
       a {
         text-decoration: none;
         font-size: 1.2rem;
-        color: white;
+        color: red;
         text-transform: uppercase;
         font-weight: 600;
       }

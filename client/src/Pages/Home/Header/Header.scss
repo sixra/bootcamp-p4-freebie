@@ -1,17 +1,84 @@
 .searchBar {
-  background-color: red;
-  width: 60%;
+  background-color: white;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem;
+  z-index: 999;
+  position: relative;
+
+  .searchBarInput, .searchBarSelectContainer {
+    width: 21.5rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  .selectContainerText {
+    display: block;
+    padding-left: 1rem;
+    width: 90%;
+    height: 100%;
+    line-height: 3rem;
+  }
+
+  .selectListContainer {
+    width: 21.5rem;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 3rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+
+    div {
+      height: 2.5rem;
+      border-bottom: .1rem solid rgba(128, 128, 128, 0.112);
+      padding-left: 1rem;
+      line-height: 2.5rem;
+    }
+  }
+  #showDropdown {
+    background-color: white;
+    transition: .4s all;
+    visibility: visible;
+  }
+
+  #hideDropdown {
+    background-color: transparent;
+    visibility: collapse;
+    transition: .4s all;
+
+  }
+
+  .selectContainerArrow {
+    position: absolute;
+    top: 0;
+    right: 11%;
+  }
+
+  .searchBarButton {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5rem;
+    border: none;
+    margin-left: 1rem;
+    background-color: red;
+  }
 }
 
 .Header {
   background-color: rgb(32, 43, 70);
   height: 50vh;
-  width: 100rem;
-  position: absolute;
-  top: 0;
-  z-index: -1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
