@@ -13,14 +13,17 @@ $gray-dark: hsl(0, 0%, 23%);
 $gray-light: hsl(0,0%,34%);
 $gray-light-secondary: hsl(0, 0%, 67%);
 $gray-light-transparent: hsl(213,5%,41%);
+$gray-details-light: hsl(0, 0%, 92%);
 
-$title-font: 'Source Serif Pro', serif;
+// $title-font: 'Source Serif Pro', serif;
+$title-font: 'Montserrat', sans-serif;
 $subtitle-paragraph-font: 'Montserrat', sans-serif;
 
 // ================================================= Root Colours, Font Variables etc. =======================================================
 
 :root{
-  --text-colour-main: #{$gray-dark};
+  --text-colour-main-dark: #{$gray-dark};
+  --text-colour-main-light: #{$white};
   --text-colour-light: #{$gray-light};
   --text-colour-light-secondary: #{$gray-light-secondary};
 
@@ -31,8 +34,21 @@ $subtitle-paragraph-font: 'Montserrat', sans-serif;
 
   --details-colour-main: #{$intense-pink};
   --details-colour-secondary: #{$intense-pink-red};
+  --details-color-gray:#{$gray-details-light};
 
   --title-font: #{$title-font};
   --subtitle-font: #{$subtitle-paragraph-font};
   --paragraph-font: #{$subtitle-paragraph-font};
+
+  --big-font-size: #{2.25rem};
+  --h1-font-size: #{1.75rem};
+  --h2-font-size: #{1.5rem};
+  --h3-font-size: #{1.25rem};
+  --normal-font-size: #{1rem};
+  --small-font-size: #{0.8rem};
+
+  --font-light-bold: 500;
+  --font-medium-bold: 600;
+
+  
 }
