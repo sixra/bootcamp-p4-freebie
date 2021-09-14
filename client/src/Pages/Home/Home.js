@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from '../../Components/Header/Header'
+import Header from './Header/Header'
 
 const Home = () => {
+
   return (
     <div className="Home">
       <Header />
