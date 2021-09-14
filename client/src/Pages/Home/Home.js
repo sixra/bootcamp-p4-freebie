@@ -1,12 +1,16 @@
 import React from "react";
-import LatestAds from "./LatestAds/LatestAds";
+import CategoriesInner from "./Categories/CategoriesInner.js";
+import Process from "./Process/Process.js";
 import Header from "./Header/Header";
+import LatestAds from "./LatestAds/LatestAds";
 
 const Home = () => {
   return (
     <div className="Home">
       <Header />
-      {/* <LatestAds /> */}
+      <CategoriesInner />
+      <Process />
+      <LatestAds />
     </div>
   );
 };
