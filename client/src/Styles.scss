@@ -1,0 +1,38 @@
+// ================================================= Import Google Fonts =======================================================
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap");
+
+// ================================================= Default colours =======================================================
+
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+$intense-pink: hsl(334, 99%, 44%);
+$intense-pink-red: hsl(346, 79%, 50%);
+
+$gray-dark: hsl(0, 0%, 23%);
+$gray-light: hsl(0, 0%, 34%);
+$gray-light-secondary: hsl(0, 0%, 67%);
+$gray-light-transparent: hsl(213, 5%, 41%);
+
+$title-font: "Source Serif Pro", serif;
+$subtitle-paragraph-font: "Montserrat", sans-serif;
+
+// ================================================= Root Colours, Font Variables etc. =======================================================
+
+:root {
+  --text-colour-main: #{$gray-dark};
+  --text-colour-light: #{$gray-light};
+  --text-colour-light-secondary: #{$gray-light-secondary};
+
+  --background-colour-main: #{$white};
+  --background-colour-dark-gray: #{$gray-dark};
+  --background-colour-light-gray: #{$gray-light};
+  --background-colour-light-gray-transparent: #{$gray-light-transparent};
+
+  --details-colour-main: #{$intense-pink};
+  --details-colour-secondary: #{$intense-pink-red};
+
+  --title-font: #{$title-font};
+  --subtitle-font: #{$subtitle-paragraph-font};
+  --paragraph-font: #{$subtitle-paragraph-font};
+}

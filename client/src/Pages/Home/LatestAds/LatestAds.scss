@@ -1,0 +1,38 @@
+// * {
+//   outline: 1px solid black;
+// }
+
+.latestAdsSection {
+  padding: 1rem;
+
+  .latestAdsTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      width: 4rem;
+      height: 0.2rem;
+      background-color: #d80059;
+      display: inline-block;
+    }
+
+    h2 {
+      padding: 1rem;
+      text-transform: capitalize;
+    }
+  }
+
+  .latestAds {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .moreAdsButton {
+    text-transform: capitalize;
+    width: 8rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+  }
+}
