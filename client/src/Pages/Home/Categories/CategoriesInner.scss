@@ -1,0 +1,54 @@
+@use "../../../Styles.scss";
+
+.categoriesInnerContainer {
+    background-color: var(--background-colour-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    & h2 {
+        margin: 1.5rem;
+        color: var(--text-colour-main-dark);
+        font-size: var(--h1-font-size);
+        font-family: var(--title-font);
+    }
+    & span {
+        margin-bottom: 1rem;
+        color: var(--text-colour-main-dark);
+        font-size: var(--h3-font-size);
+        font-weight: var(--font-light-bold);
+        font-family: var(--subtitle-font);
+    }
+}
+
+.categoriesInnerListsContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.categoriesInnerEachListContainer {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.categoriesInnerListIcon {
+    margin-bottom: 0.75rem;
+    color: var(--background-colour-light-gray);
+}
+
+.categoriesInnerListTitle {
+    & button {
+        border: none;
+        color: var(--text-colour-main-dark);
+        background-color: var(--background-colour-main);
+        font-size: var(--normal-font-size);
+        font-weight: var(--font-light-bold);
+        font-family: var(--subtitle-font);
+        &:hover {
+            color: var(--details-colour-main);
+        }
+    }
+}
