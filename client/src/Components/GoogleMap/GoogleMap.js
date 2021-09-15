@@ -2,13 +2,8 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react'
 import './GoogleMap.scss';
 
-
-
-
 const GoogleMap = () => {
-
-  const coordinates = { lat: 51.1657, lng: 10.4515 };
-  
+ const coordinates = { lat: 51.1657, lng: 10.4515 };  
   return (
     <div>
       <div id="map">
