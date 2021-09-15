@@ -1,20 +1,23 @@
+@use "../../Styles.scss";
+
 .navContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: white;
   position: fixed;
   left: 0;
   right: 0;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  max-width: 100rem;
 
   .navLogo {
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: var(--font-medium-bold);
+    color: var(--details-colour-secondary);
 
     &::after {
       content: "bie";
-      color: magenta;
+      color: var(--text-colour-main-light);
     }
   }
 
@@ -28,10 +31,10 @@
 
       a {
         text-decoration: none;
-        font-size: 1.2rem;
-        color: red;
+        font-size: var(--h3-font-size);
+        color: var(--details-colour-secondary);
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: var(--font-medium-bold);
       }
     }
   }
@@ -53,7 +56,7 @@
         width: 2rem;
         height: 2rem;
         border-radius: 5rem;
-        background-color: white;
+        background-color: var(--background-colour-main);
 
         svg {
           width: 1.2rem;
@@ -75,8 +78,8 @@
       border: none;
       text-transform: uppercase;
       font-weight: 900;
-      color: white;
-      background-color: magenta;
+      color: var(--text-colour-main-light);
+      background-color: var(--details-colour-secondary);
     }
   }
 }

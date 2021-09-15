@@ -18,7 +18,7 @@ const SearchBar = () => {
     dispatch(hideDropdown());
   };
 
-  const [state, setstate] = useState("")
+  const [state, setstate] = useState("Select category")
 
   return (
     <div className="searchBar">
