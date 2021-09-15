@@ -1,16 +1,21 @@
-.navWrapper {
+@use "../../Styles.scss";
+
+.navContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: white;
+  margin: 1rem auto;
+  max-width: 100rem;
+  padding: 2rem 0;
 
   .navLogo {
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: var(--font-medium-bold);
+    color: var(--details-colour-secondary);
 
     &::after {
       content: "bie";
-      color: magenta;
+      color: var(--text-colour-main-light);
     }
   }
 
@@ -24,10 +29,10 @@
 
       a {
         text-decoration: none;
-        font-size: 1.2rem;
-        color: white;
+        font-size: var(--h3-font-size);
+        color: var(--details-colour-secondary);
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: var(--font-medium-bold);
       }
     }
   }
@@ -49,12 +54,12 @@
         width: 2rem;
         height: 2rem;
         border-radius: 5rem;
-        background-color: white;
+        background-color: var(--background-colour-main);
 
         svg {
           width: 1.2rem;
           height: 1.2rem;
-          margin-top: .4rem;
+          margin-top: 0.4rem;
           color: black;
         }
       }
@@ -71,8 +76,8 @@
       border: none;
       text-transform: uppercase;
       font-weight: 900;
-      color: white;
-      background-color: magenta;
+      color: var(--text-colour-main-light);
+      background-color: var(--details-colour-secondary);
     }
   }
 }

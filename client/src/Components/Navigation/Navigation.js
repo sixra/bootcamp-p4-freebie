@@ -5,7 +5,7 @@ import { RiUserShared2Fill } from 'react-icons/ri'
 
 const Navigation = () => {
   return (
-    <div className="navWrapper">
+    <div className="navContainer">
       <span className="navLogo">free</span>
       <ul className="navList">
         <li className="navListItem">
