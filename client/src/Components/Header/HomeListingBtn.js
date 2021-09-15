@@ -1,19 +1,17 @@
 import React from "react";
 import "./Header.scss";
-import SearchBar from "./SearchBar";
 
-const Header = () => {
+const HomeListingBtn = () => {
   return (
-    <div className="Header">
-      <SearchBar />
+    <div className="homeListingBtn">
       <h1>Listing made easy</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi,
         officiis.
       </p>
-      <button>start</button>
+      <button className="headerBtn">start exploring</button>
     </div>
   );
 };
 
-export default Header;
+export default HomeListingBtn;
