@@ -1,10 +1,11 @@
 import React from 'react'
 import "./Header.scss"
-import { showDropdown, hideDropdown } from "../../../Redux/Actions/DropdownAction";
+import { showDropdown, hideDropdown } from "../../Redux/Actions/DropdownAction";
 import { useDispatch, useSelector } from "react-redux";
 import { RiArrowDropDownFill } from 'react-icons/ri'
 import { RiArrowDropUpFill } from 'react-icons/ri'
 import { useState } from 'react';
+
 const SearchBar = () => {
 
   const dropdown = useSelector((state) => state.DropdownState)

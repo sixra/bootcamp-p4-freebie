@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Pages/Home/Header/Header.scss"
+import "./Header.scss"
 
 const HomeListingBtn = () => {
   return (
