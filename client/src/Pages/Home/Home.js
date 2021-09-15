@@ -7,7 +7,6 @@ import LatestAds from "./LatestAds/LatestAds";
 const Home = () => {
   return (
     <div className="Home">
-      <Header />
       <CategoriesInner />
       <Process />
       <LatestAds />
