@@ -1,0 +1,25 @@
+.latestAdCard {
+  grid-column-end: span 4;
+
+  @media only screen and (max-width: 63rem) {
+    grid-column-end: span 6;
+  }
+}
+
+.latestAdImageContainer {
+  overflow: hidden;
+  max-height: 15rem;
+  border-radius: 0.7rem;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.latestAdInfo {
+  font-size: 1rem;
+  padding: 1rem 0;
+}

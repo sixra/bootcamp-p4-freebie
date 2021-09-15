@@ -4,6 +4,7 @@ import Process from './Process/Process.js'
 import SearchBar from '../../Components/Header/SearchBar'
 import HomeListingBtn from '../../Components/Header/HomeListingBtn'
 import HeroImage from "../../Components/Header/HeroImage"
+import LatestAds from "./LatestAds/LatestAds";
 
 const Home = () => {
   return (
@@ -13,8 +14,9 @@ const Home = () => {
       <HomeListingBtn />
       <CategoriesInner />
       <Process />
+      <LatestAds />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
