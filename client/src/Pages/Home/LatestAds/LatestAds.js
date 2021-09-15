@@ -6,9 +6,7 @@ const LatestAds = () => {
   return (
     <section>
       <div className="latestAdsTitle">
-        <span></span>
         <h2>latest ads</h2>
-        <span></span>
       </div>
       <div className="latestAdsContainer">
         <div className="latestAds">
