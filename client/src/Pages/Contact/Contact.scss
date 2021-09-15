@@ -1,4 +1,4 @@
-@use "../../App.scss";
+@use "../../Styles.scss";
 
 .contactContainer{
   display: flex;
@@ -136,6 +136,7 @@
               color: rgba(68,68,68,.8);
               }
             & button{
+              @include Styles.btn-background;
               position: absolute;
               display: block;
               height: 2.5rem;
@@ -144,7 +145,6 @@
               border: 0;
               border-radius: 22rem;
               bottom: -1.25rem;
-              background: linear-gradient(to right, var(--details-colour-secondary), var(--details-colour-main));;
               color: var(--text-colour-main-light);
               font-size: 1.1rem;
               font-weight: var(--font-light-bold);

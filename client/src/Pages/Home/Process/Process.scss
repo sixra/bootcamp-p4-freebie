@@ -32,13 +32,13 @@
     }
 
     & button {
+      @include Styles.btn-background;
       padding: 1rem 1.5rem;
       color: var(--text-colour-main-light);
-      background: linear-gradient(to right, var(--details-colour-secondary), var(--details-colour-main));
       font-weight: var(--font-light-bold);
       font-size: var(--normal-font-size);
       border: none;
-      border-radius: 5rem;
+      border-radius: var(--btn-border-radius);
       &:hover{
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
