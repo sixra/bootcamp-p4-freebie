@@ -1,11 +1,9 @@
-import React from 'react'
+import axios from 'axios';
 
-const Api = () => {
-  return (
-    <div>
-
-    </div>
-  )
+const getPlacesData = async () => {
+  try {
+    const response = await axios.get();
+  } catch (error) {
+    
+  }
 }
-
-export default Api
