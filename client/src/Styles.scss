@@ -19,6 +19,12 @@ $gray-details-light: hsl(0, 0%, 92%);
 $title-font: 'Montserrat', sans-serif;
 $subtitle-paragraph-font: 'Montserrat', sans-serif;
 
+// ================================================= Mixins for styling =======================================================
+
+@mixin btn-background {
+  background: linear-gradient(to right, var(--details-colour-secondary), var(--details-colour-main));
+}
+
 // ================================================= Root Colours, Font Variables etc. =======================================================
 
 :root{
@@ -47,6 +53,14 @@ $subtitle-paragraph-font: 'Montserrat', sans-serif;
   --normal-font-size: #{1rem};
   --small-font-size: #{0.8rem};
 
+  --font-normal-bold: 400;
   --font-light-bold: 500;
   --font-medium-bold: 600;
+<<<<<<< HEAD
+=======
+
+  --btn-border-radius: 5rem;
+
+  --input-border-radius: 3rem;
+>>>>>>> main-feature
 }
