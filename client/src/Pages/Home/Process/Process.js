@@ -14,7 +14,7 @@ const Process = () => {
                         <FaUsers size={48} />
                     </div>
                     <div className="processInnerEachTitle">
-                        <span>Create an Account!</span>
+                        <span>Register!</span>
                     </div>
                 </div>
 
@@ -36,6 +36,9 @@ const Process = () => {
                     </div>
                 </div>
             </div>
+            <button>
+              Start Registration
+            </button>
         </section>
     );
 };
