@@ -2,37 +2,60 @@
 //   outline: 1px solid black;
 // }
 
-.latestAdsSection {
-  padding: 1rem;
+.latestAdsTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0;
 
-  .latestAdsTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      width: 4rem;
-      height: 0.2rem;
-      background-color: #d80059;
-      display: inline-block;
-    }
-
-    h2 {
-      padding: 1rem;
-      text-transform: capitalize;
-    }
+  span {
+    width: 4rem;
+    height: 0.2rem;
+    background-color: #e42d7f;
+    display: inline-block;
   }
 
-  .latestAds {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .moreAdsButton {
+  h2 {
+    padding: 1rem;
     text-transform: capitalize;
-    width: 8rem;
-    margin: 0 auto;
+    color: #333;
+  }
+}
+
+.latestAdsContainer {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 3.75rem)) 1fr;
+  grid-gap: 2.5rem;
+
+  @media only screen and (max-width: 700px) {
+    grid-gap: 1rem;
+  }
+}
+
+.latestAds {
+  display: grid;
+  grid-column: 2 / span 12;
+  grid-template-columns: repeat(12, minmax(auto, 5rem));
+  grid-gap: 1.6rem;
+
+  @media only screen and (max-width: 44rem) {
+    grid-gap: 1rem;
+  }
+}
+
+.moreAdsButtonContainer {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+
+  button {
+    text-transform: capitalize;
     padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    border-radius: 1.1rem;
+    font-size: 1rem;
+    width: 8rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ec5844 0%, #e42d7f 100%);
   }
 }
