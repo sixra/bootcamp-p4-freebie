@@ -50,21 +50,5 @@
 
   & button {
     @include Styles.btn-background;
-    padding: 0.7rem 1.3rem;
-    color: var(--text-colour-main-light);
-    font-size: var(--normal-font-size);
-    border: none;
-    border-radius: var(--btn-border-radius);
-    text-transform: capitalize;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-    }
-    &:active {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-    }
   }
 }
