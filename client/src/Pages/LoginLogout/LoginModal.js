@@ -27,8 +27,8 @@ const LoginModal = () => {
           <h1>Login</h1>
         </div>
         <div className="modalBody">
-          <input type="email" value="Enter your email" />
-          <input type="password" value="Enter your password" />
+          <input type="email" placeholder="Enter your email" />
+          <input type="password" placeholder="Enter your password" />
         </div>
         <div className="modalFooter">
           <button
