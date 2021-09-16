@@ -10,9 +10,7 @@ import HeroImage from "../../Components/Header/HeroImage"
 const Contact = () => {
     return (
         <section className="contactContainer">
-            {/* <HeroImage height="20" /> */}
-            
-            {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.5606328089707!2d13.372827715756037!3d52.50956567981225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c9727bffff%3A0x3e6ebf44d1faa00c!2sBahntower!5e1!3m2!1sen!2sde!4v1631636373346!5m2!1sen!2sde"></iframe> */}
+            <HeroImage height="20" />
             <div className="contactAllContainer">
 
                 <div className="contactFormContainer">
