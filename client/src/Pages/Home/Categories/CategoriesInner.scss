@@ -20,6 +20,10 @@
         font-size: var(--h3-font-size);
         font-weight: var(--font-light-bold);
         font-family: var(--subtitle-font);
+        @media only screen and (max-width: 400px) {
+          text-align: center;
+          margin: 1rem;
+        }
     }
 
     .categoriesInnerListsContainer {
@@ -36,6 +40,10 @@
       @media only screen and (max-width: 600px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (max-width: 400px) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
       }
 
       .categoriesInnerEachListContainer {
@@ -61,6 +69,7 @@
               &:hover {
                   color: var(--details-colour-main);
               }
+              
           }
         }
       }
