@@ -14,7 +14,7 @@
     color: var(--details-colour-secondary);
 
     &::after {
-      content: "bie";
+      content: 'bie';
       color: var(--text-colour-main-light);
     }
   }
@@ -49,6 +49,7 @@
       width: 5.2rem;
       background-color: transparent;
       border: none;
+      cursor: pointer;
 
       .signInIcon {
         width: 2rem;
@@ -78,6 +79,7 @@
       font-weight: 900;
       color: var(--text-colour-main-light);
       background-color: var(--details-colour-secondary);
+      cursor: pointer;
     }
   }
 }
