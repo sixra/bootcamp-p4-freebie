@@ -2,8 +2,20 @@ import React from 'react'
 import "./Navigation.scss"
 import { NavLink } from 'react-router-dom'
 import { RiUserShared2Fill } from 'react-icons/ri'
+import { showLoginModal, showRegisterModal } from "../../Redux/Actions/ModalLoginRegisterAction"
+import { useDispatch } from "react-redux";
 
 const Navigation = () => {
+
+  const dispatch = useDispatch();
+
+  const openLoginModal = () => {
+    dispatch(showLoginModal());
+  };
+  const openRegisterModal = () => {
+    dispatch(showRegisterModal());
+  };
+
   return (
     <div className="navContainer">
       <span className="navLogo">free</span>
@@ -29,9 +41,9 @@ const Navigation = () => {
           <div className="signInIcon">
             <RiUserShared2Fill />
           </div>
-          <span>Sign in</span>
+          <span onClick={openLoginModal}>Sign in</span>
         </button>
-        <button className="register">register</button>
+        <button onClick={openRegisterModal} className="register" >register</button>
       </div>
     </div>
   )

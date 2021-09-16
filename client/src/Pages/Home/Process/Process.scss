@@ -1,9 +1,20 @@
 @use "../../../Styles.scss";
 
 .processContainer {
-    background-color: var(--background-colour-dark-gray);
+  background-color: var(--background-colour-dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+
+  & h2 {
+    width: 100%;
+    color: var(--text-colour-main-light);
+    margin: 1.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -53,65 +64,55 @@
       @media only screen and (max-width: 400px) {
         margin-top: 1rem;
       }
-      
     }
+  }
 
+  .processInnerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
 
-    .processInnerContainer {
-      width: 100%;
+    .processInnerEachContainer {
+      margin: 2rem;
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-content: center;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       @media only screen and (max-width: 600px) {
       display: flex;
       flex-direction: column;
       }
 
-      .processInnerEachContainer {
-        margin: 2rem;
+      .processInnerEachIcon {
+        width: 7rem;
+        height: 7rem;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         justify-items: center;
+        border-radius: 50%;
+        background-color: var(--background-colour-main);
+        border: 0.5rem solid var(--details-color-gray);
+        margin-bottom: 1rem;
+        color: var(--details-colour-main);
+      }
 
-        .processInnerEachIcon {
-          width: 7rem;
-          height: 7rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          justify-items: center;
-          border-radius: 50%;
-          background-color: var(--background-colour-main);
-          border: 0.5rem solid var(--details-color-gray);
-          margin-bottom: 1rem;
-          color: var(--details-colour-main);
-        }
-
-        .processInnerEachTitle {
-          text-align: center;
-          & span {
-              border: none;
-              color: var(--text-colour-main-light);
-              font-size: var(--normal-font-size);
-              font-weight: var(--font-light-bold);
-              font-family: var(--subtitle-font);
-              &:hover {
-                  color: var(--details-colour-main);
-              }
-            }
+      .processInnerEachTitle {
+        text-align: center;
+        & span {
+          border: none;
+          color: var(--text-colour-main-light);
+          font-size: var(--normal-font-size);
+          font-weight: var(--font-light-bold);
+          font-family: var(--subtitle-font);
+          &:hover {
+            color: var(--details-colour-main);
+          }
         }
       }
     }
+  }
 }
-
-
-
-
-
-
-
-
