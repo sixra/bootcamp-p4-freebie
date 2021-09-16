@@ -5,7 +5,6 @@ import "./Contact.scss";
 import { IoLocationSharp } from "react-icons/io5"
 import { CgPhone } from "react-icons/cg"
 import { MdEmail } from "react-icons/md"
-import Navigation from "../../Components/Navigation/Navigation";
 import HeroImage from "../../Components/Header/HeroImage"
 
 const Contact = () => {

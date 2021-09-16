@@ -11,7 +11,10 @@
       margin: 3rem;
     }
     @media only screen and (max-width: 1000px) {
-      margin: 0rem;
+      margin: 1rem;
+    }
+    @media only screen and (max-width: 530px) {
+      margin: 0;
     }
 
     & iframe {
@@ -51,10 +54,10 @@
               grid-template-areas:  "contactHeader contactHeader contactHeader" "contactAddress contactForm contactForm" "contactPhone contactForm contactForm" "contactEmail contactForm contactForm" 
             }
             @media only screen and (max-width: 530px) {
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
-              grid-template-areas: "contactHeader contactHeader" "contactForm contactForm" "contactForm contactForm" "contactForm contactForm" "contactAddress contactAddress" "contactPhone contactPhone" "contactEmail contactEmail";
+              display: flex;
+              flex-direction: column;
               height: 100%;
+              padding-bottom: 2rem ;
             }
              
             .contactUs {
@@ -152,7 +155,6 @@
                 }
 
                 @media only screen and (max-width: 530px) {
-                  padding: 0%;
                   margin: 0;
                   height: 24rem;
                 }
@@ -202,7 +204,8 @@
                     font-weight: var(--font-light-bold);
                     outline: none;
                     @media only screen and (max-width: 1000px) {
-                      left: 3rem;
+                      width: 8rem;
+                      left: 6rem;
                     }
                     @media only screen and (max-width: 530px) {
                       width: 8rem;
@@ -224,9 +227,12 @@
                 padding-bottom: 2.5rem;
                 @media only screen and (max-width: 530px) {
                   display: flex;
-                  flex-direction: column1;
                   padding-bottom: 0;
                   justify-content: center;
+                }
+                @media only screen and (max-width: 400px) {
+                  padding: 0%;
+                  height: 453px;
                 }
             }
 
