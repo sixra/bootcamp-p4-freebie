@@ -9,33 +9,35 @@
   align-items: center;
   padding-bottom: 3rem;
 
-  & h2 {
-    width: 100%;
-    color: var(--text-colour-main-light);
-    margin: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    &::after,
-    &::before {
-      display: inline-block;
-      content: "";
-      border-top: 0.2rem solid var(--details-colour-main);
-      width: 4rem;
-      margin: 0 1rem;
-      transform: translateY(-0.02rem);
-    }
-  }
+    & h2 {
+        width: 100%;
+        color: var(--text-colour-main-light);
+        margin: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        &::after,
+        &::before {
+            display: inline-block;
+            content: "";
+            border-top: 0.2rem solid var(--details-colour-main);
+            width: 4rem;
+            margin: 0 1rem;
+            transform: translateY(-0.02rem);
+        }
+        @media only screen and (max-width: 450px) {
+          text-align: center;
+        }
+      }
 
-  & button {
-    @include Styles.btn-background;
-
-    @media only screen and (max-width: 400px) {
-      margin-top: 1rem;
+    & button {
+      @include Styles.btn-background;
+      @media only screen and (max-width: 600px) {
+        margin-top: 1rem;
+      }
     }
-  }
 
   .processInnerContainer {
     width: 100%;
@@ -44,6 +46,10 @@
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     .processInnerEachContainer {
       margin: 2rem;
@@ -51,7 +57,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      justify-items: center;
+      
 
       .processInnerEachIcon {
         width: 7rem;
