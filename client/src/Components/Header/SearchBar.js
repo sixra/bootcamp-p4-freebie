@@ -35,8 +35,8 @@ const SearchBar = () => {
         </div>
         <div className="selectContainerArrow">
           {dropdown
-            ? <RiArrowDropUpFill onClick={() => closeDropdown()} size={50} />
-            : <RiArrowDropDownFill onClick={() => openDropdown()} size={50} />
+            ? <RiArrowDropUpFill onClick={() => closeDropdown()} size={40} />
+            : <RiArrowDropDownFill onClick={() => openDropdown()} size={40} />
           }
         </div>
       </div>

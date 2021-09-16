@@ -6,39 +6,40 @@
   justify-content: space-around;
   border-radius: 5rem;
   z-index: 999;
-  height: 4rem;
+  height: 3.3rem;
   margin: 5rem auto;
 
   @media only screen and (max-width: 900px) {
-    flex-direction: column;  
-    justify-content: space-between; 
-    padding: .9rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.9rem;
     width: 80%;
     max-width: 30rem;
     border-radius: 3rem;
     height: 13rem;
   }
 
-  .searchBarInput, .searchBarSelectContainer {
+  .searchBarInput,
+  .searchBarSelectContainer {
     width: 21.5rem;
-    height: 3rem;
+    height: 2.5rem;
     background-color: transparent;
     border: none;
     outline: none;
     display: flex;
     align-items: center;
     padding-left: 1rem;
-    border-right: .1rem solid rgba(128, 128, 128, 0.153);
+    border-right: 0.1rem solid rgba(128, 128, 128, 0.153);
     position: relative;
-    background-color: rgb(239, 239, 239);
+    background-color: var(--background-colour-light-gray-transparent-secondary);
     border-radius: 5rem;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
 
     @media only screen and (max-width: 900px) {
       padding-left: 3rem;
       border: none;
       height: 3rem;
-      margin: .5rem 0;
+      margin: 0.5rem 0;
       width: 90%;
       background-color: rgb(239, 239, 239);
       border-radius: 5rem;
@@ -48,10 +49,10 @@
   .selectContainerText {
     display: block;
     width: 90%;
-    height: 100%;
-    line-height: 3rem;
-    color: black;  
-}
+    line-height: 2.5rem;
+    color: var(--text-colour-light);
+    font-size: 0.9rem;
+  }
 
   .selectListContainer {
     width: 100%;
@@ -60,39 +61,39 @@
     position: absolute;
     top: 3rem;
     right: 0;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 
     div {
       height: 2.5rem;
-      border-bottom: .1rem solid rgba(128, 128, 128, 0.112);
+      border-bottom: 0.1rem solid rgba(128, 128, 128, 0.112);
       padding-left: 1rem;
       line-height: 2.5rem;
     }
   }
-  
+
   #showDropdown {
     background-color: var(--background-colour-main);
-    transition: .4s all;
+    transition: 0.4s all;
     visibility: visible;
   }
 
   #hideDropdown {
     background-color: transparent;
     visibility: collapse;
-    transition: .4s all;
+    transition: 0.4s all;
   }
 
   .selectContainerArrow {
     position: absolute;
-    top: 0;
+    top: 0rem;
     right: 0;
     color: var(--text-colour-main-dark);
   }
 
   .searchBarButton {
     width: 7rem;
-    height: 3rem;
+    height: 2.5rem;
     border-radius: 5rem;
     border: none;
     margin-left: 1rem;
@@ -101,8 +102,8 @@
     text-transform: uppercase;
     background-color: var(--details-colour-secondary);
     color: var(--text-colour-main-light);
-    margin-right: .5rem;
-    padding: 0 .5rem;
+    margin-right: 0.5rem;
+    padding: 0 0.5rem;
 
     @media only screen and (max-width: 900px) {
       height: 2.5rem;
@@ -112,19 +113,18 @@
 }
 
 .heroImage {
-  background: url("./tamanna-rumee-UG5CkjIgVX4-unsplash-2.jpg");
+  background: url('./tamanna-rumee-UG5CkjIgVX4-unsplash-2.jpg');
   background-size: cover;
   width: 100rem;
   z-index: -1;
   position: absolute;
   top: 0;
-  }
+}
 
 .homeListingBtn {
   text-align: center;
   margin: 3rem 0;
   color: var(--text-colour-main-light);
-
 
   h1 {
     font-size: 2.7rem;
