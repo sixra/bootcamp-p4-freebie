@@ -47,7 +47,7 @@ const Contact = () => {
                                 rows={4}
                                 defaultValue={""}
                             />
-                            <button type="submitButton">SEND</button>
+                            <button type="submitButton">Send</button>
                         </form>
                     </div>
                 </div>

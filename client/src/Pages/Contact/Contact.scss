@@ -192,17 +192,9 @@
                 & button {
                     @include Styles.btn-background;
                     position: absolute;
-                    display: block;
-                    height: 2.5rem;
                     width: 14rem;
                     left: 5.5rem;
-                    border: 0;
-                    border-radius: 22rem;
                     bottom: -1.25rem;
-                    color: var(--text-colour-main-light);
-                    font-size: 1.1rem;
-                    font-weight: var(--font-light-bold);
-                    outline: none;
                     @media only screen and (max-width: 1000px) {
                       width: 8rem;
                       left: 6rem;
@@ -211,15 +203,6 @@
                       width: 8rem;
                       left: 6rem;
                     }
-                    &:hover {
-                        transform: translateY(-3px);
-                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-                        cursor: pointer;
-                    }
-                    &:active {
-                        transform: translateY(-1px);
-                        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-                    }
                 }
             }
 
@@ -227,12 +210,7 @@
                 padding-bottom: 2.5rem;
                 @media only screen and (max-width: 530px) {
                   display: flex;
-                  padding-bottom: 0;
                   justify-content: center;
-                }
-                @media only screen and (max-width: 400px) {
-                  padding: 0%;
-                  height: 453px;
                 }
             }
 
