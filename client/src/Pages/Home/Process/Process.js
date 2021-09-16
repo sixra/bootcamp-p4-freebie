@@ -3,8 +3,17 @@ import "./Process.scss";
 import { RiAdvertisementFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
 import { IoMdThumbsUp } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { showRegisterModal } from "../../../Redux/Actions/ModalLoginRegisterAction"
 
 const Process = () => {
+
+    const dispatch = useDispatch();
+
+    const openRegisterModal = () => {
+        dispatch(showRegisterModal());
+    };
+
     return (
         <section className="processContainer">
             <h2>How It Works?</h2>
@@ -36,8 +45,8 @@ const Process = () => {
                     </div>
                 </div>
             </div>
-            <button>
-              Start Registration
+            <button onClick={openRegisterModal}>
+                Start Registration
             </button>
         </section>
     );
