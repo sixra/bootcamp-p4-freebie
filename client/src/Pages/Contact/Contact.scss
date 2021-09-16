@@ -155,8 +155,10 @@
                 }
 
                 @media only screen and (max-width: 530px) {
+                  width: 17rem;
                   margin: 0;
                   height: 24rem;
+                  padding: 0;
                 }
 
                 & input,
@@ -201,7 +203,7 @@
                     }
                     @media only screen and (max-width: 530px) {
                       width: 8rem;
-                      left: 6rem;
+                      left: 5rem;
                     }
                 }
             }
