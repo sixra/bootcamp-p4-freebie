@@ -10,7 +10,7 @@ import HeroImage from "../../Components/Header/HeroImage"
 const Contact = () => {
     return (
         <section className="contactContainer">
-            <HeroImage height="20" />
+            {/* <HeroImage height="20" /> */}
             <div className="contactAllContainer">
 
                 <div className="contactFormContainer">

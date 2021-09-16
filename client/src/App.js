@@ -5,19 +5,21 @@ import Categories from "./Pages/Categories/Categories";
 import Home from "./Pages/Home/Home";
 import Contact from "./Pages/Contact/Contact";
 import Navigation from "./Components/Navigation/Navigation";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
     <div className="App">
       <Router>
         <main>
-          <Navigation />
+          {/* <Navigation /> */}
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/home" exact component={Home} />
             <Route path="/categories" exact component={Categories} />
             <Route path="/contact" exact component={Contact} />
           </Switch>
+          <Footer />
         </main>
       </Router>
     </div>
