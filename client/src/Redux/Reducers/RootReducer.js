@@ -4,6 +4,8 @@ import {
   ModalLoginReducer,
   ModalRegisterReducer,
 } from "./ModalLoginAndRegister";
+import { errorReducer } from "./ErrorReducer";
+import { authReducer } from "./AuthReducer";
 import { adsReducer } from "./AdsReducer";
 
 const rootReducers = combineReducers({
@@ -11,6 +13,8 @@ const rootReducers = combineReducers({
   DropdownState: dropdownReducer,
   LoginModalState: ModalLoginReducer,
   RegisterModalState: ModalRegisterReducer,
+  error: errorReducer,
+  auth: authReducer,
 });
 
 export default rootReducers;

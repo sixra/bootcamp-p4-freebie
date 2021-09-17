@@ -4,23 +4,24 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ItemSchema = new Schema({
-  name: {
+  title: {
     type: String,
     required: true,
+  },
+  location: {
+    city: {
+      type: String,
+      required: true,
+    },
+    pobox: {
+      type: Number,
+    },
   },
   category: {
     type: String,
     required: true,
   },
-  title: {
-    type: String,
-    required: true,
-  },
   image: {
-    type: String,
-    required: true,
-  },
-  location: {
     type: String,
     required: true,
   },
