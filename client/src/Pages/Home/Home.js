@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <HeroImage height="60" />
+      <HeroImage height="60" minHeight="60" />
       <SearchBar />
       {loginModal && <LoginModal />}
       {registerModal && <RegisterModal />}

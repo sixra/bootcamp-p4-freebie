@@ -12,3 +12,8 @@ export const modalRegisterType = {
   SHOW_REGISTER_MODAL: "SHOW_REGISTER_MODAL",
   HIDE_REGISTER_MODAL: "HIDE_REGISTER_MODAL"
 };
+
+export const burgerMenuType = {
+  SHOW_BURGER_MENU: "SHOW_BURGER_MENU",
+  HIDE_BURGER_MENU: "HIDE_BURGER_MENU"
+};
