@@ -6,8 +6,39 @@ import { IoLocationSharp } from "react-icons/io5"
 import { CgPhone } from "react-icons/cg"
 import { MdEmail } from "react-icons/md"
 import HeroImage from "../../Components/Header/HeroImage"
+import axios from 'axios';
 
 const Contact = () => {
+
+
+    const submitRequest = e => {
+        e.preventDefault();
+    
+        const { contactName, email, message } = e.target.elements
+    
+        axios({
+          method: "POST",
+          url: "http://localhost:5000/api/contact",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            contactName: contactName.value,
+            email: email.value,
+            message: message.value
+          }
+        }).then(response => {
+          if (response) {
+            console.log("Email has been sent");
+            alert("Thank you. Your message has been sent")
+            window.location.reload();
+          } else {
+            console.log("FAILURE");
+          }
+        });
+      };
+
+
     return (
         <section className="contactContainer">
             <HeroImage height="20" />
@@ -37,15 +68,18 @@ const Contact = () => {
                         <h3>lorem@ipsum.com</h3>
                     </div>
                     <div className="contactForm">
-                        <form>
-                            <input placeholder="Name" type="text" />
-                            <input placeholder="Email" type="email" />
+                        <form onSubmit={submitRequest}>
+                            <input required id="contactName"  placeholder="Name" type="text" />
+                            <input required id="email" placeholder="Email" type="email" />
                             <textarea
+                                required
+                                id="message"
                                 placeholder="Write your message..."
+                                maxLength="1000"
                                 rows={4}
                                 defaultValue={""}
                             />
-                            <button type="submitButton">Send</button>
+                            <button type="submit">Send</button>
                         </form>
                     </div>
                 </div>

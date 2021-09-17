@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/api/auth.js";
 import itemRoutes from "./routes/api/items.js";
 import userRoutes from "./routes/api/users.js";
+import contactRoutes from "./routes/api/contact.js"
 
 connectDB();
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use("/api/items", itemRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 
