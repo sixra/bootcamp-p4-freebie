@@ -1,5 +1,6 @@
 import axios from "axios";
 
+<<<<<<< HEAD
 //========================> Dont touch ! This is just temporary <================//
 // const URLrapid =
 //   "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
@@ -36,3 +37,10 @@ export const getItemsData = async () => {
     console.log({ error: "This is fetch error" });
   }
 };
+=======
+//////// API FOR ADS ////////
+
+const urlAds = "https://ecommerce-reviews.herokuapp.com/api/reviews";
+
+export const fetchAds = () => axios.get(urlAds);
+>>>>>>> main-feature

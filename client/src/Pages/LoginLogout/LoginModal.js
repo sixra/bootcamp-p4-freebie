@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 import { useDispatch } from "react-redux";
-import { hideLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction"
-import "./LoginModal.scss"
+import { hideLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction";
+import "./LoginModal.scss";
 
 const LoginModal = () => {
-
   const dispatch = useDispatch();
 
   const closeLoginModal = () => {
@@ -17,7 +16,7 @@ const LoginModal = () => {
         <div className="closeModal">
           <button
             onClick={() => {
-              closeLoginModal()
+              closeLoginModal();
             }}
           >
             X
@@ -33,7 +32,7 @@ const LoginModal = () => {
         <div className="modalFooter">
           <button
             onClick={() => {
-              closeLoginModal()
+              closeLoginModal();
             }}
           >
             Cancel
@@ -42,8 +41,7 @@ const LoginModal = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginModal
-
+export default LoginModal;

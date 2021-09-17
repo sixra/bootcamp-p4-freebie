@@ -6,8 +6,10 @@ import {
 } from "./ModalLoginAndRegister";
 import { errorReducer } from "./ErrorReducer";
 import { authReducer } from "./AuthReducer";
+import { adsReducer } from "./AdsReducer";
 
 const rootReducers = combineReducers({
+  ads: adsReducer,
   DropdownState: dropdownReducer,
   LoginModalState: ModalLoginReducer,
   RegisterModalState: ModalRegisterReducer,

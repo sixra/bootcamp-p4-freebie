@@ -11,6 +11,8 @@ import ItemsList from "./Components/ItemsList/ItemsList";
 import { getItemsData, getPlacesData } from "./Api/Api";
 import store from "./Redux/Store";
 import { loadUser } from "./Redux/Actions/Auth";
+import Footer from "./Components/Footer/Footer";
+import ScrollUp from "./Components/ScrollUp/ScrollUp";
 
 const App = () => {
   const [places, setPlaces] = useState([]);
@@ -70,6 +72,8 @@ const App = () => {
               />
             </Route>
           </Switch>
+          <ScrollUp />
+          <Footer />
         </main>
       </Router>
     </div>
