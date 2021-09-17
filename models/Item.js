@@ -8,6 +8,21 @@ const ItemSchema = new Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
+  location: {
+    city: {
+      type: String,
+      required: true,
+    },
+    pobox: {
+      type: Number,
+      required: true,
+    },
+  },
+
   date: {
     type: Date,
     default: Date.now,

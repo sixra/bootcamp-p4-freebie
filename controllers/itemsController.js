@@ -26,8 +26,13 @@ export const getItems = async (req, res) => {
 export const postItem = async (req, res) => {
   const newItem = new Item({
     name: req.body.name,
+    category: req.body.category,
+    location: {
+      city: req.body.location.city,
+      pobox: req.body.location.pobox,
+    },
   });
-
+  console.log(req.body);
   try {
     const item = await newItem.save();
     if (!item) throw Error("Something went wrong saving the item");
