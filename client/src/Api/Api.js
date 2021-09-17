@@ -1,11 +1,7 @@
-import React from 'react'
+import axios from "axios";
 
-const Api = () => {
-  return (
-    <div>
+//////// API FOR ADS ////////
 
-    </div>
-  )
-}
+const urlAds = "https://ecommerce-reviews.herokuapp.com/api/reviews";
 
-export default Api
+export const fetchAds = () => axios.get(urlAds);

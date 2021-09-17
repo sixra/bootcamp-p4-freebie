@@ -20,6 +20,45 @@
 }
 
 .latestAdInfo {
-  font-size: 1rem;
-  padding: 1rem 0;
+  font-size: 0.85rem;
+  padding-top: 1rem;
+
+  & > * {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .latestAdCategory {
+    color: var(--text-colour-light);
+  }
+
+  .latestAdTitle {
+    font-size: 1rem;
+  }
+
+  .latestAdNameLocation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+
+    .latestAdName,
+    .latestAdLocation {
+      span {
+        margin-left: 0.3rem;
+      }
+    }
+
+    .latestAdName {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .latestAdNameDescription {
+    line-height: 1.2rem;
+    color: var(--text-colour-light);
+  }
 }

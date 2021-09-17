@@ -1,9 +1,7 @@
-import { Router } from 'express';
-import { getUser } from '../../controllers/userController.js';
-
+import { Router } from "express";
+import { getUser } from "../../controllers/userController.js";
 
 const router = Router();
-
 
 /**
  * @route   GET api/users
@@ -11,6 +9,6 @@ const router = Router();
  * @access  Private
  */
 
-router.get('/', getUser);
+router.get("/", getUser);
 
 export default router;
