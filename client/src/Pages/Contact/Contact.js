@@ -13,37 +13,36 @@ const Contact = () => {
 
     const submitRequest = e => {
         e.preventDefault();
-    
+
         const { contactName, email, message } = e.target.elements
-    
+
         axios({
-          method: "POST",
-          url: "http://localhost:5000/api/contact",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          data: {
-            contactName: contactName.value,
-            email: email.value,
-            message: message.value
-          }
+            method: "POST",
+            url: "http://localhost:5000/api/contact",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {
+                contactName: contactName.value,
+                email: email.value,
+                message: message.value
+            }
         }).then(response => {
-          if (response) {
-            console.log("Email has been sent");
-            alert("Thank you. Your message has been sent")
-            window.location.reload();
-          } else {
-            console.log("FAILURE");
-          }
+            if (response) {
+                console.log("Email has been sent");
+                alert("Thank you. Your message has been sent")
+                window.location.reload();
+            } else {
+                console.log("FAILURE");
+            }
         });
-      };
+    };
 
 
     return (
         <section className="contactContainer">
             <HeroImage height="20" />
             <div className="contactAllContainer">
-
                 <div className="contactFormContainer">
                     <div className="contactUs">
                         <div className="contactSideHeader">
@@ -69,7 +68,7 @@ const Contact = () => {
                     </div>
                     <div className="contactForm">
                         <form onSubmit={submitRequest}>
-                            <input required id="contactName"  placeholder="Name" type="text" />
+                            <input required id="contactName" placeholder="Name" type="text" />
                             <input required id="email" placeholder="Email" type="email" />
                             <textarea
                                 required

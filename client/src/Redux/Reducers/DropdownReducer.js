@@ -1,4 +1,4 @@
-import { searchBarDropdownType } from "..//ActionTypes";
+import { searchBarDropdownType } from "../ActionTypes";
 
 
 export const dropdownReducer = (state = false, action) => {
