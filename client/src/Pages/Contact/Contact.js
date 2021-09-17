@@ -69,11 +69,13 @@ const Contact = () => {
                     </div>
                     <div className="contactForm">
                         <form onSubmit={submitRequest}>
-                            <input id="contactName"  placeholder="Name" type="text" />
-                            <input id="email" placeholder="Email" type="email" />
+                            <input required id="contactName"  placeholder="Name" type="text" />
+                            <input required id="email" placeholder="Email" type="email" />
                             <textarea
+                                required
                                 id="message"
                                 placeholder="Write your message..."
+                                maxLength="1000"
                                 rows={4}
                                 defaultValue={""}
                             />
