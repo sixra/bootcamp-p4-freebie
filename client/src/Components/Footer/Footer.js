@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import "./Footer.scss"
 import ReactStoreBadges from 'react-store-badges'
 import { IoLocationSharp } from "react-icons/io5"
