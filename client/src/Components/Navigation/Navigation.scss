@@ -17,7 +17,7 @@
     color: var(--details-colour-secondary);
 
     &::after {
-      content: 'bie';
+      content: "bie";
       color: var(--text-colour-main-light);
     }
   }
@@ -221,4 +221,10 @@
 
 #hideBurger {
   display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  #showBurger {
+    display: none;
+  }
 }

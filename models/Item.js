@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -6,14 +6,29 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
+  location: {
+    city: {
+      type: String,
+      required: true,
+    },
+    pobox: {
+      type: Number,
+      required: true,
+    },
+  },
+
   date: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-const Item = mongoose.model('item', ItemSchema);
+const Item = mongoose.model("item", ItemSchema);
 
 export default Item;

@@ -1,11 +1,15 @@
 export const searchBarDropdownType = {
   SHOW_DROPDOWN: "SHOW_DROPDOWN",
-  HIDE_DROPDOWN: "HIDE_DROPDOWN"
+  HIDE_DROPDOWN: "HIDE_DROPDOWN",
+};
+
+export const adsType = {
+  FETCH_ADS: "FETCH_ADS",
 };
 
 export const modalLoginType = {
   SHOW_LOGIN_MODAL: "SHOW_LOGIN_MODAL",
-  HIDE_LOGIN_MODAL: "HIDE_LOGIN_MODAL"
+  HIDE_LOGIN_MODAL: "HIDE_LOGIN_MODAL",
 };
 
 export const modalRegisterType = {
@@ -16,4 +20,20 @@ export const modalRegisterType = {
 export const burgerMenuType = {
   SHOW_BURGER_MENU: "SHOW_BURGER_MENU",
   HIDE_BURGER_MENU: "HIDE_BURGER_MENU"
+};
+
+export const errorType = {
+  GET_ERRORS: "GET_ERRORS",
+  CLEAR_ERRORS: "CLEAR_ERRORS",
+};
+
+export const authType = {
+  USER_LOADING: "USER_LOADING",
+  USER_LOADED: "USER_LOADED",
+  AUTH_ERROR: "AUTH_ERROR",
+  LOGIN_SUCCESS: "LOGIN_SUCCESS",
+  LOGIN_FAIL: "LOGIN_FAIL",
+  LOGOUT_SUCCESS: "LOGOUT_SUCCESS",
+  REGISTER_SUCCESS: "REGISTER_SUCCESS",
+  REGISTER_FAIL: "REGISTER_FAIL",
 };
