@@ -58,7 +58,13 @@ import "./LoginModal.scss";
 //   const { isAuthenticated } = auth;
 //   const { error } = ERR;
 
-const RegisterModal = ({ isAuthenticated, error, register, clearErrors }) => {
+const RegisterModal = ({
+  isAuthenticated,
+  error,
+  register,
+  clearErrors,
+  auth,
+}) => {
   const [modal, setModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -95,17 +101,19 @@ const RegisterModal = ({ isAuthenticated, error, register, clearErrors }) => {
     // Check for register error
     if (error.id === "REGISTER_FAIL") {
       setMsg(error.msg.msg || error.msg.error);
+    } else if (error.id === null) {
+      setMsg(auth.msg);
     } else {
       setMsg(null);
     }
 
     // If authenticated, close modal
     if (modal) {
-      if (isAuthenticated === true) {
+      if (isAuthenticated) {
         handleToggle();
       }
     }
-  }, [error, handleToggle, isAuthenticated, modal]);
+  }, [error, handleToggle, isAuthenticated, auth, modal]);
 
   const closeRegisterModal = () => {
     dispatch(hideRegisterModal());
@@ -159,7 +167,16 @@ const RegisterModal = ({ isAuthenticated, error, register, clearErrors }) => {
               >
                 Cancel
               </button>
-              <button onClick={handleToggle}>Continue</button>
+              <button
+                onClick={() => {
+                  handleToggle();
+                  setTimeout(() => {
+                    closeRegisterModal();
+                  }, 2000);
+                }}
+              >
+                Continue
+              </button>
             </div>
           </form>
         </div>
@@ -170,6 +187,7 @@ const RegisterModal = ({ isAuthenticated, error, register, clearErrors }) => {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  auth: state.auth,
   error: state.error,
 });
 

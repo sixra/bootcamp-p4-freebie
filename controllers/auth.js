@@ -2,8 +2,9 @@ import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 
-// User Model
+// User & pendingUser Model
 import User from "../models/User.js";
+import PendingUser from "../models/pending-user.js";
 
 dotenv.config();
 
@@ -63,7 +64,8 @@ export const registerUser = async (req, res) => {
 
   try {
     const user = await User.findOne({ email });
-    if (user) throw Error("User already exists");
+    const pendingUser = await PendingUser.findOne({ email });
+    if (user || pendingUser) throw Error("User already exists");
 
     const salt = await bcrypt.genSalt(10);
     if (!salt) throw Error("Something went wrong with bcrypt");
@@ -71,7 +73,7 @@ export const registerUser = async (req, res) => {
     const hash = await bcrypt.hash(password, salt);
     if (!hash) throw Error("Something went wrong hashing the password");
 
-    const newUser = new User({
+    const newUser = new PendingUser({
       name,
       email,
       password: hash,
@@ -85,6 +87,7 @@ export const registerUser = async (req, res) => {
     });
 
     res.status(200).json({
+      msg: "You have been registered, Check your email address to active your account",
       token,
       user: {
         id: savedUser.id,
