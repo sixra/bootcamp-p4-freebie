@@ -2,8 +2,10 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import "./GoogleMap.scss";
 
-const GoogleMap = ({ setCoordinates, setBounds, coordinates }) => {
-  // const coordinates = { lat: 51.1657, lng: 10.4515 };
+// const GoogleMap = ({ setCoordinates, setBounds, coordinates }) => {
+
+const GoogleMap = ({ setCoordinates, setBounds }) => {
+  const coordinates = { lat: 52.52, lng: 13.405 };
   return (
     <div>
       <h1>Hello Google Map</h1>

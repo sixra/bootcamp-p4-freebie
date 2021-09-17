@@ -1,13 +1,14 @@
 import axios from "axios";
 
-// const URL =
+//========================> Dont touch ! This is just temporary <================//
+// const URLrapid =
 //   "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
 
 // export const getPlacesData = async (sw, ne) => {
 //   try {
 //     const {
 //       data: { data },
-//     } = await axios.get(URL, {
+//     } = await axios.get(URLrapid, {
 //       params: {
 //         bl_latitude: sw.lat,
 //         tr_latitude: ne.lat,
