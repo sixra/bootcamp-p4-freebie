@@ -20,9 +20,9 @@
     & iframe {
       width: 50%;
       height: 600px;
-      border: none;
-      z-index: -1;
-      filter: grayscale(1);
+      // border: none;
+      z-index: 1;
+      // filter: grayscale(1);
       @media only screen and (max-width: 850px) {
         display: none;
       }
