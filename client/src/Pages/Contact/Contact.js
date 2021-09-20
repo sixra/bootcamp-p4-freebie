@@ -6,13 +6,43 @@ import { IoLocationSharp } from "react-icons/io5"
 import { CgPhone } from "react-icons/cg"
 import { MdEmail } from "react-icons/md"
 import HeroImage from "../../Components/Header/HeroImage"
+import axios from 'axios';
 
 const Contact = () => {
+
+
+    const submitRequest = e => {
+        e.preventDefault();
+
+        const { contactName, email, message } = e.target.elements
+
+        axios({
+            method: "POST",
+            url: "http://localhost:5000/api/contact",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {
+                contactName: contactName.value,
+                email: email.value,
+                message: message.value
+            }
+        }).then(response => {
+            if (response) {
+                console.log("Email has been sent");
+                alert("Thank you. Your message has been sent")
+                window.location.reload();
+            } else {
+                console.log("FAILURE");
+            }
+        });
+    };
+
+
     return (
         <section className="contactContainer">
-            {/* <HeroImage height="20" /> */}
+            <HeroImage height="20" />
             <div className="contactAllContainer">
-
                 <div className="contactFormContainer">
                     <div className="contactUs">
                         <div className="contactSideHeader">
@@ -37,23 +67,23 @@ const Contact = () => {
                         <h3>lorem@ipsum.com</h3>
                     </div>
                     <div className="contactForm">
-                        <form>
-                            <input placeholder="Name" type="text" />
-                            <input placeholder="Email" type="email" />
+                        <form onSubmit={submitRequest}>
+                            <input required id="contactName" placeholder="Name" type="text" />
+                            <input required id="email" placeholder="Email" type="email" />
                             <textarea
+                                required
+                                id="message"
                                 placeholder="Write your message..."
+                                maxLength="1000"
                                 rows={4}
                                 defaultValue={""}
                             />
-                            <button type="submitButton">Send</button>
+                            <button type="submit">Send</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <iframe
-                className="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d301941.965402527!2d13.144553707447377!3d52.50651327072207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin!5e1!3m2!1sen!2sde!4v1631625218844!5m2!1sen!2sde"
-            ></iframe>
+            <iframe className="map" src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"></iframe>
         </section>
     );
 };
