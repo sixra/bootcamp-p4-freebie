@@ -8,8 +8,7 @@ node_modules/
 
 # testing
 /coverage
-/data
-seederScript.js
+
 
 # production
 /build
@@ -21,6 +20,8 @@ seederScript.js
 .env.development.local
 .env.test.local
 .env.production.local
+/data
+seederScript.js
 
 
 npm-debug.log*
