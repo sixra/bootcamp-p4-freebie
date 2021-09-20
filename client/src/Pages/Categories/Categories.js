@@ -5,7 +5,7 @@ import SearchBar from '../../Components/Header/SearchBar'
 const Categories = () => {
   return (
     <div>
-      <HeroImage height="20" />
+      <HeroImage height="25" minHeight="25" maxHeight="25" />
       <SearchBar />
     </div>
   )

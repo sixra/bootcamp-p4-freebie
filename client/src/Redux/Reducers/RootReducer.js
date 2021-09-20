@@ -1,9 +1,8 @@
-import { combineReducers } from "redux";
-import { dropdownReducer } from "./DropdownReducer";
-import {
-  ModalLoginReducer,
-  ModalRegisterReducer,
-} from "./ModalLoginAndRegister";
+
+import { combineReducers } from "redux"
+import { dropdownReducer } from "./DropdownReducer"
+import { ModalLoginReducer, ModalRegisterReducer } from "./ModalLoginAndRegister"
+import { burgerMenuReducer } from "./BurgerMenuReducer"
 import { errorReducer } from "./ErrorReducer";
 import { authReducer } from "./AuthReducer";
 import { adsReducer } from "./AdsReducer";
@@ -13,6 +12,7 @@ const rootReducers = combineReducers({
   DropdownState: dropdownReducer,
   LoginModalState: ModalLoginReducer,
   RegisterModalState: ModalRegisterReducer,
+  BurgerMenuState: burgerMenuReducer,
   error: errorReducer,
   auth: authReducer,
 });
