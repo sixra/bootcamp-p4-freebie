@@ -21,19 +21,17 @@ const LatestAds = () => {
         <h2>latest ads</h2>
       </div>
 
-      <div className="latestAdsContainer">
-        {!ads.length ? (
-          <div className="LoadingSpinner">
-            <LoadingSpinner />
-          </div>
-        ) : (
+      {!ads.length ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="latestAdsContainer">
           <div className="latestAds">
             {ads.map((adInfo) => (
               <LatestAd key={adInfo._id} adInfo={adInfo} />
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="moreAdsButtonContainer">
         <button>more ads</button>
