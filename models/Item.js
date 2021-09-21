@@ -4,11 +4,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ItemSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  category: {
+  title: {
     type: String,
     required: true,
   },
@@ -19,10 +15,20 @@ const ItemSchema = new Schema({
     },
     pobox: {
       type: Number,
-      required: true,
     },
   },
-
+  category: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,

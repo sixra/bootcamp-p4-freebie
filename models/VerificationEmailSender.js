@@ -29,7 +29,7 @@ export const sendConfirmationEmail = function ({ toUser, hash }) {
     html: `
       <h3> Hello ${toUser} </h3>
       <p>Thank you for registering into our Application. Much Appreciated! Just one last step is laying ahead of you...</p>
-      <p>To activate your account please follow this link: <a target="_" href="${process.env.DOMAIN}/api/activate/user/${hash}">${process.env.DOMAIN}/Activate </a></p>
+      <p>To activate your account please follow this link: <a target="_" href="${process.env.DOMAIN}/api/activate/user/${hash}">Activate Link</a></p>
       <p>Cheers</p>
       <p>Your Application Team</p>
     `,
