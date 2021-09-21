@@ -1,4 +1,5 @@
 @use "../../Styles.scss";
+@import "toastr";
 
 .footerContainer{
   background-color: var(--background-colour-dark-gray);
@@ -23,6 +24,7 @@
       @media only screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
+        margin: 0;
       }
       .footerLogo{
         text-align: center;
