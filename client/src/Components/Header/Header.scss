@@ -31,9 +31,11 @@
     padding-left: 1rem;
     border-right: 0.1rem solid rgba(128, 128, 128, 0.153);
     position: relative;
-    background-color: var(--background-colour-light-gray-transparent-secondary);
+    background-color: var(--background-colour-main);
     border-radius: 5rem;
     margin: 0 0.5rem;
+    box-shadow: rgb(204, 219, 232) 2px 2px 4px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
     @media only screen and (max-width: 1000px) {
       padding-left: 3rem;
@@ -59,7 +61,7 @@
     background-color: var(--background-colour-main);
     color: var(--text-colour-main-dark);
     position: absolute;
-    top: 3rem;
+    top: 0;
     right: 0;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -69,6 +71,11 @@
       border-bottom: 0.1rem solid rgba(128, 128, 128, 0.112);
       padding-left: 1rem;
       line-height: 2.5rem;
+
+      &:first-of-type {
+        height: 5rem;
+        padding-top: 2.5rem;
+      }
     }
   }
 
@@ -97,13 +104,18 @@
     border-radius: 5rem;
     border: none;
     margin-left: 1rem;
-    background-color: var(--details-colour-secondary);
+    background: linear-gradient(
+      to right,
+      var(--details-colour-secondary),
+      var(--details-colour-main)
+    );
     font-weight: var(--font-medium-bold);
     text-transform: uppercase;
     background-color: var(--details-colour-secondary);
     color: var(--text-colour-main-light);
     margin-right: 0.5rem;
     padding: 0 0.5rem;
+    cursor: pointer;
 
     @media only screen and (max-width: 1000px) {
       height: 2.5rem;
@@ -113,7 +125,7 @@
 }
 
 .heroImage {
-  background: url("./tamanna-rumee-UG5CkjIgVX4-unsplash-2.jpg");
+  background: url("./laura-davidson-QBAH4IldaZY-unsplash-3.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -146,9 +158,14 @@
     border-radius: 5rem;
     font-weight: var(--font-medium-bold);
     text-transform: uppercase;
-    background-color: var(--details-colour-secondary);
+    background: linear-gradient(
+      to right,
+      var(--details-colour-secondary),
+      var(--details-colour-main)
+    );
     font-size: var(--normal-font-size);
     color: var(--text-colour-main-light);
     margin-top: 1rem;
+    cursor: pointer;
   }
 }
