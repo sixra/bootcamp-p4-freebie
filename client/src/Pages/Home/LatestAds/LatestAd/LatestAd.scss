@@ -21,6 +21,7 @@
 
 .latestAdInfo {
   font-size: 0.85rem;
+
   padding-top: 1rem;
 
   & > * {
@@ -29,6 +30,7 @@
 
   .latestAdCategory {
     color: var(--text-colour-light);
+    text-transform: capitalize;
   }
 
   .latestAdTitle {
@@ -47,6 +49,7 @@
 
     .latestAdName,
     .latestAdLocation {
+      text-transform: capitalize;
       span {
         margin-left: 0.3rem;
       }
