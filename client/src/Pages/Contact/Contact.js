@@ -11,10 +11,8 @@ import toastr from "toastr";
 
 
 const Contact = () => {
-
-
-    const submitRequest = e => {
-        e.preventDefault();
+  const submitRequest = (e) => {
+    e.preventDefault();
 
         const { contactName, email, message } = e.target.elements
 
@@ -41,7 +39,6 @@ const Contact = () => {
                 console.log("FAILURE");
             }
         });
-    };
 
     toastr.options = {
         "closeButton": true,
@@ -60,55 +57,59 @@ const Contact = () => {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
       }
+    };
 
-
-    return (
-        <section className="contactContainer">
-            <HeroImage height="20" />
-            <div className="contactAllContainer">
-                <div className="contactFormContainer">
-                    <div className="contactUs">
-                        <div className="contactSideHeader">
-                            <h1>⎯⎯⎯⎯&nbsp;&nbsp;CONTACT US</h1>
-                        </div>
-                    </div>
-                    <div className="contactHeader">
-                        <h1>Get in Touch</h1>
-                        <h2>Any Questions or remarks? Just write us a message!</h2>
-                    </div>
-                    <div className="contactAddress">
-                        <IoLocationSharp className="icon" />
-                        <h3>10785 Mitte</h3>
-                        <h3>Berlin, DE</h3>
-                    </div>
-                    <div className="contactPhone">
-                        <CgPhone className="icon" />
-                        <h3>01575 141 615 </h3>
-                    </div>
-                    <div className="contactEmail">
-                        <MdEmail className="icon" />
-                        <h3>lorem@ipsum.com</h3>
-                    </div>
-                    <div className="contactForm">
-                        <form onSubmit={submitRequest}>
-                            <input required id="contactName" placeholder="Name" type="text" />
-                            <input required id="email" placeholder="Email" type="email" />
-                            <textarea
-                                required
-                                id="message"
-                                placeholder="Write your message..."
-                                maxLength="1000"
-                                rows={4}
-                                defaultValue={""}
-                            />
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>     
+ 
+  return (
+    <section className="contactContainer">
+      <HeroImage height="20" />
+      <div className="contactAllContainer">
+        <div className="contactFormContainer">
+          <div className="contactUs">
+            <div className="contactSideHeader">
+              <h1>⎯⎯⎯⎯&nbsp;&nbsp;CONTACT US</h1>
             </div>
-            <iframe className="map" src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"></iframe>
-        </section>
-    );
+          </div>
+          <div className="contactHeader">
+            <h1>Get in Touch</h1>
+            <h2>Any Questions or remarks? Just write us a message!</h2>
+          </div>
+          <div className="contactAddress">
+            <IoLocationSharp className="icon" />
+            <h3>10785 Mitte</h3>
+            <h3>Berlin, DE</h3>
+          </div>
+          <div className="contactPhone">
+            <CgPhone className="icon" />
+            <h3>01575 141 615 </h3>
+          </div>
+          <div className="contactEmail">
+            <MdEmail className="icon" />
+            <h3>lorem@ipsum.com</h3>
+          </div>
+          <div className="contactForm">
+            <form onSubmit={submitRequest}>
+              <input required id="contactName" placeholder="Name" type="text" />
+              <input required id="email" placeholder="Email" type="email" />
+              <textarea
+                required
+                id="message"
+                placeholder="Write your message..."
+                maxLength="1000"
+                rows={4}
+                defaultValue={""}
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <iframe
+        className="map"
+        src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"
+      ></iframe>
+    </section>
+  );
 };
 
 export default Contact;

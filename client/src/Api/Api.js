@@ -38,6 +38,6 @@ export const getItemsData = async () => {
 };
 //////// API FOR ADS ////////
 
-const urlAds = "https://ecommerce-reviews.herokuapp.com/api/reviews";
+const urlAds = "http://localhost:5000/api/items";
 
 export const fetchAds = () => axios.get(urlAds);
