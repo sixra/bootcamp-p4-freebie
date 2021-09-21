@@ -4,7 +4,14 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
 
 const LatestAd = ({ adInfo }) => {
-  const { name, category, description, image, location, title } = adInfo;
+  const {
+    name,
+    category,
+    description,
+    image,
+    location: { city, pobox },
+    title,
+  } = adInfo;
 
   return (
     <div className="latestAdCard">
@@ -21,7 +28,8 @@ const LatestAd = ({ adInfo }) => {
           </div>
           <div className="latestAdLocation">
             <IoLocationOutline size={15} style={{ color: "#df0161" }} />
-            <span>{location}</span>
+            <span>{city}</span>
+            <span>{pobox}</span>
           </div>
         </div>
 

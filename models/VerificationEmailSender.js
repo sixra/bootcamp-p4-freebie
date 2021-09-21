@@ -27,7 +27,7 @@ export const sendConfirmationEmail = function ({ toUser, hash }) {
     to: process.env.GOOGLE_USER,
     subject: "Your App - Activate Account",
     html: `
-      <h3> Hello ${toUser} </h3>
+      <h3> Hello ${toUser.name} </h3>
       <p>Thank you for registering into our Application. Much Appreciated! Just one last step is laying ahead of you...</p>
       <p>To activate your account please follow this link: <a target="_" href="${process.env.DOMAIN}/api/activate/user/${hash}">Activate Link</a></p>
       <p>Cheers</p>

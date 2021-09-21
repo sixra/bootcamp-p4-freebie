@@ -25,7 +25,9 @@ export const getItems = async (req, res) => {
 
 export const postItem = async (req, res) => {
   const newItem = new Item({
-    name: req.body.name,
+    image: req.body.image,
+    title: req.body.title,
+    description: req.body.description,
     category: req.body.category,
     location: {
       city: req.body.location.city,
