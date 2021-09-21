@@ -93,18 +93,12 @@ const RegisterModal = ({
           {console.log("This is msg", msg)}
         </div>
 
-<<<<<<< HEAD
-        <div >
-          {/* {msg ? alert(msg) : null} */}
-          <form className="modalBody" onSubmit={handleOnSubmit}>
-=======
         <div>
           {/* {msg ? alert(msg) : null} */}
           <form
             className={isAuthenticated ? "removeModalBody" : "modalBody"}
             onSubmit={handleOnSubmit}
           >
->>>>>>> main-feature
             <input
               onChange={handleChangeName}
               name="name"
