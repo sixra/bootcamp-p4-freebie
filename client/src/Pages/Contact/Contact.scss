@@ -1,4 +1,5 @@
 @use "../../Styles.scss";
+@import "toastr";
 
 .contactContainer {
     display: flex;
@@ -11,7 +12,7 @@
       margin: 3rem;
     }
     @media only screen and (max-width: 1000px) {
-      margin: 1rem;
+      margin: 3rem 1rem 1rem 1rem;;
     }
     @media only screen and (max-width: 530px) {
       margin: 0;
@@ -20,9 +21,9 @@
     & iframe {
       width: 50%;
       height: 600px;
-      // border: none;
+      border: none;
       z-index: 1;
-      // filter: grayscale(1);
+      filter: grayscale(1);
       @media only screen and (max-width: 850px) {
         display: none;
       }
@@ -239,4 +240,78 @@
             grid-area: contactForm;
         }
     }
+}
+
+// /* Alert Position */
+
+$alert-width: 31.25rem;
+$alert-extra-padding: 3.125rem;
+
+.alert-main {
+  animation: fadeIn ease 0.5s;
+  width: $alert-width;
+  margin: auto;
+  position: fixed;
+  background-color: white;
+  min-height: 12.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  top: 20vh;
+  left: calc(50vw - #{($alert-width/2)});
+  @media (max-width: $alert-width+$alert-extra-padding) {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+
+.alert-header {
+  padding: 1rem;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.alert-body {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.063rem;
+}
+
+.alert-button {
+  width: 9.375rem;
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 2.5rem;
+  font-size: 1.063rem;
+  font-weight: 600;
+  border-radius: 1.875rem;
+  align-items: center;
+  position: relative;
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.backdrop {
+  animation: fadeIn ease 1s;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

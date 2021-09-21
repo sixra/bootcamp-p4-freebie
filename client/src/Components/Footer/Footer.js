@@ -1,6 +1,7 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import "./Footer.scss"
+import toastr from "toastr";
 import ReactStoreBadges from 'react-store-badges'
 import { IoLocationSharp } from "react-icons/io5"
 import { CgPhone } from "react-icons/cg"
@@ -10,6 +11,36 @@ import { FaPaperPlane, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icon
 
 
 const Footer = () => {
+
+  const signNewsletter = (e) => {
+    e.preventDefault()
+    const { email } = e.target.elements;
+    if(email.value){
+      toastr["success"]("For Subscribing to our Newsletter!", "Thank You!")
+    } else {
+      toastr["error"]("Please try again, with a valid email!", "Something went wrong")
+    }
+    
+
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-bottom-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  }
+
   return (
       <footer className="footerContainer">
         <div className="footerInputContainer">
@@ -69,12 +100,14 @@ const Footer = () => {
             
             </div>
             <div className="footerDetailsSubscribe">
-            <h3>Subscribe</h3>
-            <div className="footerDetailsSubscribeInput">
-            <input type="email" placeholder="Email Adress"/>
-            <button type="submitButton"><FaPaperPlane size={16}/></button>
-            </div>
-            <span>Get the latest updates in your mailbox!</span>
+              <h3>Subscribe</h3>
+              <div >
+                <form className="footerDetailsSubscribeInput" action="" onSubmit={signNewsletter}>
+                <input id="email" type="email" placeholder="Email Adress"/>
+                <button  type="submitButton"><FaPaperPlane size={16}/></button>
+                </form>
+              </div>
+              <span>Get the latest updates in your mailbox!</span>
             </div>
           </div>
           <div className="footerSocialMedia">
