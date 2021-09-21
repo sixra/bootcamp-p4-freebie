@@ -19,6 +19,7 @@ const RegisterModal = ({
   clearErrors,
   auth,
 }) => {
+
   const [modal, setModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

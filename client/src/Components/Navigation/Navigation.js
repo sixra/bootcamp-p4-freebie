@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <div>
       <div className="navContainer">
-        <span className="navLogo">free</span>
+        <span className="navLogo"> free</span>
         <ul className="navList">
           <li className="navListItem">
             <NavLink activeClassName="activePage" to="/home">
