@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
+import { sendConfirmationEmail } from "../models/VerificationEmailSender.js";
 
 // User & pendingUser Model
 import User from "../models/User.js";
@@ -80,6 +81,10 @@ export const registerUser = async (req, res) => {
     });
 
     const savedUser = await newUser.save();
+    await sendConfirmationEmail({
+      toUser: savedUser,
+      hash: savedUser._id,
+    });
     if (!savedUser) throw Error("Something went wrong saving the user");
 
     const token = jwt.sign({ id: savedUser._id }, process.env.jwtSecret, {

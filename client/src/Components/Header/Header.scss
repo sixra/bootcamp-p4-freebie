@@ -115,7 +115,9 @@
 .heroImage {
   background: url("./tamanna-rumee-UG5CkjIgVX4-unsplash-2.jpg");
   background-size: cover;
-  width: 100rem;
+  background-position: center;
+  width: 100%;
+  max-width: 100rem;
   z-index: -1;
   position: absolute;
   top: 0;

@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -15,9 +15,19 @@ const transporter = nodemailer.createTransport({
 function sendEmail(contactName, email, message, callback) {
   const mailOption = {
     from: "brah.freebie@gmail.com",
-    to: "b.brisilda1552@gmail.com",
+    to: process.env.GOOGLE_USER,
     subject: "Message from Freebie",
-    text: "\n" + "Contact Name:  " +  contactName + "\n" + "email:  " + email + "\n" + "Message: " + "\n" + message,
+    text:
+      "\n" +
+      "Contact Name:  " +
+      contactName +
+      "\n" +
+      "email:  " +
+      email +
+      "\n" +
+      "Message: " +
+      "\n" +
+      message,
   };
   transporter.sendMail(mailOption, function (error, info) {
     if (error) {

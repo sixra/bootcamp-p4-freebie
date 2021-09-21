@@ -139,11 +139,15 @@ const RegisterModal = ({
           {console.log("This is msg", msg)}
         </div>
 
-        <div className="modalBody">
+        <div>
           {/* {msg ? alert(msg) : null} */}
-          <form onSubmit={handleOnSubmit}>
+          <form
+            className={isAuthenticated ? "removeModalBody" : "modalBody"}
+            onSubmit={handleOnSubmit}
+          >
             <input
               onChange={handleChangeName}
+              name="name"
               type="text"
               placeholder="Name..."
             />
@@ -172,7 +176,7 @@ const RegisterModal = ({
                   handleToggle();
                   setTimeout(() => {
                     closeRegisterModal();
-                  }, 2000);
+                  }, 10000);
                 }}
               >
                 Continue
