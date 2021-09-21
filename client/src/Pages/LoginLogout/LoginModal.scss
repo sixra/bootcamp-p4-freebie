@@ -1,3 +1,5 @@
+@use "../../Styles.scss";
+
 .modalBackground {
   width: 100vw;
   height: 100vh;
@@ -15,7 +17,8 @@
   .modalContainer {
     width: 30rem;
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--background-colour-light-gray-transparent-secondary);
+    color: var(--text-colour-main-dark);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
       rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
       rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -29,14 +32,13 @@
 
     .closeModal {
       text-align: right;
-      cursor: pointer;
 
       button {
         border: none;
-        background-color: rgb(211, 211, 211);
         border-radius: 50%;
         width: 1.3rem;
         height: 1.3rem;
+        cursor: pointer;
       }
     }
 
@@ -57,10 +59,10 @@
         height: 2.5rem;
         border: none;
         outline: none;
-        background-color: gray;
         border-radius: 3rem;
         padding-left: 1.5rem;
-        background-color: rgb(233, 233, 233);
+        box-shadow: rgb(204, 219, 232) 2px 2px 4px 0px inset,
+          rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
       }
     }
     .removeModalBody {
@@ -79,6 +81,17 @@
         border: none;
         border-radius: 1rem;
         cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        &:nth-of-type(2) {
+          background: linear-gradient(
+            to right,
+            var(--details-colour-secondary),
+            var(--details-colour-main)
+          );
+          color: var(--text-colour-main-light);
+        }
       }
     }
   }
