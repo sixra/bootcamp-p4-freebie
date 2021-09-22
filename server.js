@@ -8,6 +8,7 @@ import authRoutes from "./routes/api/auth.js";
 import itemRoutes from "./routes/api/items.js";
 import userRoutes from "./routes/api/users.js";
 import contactRoutes from "./routes/api/contact.js";
+import activateRoutes from "./routes/api/activate.js";
 
 connectDB();
 
@@ -23,6 +24,7 @@ app.use("/api/items", itemRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/activate/user", activateRoutes);
 
 const PORT = process.env.PORT || 4000;
 
