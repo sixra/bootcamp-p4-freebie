@@ -42,8 +42,28 @@
       }
     }
 
-    .modalTitle {
+    .modalRegisterSuccess{
       text-align: center;
+    }
+    .modalRegisterSuccess .modalRegisterSuccessIcon{
+      height: 200px;
+      background-color: green;
+      color: white;
+      text-align: center;
+    }
+
+    .modalRegisterErrorIcon{
+      text-align: center;
+      padding: 0.5rem;
+      background-color: red;
+      color: white;
+    }
+
+    .modalRegisterSuccessIcon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
     }
 
     .modalBody {

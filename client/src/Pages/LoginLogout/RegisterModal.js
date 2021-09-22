@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
+import { showLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction"
 import { register } from "../../Redux/Actions/Auth";
 import { clearErrors } from "../../Redux/Actions/Error";
-
 import { hideRegisterModal } from "../../Redux/Actions/ModalLoginRegisterAction";
+import {FaCheckCircle, FaRegTimesCircle} from "react-icons/fa"
 
 import "./LoginModal.scss";
 
@@ -24,6 +25,7 @@ const RegisterModal = ({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [msg, setMsg] = useState(null);
   const [msg, setMsg] = useState(null);
   console.log(modal);
   const handleToggle = useCallback(() => {
@@ -74,6 +76,12 @@ const RegisterModal = ({
     dispatch(hideRegisterModal());
   };
 
+  const openLoginModal = () => {
+    dispatch(showLoginModal());
+  };
+
+
+
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -88,9 +96,15 @@ const RegisterModal = ({
           </button>
         </div>
 
-        <div className="modalTitle">
-          <h1> Register </h1>
-          <h3> {msg ? msg : null}</h3>
+        <div className={isAuthenticated ? "modalRegisterSuccess" : "modalRegisterError"}>
+          <div className={isAuthenticated ? "modalRegisterSuccessIcon" : null }> {isAuthenticated ? <FaCheckCircle size={56}/> : null} </div>
+          <div className={error.id === null ? null : "modalRegisterErrorIcon"}> {error.id === null ? null : <FaRegTimesCircle size={56}/>} 
+          <h3> {isAuthenticated ? msg : msg}</h3>
+          {msg === "User already exists, Please log in!" ? (<span>Click here to <button onClick={() => {
+              closeRegisterModal();
+              openLoginModal();}} >Login</button></span>) : null}
+          </div>
+          <h1>{isAuthenticated ? "Success!" : "Register"}</h1>
           {console.log("This is msg", msg)}
         </div>
 
@@ -131,7 +145,7 @@ const RegisterModal = ({
                   handleToggle();
                   setTimeout(() => {
                     closeRegisterModal();
-                  }, 10000);
+                  }, 1000000000);
                 }}
               >
                 Continue
