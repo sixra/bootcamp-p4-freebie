@@ -5,6 +5,8 @@ import { register } from "../../Redux/Actions/Auth";
 import { clearErrors } from "../../Redux/Actions/Error";
 import { hideRegisterModal } from "../../Redux/Actions/ModalLoginRegisterAction";
 import {FaCheckCircle, FaRegTimesCircle} from "react-icons/fa"
+import {GoMailRead} from "react-icons/go"
+import {IoCloseCircleOutline} from "react-icons/io5"
 
 import "./LoginModal.scss";
 
@@ -92,28 +94,31 @@ const RegisterModal = ({
               handleToggle();
             }}
           >
-            X
+            <IoCloseCircleOutline size={24}/>
           </button>
         </div>
 
         <div className={isAuthenticated ? "modalRegisterSuccess" : "modalRegisterError"}>
-          <div className={isAuthenticated ? "modalRegisterSuccessIcon" : null }> {isAuthenticated ? <FaCheckCircle size={56}/> : null} </div>
-          <div className={error.id === null ? null : "modalRegisterErrorIcon"}> {error.id === null ? null : <FaRegTimesCircle size={56}/>} 
+          <div className={isAuthenticated ? "modalRegisterSuccessIcon" : null }> {isAuthenticated ? <GoMailRead size={56}/> : null} </div>
+          <div className={error.id === null ? null : "modalRegisterErrorIcon"}> {error.id === null ? null : <FaRegTimesCircle size={56}/>}</div>
+          <h1>{isAuthenticated ? "Thank You!" : null}</h1>
+          <br/>
           <h3> {isAuthenticated ? msg : msg}</h3>
-          {msg === "User already exists, Please log in!" ? (<span>Click here to <button onClick={() => {
+          <br/>
+          {msg === "User already exists!" ? (<span className="errorHandleLoggin">You can click <button onClick={() => {
               closeRegisterModal();
-              openLoginModal();}} >Login</button></span>) : null}
-          </div>
-          <h1>{isAuthenticated ? "Success!" : "Register"}</h1>
+              openLoginModal();}} >Sign in</button> to enter!</span>) : null}
           {console.log("This is msg", msg)}
         </div>
 
         <div>
           {/* {msg ? alert(msg) : null} */}
+          
           <form
             className={isAuthenticated ? "removeModalBody" : "modalBody"}
             onSubmit={handleOnSubmit}
           >
+            <h1>Register</h1>
             <input
               onChange={handleChangeName}
               name="name"

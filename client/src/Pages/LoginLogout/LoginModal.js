@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { hideLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction";
 import "./LoginModal.scss";
+import {IoCloseCircleOutline} from "react-icons/io5"
 
 const LoginModal = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,11 @@ const LoginModal = () => {
               closeLoginModal();
             }}
           >
-            X
+            <IoCloseCircleOutline size={24}/>
           </button>
         </div>
         <div className="modalTitle">
-          <h1>Login</h1>
+          <h1>Sign in</h1>
         </div>
         <div className="modalBody">
           <input type="email" placeholder="Enter your email" />
