@@ -36,6 +36,7 @@ export const getItemsData = async () => {
     console.log({ error: "This is fetch error" });
   }
 };
+
 //////// API FOR ADS ////////
 
 const urlAds = "http://localhost:5000/api/items";

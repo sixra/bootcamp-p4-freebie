@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact/Contact";
 import Navigation from "./Components/Navigation/Navigation";
 import GoogleMap from "./Components/GoogleMap/GoogleMap";
 import ItemsList from "./Components/ItemsList/ItemsList";
+import UserInterface from "./Pages/UserInterface/UserInterface";
 
 import { getItemsData, getPlacesData } from "./Api/Api";
 import store from "./Redux/Store";
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/home" exact component={Home} />
             <Route path="/categories" exact component={Categories} />
             <Route path="/contact" exact component={Contact} />
+            <Route path="/user" exact component={UserInterface} />
             {/* <Route path="/map" exact component={GoogleMap} /> */}
             <Route path="/itemslist">
               <ItemsList places={places} />{" "}
