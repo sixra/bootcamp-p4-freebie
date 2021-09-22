@@ -66,7 +66,7 @@ export const registerUser = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     const pendingUser = await PendingUser.findOne({ email });
-    if (user || pendingUser) throw Error("User already exists");
+    if (user || pendingUser) throw Error("User already exists!");
 
     const salt = await bcrypt.genSalt(10);
     if (!salt) throw Error("Something went wrong with bcrypt");
@@ -92,7 +92,7 @@ export const registerUser = async (req, res) => {
     });
 
     res.status(200).json({
-      msg: "You have been registered, Check your email address to active your account",
+      msg: "Your registration form is complete. Please check your email address to activate your account!",
       token,
       user: {
         id: savedUser.id,
