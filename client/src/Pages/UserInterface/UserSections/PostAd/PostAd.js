@@ -23,6 +23,8 @@ const PostAd = () => {
     dispatch(postAd(adData));
   };
 
+  console.log(ads);
+
   return (
     <>
       <h2 className="postAdHeader">Ad Details</h2>
@@ -77,11 +79,11 @@ const PostAd = () => {
           <option value="matrimony">Matrimony</option>
         </select>
 
-        {/* <FileBase
+        <FileBase
           type="file"
           multiple={false}
           onDone={({ base64 }) => setAdData({ ...adData, imageUrl: base64 })}
-        /> */}
+        />
 
         <textarea
           name="description"
@@ -95,6 +97,7 @@ const PostAd = () => {
             })
           }
         ></textarea>
+
         <button type="submit" className="adSubmitButton">
           Submit
         </button>
