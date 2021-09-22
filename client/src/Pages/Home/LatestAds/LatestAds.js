@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAds } from "../../../Redux/Actions/adsAction";
+import { getAds } from "../../../Redux/Actions/AdsAction";
 import "./LatestAds.scss";
 import LatestAd from "./LatestAd/LatestAd";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
@@ -12,8 +12,6 @@ const LatestAds = () => {
   useEffect(() => {
     dispatch(getAds());
   }, [dispatch]);
-
-  console.log(ads);
 
   return (
     <section>
