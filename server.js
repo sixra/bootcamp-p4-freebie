@@ -7,7 +7,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/api/auth.js";
 import itemRoutes from "./routes/api/items.js";
 import userRoutes from "./routes/api/users.js";
-import contactRoutes from "./routes/api/contact.js"
+import contactRoutes from "./routes/api/contact.js";
 
 connectDB();
 

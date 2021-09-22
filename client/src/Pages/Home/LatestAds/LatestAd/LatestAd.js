@@ -5,7 +5,6 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const LatestAd = ({ adInfo }) => {
   const {
-    name,
     category,
     description,
     image,
@@ -24,7 +23,7 @@ const LatestAd = ({ adInfo }) => {
         <div className="latestAdNameLocation">
           <div className="latestAdName">
             <AiOutlineUser size={15} style={{ color: "#df0161" }} />
-            <span>{name}</span>
+            <span>Max Sampleman</span>
           </div>
           <div className="latestAdLocation">
             <IoLocationOutline size={15} style={{ color: "#df0161" }} />
