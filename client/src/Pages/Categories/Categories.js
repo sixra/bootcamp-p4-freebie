@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeroImage from "../../Components/Header/HeroImage"
 import SearchBar from '../../Components/Header/SearchBar'
 import { HiOutlineViewGrid } from "react-icons/hi"
@@ -6,17 +6,30 @@ import { HiViewList } from "react-icons/hi"
 import { useDispatch, useSelector } from "react-redux";
 import { getAds } from "../../Redux/Actions/adsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
-import LatestAd from "../Home/LatestAds/LatestAd/LatestAd";
 import "./Categories.scss"
 import LoginModal from '../LoginLogout/LoginModal.js'
 import RegisterModal from '../LoginLogout/RegisterModal.js'
+import SingleAd from "./SingleAd";
+import { showGridView, hideGridView } from "../../Redux/Actions/ListGridView"
 
 const Categories = () => {
 
   const loginModal = useSelector((state) => state.LoginModalState)
+
   const registerModal = useSelector((state) => state.RegisterModalState)
+
   const ads = useSelector((state) => state.ads);
   const dispatch = useDispatch();
+
+  const gridView = useSelector((state) => state.ListGridViewState)
+
+  const showGrid = () => {
+    dispatch(showGridView());
+  };
+
+  const hideGrid = () => {
+    dispatch(hideGridView());
+  };
 
   useEffect(() => {
     dispatch(getAds());
@@ -52,20 +65,18 @@ const Categories = () => {
           <div className="infoTabContainer">
             <span>Showing blabla from 10000 products</span>
             <div>
-              <HiOutlineViewGrid size={30} />
-              <HiViewList size={30} />
+              <HiOutlineViewGrid onClick={showGrid} size={30} />
+              <HiViewList onClick={hideGrid} size={30} />
             </div>
           </div>
           <div className="productsListContainer">
             {!ads.length ? (
               <LoadingSpinner />
             ) : (
-              <div className="latestAdsContainer">
-                <div className="latestAds">
-                  {ads.map((adInfo) => (
-                    <LatestAd key={adInfo._id} adInfo={adInfo} />
-                  ))}
-                </div>
+              <div className={gridView ? "latestAdsContain" : null}>
+                {ads.map((adInfo) => (
+                  <SingleAd key={adInfo._id} adInfo={adInfo} />
+                ))}
               </div>
             )}
           </div>

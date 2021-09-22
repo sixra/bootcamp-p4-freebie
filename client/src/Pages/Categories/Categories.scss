@@ -1,7 +1,9 @@
 .categoriesPageContainer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: auto;
+  margin-top: 11rem;
 
   .categoriesAndSearchContainer {
     display: flex;
@@ -9,6 +11,8 @@
     width: 20%;
     min-width: 15rem;
     justify-content: space-around;
+    height: 100%;
+    padding-left: 2rem;
 
     .searchBarContainer {
       input {
@@ -22,10 +26,10 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-      /*   div:: {
-        border-bottom: 1px solid gray;
+      div:first-of-type {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.195);
         padding: 1rem;
-      } */
+      }
 
       span {
         display: block;
@@ -49,18 +53,102 @@
   .infoTabAndproductsList {
     display: flex;
     flex-direction: column;
-    width: 80%;
     min-width: 35rem;
+    width: 75%;
 
     .infoTabContainer {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      background-color: beige;
+      width: 85%;
+      margin: 1rem auto;
+      align-items: center;
+    }
+    .productsListContainer {
+      .latestAdsContain {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.singleAdCardRow {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+}
+
+.singleAdCardCol {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  margin: 0.5rem auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+}
+
+.singleAdImageContainer {
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.singleAdInfo {
+  font-size: 0.85rem;
+  padding: 1rem;
+
+  & > * {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .singleAdCategory {
+    color: var(--text-colour-light);
+    text-transform: uppercase;
+  }
+
+  .singleAdTitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .singleAdNameLocation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+      display: flex;
       align-items: center;
     }
 
-    .productsListContainer {
+    .singleAdName,
+    .singleAdLocation {
+      text-transform: capitalize;
+      span {
+        margin-left: 0.3rem;
+      }
     }
+
+    .singleAdName {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .singleAdNameDescription {
+    line-height: 1.2rem;
+    margin-top: 1rem;
+    color: var(--text-colour-light);
   }
 }

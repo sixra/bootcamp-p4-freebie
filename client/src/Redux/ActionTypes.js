@@ -37,3 +37,8 @@ export const authType = {
   REGISTER_SUCCESS: "REGISTER_SUCCESS",
   REGISTER_FAIL: "REGISTER_FAIL",
 };
+
+export const categoriesListGridView = {
+  SHOW_GRID_VIEW: "SHOW_GRID_VIEW",
+  HIDE_GRID_VIEW: "HIDE_GRID_VIEW"
+};
