@@ -1,0 +1,16 @@
+// * {
+//   outline: 1px solid red;
+// }
+
+.userInterface {
+  display: flex;
+  max-width: 50rem;
+  width: 100%;
+  margin: 5rem auto;
+
+  .userSections {
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+  }
+}
