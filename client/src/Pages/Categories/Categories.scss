@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   margin: auto;
   margin-top: 11rem;
+  @media only screen and (max-width: 1000px) {
+    margin-top: 7rem;
+  }
 
   .categoriesAndSearchContainer {
     display: flex;
