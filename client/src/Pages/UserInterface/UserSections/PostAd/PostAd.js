@@ -5,6 +5,7 @@ import { postAd } from "../../../../Redux/Actions/AdsAction";
 import "./PostAd.scss";
 
 const PostAd = () => {
+  const ads = useSelector((state) => state.ads);
   const [adData, setAdData] = useState({
     title: "",
     category: "",
@@ -15,7 +16,6 @@ const PostAd = () => {
     description: "",
   });
 
-  const ads = useSelector((state) => state.ads);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {

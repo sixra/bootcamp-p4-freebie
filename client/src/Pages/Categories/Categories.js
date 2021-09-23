@@ -1,20 +1,19 @@
 import React, { useEffect } from "react";
-import HeroImage from "../../Components/Header/HeroImage"
-import SearchBar from '../../Components/Header/SearchBar'
-import { HiOutlineViewGrid } from "react-icons/hi"
-import { HiViewList } from "react-icons/hi"
+import HeroImage from "../../Components/Header/HeroImage";
+import SearchBar from "../../Components/Header/SearchBar";
+import { HiOutlineViewGrid } from "react-icons/hi";
+import { HiViewList } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { getAds } from "../../Redux/Actions/adsAction";
+import { getAds } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import LatestAd from "../Home/LatestAds/LatestAd/LatestAd";
-import "./Categories.scss"
-import LoginModal from '../LoginLogout/LoginModal.js'
-import RegisterModal from '../LoginLogout/RegisterModal.js'
+import "./Categories.scss";
+import LoginModal from "../LoginLogout/LoginModal.js";
+import RegisterModal from "../LoginLogout/RegisterModal.js";
 
 const Categories = () => {
-
-  const loginModal = useSelector((state) => state.LoginModalState)
-  const registerModal = useSelector((state) => state.RegisterModalState)
+  const loginModal = useSelector((state) => state.LoginModalState);
+  const registerModal = useSelector((state) => state.RegisterModalState);
   const ads = useSelector((state) => state.ads);
   const dispatch = useDispatch();
 
@@ -71,10 +70,8 @@ const Categories = () => {
           </div>
         </div>
       </section>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;
