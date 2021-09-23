@@ -14,6 +14,11 @@
     height: 100%;
     padding-left: 2rem;
 
+    @media only screen and (max-width: 1000px) {
+      width: 90%;
+      padding-left: 0;
+    }
+
     .searchBarContainer {
       position: relative;
 
@@ -56,27 +61,54 @@
         font-size: 1.2rem;
       }
 
-      ul {
-        list-style-type: none;
+      .categoriesListsContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
 
-        li {
-          padding: 0.75rem 1rem;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
+        @media only screen and (max-width: 1000px) {
+          justify-content: space-evenly;
+          flex-direction: row;
+        }
+        @media only screen and (max-width: 550px) {
+          justify-content: flex-start;
+        }
 
-          svg {
-            color: var(--text-colour-light);
-            margin-right: 1rem;
+        ul {
+          list-style-type: none;
+
+          @media only screen and (max-width: 1000px) {
+            padding-left: 1rem;
+            width: 11rem;
           }
 
-          span {
-            font-weight: 300;
-            font-size: 0.9rem;
-            color: var(--text-colour-light);
+          @media only screen and (max-width: 790px) {
+            width: 15rem;
+          }
 
-            &:hover {
-              color: var(--details-colour-secondary);
+          li {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            svg {
+              color: var(--text-colour-light);
+              margin-right: 1rem;
+            }
+
+            span {
+              font-weight: 300;
+              font-size: 1rem;
+              color: var(--text-colour-light);
+              @media only screen and (max-width: 1000px) {
+                font-size: 0.8rem;
+              }
+
+              &:hover {
+                color: var(--details-colour-secondary);
+              }
             }
           }
         }
@@ -89,11 +121,15 @@
     flex-direction: column;
     min-width: 35rem;
     width: 75%;
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      min-width: 0;
+    }
 
     .infoTabContainer {
       display: flex;
       justify-content: space-between;
-      width: 85%;
+      width: 90%;
       margin: 1rem auto;
       align-items: center;
 
@@ -102,10 +138,18 @@
         color: var(--text-colour-light);
       }
 
-      div {
+      .gridListIconsContainer {
         cursor: pointer;
+        display: flex;
+
+        div {
+          @media only screen and (max-width: 790px) {
+            display: none;
+          }
+        }
       }
     }
+
     .productsListContainer {
       display: flex;
       flex-direction: column;
@@ -118,6 +162,11 @@
         width: 95%;
         margin: auto;
         justify-content: center;
+
+        @media only screen and (max-width: 790px) {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
 
@@ -157,21 +206,33 @@
 .singleAdCardRow {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 47%;
   margin: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+  @media only screen and (max-width: 790px) {
+    width: 95%;
+    flex-direction: row;
+  }
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    width: 95%;
+  }
 }
 
 .singleAdCardCol {
   display: flex;
   flex-direction: row;
-  width: 85%;
+  width: 90%;
   margin: 0.5rem auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    width: 90%;
+  }
 }
 
 .singleAdImageContainer {

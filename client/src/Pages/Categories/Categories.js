@@ -57,7 +57,7 @@ const Categories = () => {
 
   return (
     <div>
-      <HeroImage height="25" minHeight="25" maxHeight="25" />
+      <HeroImage height="30" minHeight="25" maxHeight="25" />
       <SearchBar />
       {loginModal && <LoginModal />}
       {registerModal && <RegisterModal />}
@@ -71,17 +71,23 @@ const Categories = () => {
             <div>
               <span>all categories</span>
             </div>
-            <div>
+            <div className="categoriesListsContainer">
               <ul>
                 <li><GiCarWheel /> <span>vehicle Parts</span></li>
                 <li><GiSofa /> <span>furnitures</span></li>
                 <li><IoTvSharp /><span>electronics</span></li>
+              </ul>
+              <ul>
                 <li><FaMobile /> <span>mobiles</span></li>
                 <li><FaTshirt /> <span>clothing</span></li>
                 <li><GiWatch /> <span>accessories</span></li>
+              </ul>
+              <ul>
                 <li><FaBriefcase /> <span>jobs</span></li>
                 <li><FaConciergeBell /> <span>services</span></li>
                 <li><IoPawSharp /> <span>animals</span></li>
+              </ul>
+              <ul>
                 <li><GiBookshelf /> <span>books</span></li>
                 <li><FaBabyCarriage /> <span>baby products</span></li>
                 <li><FaHeart /> <span>matrimony</span></li>
@@ -92,9 +98,13 @@ const Categories = () => {
         <div className="infoTabAndproductsList">
           <div className="infoTabContainer">
             <span className="infoTabText">You are seeing total of {ads.length} ads.</span>
-            <div>
-              <HiOutlineViewGrid onClick={showGrid} size={30} />
-              <HiViewList onClick={hideGrid} size={30} />
+            <div className="gridListIconsContainer">
+              <div>
+                <HiOutlineViewGrid onClick={showGrid} size={30} />
+              </div>
+              <div>
+                <HiViewList onClick={hideGrid} size={30} />
+              </div>
             </div>
           </div>
           <div className="productsListContainer">
@@ -110,10 +120,10 @@ const Categories = () => {
             <ReactPaginate previousLabel={"<"} nextLabel={">"} pageCount={pageCount} onPageChange={changePage} containerClassName={"paginationBtn"} previousClassName={"previousPageBtn"} nextClassName={"nextPageBtn"} disabledClassName={"paginationDisabled"} activeClassName={"paginationActivePage"} />
           </div>
         </div>
-      </section>
+      </section >
 
 
-    </div>
+    </div >
   )
 }
 

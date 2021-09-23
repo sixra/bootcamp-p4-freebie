@@ -27,7 +27,7 @@
     justify-content: space-between;
     width: 20rem;
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
       display: none;
     }
 
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: space-around;
     width: 13rem;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
       display: none;
     }
 
@@ -101,7 +101,7 @@
   .openBurgerMenuIcon {
     display: none;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     #openBurger,
     #closeBurger {
       display: block;
@@ -228,7 +228,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
   #showBurger {
     display: none;
   }
