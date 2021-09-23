@@ -20,7 +20,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import { GiSofa, GiCarWheel, GiBookshelf, GiWatch } from "react-icons/gi";
-import { IoPawSharp, IoTvSharp } from "react-icons/io5";
+import { IoPawSharp, IoTvSharp, IoSearchOutline } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
 
 const Categories = () => {
@@ -47,7 +47,7 @@ const Categories = () => {
   }, [dispatch]);
 
   const [pageNumber, setPageNumber] = useState(0)
-  const postsPerPage = 10;
+  const postsPerPage = 4;
   const visitedPages = pageNumber * postsPerPage;
 
   const pageCount = Math.ceil(ads.length / postsPerPage)
@@ -65,6 +65,7 @@ const Categories = () => {
         <div className="categoriesAndSearchContainer">
           <div className="searchBarContainer">
             <input type="search" placeholder="Search..." />
+            <IoSearchOutline size={20} />
           </div>
           <div className="categoriesContainer">
             <div>
@@ -90,7 +91,7 @@ const Categories = () => {
         </div>
         <div className="infoTabAndproductsList">
           <div className="infoTabContainer">
-            <span>Showing blabla from 10000 products</span>
+            <span className="infoTabText">You are seeing total of {ads.length} ads.</span>
             <div>
               <HiOutlineViewGrid onClick={showGrid} size={30} />
               <HiViewList onClick={hideGrid} size={30} />

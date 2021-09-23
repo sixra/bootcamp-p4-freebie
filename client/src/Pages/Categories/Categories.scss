@@ -15,6 +15,8 @@
     padding-left: 2rem;
 
     .searchBarContainer {
+      position: relative;
+
       input {
         background-color: rgba(128, 128, 128, 0.091);
         border: none;
@@ -26,6 +28,15 @@
         height: 2.5rem;
         padding-left: 1rem;
         font-size: 1rem;
+      }
+
+      svg {
+        position: absolute;
+        right: 0.4rem;
+        top: 0.7rem;
+        color: rgb(155, 155, 155);
+        cursor: pointer;
+        width: 2rem;
       }
     }
 
@@ -50,7 +61,7 @@
 
         li {
           padding: 0.75rem 1rem;
-
+          cursor: pointer;
           display: flex;
           align-items: center;
 
@@ -63,6 +74,10 @@
             font-weight: 300;
             font-size: 0.9rem;
             color: var(--text-colour-light);
+
+            &:hover {
+              color: var(--details-colour-secondary);
+            }
           }
         }
       }
@@ -81,6 +96,11 @@
       width: 85%;
       margin: 1rem auto;
       align-items: center;
+
+      .infoTabText {
+        font-size: 0.9rem;
+        color: var(--text-colour-light);
+      }
 
       div {
         cursor: pointer;
