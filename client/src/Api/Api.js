@@ -26,7 +26,7 @@ import axios from "axios";
 //   }
 // };
 
-const URL = "http://localhost:5000/api/items";
+const URL = "http://localhost:4000/api/items";
 
 export const getItemsData = async () => {
   try {
@@ -39,7 +39,7 @@ export const getItemsData = async () => {
 
 //////// API FOR ADS ////////
 
-const urlAds = "http://localhost:5000/api/items";
+const urlAds = "http://localhost:4000/api/items";
 
 export const fetchAds = () => axios.get(urlAds);
 export const postAd = (newAd) => axios.post(urlAds, newAd);

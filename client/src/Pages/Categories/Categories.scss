@@ -1,0 +1,66 @@
+.categoriesPageContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+
+  .categoriesAndSearchContainer {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 15rem;
+    justify-content: space-around;
+
+    .searchBarContainer {
+      input {
+        background-color: white;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .categoriesContainer {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+      /*   div:: {
+        border-bottom: 1px solid gray;
+        padding: 1rem;
+      } */
+
+      span {
+        display: block;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        list-style-type: none;
+
+        li {
+          padding: 0.75rem 1rem;
+          font-weight: 300;
+          font-size: 0.8rem;
+          color: var(--text-colour-light);
+        }
+      }
+    }
+  }
+  .infoTabAndproductsList {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 35rem;
+
+    .infoTabContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: beige;
+      align-items: center;
+    }
+
+    .productsListContainer {
+    }
+  }
+}
