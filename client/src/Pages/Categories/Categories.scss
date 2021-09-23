@@ -1,6 +1,6 @@
 .categoriesPageContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 11rem;
@@ -16,9 +16,16 @@
 
     .searchBarContainer {
       input {
-        background-color: white;
+        background-color: rgba(128, 128, 128, 0.091);
         border: none;
         outline: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        width: 100%;
+        margin-bottom: 2rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+        font-size: 1rem;
       }
     }
 
@@ -43,13 +50,25 @@
 
         li {
           padding: 0.75rem 1rem;
-          font-weight: 300;
-          font-size: 0.8rem;
-          color: var(--text-colour-light);
+
+          display: flex;
+          align-items: center;
+
+          svg {
+            color: var(--text-colour-light);
+            margin-right: 1rem;
+          }
+
+          span {
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-colour-light);
+          }
         }
       }
     }
   }
+
   .infoTabAndproductsList {
     display: flex;
     flex-direction: column;
@@ -62,8 +81,17 @@
       width: 85%;
       margin: 1rem auto;
       align-items: center;
+
+      div {
+        cursor: pointer;
+      }
     }
     .productsListContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       .latestAdsContain {
         display: flex;
         flex-wrap: wrap;
@@ -71,6 +99,37 @@
         margin: auto;
         justify-content: center;
       }
+    }
+
+    .paginationBtn {
+      margin: 3rem 0 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      width: 35rem;
+      list-style-type: none;
+      font-weight: 500;
+
+      li {
+        margin-right: 2rem;
+        cursor: pointer;
+        outline: none;
+
+        a {
+          outline: none;
+          padding: 0.6rem 0.9rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+
+    .paginationActivePage {
+      color: var(--text-colour-main-light);
+      background-color: var(--details-colour-secondary);
+      padding: 0.6rem 0;
+      margin-top: -0.6rem;
+      border-radius: 0.3rem;
     }
   }
 }
@@ -97,11 +156,14 @@
 
 .singleAdImageContainer {
   overflow: hidden;
+  padding: 0.2rem;
+  max-height: 19rem;
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 0.3rem;
   }
 }
 
