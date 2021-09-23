@@ -1,14 +1,19 @@
-import React from 'react'
-import "./Navigation.scss"
-import { NavLink } from 'react-router-dom'
-import { RiUserShared2Fill } from 'react-icons/ri'
-import { showLoginModal, showRegisterModal } from "../../Redux/Actions/ModalLoginRegisterAction"
+import React from "react";
+import "./Navigation.scss";
+import { NavLink } from "react-router-dom";
+import { RiUserShared2Fill } from "react-icons/ri";
+import {
+  showLoginModal,
+  showRegisterModal,
+} from "../../Redux/Actions/ModalLoginRegisterAction";
 import { useDispatch, useSelector } from "react-redux";
-import { showBurgerMenu, hideBurgerMenu } from '../../Redux/Actions/BurgerMenuAction';
-import BurgerMenu from './BurgerMenu'
+import {
+  showBurgerMenu,
+  hideBurgerMenu,
+} from "../../Redux/Actions/BurgerMenuAction";
+import BurgerMenu from "./BurgerMenu";
 
 const Navigation = () => {
-
   const dispatch = useDispatch();
 
   const openLoginModal = () => {
@@ -19,7 +24,7 @@ const Navigation = () => {
     dispatch(showRegisterModal());
   };
 
-  const burger = useSelector((state) => state.BurgerMenuState)
+  const burger = useSelector((state) => state.BurgerMenuState);
 
   const showBurger = () => {
     dispatch(showBurgerMenu());
@@ -28,7 +33,6 @@ const Navigation = () => {
   const hideBurger = () => {
     dispatch(hideBurgerMenu());
   };
-
 
   return (
     <div>
@@ -46,6 +50,11 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li className="navListItem">
+            <NavLink activeClassName="activePage" to="/user">
+              user
+            </NavLink>
+          </li>
+          <li className="navListItem">
             <NavLink activeClassName="activePage" to="/contact">
               contact
             </NavLink>
@@ -58,9 +67,12 @@ const Navigation = () => {
             </div>
             <span onClick={openLoginModal}>Sign in</span>
           </button>
-          <button onClick={openRegisterModal} className="register" >register</button>
+          <button onClick={openRegisterModal} className="register">
+            register
+          </button>
         </div>
-        <div className="openBurgerMenuIcon"
+        <div
+          className="openBurgerMenuIcon"
           id={burger ? "closeBurger" : "openBurger"}
           onClick={burger ? hideBurger : showBurger}
         >
@@ -73,7 +85,7 @@ const Navigation = () => {
       </div>
       <BurgerMenu />
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

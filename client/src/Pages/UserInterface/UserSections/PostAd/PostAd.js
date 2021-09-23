@@ -9,7 +9,7 @@ const PostAd = () => {
   const [adData, setAdData] = useState({
     title: "",
     category: "",
-    image: "",
+    image: "https://live.staticflickr.com/65535/51506026332_c5054675e4_c.jpg",
     location: {
       city: "",
       pobox: "12345",
