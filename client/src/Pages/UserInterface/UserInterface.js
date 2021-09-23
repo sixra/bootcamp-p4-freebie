@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HeroImage from "../../Components/Header/HeroImage";
 import "./UserInterface.scss";
 
 import UserNavBar from "./UserNavBar/UserNavBar";

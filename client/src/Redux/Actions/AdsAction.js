@@ -9,3 +9,12 @@ export const getAds = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const postAd = (ad) => async (dispatch) => {
+  try {
+    const { data } = await api.postAd(ad);
+    dispatch({ type: adsType.POST_AD, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
