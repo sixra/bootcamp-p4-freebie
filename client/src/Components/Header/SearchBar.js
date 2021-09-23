@@ -27,11 +27,18 @@ const SearchBar = () => {
       <div className="searchBarSelectContainer">
         <span onClick={() => openDropdown()} className="selectContainerText">{state}</span>
         <div onClick={() => closeDropdown()} id={dropdown ? "showDropdown" : "hideDropdown"} className="selectListContainer">
-          <div onClick={() => setstate("1")}>1</div>
-          <div onClick={() => setstate("2")}>2</div>
-          <div onClick={() => setstate("3")}>3</div>
-          <div onClick={() => setstate("4")}>4</div>
-          <div onClick={() => setstate("5")}>5</div>
+          <div onClick={() => setstate("Vehicle Parts")}>vehicle Parts</div>
+          <div onClick={() => setstate("Furnitures")}>furnitures</div>
+          <div onClick={() => setstate("Electronics")}>electronics</div>
+          <div onClick={() => setstate("Mobiles")}>mobiles</div>
+          <div onClick={() => setstate("Clothing")}>clothing</div>
+          <div onClick={() => setstate("Accessories")}>accessories</div>
+          <div onClick={() => setstate("Jobs")}>jobs</div>
+          <div onClick={() => setstate("Services")}>services</div>
+          <div onClick={() => setstate("Animals")}>animals</div>
+          <div onClick={() => setstate("Books")}>books</div>
+          <div onClick={() => setstate("Baby products")}>baby products</div>
+          <div onClick={() => setstate("Matrimony")}>matrimony</div>
         </div>
         <div className="selectContainerArrow">
           {dropdown

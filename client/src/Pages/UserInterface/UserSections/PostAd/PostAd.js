@@ -12,6 +12,7 @@ const PostAd = () => {
     image: "",
     location: {
       city: "",
+      pobox: "12345",
     },
     description: "",
   });
@@ -82,7 +83,7 @@ const PostAd = () => {
         <FileBase
           type="file"
           multiple={false}
-          onDone={({ base64 }) => setAdData({ ...adData, imageUrl: base64 })}
+          onDone={({ base64 }) => setAdData({ ...adData, image: base64 })}
         />
 
         <textarea

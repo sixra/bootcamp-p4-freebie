@@ -8,6 +8,7 @@ import { burgerMenuReducer } from "./BurgerMenuReducer";
 import { errorReducer } from "./ErrorReducer";
 import { authReducer } from "./AuthReducer";
 import { adsReducer } from "./AdsReducer";
+import { listGridViewReducer } from "./ListGridView";
 
 const rootReducers = combineReducers({
   ads: adsReducer,
@@ -17,6 +18,7 @@ const rootReducers = combineReducers({
   BurgerMenuState: burgerMenuReducer,
   error: errorReducer,
   auth: authReducer,
+  ListGridViewState: listGridViewReducer
 });
 
 export default rootReducers;
