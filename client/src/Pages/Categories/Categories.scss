@@ -1,7 +1,12 @@
 .categoriesPageContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
+  margin-top: 11rem;
+  @media only screen and (max-width: 1000px) {
+    margin-top: 7rem;
+  }
 
   .categoriesAndSearchContainer {
     display: flex;
@@ -9,12 +14,37 @@
     width: 20%;
     min-width: 15rem;
     justify-content: space-around;
+    height: 100%;
+    padding-left: 2rem;
+
+    @media only screen and (max-width: 1000px) {
+      width: 90%;
+      padding-left: 0;
+    }
 
     .searchBarContainer {
+      position: relative;
+
       input {
-        background-color: white;
+        background-color: rgba(128, 128, 128, 0.091);
         border: none;
         outline: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        width: 100%;
+        margin-bottom: 2rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+        font-size: 1rem;
+      }
+
+      svg {
+        position: absolute;
+        right: 0.4rem;
+        top: 0.7rem;
+        color: rgb(155, 155, 155);
+        cursor: pointer;
+        width: 2rem;
       }
     }
 
@@ -22,10 +52,10 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-      /*   div:: {
-        border-bottom: 1px solid gray;
+      div:first-of-type {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.195);
         padding: 1rem;
-      } */
+      }
 
       span {
         display: block;
@@ -34,33 +64,237 @@
         font-size: 1.2rem;
       }
 
-      ul {
-        list-style-type: none;
+      .categoriesListsContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
 
-        li {
-          padding: 0.75rem 1rem;
-          font-weight: 300;
-          font-size: 0.8rem;
-          color: var(--text-colour-light);
+        @media only screen and (max-width: 1000px) {
+          justify-content: space-evenly;
+          flex-direction: row;
+        }
+        @media only screen and (max-width: 550px) {
+          justify-content: flex-start;
+        }
+
+        ul {
+          list-style-type: none;
+
+          @media only screen and (max-width: 1000px) {
+            padding-left: 1rem;
+            width: 11rem;
+          }
+
+          @media only screen and (max-width: 790px) {
+            width: 15rem;
+          }
+
+          li {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            svg {
+              color: var(--text-colour-light);
+              margin-right: 1rem;
+            }
+
+            span {
+              font-weight: 300;
+              font-size: 1rem;
+              color: var(--text-colour-light);
+              @media only screen and (max-width: 1000px) {
+                font-size: 0.8rem;
+              }
+
+              &:hover {
+                color: var(--details-colour-secondary);
+              }
+            }
+          }
         }
       }
     }
   }
+
   .infoTabAndproductsList {
     display: flex;
     flex-direction: column;
-    width: 80%;
     min-width: 35rem;
+    width: 75%;
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      min-width: 0;
+    }
 
     .infoTabContainer {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      background-color: beige;
+      width: 90%;
+      margin: 1rem auto;
       align-items: center;
+
+      .infoTabText {
+        font-size: 0.9rem;
+        color: var(--text-colour-light);
+      }
+
+      .gridListIconsContainer {
+        cursor: pointer;
+        display: flex;
+
+        div {
+          @media only screen and (max-width: 790px) {
+            display: none;
+          }
+        }
+      }
     }
 
     .productsListContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .latestAdsContain {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+
+        @media only screen and (max-width: 790px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     }
+
+    .paginationBtn {
+      margin: 3rem 0 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      width: 35rem;
+      list-style-type: none;
+      font-weight: 500;
+
+      li {
+        margin-right: 2rem;
+        cursor: pointer;
+        outline: none;
+
+        a {
+          outline: none;
+          padding: 0.6rem 0.9rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+
+    .paginationActivePage {
+      color: var(--text-colour-main-light);
+      background-color: var(--details-colour-secondary);
+      padding: 0.6rem 0;
+      margin-top: -0.6rem;
+      border-radius: 0.3rem;
+    }
+  }
+}
+
+.singleAdCardRow {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  margin: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+  @media only screen and (max-width: 790px) {
+    width: 95%;
+    flex-direction: row;
+  }
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+.singleAdCardCol {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0.5rem auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+.singleAdImageContainer {
+  overflow: hidden;
+  padding: 0.2rem;
+  max-height: 19rem;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.3rem;
+  }
+}
+
+.singleAdInfo {
+  font-size: 0.85rem;
+  padding: 1rem;
+
+  & > * {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .singleAdCategory {
+    color: var(--text-colour-light);
+    text-transform: uppercase;
+  }
+
+  .singleAdTitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .singleAdNameLocation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+
+    .singleAdName,
+    .singleAdLocation {
+      text-transform: capitalize;
+      span {
+        margin-left: 0.3rem;
+      }
+    }
+
+    .singleAdName {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .singleAdNameDescription {
+    line-height: 1.2rem;
+    margin-top: 1rem;
+    color: var(--text-colour-light);
   }
 }

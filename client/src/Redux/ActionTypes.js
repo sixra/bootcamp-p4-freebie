@@ -5,6 +5,7 @@ export const searchBarDropdownType = {
 
 export const adsType = {
   FETCH_ADS: "FETCH_ADS",
+  POST_AD: "POST_AD",
 };
 
 export const modalLoginType = {
@@ -14,12 +15,12 @@ export const modalLoginType = {
 
 export const modalRegisterType = {
   SHOW_REGISTER_MODAL: "SHOW_REGISTER_MODAL",
-  HIDE_REGISTER_MODAL: "HIDE_REGISTER_MODAL"
+  HIDE_REGISTER_MODAL: "HIDE_REGISTER_MODAL",
 };
 
 export const burgerMenuType = {
   SHOW_BURGER_MENU: "SHOW_BURGER_MENU",
-  HIDE_BURGER_MENU: "HIDE_BURGER_MENU"
+  HIDE_BURGER_MENU: "HIDE_BURGER_MENU",
 };
 
 export const errorType = {
@@ -36,4 +37,9 @@ export const authType = {
   LOGOUT_SUCCESS: "LOGOUT_SUCCESS",
   REGISTER_SUCCESS: "REGISTER_SUCCESS",
   REGISTER_FAIL: "REGISTER_FAIL",
+};
+
+export const categoriesListGridView = {
+  SHOW_GRID_VIEW: "SHOW_GRID_VIEW",
+  HIDE_GRID_VIEW: "HIDE_GRID_VIEW"
 };

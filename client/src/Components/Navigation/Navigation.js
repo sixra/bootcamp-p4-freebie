@@ -12,7 +12,6 @@ import {
   hideBurgerMenu,
 } from "../../Redux/Actions/BurgerMenuAction";
 import BurgerMenu from "./BurgerMenu";
-import { Logout } from "../../Pages/LoginLogout/Logout";
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -38,7 +37,6 @@ const Navigation = () => {
   return (
     <div>
       <div className="navContainer">
-        <Logout />
         <span className="navLogo"> free</span>
         <ul className="navList">
           <li className="navListItem">
@@ -49,6 +47,11 @@ const Navigation = () => {
           <li className="navListItem">
             <NavLink activeClassName="activePage" to="/categories">
               categories
+            </NavLink>
+          </li>
+          <li className="navListItem">
+            <NavLink activeClassName="activePage" to="/user">
+              user
             </NavLink>
           </li>
           <li className="navListItem">

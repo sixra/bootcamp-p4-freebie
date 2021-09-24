@@ -42,3 +42,4 @@ export const getItemsData = async () => {
 const urlAds = "http://localhost:4000/api/items";
 
 export const fetchAds = () => axios.get(urlAds);
+export const postAd = (newAd) => axios.post(urlAds, newAd);
