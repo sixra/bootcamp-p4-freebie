@@ -55,6 +55,45 @@ export const register =
       });
   };
 
+// Login User
+export const login =
+  ({ email, password }) =>
+  (dispatch) => {
+    // Headers
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    // Request body
+    const body = JSON.stringify({ email, password });
+
+    axios
+      .post("/api/auth/login", body, config)
+      .then((res) =>
+        dispatch({
+          type: authType.LOGIN_SUCCESS,
+          payload: res.data,
+        })
+      )
+      .catch((err) => {
+        dispatch(
+          returnErrors(err.response.data, err.response.status, "LOGIN_FAIL")
+        );
+        dispatch({
+          type: authType.LOGIN_FAIL,
+        });
+      });
+  };
+
+// Logout User
+export const logout = () => {
+  return {
+    type: authType.LOGOUT_SUCCESS,
+  };
+};
+
 // Setup config/headers and token
 export const tokenConfig = (getState) => {
   // Get token from localstorage

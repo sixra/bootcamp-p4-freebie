@@ -15,6 +15,7 @@ const ItemSchema = new Schema({
     },
     pobox: {
       type: Number,
+      required: true,
     },
   },
   category: {

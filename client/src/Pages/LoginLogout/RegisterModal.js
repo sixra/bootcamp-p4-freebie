@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
-import { showLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction"
+import { showLoginModal } from "../../Redux/Actions/ModalLoginRegisterAction";
 import { register } from "../../Redux/Actions/Auth";
 import { clearErrors } from "../../Redux/Actions/Error";
 import { hideRegisterModal } from "../../Redux/Actions/ModalLoginRegisterAction";
-import {FaCheckCircle, FaRegTimesCircle} from "react-icons/fa"
-import {GoMailRead} from "react-icons/go"
-import {IoCloseCircleOutline} from "react-icons/io5"
+import { FaCheckCircle, FaRegTimesCircle } from "react-icons/fa";
+import { GoMailRead } from "react-icons/go";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 import "./LoginModal.scss";
 
@@ -22,7 +22,6 @@ const RegisterModal = ({
   clearErrors,
   auth,
 }) => {
-
   const [modal, setModal] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,8 +81,6 @@ const RegisterModal = ({
     dispatch(showLoginModal());
   };
 
-
-
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -94,26 +91,47 @@ const RegisterModal = ({
               handleToggle();
             }}
           >
-            <IoCloseCircleOutline size={24}/>
+            <IoCloseCircleOutline size={24} />
           </button>
         </div>
 
-        <div className={isAuthenticated ? "modalRegisterSuccess" : "modalRegisterError"}>
-          <div className={isAuthenticated ? "modalRegisterSuccessIcon" : null }> {isAuthenticated ? <GoMailRead size={56}/> : null} </div>
-          <div className={error.id === null ? null : "modalRegisterErrorIcon"}> {error.id === null ? null : <FaRegTimesCircle size={56}/>}</div>
+        <div
+          className={
+            isAuthenticated ? "modalRegisterSuccess" : "modalRegisterError"
+          }
+        >
+          <div className={isAuthenticated ? "modalRegisterSuccessIcon" : null}>
+            {" "}
+            {isAuthenticated ? <GoMailRead size={56} /> : null}{" "}
+          </div>
+          <div className={error.id === null ? null : "modalRegisterErrorIcon"}>
+            {" "}
+            {error.id === null ? null : <FaRegTimesCircle size={56} />}
+          </div>
           <h1>{isAuthenticated ? "Thank You!" : null}</h1>
-          <br/>
+          <br />
           <h3> {isAuthenticated ? msg : msg}</h3>
-          <br/>
-          {msg === "User already exists!" ? (<span className="errorHandleLoggin">You can click <button onClick={() => {
-              closeRegisterModal();
-              openLoginModal();}} >Sign in</button> to enter!</span>) : null}
+          <br />
+          {msg === "User already exists!" ? (
+            <span className="errorHandleLoggin">
+              You can click{" "}
+              <button
+                onClick={() => {
+                  closeRegisterModal();
+                  openLoginModal();
+                }}
+              >
+                Sign in
+              </button>{" "}
+              to enter!
+            </span>
+          ) : null}
           {console.log("This is msg", msg)}
         </div>
 
         <div>
           {/* {msg ? alert(msg) : null} */}
-          
+
           <form
             className={isAuthenticated ? "removeModalBody" : "modalBody"}
             onSubmit={handleOnSubmit}
@@ -150,7 +168,7 @@ const RegisterModal = ({
                   handleToggle();
                   setTimeout(() => {
                     closeRegisterModal();
-                  }, 1000000000);
+                  }, 3000000);
                 }}
               >
                 Continue
@@ -168,7 +186,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
   error: state.error,
 });
-
 
 export default connect(mapStateToProps, { register, clearErrors })(
   RegisterModal
