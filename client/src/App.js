@@ -14,6 +14,7 @@ import store from "./Redux/Store";
 import { loadUser } from "./Redux/Actions/Auth";
 import Footer from "./Components/Footer/Footer";
 import ScrollUp from "./Components/ScrollUp/ScrollUp";
+import UserActivate from "./Components/UserActivate";
 
 const App = () => {
   const [places, setPlaces] = useState([]);
@@ -62,7 +63,6 @@ const App = () => {
             <Route path="/categories" exact component={Categories} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/user" exact component={UserInterface} />
-            {/* <Route path="/map" exact component={GoogleMap} /> */}
             <Route path="/itemslist">
               <ItemsList places={places} />{" "}
             </Route>
@@ -73,6 +73,11 @@ const App = () => {
                 coordinates={coordinates}
               />
             </Route>
+            <Route
+              path="/Api/activate/user/:id"
+              exact
+              component={UserActivate}
+            />
           </Switch>
           <ScrollUp />
           <Footer />
