@@ -6,11 +6,12 @@ import { useSelector } from "react-redux";
 
 const SingleAd = ({ adInfo }) => {
   const {
+    name,
     category,
+    title,
     description,
     image,
-    location: { city, pobox },
-    title,
+    location,
   } = adInfo;
 
   const gridView = useSelector((state) => state.ListGridViewState)
@@ -26,12 +27,11 @@ const SingleAd = ({ adInfo }) => {
         <div className="singleAdNameLocation">
           <div className="singleAdName">
             <AiOutlineUser size={15} style={{ color: "#df0161" }} />
-            <span>Max Sampleman</span>
+            <span>{name}</span>
           </div>
           <div className="singleAdLocation">
             <IoLocationOutline size={15} style={{ color: "#df0161" }} />
-            <span>{city}</span>
-            <span>{pobox}</span>
+            <span>{location}</span>
           </div>
         </div>
 

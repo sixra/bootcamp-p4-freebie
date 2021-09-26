@@ -10,18 +10,16 @@ const PostAd = () => {
     title: "",
     category: "",
     image: "https://live.staticflickr.com/65535/51506026332_c5054675e4_c.jpg",
-    location: {
-      city: "",
-      pobox: "12345",
-    },
+    location: "",
     description: "",
   });
 
+  const user = JSON.parse(localStorage.getItem("profile"));
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postAd(adData));
+    dispatch(postAd({ ...adData, name: user?.result?.name }));
   };
 
   console.log(ads);
@@ -48,9 +46,7 @@ const PostAd = () => {
           onChange={(e) =>
             setAdData({
               ...adData,
-              location: {
-                city: e.target.value,
-              },
+              location: e.target.value,
             })
           }
         />

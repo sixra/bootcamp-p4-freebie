@@ -4,7 +4,6 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 
 // routes
-import authRoutes from "./routes/api/auth.js";
 import itemRoutes from "./routes/api/items.js";
 import userRoutes from "./routes/api/users.js";
 import contactRoutes from "./routes/api/contact.js";
@@ -21,8 +20,7 @@ app.use(cors());
 
 // Use Routes
 app.use("/api/items", itemRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/activate/user", activateRoutes);
 

@@ -1,24 +1,16 @@
 import { combineReducers } from "redux";
 import { dropdownReducer } from "./DropdownReducer";
-import {
-  ModalLoginReducer,
-  ModalRegisterReducer,
-} from "./ModalLoginAndRegister";
 import { burgerMenuReducer } from "./BurgerMenuReducer";
-import { errorReducer } from "./ErrorReducer";
-import { authReducer } from "./AuthReducer";
 import { adsReducer } from "./AdsReducer";
 import { listGridViewReducer } from "./ListGridView";
+import { authReducer } from "./AuthReducer.js"; 
 
 const rootReducers = combineReducers({
   ads: adsReducer,
+  auth: authReducer, 
   DropdownState: dropdownReducer,
-  LoginModalState: ModalLoginReducer,
-  RegisterModalState: ModalRegisterReducer,
   BurgerMenuState: burgerMenuReducer,
-  error: errorReducer,
-  auth: authReducer,
-  ListGridViewState: listGridViewReducer
+  ListGridViewState: listGridViewReducer,
 });
 
 export default rootReducers;

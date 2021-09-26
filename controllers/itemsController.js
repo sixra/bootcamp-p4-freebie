@@ -24,26 +24,21 @@ export const getItems = async (req, res) => {
  */
 
 export const postItem = async (req, res) => {
-  const newItem = new Item({
-    image: req.body.image,
-    title: req.body.title,
-    description: req.body.description,
-    category: req.body.category,
-    location: {
-      city: req.body.location.city,
-      pobox: req.body.location.pobox,
-    },
-  });
-  console.log(req.body);
-  try {
-    const item = await newItem.save();
-    if (!item) throw Error("Something went wrong saving the item");
+  const item = req.body;
 
-    res.status(200).json(item);
+  const newItem = new Item({ ...item, creator: req.userId, createdAt: new Date().toISOString() })
+
+  console.log(item);
+
+  try {
+    await newItem.save();
+
+    res.status(200).json(newItem);
   } catch (e) {
     res.status(400).json({ msg: e.message });
   }
 };
+
 
 /**
  * @route   UPDATE api/items/:id
@@ -57,13 +52,8 @@ export const updateItem = async (req, res) => {
     const item = await Item.findById(_id);
     const wholeItem = req.body;
     if (!item) throw Error("No item found");
-    const updatedItem = await Item.findByIdAndUpdate(
-      _id,
-      { ...wholeItem, _id },
-      { new: true }
-    );
-    if (!updatedItem)
-      throw Error("Something went wrong while trying to update the item");
+    const updatedItem = await Item.findByIdAndUpdate(_id, { ...wholeItem, _id }, { new: true });
+    if (!updatedItem) throw Error("Something went wrong while trying to update the item");
 
     res.status(200).json({ success: true });
   } catch (e) {
@@ -83,8 +73,7 @@ export const deleteItem = async (req, res) => {
     if (!item) throw Error("No item found");
 
     const removed = await item.remove();
-    if (!removed)
-      throw Error("Something went wrong while trying to delete the item");
+    if (!removed) throw Error("Something went wrong while trying to delete the item");
 
     res.status(200).json({ success: true });
   } catch (e) {

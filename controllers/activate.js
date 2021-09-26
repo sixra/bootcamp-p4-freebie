@@ -1,5 +1,5 @@
 // User & pendingUser Model
-import User from "../models/User.js";
+import User from "../models/user.js";
 import PendingUser from "../models/pending-user.js";
 
 export const activateUser = async (req, res) => {

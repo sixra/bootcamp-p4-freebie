@@ -1,21 +1,16 @@
-export const searchBarDropdownType = {
-  SHOW_DROPDOWN: "SHOW_DROPDOWN",
-  HIDE_DROPDOWN: "HIDE_DROPDOWN",
-};
+export const authType = {
+  AUTH: "AUTH",
+  LOGOUT: "LOGOUT",
+}
 
 export const adsType = {
   FETCH_ADS: "FETCH_ADS",
   POST_AD: "POST_AD",
 };
 
-export const modalLoginType = {
-  SHOW_LOGIN_MODAL: "SHOW_LOGIN_MODAL",
-  HIDE_LOGIN_MODAL: "HIDE_LOGIN_MODAL",
-};
-
-export const modalRegisterType = {
-  SHOW_REGISTER_MODAL: "SHOW_REGISTER_MODAL",
-  HIDE_REGISTER_MODAL: "HIDE_REGISTER_MODAL",
+export const searchBarDropdownType = {
+  SHOW_DROPDOWN: "SHOW_DROPDOWN",
+  HIDE_DROPDOWN: "HIDE_DROPDOWN",
 };
 
 export const burgerMenuType = {
@@ -23,23 +18,7 @@ export const burgerMenuType = {
   HIDE_BURGER_MENU: "HIDE_BURGER_MENU",
 };
 
-export const errorType = {
-  GET_ERRORS: "GET_ERRORS",
-  CLEAR_ERRORS: "CLEAR_ERRORS",
-};
-
-export const authType = {
-  USER_LOADING: "USER_LOADING",
-  USER_LOADED: "USER_LOADED",
-  AUTH_ERROR: "AUTH_ERROR",
-  LOGIN_SUCCESS: "LOGIN_SUCCESS",
-  LOGIN_FAIL: "LOGIN_FAIL",
-  LOGOUT_SUCCESS: "LOGOUT_SUCCESS",
-  REGISTER_SUCCESS: "REGISTER_SUCCESS",
-  REGISTER_FAIL: "REGISTER_FAIL",
-};
-
 export const categoriesListGridView = {
   SHOW_GRID_VIEW: "SHOW_GRID_VIEW",
-  HIDE_GRID_VIEW: "HIDE_GRID_VIEW"
+  HIDE_GRID_VIEW: "HIDE_GRID_VIEW",
 };

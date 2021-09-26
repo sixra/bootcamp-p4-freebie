@@ -2,28 +2,16 @@ import React from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
 import { RiUserShared2Fill } from "react-icons/ri";
-import {
-  showLoginModal,
-  showRegisterModal,
-} from "../../Redux/Actions/ModalLoginRegisterAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   showBurgerMenu,
   hideBurgerMenu,
 } from "../../Redux/Actions/BurgerMenuAction";
 import BurgerMenu from "./BurgerMenu";
+import AuthButton from "./AuthButton/AuthButton";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-
-  const openLoginModal = () => {
-    dispatch(showLoginModal());
-  };
-
-  const openRegisterModal = () => {
-    dispatch(showRegisterModal());
-  };
-
   const burger = useSelector((state) => state.BurgerMenuState);
 
   const showBurger = () => {
@@ -50,27 +38,12 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li className="navListItem">
-            <NavLink activeClassName="activePage" to="/user">
-              user
-            </NavLink>
-          </li>
-          <li className="navListItem">
             <NavLink activeClassName="activePage" to="/contact">
               contact
             </NavLink>
           </li>
         </ul>
-        <div className="navSignInRegister">
-          <button className="signIn">
-            <div className="signInIcon">
-              <RiUserShared2Fill />
-            </div>
-            <span onClick={openLoginModal}>Sign in</span>
-          </button>
-          <button onClick={openRegisterModal} className="register">
-            register
-          </button>
-        </div>
+        <AuthButton/>
         <div
           className="openBurgerMenuIcon"
           id={burger ? "closeBurger" : "openBurger"}

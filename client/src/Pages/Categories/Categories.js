@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAds } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import "./Categories.scss";
-import LoginModal from "../LoginLogout/LoginModal.js";
-import RegisterModal from "../LoginLogout/RegisterModal.js";
 import SingleAd from "./SingleAd";
 import { showGridView, hideGridView } from "../../Redux/Actions/ListGridView";
 import {
@@ -24,10 +22,6 @@ import { IoPawSharp, IoTvSharp, IoSearchOutline } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
 
 const Categories = () => {
-  const loginModal = useSelector((state) => state.LoginModalState);
-
-  const registerModal = useSelector((state) => state.RegisterModalState);
-
   const ads = useSelector((state) => state.ads);
   const dispatch = useDispatch();
 
@@ -58,8 +52,7 @@ const Categories = () => {
     <div>
       <HeroImage height="30" minHeight="25" maxHeight="25" />
       <SearchBar />
-      {loginModal && <LoginModal />}
-      {registerModal && <RegisterModal />}
+
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
           <div className="searchBarContainer">
