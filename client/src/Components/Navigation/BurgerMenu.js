@@ -1,11 +1,8 @@
 import React from "react";
 import { RiUserShared2Fill } from "react-icons/ri";
-import { useDispatch, useSelector } from "react-redux";
-import { hideBurgerMenu } from "../../Redux/Actions/BurgerMenuAction";
+import { useSelector } from "react-redux";
 
 const BurgerMenu = () => {
-  const dispatch = useDispatch();
-
   const burger = useSelector((state) => state.BurgerMenuState);
 
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
-import { RiUserShared2Fill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import {
   showBurgerMenu,

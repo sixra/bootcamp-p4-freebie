@@ -3,10 +3,8 @@ import "./Process.scss";
 import { RiAdvertisementFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
 import { IoMdThumbsUp } from "react-icons/io";
-import { useDispatch } from "react-redux";
 
 const Process = () => {
-  const dispatch = useDispatch();
 
   return (
     <section className="processContainer">
