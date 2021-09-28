@@ -3,6 +3,8 @@ import "./UserActivate.scss";
 import { activateUser } from "../../Api/activate/user/hash.js";
 import error from "./images/error.gif"
 import success from "./images/success.gif"
+import { useHistory } from 'react-router-dom';
+import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 
 const UserActivate = (props) => {
   const [state, setState] = useState({ message: "pending..." });
@@ -15,6 +17,11 @@ const UserActivate = (props) => {
     fetchData();
   }, [props.match.params.id]);
   console.log(props.match.params.id);
+
+  const history = useHistory();
+  const handleClick = () => {
+    history.push("/auth");
+}
   if (state.message === "Validation Done!") {
     return (
       <div className="successContainer">
@@ -24,13 +31,14 @@ const UserActivate = (props) => {
               <h1 className="successAlert">YAY!</h1>
               <p>You have successfully been Verified, you can now sign in!</p>
             </div>
-            <button class="successButtonBox">
+            <button onClick={handleClick} class="successButtonBox">
               Sign in
             </button>
         </div>
       </div>
     );
-  } else if (state.message === "Cannot Validate an User!") {
+  } 
+  else if (state.message === "Cannot Validate an User!") {
     return (
       <div className="errorContainer">
         <div className="errorBox">
@@ -39,15 +47,18 @@ const UserActivate = (props) => {
               <h1 className="errorAlert">OOPS!</h1>
               <p>Something went wrong, and we could not Verify you!</p>
             </div>
-            <button class="errorButtonBox">
-              try again
+            <button onClick={handleClick} class="errorButtonBox">
+              Try Again
             </button>
         </div>
       </div>
     );
-  } else {
+  } 
+  else {
     return (
-    <h1>Pending...</h1>
+    <div className="loadingOutcome">
+      <LoadingSpinner/>
+    </div>
     );
   }
 };

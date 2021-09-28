@@ -29,8 +29,6 @@ const Contact = () => {
             }
         }).then(response => {
             if (response) {
-                // alert("Thank you. Your message has been sent")
-                // window.location.reload();
                 toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
                 console.log("Email has been sent");
                 e.target.reset();
@@ -104,10 +102,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <iframe
+      {/* <iframe
         className="map"
         src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"
-      ></iframe>
+      ></iframe> */}
     </section>
   );
 };

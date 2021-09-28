@@ -31,9 +31,9 @@ export const signin = async (req, res) => {
 };
 
 export const signup = async (req, res) => {
-  const { email, password, firstName, lastName } = req.body;
+  const { email, password, confirmPassword, firstName, lastName } = req.body;
 
-  if (!email || !password || !firstName || !lastName ) {
+  if (!email || !password || !confirmPassword || !firstName || !lastName ) {
     return res.status(400).json({ msg: "Please enter all fields" });
   }
 
@@ -42,7 +42,9 @@ export const signup = async (req, res) => {
 
     const pendingUser = await PendingUser.findOne({ email });
 
-    if (oldUser || pendingUser) throw Error("User already exists!");
+    if (oldUser || pendingUser) return res.status(409).send({ msg: "User already exists" });
+
+    if (password !== confirmPassword) return res.status(403).send({ msg: "Repeat password has to match password" });
 
     const salt = await bcrypt.genSalt(10);
     if (!salt) throw Error("Something went wrong with bcrypt");
