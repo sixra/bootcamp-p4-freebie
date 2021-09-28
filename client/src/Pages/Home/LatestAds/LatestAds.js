@@ -6,7 +6,7 @@ import LatestAd from "./LatestAd/LatestAd";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
 
 const LatestAds = () => {
-  const ads = useSelector((state) => state.ads);
+  const ads = useSelector((state) => state.allAds.ads);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const LatestAds = () => {
           <div className="latestAds">
             {ads.map((adInfo) => (
               <LatestAd key={adInfo._id} adInfo={adInfo} />
-            ))}
+            )).slice(0, 3)}
           </div>
         </div>
       )}

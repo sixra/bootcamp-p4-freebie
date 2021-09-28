@@ -1,49 +1,58 @@
 import React from 'react'
 import "./Header.scss"
-import { showDropdown, hideDropdown } from "../../Redux/Actions/DropdownAction";
-import { useDispatch, useSelector } from "react-redux";
 import { RiArrowDropDownFill } from 'react-icons/ri'
 import { RiArrowDropUpFill } from 'react-icons/ri'
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterAds } from '../../Redux/Actions/AdsAction'
+
 
 const SearchBar = () => {
 
-  const dropdown = useSelector((state) => state.DropdownState)
-
+  const [dropdown, setDropdown] = useState()
   const dispatch = useDispatch();
 
-  const openDropdown = () => {
-    dispatch(showDropdown());
-  };
-  const closeDropdown = () => {
-    dispatch(hideDropdown());
-  };
+  const allAds = useSelector((state) => state.allAds)
+  const categories = allAds.ads.map((e) => {
+    return e.category
+  })
+  const removeDuplicateCategory = Array.from(new Set(categories)).map((cat) => {
+    return cat
+  })
 
-  const [state, setstate] = useState("Select category")
+  const searchBarAds = allAds.ads.map((ad) => {
+    return ad.title
+  })
+  const removeDuplicateAds = Array.from(new Set(searchBarAds)).map((ad) => {
+    return ad
+  })
 
   return (
     <div className="searchBar">
-      <input className="searchBarInput" type="text" placeholder="What are you looking for?" />
+      <div className="searchInputContainer">
+        <input
+          className="searchBarInput"
+          type="text"
+          placeholder="What are you looking for?"
+        />
+        <div className="searchBarResults">
+          {removeDuplicateAds.map((ad) => (
+            <div onClick={() => dispatch(filterAds(allAds.filteredAds, ad))}>{ad}</div>
+          ))}
+        </div>
+      </div>
       <div className="searchBarSelectContainer">
-        <span onClick={() => openDropdown()} className="selectContainerText">{state}</span>
-        <div onClick={() => closeDropdown()} id={dropdown ? "showDropdown" : "hideDropdown"} className="selectListContainer">
-          <div onClick={() => setstate("Vehicle Parts")}>vehicle Parts</div>
-          <div onClick={() => setstate("Furnitures")}>furnitures</div>
-          <div onClick={() => setstate("Electronics")}>electronics</div>
-          <div onClick={() => setstate("Mobiles")}>mobiles</div>
-          <div onClick={() => setstate("Clothing")}>clothing</div>
-          <div onClick={() => setstate("Accessories")}>accessories</div>
-          <div onClick={() => setstate("Jobs")}>jobs</div>
-          <div onClick={() => setstate("Services")}>services</div>
-          <div onClick={() => setstate("Animals")}>animals</div>
-          <div onClick={() => setstate("Books")}>books</div>
-          <div onClick={() => setstate("Baby products")}>baby products</div>
-          <div onClick={() => setstate("Matrimony")}>matrimony</div>
+        <span onClick={() => setDropdown()} className="selectContainerText">{allAds.category}</span>
+        <div onClick={() => setDropdown()} id={dropdown ? "showDropdown" : "hideDropdown"} className="selectListContainer">
+          <div onClick={() => dispatch(filterAds(allAds.ads, "All products"))}>All products</div>
+          {removeDuplicateCategory.map((cat) => (
+            <div onClick={() => dispatch(filterAds(allAds.ads, cat))}>{cat}</div>
+          ))}
         </div>
         <div className="selectContainerArrow">
           {dropdown
-            ? <RiArrowDropUpFill onClick={() => closeDropdown()} size={40} />
-            : <RiArrowDropDownFill onClick={() => openDropdown()} size={40} />
+            ? <RiArrowDropUpFill onClick={() => setDropdown(false)} size={40} />
+            : <RiArrowDropDownFill onClick={() => setDropdown(true)} size={40} />
           }
         </div>
       </div>

@@ -7,33 +7,19 @@ import { getAds } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import "./Categories.scss"
 import SingleAd from "./SingleAd";
-import { showGridView, hideGridView } from "../../Redux/Actions/ListGridView"
-import {
-  FaMobile,
-  FaTshirt,
-  FaBriefcase,
-  FaBabyCarriage,
-  FaConciergeBell,
-  FaHeart,
-} from "react-icons/fa";
-import { GiSofa, GiCarWheel, GiBookshelf, GiWatch } from "react-icons/gi";
-import { IoPawSharp, IoTvSharp, IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
+import { Filter } from "./Filter";
 
 const Categories = () => {
 
-  const ads = useSelector((state) => state.ads);
+  const ads = useSelector((state) => state.allAds.filteredAds);
   const dispatch = useDispatch();
 
-  const gridView = useSelector((state) => state.ListGridViewState)
-
-  const showGrid = () => {
-    dispatch(showGridView());
-  };
-
-  const hideGrid = () => {
-    dispatch(hideGridView());
-  };
+  const [gridToggle, setGridToggle] = useState(true)
+  const buttonHandler = () => {
+    setGridToggle(current => !current)
+  }
 
   useEffect(() => {
     dispatch(getAds());
@@ -47,7 +33,6 @@ const Categories = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-
   return (
     <div>
       <HeroImage height="30" minHeight="25" maxHeight="25" />
@@ -59,29 +44,10 @@ const Categories = () => {
           </div>
           <div className="categoriesContainer">
             <div>
-              <span>all categories</span>
+              <span>search by category</span>
             </div>
             <div className="categoriesListsContainer">
-              <ul>
-                <li><GiCarWheel /> <span>vehicle Parts</span></li>
-                <li><GiSofa /> <span>furnitures</span></li>
-                <li><IoTvSharp /><span>electronics</span></li>
-              </ul>
-              <ul>
-                <li><FaMobile /> <span>mobiles</span></li>
-                <li><FaTshirt /> <span>clothing</span></li>
-                <li><GiWatch /> <span>accessories</span></li>
-              </ul>
-              <ul>
-                <li><FaBriefcase /> <span>jobs</span></li>
-                <li><FaConciergeBell /> <span>services</span></li>
-                <li><IoPawSharp /> <span>animals</span></li>
-              </ul>
-              <ul>
-                <li><GiBookshelf /> <span>books</span></li>
-                <li><FaBabyCarriage /> <span>baby products</span></li>
-                <li><FaHeart /> <span>matrimony</span></li>
-              </ul>
+              <Filter />
             </div>
           </div>
         </div>
@@ -90,10 +56,11 @@ const Categories = () => {
             <span className="infoTabText">You are seeing total of {ads.length} ads.</span>
             <div className="gridListIconsContainer">
               <div>
-                <HiOutlineViewGrid onClick={showGrid} size={30} />
-              </div>
-              <div>
-                <HiViewList onClick={hideGrid} size={30} />
+                {gridToggle ?
+                  <HiViewList onClick={buttonHandler} size={30} />
+                  :
+                  <HiOutlineViewGrid onClick={buttonHandler} size={30}
+                  />}
               </div>
             </div>
           </div>
@@ -101,18 +68,16 @@ const Categories = () => {
             {!ads.length ? (
               <LoadingSpinner />
             ) : (
-              <div className={gridView ? "latestAdsContain" : null}>
+              <div className={gridToggle ? "latestAdsContain" : null}>
                 {ads.slice(visitedPages, visitedPages + postsPerPage).map((adInfo) => (
-                  <SingleAd key={adInfo._id} adInfo={adInfo} />
+                  <SingleAd key={adInfo._id} adInfo={adInfo} gridToggle={gridToggle} />
                 ))}
               </div>
             )}
-            <ReactPaginate previousLabel={"<"} nextLabel={">"} pageCount={pageCount} onPageChange={changePage} containerClassName={"paginationBtn"} previousClassName={"previousPageBtn"} nextClassName={"nextPageBtn"} disabledClassName={"paginationDisabled"} activeClassName={"paginationActivePage"} />
+            <ReactPaginate previousLabel={"<"} nextLabel={">"} pageCount={pageCount} onPageChange={changePage} containerClassName={"paginationBtn"} activeClassName={"paginationActivePage"} />
           </div>
         </div>
       </section >
-
-
     </div >
   )
 }

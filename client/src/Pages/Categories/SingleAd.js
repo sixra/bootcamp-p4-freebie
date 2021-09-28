@@ -2,9 +2,8 @@ import React from "react";
 import "./Categories.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
-import { useSelector } from "react-redux";
 
-const SingleAd = ({ adInfo }) => {
+const SingleAd = ({ adInfo, gridToggle }) => {
   const {
     name,
     category,
@@ -14,10 +13,10 @@ const SingleAd = ({ adInfo }) => {
     location,
   } = adInfo;
 
-  const gridView = useSelector((state) => state.ListGridViewState)
+  console.log(gridToggle);
 
   return (
-    <div className={gridView ? "singleAdCardRow" : "singleAdCardCol"}>
+    <div className={gridToggle ? "singleAdCardRow" : "singleAdCardCol"}>
       <div className="singleAdImageContainer">
         <img src={image} alt="ad-img" />
       </div>

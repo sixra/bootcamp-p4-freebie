@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 11rem;
+  margin-top: 18rem;
   @media only screen and (max-width: 1000px) {
     margin-top: 7rem;
   }
@@ -61,7 +61,7 @@
         display: block;
         text-transform: capitalize;
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .categoriesListsContainer {
@@ -70,24 +70,14 @@
         flex-wrap: wrap;
         flex-direction: column;
 
-        @media only screen and (max-width: 1000px) {
-          justify-content: space-evenly;
-          flex-direction: row;
-        }
-        @media only screen and (max-width: 550px) {
-          justify-content: flex-start;
-        }
-
         ul {
           list-style-type: none;
-
           @media only screen and (max-width: 1000px) {
-            padding-left: 1rem;
-            width: 11rem;
-          }
-
-          @media only screen and (max-width: 790px) {
-            width: 15rem;
+            justify-content: space-around;
+            flex-direction: row;
+            display: flex;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
           }
 
           li {
@@ -95,23 +85,12 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            text-transform: capitalize;
+            font-weight: 300;
+            color: var(--text-colour-light);
 
-            svg {
-              color: var(--text-colour-light);
-              margin-right: 1rem;
-            }
-
-            span {
-              font-weight: 300;
-              font-size: 1rem;
-              color: var(--text-colour-light);
-              @media only screen and (max-width: 1000px) {
-                font-size: 0.8rem;
-              }
-
-              &:hover {
-                color: var(--details-colour-secondary);
-              }
+            &:hover {
+              color: var(--details-colour-secondary);
             }
           }
         }
