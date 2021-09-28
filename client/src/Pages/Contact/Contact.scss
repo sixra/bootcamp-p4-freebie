@@ -2,244 +2,234 @@
 @import "toastr";
 
 .contactContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 11rem auto 1rem auto;
+
+  & iframe {
+    width: 50%;
+    height: 600px;
+    border: none;
+    z-index: 1;
+    filter: grayscale(1);
+    @media only screen and (max-width: 850px) {
+      display: none;
+    }
+  }
+  .contactAllContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 5rem;
-    @media only screen and (max-width: 1600px) {
-      margin: 3rem;
-    }
-    @media only screen and (max-width: 1000px) {
-      margin: 3rem 1rem 1rem 1rem;;
-    }
-    @media only screen and (max-width: 530px) {
-      margin: 0;
-    }
 
-    & iframe {
-      width: 50%;
+    .contactFormContainer {
+      background: var(--details-color-gray);
+      font-family: var(--title-font);
+      width: 100%;
       height: 600px;
-      border: none;
-      z-index: 1;
-      filter: grayscale(1);
-      @media only screen and (max-width: 850px) {
-        display: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 0.5fr 0.5fr 2fr;
+      grid-template-areas: "contactUs contactHeader contactHeader contactHeader" "contactUs contactAddress contactPhone contactEmail" "contactUs contactForm contactForm contactForm";
+      @media only screen and (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 2fr;
+        grid-template-areas: "contactHeader contactHeader contactHeader" "contactAddress contactPhone contactEmail" "contactForm contactForm contactForm";
+      }
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr;
+        grid-template-areas: "contactHeader contactHeader contactHeader" "contactAddress contactForm contactForm" "contactPhone contactForm contactForm" "contactEmail contactForm contactForm";
+      }
+      @media only screen and (max-width: 530px) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: 2rem;
+      }
+
+      .contactUs {
+        position: relative;
+        width: 12rem;
+        background: var(--background-colour-dark-gray);
+        overflow: hidden;
+        @media only screen and (max-width: 1200px) {
+          display: none;
+        }
+        &:before {
+          position: absolute;
+          content: "";
+          bottom: -3.125rem;
+          left: -6.25rem;
+          height: 15.625rem;
+          width: 25rem;
+          background: linear-gradient(
+            to right,
+            var(--details-colour-secondary),
+            var(--details-colour-main)
+          );
+          transform: rotate(25deg);
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          bottom: -5rem;
+          right: -6.25rem;
+          height: 16.875rem;
+          width: 25rem;
+          background: linear-gradient(
+            to left,
+            var(--details-colour-secondary),
+            var(--details-colour-main)
+          );
+          transform: rotate(-25deg);
+        }
+      }
+
+      .contactSideHeader {
+        color: var(--background-colour-main);
+        position: absolute;
+        transform: rotate(-90deg);
+        top: 7.5rem;
+        left: -2.5rem;
+        & h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .contactHeader {
+        text-align: center;
+        margin: 1rem;
+        color: var(--text-colour-main-dark);
+        & h1 {
+          font-weight: var(--font-medium-bold);
+        }
+        & h2 {
+          margin: 1rem;
+          font-weight: var(--font-light-bold);
+        }
+      }
+
+      .contactAddress,
+      .contactEmail,
+      .contactPhone {
+        text-align: center;
+        margin: 1rem;
+        color: #444;
+        & h3 {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+        & .icon {
+          color: var(--details-colour-main);
+          font-size: 1.7rem;
+        }
+      }
+
+      form {
+        position: relative;
+        width: 25rem;
+        margin: 0 auto;
+        padding: 1.25rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background: white;
+
+        @media only screen and (max-width: 1000px) {
+          width: 85%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        @media only screen and (max-width: 530px) {
+          width: 85%;
+          margin: 0;
+          height: 24rem;
+          padding: 0;
+        }
+
+        & input,
+        & textarea {
+          background: white;
+          display: block;
+          margin: 1.25rem auto;
+          width: 100%;
+          border: 0;
+          padding-left: 1rem;
+        }
+        & input {
+          height: 40px;
+          line-height: 40px;
+          outline: 0;
+          border-bottom: 1px solid rgba(68, 68, 68, 0.3);
+          font-size: 1rem;
+          color: rgba(68, 68, 68, 0.8);
+        }
+        & textarea {
+          border-bottom: 1px solid rgba(68, 68, 68, 0.3);
+          resize: none;
+          outline: none;
+          font-size: 1rem;
+          font-family: lato;
+          color: rgba(68, 68, 68, 0.8);
+          @media only screen and (max-width: 1000px) {
+            height: 11rem;
+          }
+          @media only screen and (max-width: 530px) {
+            height: 8rem;
+          }
+        }
+        & button {
+          @include Styles.btn-background;
+          position: absolute;
+          width: 14rem;
+          left: 5.5rem;
+          bottom: -1.25rem;
+          @media only screen and (max-width: 1000px) {
+            width: 8rem;
+            left: 6rem;
+          }
+          @media only screen and (max-width: 530px) {
+            width: 8rem;
+            left: 5rem;
+          }
+        }
+      }
+
+      .contactForm {
+        padding-bottom: 2.5rem;
+        @media only screen and (max-width: 530px) {
+          display: flex;
+          justify-content: center;
+        }
       }
     }
-    .contactAllContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-
-        .contactFormContainer {
-            background: var(--details-color-gray);
-            font-family: var(--title-font);
-            width: 100%;
-            height: 600px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 0.5fr 0.5fr 2fr;
-            grid-template-areas: "contactUs contactHeader contactHeader contactHeader" "contactUs contactAddress contactPhone contactEmail" "contactUs contactForm contactForm contactForm";
-            @media only screen and (max-width: 1200px) {
-              grid-template-columns: 1fr 1fr 1fr;
-              grid-template-rows: 0.5fr 0.5fr 2fr;
-              grid-template-areas: "contactHeader contactHeader contactHeader" "contactAddress contactPhone contactEmail" "contactForm contactForm contactForm";
-            }
-            @media only screen and (max-width: 1000px) {
-              grid-template-columns: 1fr 1fr 1fr;
-              grid-template-rows: 0.5fr 1fr 1fr 1fr ;
-              grid-template-areas:  "contactHeader contactHeader contactHeader" "contactAddress contactForm contactForm" "contactPhone contactForm contactForm" "contactEmail contactForm contactForm" 
-            }
-            @media only screen and (max-width: 530px) {
-              display: flex;
-              flex-direction: column;
-              height: 100%;
-              padding-bottom: 2rem ;
-            }
-             
-            .contactUs {
-                position: relative;
-                width: 12rem;
-                background: var(--background-colour-dark-gray);
-                overflow: hidden;
-                @media only screen and (max-width: 1200px) {
-                  display: none;
-                }
-                &:before {
-                    position: absolute;
-                    content: "";
-                    bottom: -3.125rem;
-                    left: -6.25rem;
-                    height: 15.625rem;
-                    width: 25rem;
-                    background: linear-gradient(
-                        to right,
-                        var(--details-colour-secondary),
-                        var(--details-colour-main)
-                    );
-                    transform: rotate(25deg);
-                }
-
-                &:after {
-                    position: absolute;
-                    content: "";
-                    bottom: -5rem;
-                    right: -6.25rem;
-                    height: 16.875rem;
-                    width: 25rem;
-                    background: linear-gradient(
-                        to left,
-                        var(--details-colour-secondary),
-                        var(--details-colour-main)
-                    );
-                    transform: rotate(-25deg);
-                }
-            }
-
-                .contactSideHeader {
-                    color: var(--background-colour-main);
-                    position: absolute;
-                    transform: rotate(-90deg);
-                    top: 7.5rem;
-                    left: -2.5rem;
-                    & h1 {
-                        font-size: 1.5rem;
-                    }
-                }
-
-            .contactHeader {
-                text-align: center;
-                margin: 1rem;
-                color: var(--text-colour-main-dark);
-                & h1 {
-                    font-weight: var(--font-medium-bold);
-                }
-                & h2 {
-                    margin: 1rem;
-                    font-weight: var(--font-light-bold);
-                }
-            }
-
-            .contactAddress,
-            .contactEmail,
-            .contactPhone {
-                text-align: center;
-                margin: 1rem;
-                color: #444;
-                & h3 {
-                    font-size: 1rem;
-                    font-weight: 300;
-                }
-                & .icon {
-                    color: var(--details-colour-main);
-                    font-size: 1.7rem;
-                }
-            }
-
-            form {
-                position: relative;
-                width: 25rem;
-                margin: 0 auto;
-                padding: 1.25rem;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-                background: white;
-
-                @media only screen and (max-width: 1000px) {
-                  width: 20rem;
-                  height: 100%;
-                  display: flex;
-                  flex-direction: column;
-                }
-
-                @media only screen and (max-width: 530px) {
-                  width: 17rem;
-                  margin: 0;
-                  height: 24rem;
-                  padding: 0;
-                }
-
-                & input,
-                & textarea {
-                    background: white;
-                    display: block;
-                    margin: 1.25rem auto;
-                    width: 100%;
-                    border: 0;
-                }
-                & input {
-                    height: 40px;
-                    line-height: 40px;
-                    outline: 0;
-                    border-bottom: 1px solid rgba(68, 68, 68, 0.3);
-                    font-size: 1rem;
-                    color: rgba(68, 68, 68, 0.8);
-                }
-                & textarea {
-                    border-bottom: 1px solid rgba(68, 68, 68, 0.3);
-                    resize: none;
-                    outline: none;
-                    font-size: 1rem;
-                    font-family: lato;
-                    color: rgba(68, 68, 68, 0.8);
-                    @media only screen and (max-width: 1000px) {
-                      height: 11rem;
-                    }
-                    @media only screen and (max-width: 530px) {
-                      height: 8rem;
-                    }
-                }
-                & button {
-                    @include Styles.btn-background;
-                    position: absolute;
-                    width: 14rem;
-                    left: 5.5rem;
-                    bottom: -1.25rem;
-                    @media only screen and (max-width: 1000px) {
-                      width: 8rem;
-                      left: 6rem;
-                    }
-                    @media only screen and (max-width: 530px) {
-                      width: 8rem;
-                      left: 5rem;
-                    }
-                }
-            }
-
-            .contactForm {
-                padding-bottom: 2.5rem;
-                @media only screen and (max-width: 530px) {
-                  display: flex;
-                  justify-content: center;
-                }
-            }
-
-            
-        }
-        // /* Layout Stuff */
-        .contactUs {
-            grid-area: contactUs;
-        }
-
-        .contactHeader {
-            grid-area: contactHeader;
-        }
-        .contactAddress {
-            grid-area: contactAddress;
-        }
-        .contactPhone {
-            grid-area: contactPhone;
-        }
-        .contactEmail {
-            grid-area: contactEmail;
-        }
-        .contactForm {
-            grid-area: contactForm;
-        }
+    // /* Layout Stuff */
+    .contactUs {
+      grid-area: contactUs;
     }
+
+    .contactHeader {
+      grid-area: contactHeader;
+    }
+    .contactAddress {
+      grid-area: contactAddress;
+    }
+    .contactPhone {
+      grid-area: contactPhone;
+    }
+    .contactEmail {
+      grid-area: contactEmail;
+    }
+    .contactForm {
+      grid-area: contactForm;
+    }
+  }
 }
 
 // /* Alert Position */
@@ -265,7 +255,6 @@ $alert-extra-padding: 3.125rem;
     left: 5vw;
   }
 }
-
 
 .alert-header {
   padding: 1rem;

@@ -41,6 +41,7 @@
       padding-left: 0.8rem;
       height: 100%;
       background-color: rgb(245, 245, 245);
+      font-size: 0.85rem;
 
       @media only screen and (max-width: 1000px) {
         padding-left: 3rem;
@@ -101,6 +102,7 @@
     line-height: 2.5rem;
     color: var(--text-colour-light);
     font-size: 0.9rem;
+    font-weight: 300;
   }
 
   .selectListContainer {
@@ -110,12 +112,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    border-top-right-radius: 1.5rem;
-    border-top-left-radius: 1.5rem;
+    border-radius: 1.5rem;
 
     div {
       height: 2.5rem;
-      border-bottom: 0.1rem solid rgba(128, 128, 128, 0.112);
+      border-top: 0.1rem solid rgba(128, 128, 128, 0.132);
       padding-left: 1rem;
       line-height: 2.5rem;
       font-size: 0.9rem;
@@ -124,12 +125,13 @@
       &:first-of-type {
         height: 5rem;
         padding-top: 2.5rem;
+        border: none;
       }
     }
   }
 
   #showDropdown {
-    background-color: rgba(232, 232, 232, 0.845);
+    background-color: rgba(232, 232, 232, 0.947);
     transition: 0.4s all;
     visibility: visible;
   }
@@ -137,7 +139,9 @@
   #hideDropdown {
     background-color: transparent;
     visibility: collapse;
-    transition: 0.4s all;
+    transition: 0.3s all;
+    color: transparent;
+    border: none;
   }
 
   .selectContainerArrow {
@@ -170,6 +174,7 @@
     margin-right: 0.5rem;
     padding: 0 0.5rem;
     cursor: pointer;
+    font-size: 0.9rem;
 
     @media only screen and (max-width: 1000px) {
       height: 2.5rem;

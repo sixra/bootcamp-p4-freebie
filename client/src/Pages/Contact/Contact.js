@@ -14,55 +14,55 @@ const Contact = () => {
   const submitRequest = (e) => {
     e.preventDefault();
 
-        const { contactName, email, message } = e.target.elements
+    const { contactName, email, message } = e.target.elements
 
-        axios({
-            method: "POST",
-            url: "http://localhost:5000/api/contact",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: {
-                contactName: contactName.value,
-                email: email.value,
-                message: message.value
-            }
-        }).then(response => {
-            if (response) {
-                // alert("Thank you. Your message has been sent")
-                // window.location.reload();
-                toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
-                console.log("Email has been sent");
-                e.target.reset();
-            } else if (!response){
-                toastr["error"]("There was an issue sending your message to us, please try again later!", "Message not sent!")
-                console.log("FAILURE");
-            }
-        });
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/api/contact",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        contactName: contactName.value,
+        email: email.value,
+        message: message.value
+      }
+    }).then(response => {
+      if (response) {
+        // alert("Thank you. Your message has been sent")
+        // window.location.reload();
+        toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
+        console.log("Email has been sent");
+        e.target.reset();
+      } else if (!response) {
+        toastr["error"]("There was an issue sending your message to us, please try again later!", "Message not sent!")
+        console.log("FAILURE");
+      }
+    });
 
     toastr.options = {
-        "closeButton": true,
-        "debug": true,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-top-center",
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-      }
-    };
+      "closeButton": true,
+      "debug": true,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  };
 
- 
+
   return (
     <section className="contactContainer">
-      <HeroImage height="20" />
+      <HeroImage height="20" minHeight="15" maxHeight="25" />
       <div className="contactAllContainer">
         <div className="contactFormContainer">
           <div className="contactUs">

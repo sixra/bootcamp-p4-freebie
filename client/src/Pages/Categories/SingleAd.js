@@ -13,8 +13,6 @@ const SingleAd = ({ adInfo, gridToggle }) => {
     location,
   } = adInfo;
 
-  console.log(gridToggle);
-
   return (
     <div className={gridToggle ? "singleAdCardRow" : "singleAdCardCol"}>
       <div className="singleAdImageContainer">

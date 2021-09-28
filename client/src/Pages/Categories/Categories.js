@@ -35,7 +35,7 @@ const Categories = () => {
   }
   return (
     <div>
-      <HeroImage height="30" minHeight="25" maxHeight="25" />
+      <HeroImage height="20" minHeight="15" maxHeight="25" />
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
           <div className="searchBarContainer">

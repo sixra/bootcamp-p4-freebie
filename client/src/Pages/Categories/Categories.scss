@@ -3,10 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 18rem;
-  @media only screen and (max-width: 1000px) {
-    margin-top: 7rem;
-  }
+  margin-top: 19rem;
 
   .categoriesAndSearchContainer {
     display: flex;
@@ -112,7 +109,7 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
-      margin: 1rem auto;
+      margin: auto;
       align-items: center;
 
       .infoTabText {
