@@ -33,6 +33,5 @@ export const adsReducer = (state = allAds, action) => {
       return [...action.payload.ads, action.payload];
     default:
       return state;
-
   }
 };

@@ -5,7 +5,10 @@ import { postAd } from "../../../../Redux/Actions/AdsAction";
 import "./PostAd.scss";
 
 const PostAd = () => {
-  const ads = useSelector((state) => state.ads);
+  const ads = useSelector((state) => state.allAds.ads);
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const dispatch = useDispatch();
+
   const [adData, setAdData] = useState({
     title: "",
     category: "",
@@ -13,9 +16,6 @@ const PostAd = () => {
     location: "",
     description: "",
   });
-
-  const user = JSON.parse(localStorage.getItem("profile"));
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
