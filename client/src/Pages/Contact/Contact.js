@@ -16,29 +16,27 @@ const Contact = () => {
 
     const { contactName, email, message } = e.target.elements
 
-    axios({
-      method: "POST",
-      url: "http://localhost:5000/api/contact",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: {
-        contactName: contactName.value,
-        email: email.value,
-        message: message.value
-      }
-    }).then(response => {
-      if (response) {
-        // alert("Thank you. Your message has been sent")
-        // window.location.reload();
-        toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
-        console.log("Email has been sent");
-        e.target.reset();
-      } else if (!response) {
-        toastr["error"]("There was an issue sending your message to us, please try again later!", "Message not sent!")
-        console.log("FAILURE");
-      }
-    });
+        axios({
+            method: "POST",
+            url: "http://localhost:5000/api/contact",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {
+                contactName: contactName.value,
+                email: email.value,
+                message: message.value
+            }
+        }).then(response => {
+            if (response) {
+                toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
+                console.log("Email has been sent");
+                e.target.reset();
+            } else if (!response){
+                toastr["error"]("There was an issue sending your message to us, please try again later!", "Message not sent!")
+                console.log("FAILURE");
+            }
+        });
 
     toastr.options = {
       "closeButton": true,
@@ -104,10 +102,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <iframe
+      {/* <iframe
         className="map"
         src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"
-      ></iframe>
+      ></iframe> */}
     </section>
   );
 };

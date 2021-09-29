@@ -1,68 +1,141 @@
-import React, { useState } from 'react';
-import { Button, Paper, Grid, Typography, Container } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import "./AuthForm.scss";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import useStyles from './styles';
-import Input from './Input';
-import { signin, signup } from '../../Redux/Actions/AuthAction';
+import { signin, signup } from "../../Redux/Actions/AuthAction";
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const AuthForm = () => {
-
-  const classes = useStyles();
-  const [showPassword, setShowPassword] = useState(false);
-  const [isSignup, setIsSignup] = useState(false);
+  const [signIn, setSignIn] = useState(true);
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleShowPassword = () => setShowPassword(!showPassword);
-  const handleSubmit = (e) => {
+  const submitSignUp = (e) => {
     e.preventDefault();
-    if (isSignup) {
-      dispatch(signup(formData, history));
-    } else {
-      dispatch(signin(formData, history));
-    }
+    dispatch(signup(formData, history));
   };
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const submitSignIn = (e) => {
+    e.preventDefault();
+    dispatch(signin(formData, history));
+  };
 
-  const switchMode = () => {
-    setIsSignup((prevIsSignup) => !prevIsSignup);
-    setShowPassword(false);
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const switchHandle = () => {
+    setSignIn(!signIn);
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper className={classes.paper} elevation={3}>
-        <Typography component="h1" variant="h5">{isSignup ? 'Sign up' : 'Sign in'}</Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            {isSignup && (
-              <>
-                <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                <Input name="lastName" label="Last Name" handleChange={handleChange} half />
-              </>
-            )}
-            <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-            <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
-          </Grid>
-          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-            {isSignup ? 'Sign Up' : 'Sign In'}
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Button onClick={switchMode}>
-                {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
-              </Button>
-            </Grid>
-          </Grid>
+    <div className={signIn ? "authContainer" : "authContainer right-panel-active"}>
+
+      <div className="form-container sign-up-container">
+        <form onSubmit={submitSignUp}>
+          <h1>Create an Account</h1>
+          <input
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+            label="First Name"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            name="lastName"
+            label="Last Name"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            label="Email Address"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            label="Password"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Repeat Password"
+            name="confirmPassword"
+            label="Repeat Password"
+            required
+            onChange={handleChange}
+          />
+          <button type="submit">Sign Up</button>
+          
         </form>
-      </Paper>
-    </Container>
+        <div>
+          By signing up I agree to the <span>Terms and Conditions</span> and{" "}
+          <span>Private Policy</span>
+        </div>
+      </div>
+
+      <div className="form-container sign-in-container">
+        <form onSubmit={submitSignIn}>
+          <h1>Sign In</h1>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            label="Email Address"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            label="Password"
+            required
+            onChange={handleChange}
+          />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-panel overlay-left">
+            <h1>Already registered?</h1>
+            <p>
+              Sign in to your account in order to browse around for more
+              freebies.
+            </p>
+            <button onClick={switchHandle}>Sign In</button>
+          </div>
+
+          <div className="overlay-panel overlay-right">
+            <h1>Hello, Visitor!</h1>
+            <p>
+              Don't have an account? Sign up and start finding freebies near
+              you.
+            </p>
+            <button onClick={switchHandle}>Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 };
 

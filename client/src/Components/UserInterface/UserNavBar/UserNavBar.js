@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import profilePicture from "./avatar-profile.jpg";
 import "./UserNavBar.scss";
@@ -8,13 +8,21 @@ import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
 
 const UserNavBar = () => {
+
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
+ useEffect(() => {
+  setUser(JSON.parse(localStorage.getItem("profile")));
+}, []);
+
+
   return (
     <nav className="userNavbar">
       <div className="userInfo">
         <div className="userImage">
           <img src={profilePicture} alt="profile" />
         </div>
-        <span className="userName">Hello User!</span>
+        <div className="userName">{`Hello ${user?.result.name}`}</div>
       </div>
 
       <ul className="userSectionLinks">
