@@ -4,9 +4,6 @@
   flex-wrap: wrap;
   margin: auto;
   margin-top: 11rem;
-  @media only screen and (max-width: 1000px) {
-    margin-top: 7rem;
-  }
 
   .categoriesAndSearchContainer {
     display: flex;
@@ -46,11 +43,40 @@
         cursor: pointer;
         width: 2rem;
       }
+
+      .searchBarOutput {
+        background-color: rgb(240, 240, 240);
+        position: absolute;
+        top: 2.7rem;
+        width: 100%;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+
+        .searchBarOutputItem {
+          border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
+
+          &:first-of-type {
+            border: none;
+          }
+
+          span {
+            display: block;
+            padding: 0.7rem 0;
+            text-transform: capitalize;
+            cursor: pointer;
+
+            &:hover {
+              color: var(--details-colour-secondary);
+            }
+          }
+        }
+      }
     }
 
     .categoriesContainer {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      margin-bottom: 1rem;
 
       div:first-of-type {
         border-bottom: 1px solid rgba(128, 128, 128, 0.195);
@@ -61,7 +87,7 @@
         display: block;
         text-transform: capitalize;
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .categoriesListsContainer {
@@ -70,24 +96,14 @@
         flex-wrap: wrap;
         flex-direction: column;
 
-        @media only screen and (max-width: 1000px) {
-          justify-content: space-evenly;
-          flex-direction: row;
-        }
-        @media only screen and (max-width: 550px) {
-          justify-content: flex-start;
-        }
-
         ul {
           list-style-type: none;
-
           @media only screen and (max-width: 1000px) {
-            padding-left: 1rem;
-            width: 11rem;
-          }
-
-          @media only screen and (max-width: 790px) {
-            width: 15rem;
+            justify-content: space-around;
+            flex-direction: row;
+            display: flex;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
           }
 
           li {
@@ -95,23 +111,12 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            text-transform: capitalize;
+            font-weight: 300;
+            color: var(--text-colour-light);
 
-            svg {
-              color: var(--text-colour-light);
-              margin-right: 1rem;
-            }
-
-            span {
-              font-weight: 300;
-              font-size: 1rem;
-              color: var(--text-colour-light);
-              @media only screen and (max-width: 1000px) {
-                font-size: 0.8rem;
-              }
-
-              &:hover {
-                color: var(--details-colour-secondary);
-              }
+            &:hover {
+              color: var(--details-colour-secondary);
             }
           }
         }
@@ -133,7 +138,7 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
-      margin: 1rem auto;
+      margin: auto;
       align-items: center;
 
       .infoTabText {
@@ -214,6 +219,27 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+
+  .singleAdImageContainer {
+    overflow: hidden;
+    padding: 0.2rem;
+    max-height: 19rem;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.3rem;
+    }
+    @media only screen and (max-width: 790px) {
+      width: 55%;
+    }
+    @media only screen and (max-width: 550px) {
+      width: 100%;
+    }
+  }
   @media only screen and (max-width: 790px) {
     width: 95%;
     flex-direction: row;
@@ -232,22 +258,30 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
-  @media only screen and (max-width: 550px) {
-    flex-direction: column;
-    width: 90%;
-  }
-}
 
-.singleAdImageContainer {
-  overflow: hidden;
-  padding: 0.2rem;
-  max-height: 19rem;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0.3rem;
+  .singleAdImageContainer {
+    overflow: hidden;
+    padding: 0.2rem;
+    max-height: 19rem;
+    width: 50%;
+    @media only screen and (max-width: 790px) {
+      width: 55%;
+    }
+    @media only screen and (max-width: 550px) {
+      width: 50%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.3rem;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    width: 90%;
   }
 }
 

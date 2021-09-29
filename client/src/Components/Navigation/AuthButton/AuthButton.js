@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import "./AuthButton.scss"
@@ -26,14 +26,14 @@ const AuthButton = () => {
     <>
       {user?.result ? (
         <div >
-          <div component={Link} to="/user" alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</div>
-          <div variant="h6">{user?.result.name}</div>
+          <Link to="/user" alt={user?.result.name}>{user?.result.name}</Link>
           <button onClick={logout}>Logout</button>
         </div>
       ) : (
         <>
-          <Link to="/auth" className="signInButton">Sign In</Link>
-          <NavLink to="/post" className="signInButton">Post Your Ad</NavLink>
+         <div className="signInContainer">
+          <Link to="/auth" >Sign In</Link>
+          </div>
         </>
       )}
     </>

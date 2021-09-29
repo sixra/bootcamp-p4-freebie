@@ -1,22 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { showBurgerMenu, hideBurgerMenu } from "../../Redux/Actions/BurgerMenuAction";
 import BurgerMenu from "./BurgerMenu";
 import AuthButton from "./AuthButton/AuthButton";
 
 const Navigation = () => {
-  const dispatch = useDispatch();
-  const burger = useSelector((state) => state.BurgerMenuState);
-
-  const showBurger = () => {
-    dispatch(showBurgerMenu());
-  };
-
-  const hideBurger = () => {
-    dispatch(hideBurgerMenu());
-  };
+  const [burger, setBurger] = useState(false)
+  const buttonHandler = () => {
+    setBurger(current => !current)
+  }
 
   return (
     <div>
@@ -39,20 +31,22 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-        <AuthButton/>
-        <div
-          className="openBurgerMenuIcon"
-          id={burger ? "closeBurger" : "openBurger"}
-          onClick={burger ? hideBurger : showBurger}
-        >
-          <div className="test">
-            <div className="burgerTopLine topLineRotate"></div>
-            <div className="burgerMiddleLine middleLineNone"></div>
-            <div className="burgerBottomLine bottomLineRotate"></div>
+        <div className="burgerSignInContainer">
+          <AuthButton />
+          <div
+            className="openBurgerMenuIcon"
+            id={burger ? "closeBurger" : "openBurger"}
+            onClick={buttonHandler}
+          >
+            <div className="test">
+              <div className="burgerTopLine topLineRotate"></div>
+              <div className="burgerMiddleLine middleLineNone"></div>
+              <div className="burgerBottomLine bottomLineRotate"></div>
+            </div>
           </div>
         </div>
       </div>
-      <BurgerMenu />
+      <BurgerMenu burger={burger} />
     </div>
   );
 };

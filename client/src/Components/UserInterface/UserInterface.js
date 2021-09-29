@@ -15,10 +15,10 @@ const UserInterface = () => {
         <UserNavBar />
         <main className="userSections">
           <Switch>
-            <Route path="user/dashboard" exact component={Dashboard} />
-            <Route path="user/post" exact component={PostAd} />
-            <Route path="user/ads" exact component={MyAds} />
-            <Route path="user/favorite" exact component={MyFavorites} />
+            <Route path="/user/dashboard" exact component={Dashboard} />
+            <Route path="/user/post" exact component={PostAd} />
+            <Route path="/user/ads" exact component={MyAds} />
+            <Route path="/user/favorite" exact component={MyFavorites} />
           </Switch>
         </main>
       </Router>

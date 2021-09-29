@@ -1,9 +1,7 @@
 import React from "react";
 import { RiUserShared2Fill } from "react-icons/ri";
-import { useSelector } from "react-redux";
 
-const BurgerMenu = () => {
-  const burger = useSelector((state) => state.BurgerMenuState);
+const BurgerMenu = ({ burger }) => {
 
   return (
     <div

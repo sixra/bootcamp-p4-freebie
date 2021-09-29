@@ -1,4 +1,14 @@
 @use "../../../Styles.scss";
 
 
+.signInContainer {
+    display: flex;
+    justify-content: flex-end;
 
+    a {
+        padding: 0.5rem;
+        background-color: white;
+        text-decoration: none;
+        color: black
+    }
+}
