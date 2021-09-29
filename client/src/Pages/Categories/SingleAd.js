@@ -14,7 +14,7 @@ const SingleAd = ({ adInfo, gridToggle }) => {
   } = adInfo;
 
   return (
-    <div className={gridToggle ? "singleAdCardRow" : "singleAdCardCol"}>
+    <div className={gridToggle ? "singleAdCardColumn" : "singleAdCardRow"}>
       <div className="singleAdImageContainer">
         <img src={image} alt="ad-img" />
       </div>
