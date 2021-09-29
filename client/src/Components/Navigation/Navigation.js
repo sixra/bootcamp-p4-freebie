@@ -2,10 +2,7 @@ import React from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  showBurgerMenu,
-  hideBurgerMenu,
-} from "../../Redux/Actions/BurgerMenuAction";
+import { showBurgerMenu, hideBurgerMenu } from "../../Redux/Actions/BurgerMenuAction";
 import BurgerMenu from "./BurgerMenu";
 import AuthButton from "./AuthButton/AuthButton";
 

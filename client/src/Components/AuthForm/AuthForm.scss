@@ -1,9 +1,5 @@
 @use "../../Styles.scss";
 
-// * {
-//   outline: 1px solid black;
-// }
-
 .authContainer {
   background: #fff;
   border-radius: 0.4rem;
@@ -13,7 +9,7 @@
   max-width: 50rem;
   width: 100%;
   min-height: 30rem;
-  margin: 6rem auto;
+  margin: 5rem auto;
 
   .form-container {
     position: absolute;

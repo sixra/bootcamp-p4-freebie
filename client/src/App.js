@@ -30,11 +30,7 @@ const App = () => {
           <Route path="/contact" exact component={Contact} />
           <Route path="/auth" exact component={AuthForm} />
           <Route path="/user" exact component={UserInterface} />
-          <Route
-              path="/Api/activate/user/:id"
-              exact
-              component={UserActivate}
-            />
+          <Route path="/Api/activate/user/:id" exact component={UserActivate} />
         </Switch>
         <ScrollUp />
         <Footer />
