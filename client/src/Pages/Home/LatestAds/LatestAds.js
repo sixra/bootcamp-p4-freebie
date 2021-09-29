@@ -26,7 +26,7 @@ const LatestAds = () => {
           <div className="latestAds">
             {ads.map((adInfo) => (
               <LatestAd key={adInfo._id} adInfo={adInfo} />
-            )).slice(0, 3)}
+            )).slice(0, 6)}
           </div>
         </div>
       )}

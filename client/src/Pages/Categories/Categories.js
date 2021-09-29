@@ -7,9 +7,9 @@ import { getAds } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import "./Categories.scss"
 import SingleAd from "./SingleAd";
-import { IoSearchOutline } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
+import SearchBar from "./SearchBar";
 
 const Categories = () => {
 
@@ -38,10 +38,7 @@ const Categories = () => {
       <HeroImage height="20" minHeight="15" maxHeight="25" />
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
-          <div className="searchBarContainer">
-            <input type="search" placeholder="Search..." />
-            <IoSearchOutline size={20} />
-          </div>
+          <SearchBar placeholder="Search..." data={ads} />
           <div className="categoriesContainer">
             <div>
               <span>search by category</span>

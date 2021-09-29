@@ -16,7 +16,7 @@ import { adsType } from "../ActionTypes";
 const allAds = {
   ads: [],
   filteredAds: [],
-  filterSearchBar: [],
+  title: "",
   category: "Select category"
 }
 
@@ -27,6 +27,8 @@ export const adsReducer = (state = allAds, action) => {
       return { ...state, ads: action.payload, filteredAds: action.payload };
     case adsType.FILTER_BY_CATEGORY:
       return { ...state, filteredAds: action.payload.ads, category: action.payload.category };
+    case adsType.FILTER_BY_SEARCH:
+      return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
       return [...action.payload.ads, action.payload];
     default:
