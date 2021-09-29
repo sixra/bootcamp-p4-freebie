@@ -3,8 +3,9 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 11rem;
+  margin-top: 12rem;
 
+  // CATEGORIES AND SEARCH CONTAINER
   .categoriesAndSearchContainer {
     display: flex;
     flex-direction: column;
@@ -73,38 +74,46 @@
       }
     }
 
+    // CATEGORIES CONTAINER WITH BUTTON FOR DROPDOWN FUNCTION
     .categoriesContainer {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       margin-bottom: 1rem;
 
-      div:first-of-type {
+      .titleAndDropdownContainer {
         border-bottom: 1px solid rgba(128, 128, 128, 0.195);
-        padding: 1rem;
+        padding: 0.2rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          display: block;
+          text-transform: capitalize;
+          font-weight: 500;
+          font-size: 1.1rem;
+          padding: 0.5rem 0;
+        }
+
+        .categoryDropdownArrow {
+          cursor: pointer;
+          line-height: 0.5rem;
+          @media only screen and (min-width: 1000px) {
+            display: none;
+          }
+        }
       }
 
-      span {
-        display: block;
-        text-transform: capitalize;
-        font-weight: 500;
-        font-size: 1.1rem;
-      }
-
+      // LIST OF ALL CATEGORIES
       .categoriesListsContainer {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
         flex-direction: column;
 
+        // FROM FILTER.JS
         ul {
           list-style-type: none;
-          @media only screen and (max-width: 1000px) {
-            justify-content: space-around;
-            flex-direction: row;
-            display: flex;
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-          }
 
           li {
             padding: 0.75rem 1rem;
@@ -121,9 +130,22 @@
           }
         }
       }
+
+      // CATEGORIES DROPDOWN MENU
+      #hideCategoryDropdown {
+        display: none;
+        @media only screen and (min-width: 1000px) {
+          display: block;
+        }
+      }
+
+      #showCategoryDropdown {
+        display: block;
+      }
     }
   }
 
+  // INFO TAB WITH GRID SWITCH VIEW BUTTON
   .infoTabAndproductsList {
     display: flex;
     flex-direction: column;
@@ -151,13 +173,14 @@
         display: flex;
 
         div {
-          @media only screen and (max-width: 790px) {
+          @media only screen and (max-width: 800px) {
             display: none;
           }
         }
       }
     }
 
+    // LIST OF ALL PRODUCTS
     .productsListContainer {
       display: flex;
       flex-direction: column;
@@ -171,7 +194,7 @@
         margin: auto;
         justify-content: center;
 
-        @media only screen and (max-width: 790px) {
+        @media only screen and (max-width: 800px) {
           flex-direction: column;
           align-items: center;
         }
@@ -211,6 +234,9 @@
   }
 }
 
+// SINGLE PRODUCT STYLING
+
+// SINGLE ADD IN COLUMN VIEW
 .singleAdCardColumn {
   display: flex;
   flex-direction: column;
@@ -233,22 +259,19 @@
       object-position: center;
       border-radius: 0.3rem;
     }
-    @media only screen and (max-width: 790px) {
-      width: 55%;
-    }
-    @media only screen and (max-width: 550px) {
-      width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      max-width: 100%;
     }
   }
-  @media only screen and (max-width: 790px) {
-    width: 95%;
-    flex-direction: row;
-  }
-  @media only screen and (max-width: 550px) {
+
+  @media only screen and (max-width: 800px) {
     flex-direction: column;
     width: 95%;
   }
 }
+
+// SINGLE ADD IN ROW VIEW
 
 .singleAdCardRow {
   display: flex;
@@ -258,17 +281,17 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 
   .singleAdImageContainer {
     overflow: hidden;
     padding: 0.2rem;
-    max-height: 19rem;
-    width: 50%;
-    @media only screen and (max-width: 790px) {
-      width: 55%;
-    }
-    @media only screen and (max-width: 550px) {
-      width: 50%;
+    max-height: 20rem;
+    width: 40rem;
+    @media only screen and (max-width: 800px) {
+      width: 100%;
     }
 
     img {
@@ -280,9 +303,9 @@
     }
   }
 
-  @media only screen and (max-width: 550px) {
+  /*  @media only screen and (max-width: 550px) {
     width: 90%;
-  }
+  } */
 }
 
 .singleAdInfo {

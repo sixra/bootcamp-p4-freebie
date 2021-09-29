@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterAds } from '../../Redux/Actions/AdsAction'
 import "./Categories.scss"
@@ -14,6 +14,8 @@ export const Filter = () => {
   const removeDuplicates = Array.from(new Set(options)).map((e) => {
     return e
   })
+
+
 
   return (
     <div>

@@ -10,6 +10,8 @@ import SingleAd from "./SingleAd";
 import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
 import SearchBar from "./SearchBar";
+import { RiArrowDropDownFill } from 'react-icons/ri'
+import { RiArrowDropUpFill } from 'react-icons/ri'
 
 const Categories = () => {
 
@@ -19,6 +21,11 @@ const Categories = () => {
   const [gridToggle, setGridToggle] = useState(true)
   const buttonHandler = () => {
     setGridToggle(current => !current)
+  }
+
+  const [categoriesDropdown, setCategoriesDropdown] = useState(false)
+  const dropdownHandler = () => {
+    setCategoriesDropdown(current => !current)
   }
 
   useEffect(() => {
@@ -35,15 +42,21 @@ const Categories = () => {
   }
   return (
     <div>
-      <HeroImage height="20" minHeight="15" maxHeight="25" />
+      <HeroImage height="15" minHeight="15" maxHeight="25" />
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
           <SearchBar placeholder="Search..." data={ads} />
           <div className="categoriesContainer">
-            <div>
+            <div className="titleAndDropdownContainer">
               <span>search by category</span>
+              <div onClick={dropdownHandler} className="categoryDropdownArrow">
+                {categoriesDropdown
+                  ? <RiArrowDropUpFill size={40} />
+                  : <RiArrowDropDownFill size={40} />
+                }
+              </div>
             </div>
-            <div className="categoriesListsContainer">
+            <div className="categoriesListsContainer" id={categoriesDropdown ? "showCategoryDropdown" : "hideCategoryDropdown"}>
               <Filter />
             </div>
           </div>

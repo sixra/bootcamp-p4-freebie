@@ -62,7 +62,7 @@ const Contact = () => {
 
   return (
     <section className="contactContainer">
-      <HeroImage height="20" minHeight="15" maxHeight="25" />
+      <HeroImage height="15" minHeight="15" maxHeight="25" />
       <div className="contactAllContainer">
         <div className="contactFormContainer">
           <div className="contactUs">
