@@ -16,6 +16,8 @@ const AuthButton = () => {
   const history = useHistory();
   const location = useLocation();
 
+  console.log(user);
+  
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");
@@ -31,7 +33,7 @@ const AuthButton = () => {
     <>
       {user?.result ? (
         <div className="userSectionDropdown" >
-          <Link className="userSectionDropdownBtn" to="/user" alt={user?.result.name}>{user?.result.name.slice(0, 1).toUpperCase()}</Link>
+          <Link className="userSectionDropdownBtn" to="/user" alt={user?.result.firstName}>{user?.result.firstName.slice(0, 1).toUpperCase()}</Link>
           <ul className="userSectionLinks">
             <li>
               <NavLink className="listContainer" activeClassName="activeSection" to="/user/dashboard">

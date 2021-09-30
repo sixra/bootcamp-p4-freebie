@@ -9,7 +9,8 @@ export const activateUser = async (req, res) => {
     const user = await PendingUser.findOne({ _id: hash });
     console.log("this is user ", user);
     const newUser = new User({
-      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
       password: user.password,
     });

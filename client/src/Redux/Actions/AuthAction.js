@@ -2,6 +2,7 @@ import { authType } from '../ActionTypes';
 import * as api from "../../Api/Api"
 import axios from "axios";
 import { errorType } from "../ActionTypes";
+import toastr from "toastr";
 
 export const signin = (formData, router) => async (dispatch) => {
   try {
@@ -11,7 +12,32 @@ export const signin = (formData, router) => async (dispatch) => {
 
     router.push('/user');
   } catch (error) {
-    console.log(error);
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "0",
+      "extendedTimeOut": "0",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    if(error.message === "Request failed with status code 404"){
+      toastr["error"]("User doesn't exist, check your email address and make sure you have been verified!", "No user found!")
+      console.log("FAILURE");
+      } else if(error.message === "Request failed with status code 400"){
+        toastr["error"]("You have not used valid credentials, please try again!", "Invalid Credentials!")
+        console.log("FAILURE");
+      }else {
+        console.log(JSON.stringify(error));
+      }
   }
 };
 
@@ -21,10 +47,56 @@ export const signup = (formData, router) => async (dispatch) => {
 
     dispatch({ type: authType.AUTH, data });
 
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "0",
+      "extendedTimeOut": "0",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    toastr["success"]("Your registration is complete! Please check your email address for a verification code!", "Thank you!")
+    console.log("SUCCESS! EMAIL SENT");
+
     router.push('/auth');
   } catch (error) {
-    console.log(error);
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "0",
+      "extendedTimeOut": "0",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    if(error.message === "Request failed with status code 403"){
+    toastr["error"]("Repeat Password has to match Password!", "No Match!")
+    console.log("FAILURE RE-PASSWORD");
+    } else if(error.message === "Request failed with status code 409"){
+      toastr["error"]("User already exists, try to login!", "User Exists!")
+      console.log("FAILURE USER EXISTS");
+    }else {
+      console.log(JSON.stringify(error));
+    }
   }
+  
 };
 
 export const loadUser = () => (dispatch, getState) => {

@@ -42,9 +42,9 @@ export const signup = async (req, res) => {
 
     const pendingUser = await PendingUser.findOne({ email });
 
-    if (oldUser || pendingUser) return res.status(409).send({ msg: "User already exists" });
+    if (oldUser || pendingUser) return res.status(409).json({ msg: "User already exists" });
 
-    if (password !== confirmPassword) return res.status(403).send({ msg: "Repeat password has to match password" });
+    if (password !== confirmPassword) return res.status(403).json({ msg: "Repeat password has to match password" });
 
     const salt = await bcrypt.genSalt(10);
     if (!salt) throw Error("Something went wrong with bcrypt");
@@ -53,7 +53,8 @@ export const signup = async (req, res) => {
     if (!hashedPassword) throw Error("Something went wrong hashing the password");
 
     const newUser = new PendingUser({
-      name: `${firstName} ${lastName}`,
+      firstName: firstName,
+      lastName: lastName,
       email,
       password: hashedPassword,
     });
@@ -70,11 +71,12 @@ export const signup = async (req, res) => {
     });
 
     res.status(200).json({
-      msg: "Your registration form is complete. Please check your email address to activate your account!",
+      msg: "Success!",
       token,
       user: {
         id: savedUser.id,
-        name: savedUser.name,
+        firstName: savedUser.firstName,
+        lastName: savedUser.lastName,
         email: savedUser.email,
       },
     });

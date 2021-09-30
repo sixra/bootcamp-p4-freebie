@@ -15,13 +15,6 @@ const Footer = () => {
   const signNewsletter = (e) => {
     e.preventDefault()
     const { email } = e.target.elements;
-    if(email.value){
-      toastr["success"]("For Subscribing to our Newsletter!", "Thank You!")
-    } else {
-      toastr["error"]("Please try again, with a valid email!", "Something went wrong")
-    }
-    
-
     toastr.options = {
       "closeButton": true,
       "debug": false,
@@ -38,6 +31,11 @@ const Footer = () => {
       "hideEasing": "linear",
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
+    }
+    if(email.value){
+      toastr["success"]("For Subscribing to our Newsletter!", "Thank You!")
+    } else {
+      toastr["error"]("Please try again, with a valid email!", "Something went wrong")
     }
   }
 
