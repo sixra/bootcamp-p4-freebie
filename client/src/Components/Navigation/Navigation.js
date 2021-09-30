@@ -1,25 +1,10 @@
 import React from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  showBurgerMenu,
-  hideBurgerMenu,
-} from "../../Redux/Actions/BurgerMenuAction";
-import BurgerMenu from "./BurgerMenu";
 import AuthButton from "./AuthButton/AuthButton";
 
 const Navigation = () => {
-  const dispatch = useDispatch();
-  const burger = useSelector((state) => state.BurgerMenuState);
 
-  const showBurger = () => {
-    dispatch(showBurgerMenu());
-  };
-
-  const hideBurger = () => {
-    dispatch(hideBurgerMenu());
-  };
 
   return (
     <div>
@@ -42,20 +27,8 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-        <AuthButton/>
-        <div
-          className="openBurgerMenuIcon"
-          id={burger ? "closeBurger" : "openBurger"}
-          onClick={burger ? hideBurger : showBurger}
-        >
-          <div className="test">
-            <div className="burgerTopLine topLineRotate"></div>
-            <div className="burgerMiddleLine middleLineNone"></div>
-            <div className="burgerBottomLine bottomLineRotate"></div>
-          </div>
-        </div>
+        <AuthButton />
       </div>
-      <BurgerMenu />
     </div>
   );
 };

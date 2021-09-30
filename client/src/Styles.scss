@@ -1,13 +1,13 @@
 // ================================================= Import Google Fonts =======================================================
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 // ================================================= Default colours =======================================================
 
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 
-$intense-pink: hsl(334, 99%, 44%);
-$intense-pink-red: hsl(346, 79%, 50%);
+$intense-pink: hsl(334, 83%, 48%);
+$intense-pink-red: hsl(0, 80%, 57%);
 
 $gray-dark: hsl(0, 0%, 23%);
 $gray-light: hsl(0, 0%, 34%);
@@ -28,20 +28,20 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
     var(--details-colour-secondary),
     var(--details-colour-main)
   );
-  padding: 0.7rem 1.3rem;
+  padding: 0.6rem 1.2rem;
   color: var(--text-colour-main-light);
-  font-size: var(--normal-font-size);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.04rem;
   border: none;
   border-radius: var(--btn-border-radius);
-  text-transform: capitalize;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
   cursor: pointer;
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  }
+  
+  
   &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(0.95);
   }
 }
 

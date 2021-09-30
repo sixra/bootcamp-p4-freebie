@@ -14,7 +14,7 @@ const Contact = () => {
   const submitRequest = (e) => {
     e.preventDefault();
 
-        const { contactName, email, message } = e.target.elements
+    const { contactName, email, message } = e.target.elements
 
         axios({
             method: "POST",
@@ -39,28 +39,28 @@ const Contact = () => {
         });
 
     toastr.options = {
-        "closeButton": true,
-        "debug": true,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-top-center",
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-      }
-    };
+      "closeButton": true,
+      "debug": true,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  };
 
- 
+
   return (
     <section className="contactContainer">
-      <HeroImage height="20" />
+      <HeroImage height="15" minHeight="15" maxHeight="25" />
       <div className="contactAllContainer">
         <div className="contactFormContainer">
           <div className="contactUs">
