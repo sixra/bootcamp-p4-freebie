@@ -27,6 +27,10 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />
           <Route path="/categories" exact component={Categories} />
+          <Route path="/user/ads" exact component={UserInterface} />
+          <Route path="/user/dashboard" exact component={UserInterface} />
+          <Route path="/user/post" exact component={UserInterface} />
+          <Route path="/user/favorite" exact component={UserInterface} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/auth" exact component={AuthForm} />
           <Route path="/user" exact component={UserInterface} />

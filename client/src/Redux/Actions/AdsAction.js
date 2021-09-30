@@ -15,7 +15,7 @@ export const postAd = (ad) => async (dispatch) => {
     const { data } = await api.postAd(ad);
     dispatch({ type: adsType.POST_AD, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.log("jfrru", error.message);
   }
 };
 
