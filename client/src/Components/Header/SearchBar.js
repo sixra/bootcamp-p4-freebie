@@ -5,7 +5,8 @@ import { RiArrowDropUpFill } from 'react-icons/ri'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterAds } from '../../Redux/Actions/AdsAction'
-
+import { useHistory } from "react-router-dom";
+import SearchInput from '../../Pages/Categories/SearchInput';
 
 const SearchBar = () => {
 
@@ -14,8 +15,16 @@ const SearchBar = () => {
     setDropdown(current => !current)
   }
   const dispatch = useDispatch();
+  const history = useHistory();
+  const routeChange = () => {
+    history.push("/categories");
+  }
 
   const allAds = useSelector((state) => state.allAds)
+  const ads = useSelector((state) => state.allAds.filteredAds);
+  const title = useSelector((state) => state.allAds.title);
+  const category = useSelector((state) => state.allAds.category);
+
   const categories = allAds.ads.map((e) => {
     return e.category
   })
@@ -23,26 +32,10 @@ const SearchBar = () => {
     return cat
   })
 
-  // const searchBarAds = allAds.ads.map((ad) => {
-  //   return ad.title
-  // })
-  // const removeDuplicateAds = Array.from(new Set(searchBarAds)).map((ad) => {
-  //   return ad
-  // })
-
   return (
     <div className="searchBar">
       <div className="searchInputContainer">
-        <input
-          className="searchBarInput"
-          type="text"
-          placeholder="What are you looking for?"
-        />
-        {/* <div className="searchBarResults">
-           {removeDuplicateAds.map((ad) => (
-            <div onClick={() => dispatch(filterAds(allAds.filteredAds, ad))}>{ad}</div>
-          ))} 
-        </div> */}
+        <SearchInput placeholder="Search..." data={ads} searchBarStyle="searchInputContainer" />
       </div>
       <div className="searchBarSelectContainer">
         <span onClick={buttonHandler} className="selectContainerText">{allAds.category}</span>
@@ -59,7 +52,11 @@ const SearchBar = () => {
           }
         </div>
       </div>
-      <button className="searchBarButton">search</button>
+      {title !== "" || category !== "Select category" ?
+        <button className="searchBarButton" onClick={routeChange}>search</button>
+        :
+        <button className="searchBarButtonDisabled">search</button>
+      }
     </div>
   )
 }

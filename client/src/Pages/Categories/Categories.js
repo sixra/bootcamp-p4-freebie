@@ -3,16 +3,15 @@ import HeroImage from "../../Components/Header/HeroImage"
 import { HiOutlineViewGrid } from "react-icons/hi"
 import { HiViewList } from "react-icons/hi"
 import { useDispatch, useSelector } from "react-redux";
-import { getAds } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import "./Categories.scss"
 import SingleAd from "./SingleAd";
 import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
-import SearchBar from "./SearchBar";
+import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from 'react-icons/ri'
 import { RiArrowDropUpFill } from 'react-icons/ri'
-
+import { getAds } from "../../Redux/Actions/AdsAction";
 const Categories = () => {
 
   const ads = useSelector((state) => state.allAds.filteredAds);
@@ -28,9 +27,9 @@ const Categories = () => {
     setCategoriesDropdown(current => !current)
   }
 
-  useEffect(() => {
-    dispatch(getAds());
-  }, [dispatch]);
+  /*   useEffect(() => {
+      dispatch(getAds());
+    }, [dispatch]); */
 
   const [pageNumber, setPageNumber] = useState(0)
   const postsPerPage = 4;
@@ -45,7 +44,7 @@ const Categories = () => {
       <HeroImage height="15" minHeight="15" maxHeight="25" />
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
-          <SearchBar placeholder="Search..." data={ads} />
+          <SearchInput placeholder="Search..." data={ads} searchBarStyle="searchBarContainer" />
           <div className="categoriesContainer">
             <div className="titleAndDropdownContainer">
               <span>search by category</span>

@@ -17,7 +17,7 @@ const AuthButton = () => {
   const location = useLocation();
 
   console.log(user);
-  
+
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");
