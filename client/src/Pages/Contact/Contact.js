@@ -18,7 +18,7 @@ const Contact = () => {
 
         axios({
             method: "POST",
-            url: "http://localhost:5000/api/contact",
+            url: "http://localhost:4000/api/contact",
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -28,6 +28,23 @@ const Contact = () => {
                 message: message.value
             }
         }).then(response => {
+          toastr.options = {
+            "closeButton": true,
+            "debug": true,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
             if (response) {
                 toastr["success"]("We have received your message and will get back to you as soon as possible!", "Thank you!");
                 console.log("Email has been sent");
@@ -37,24 +54,6 @@ const Contact = () => {
                 console.log("FAILURE");
             }
         });
-
-    toastr.options = {
-      "closeButton": true,
-      "debug": true,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
   };
 
 
