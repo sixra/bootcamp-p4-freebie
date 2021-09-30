@@ -27,9 +27,9 @@ const Categories = () => {
     setCategoriesDropdown(current => !current)
   }
 
-  /*  useEffect(() => {
-     dispatch(getAds());
-   }, [dispatch]); */
+  /*   useEffect(() => {
+      dispatch(getAds());
+    }, [dispatch]); */
 
   const [pageNumber, setPageNumber] = useState(0)
   const postsPerPage = 4;

@@ -8,6 +8,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
+  console.log(filteredData);
   const handleFilter = (event) => {
 
     const searchWord = event.target.value;
@@ -51,6 +52,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
       {filteredData.length !== 0 && (
         <div className="searchBarOutput">
           {filteredData.slice(0, 10).map((value) => {
+
             return (
               <div className="searchBarOutputItem" rel="noreferrer" target="_blank" onClick={() => dispatch(filterAdsSearch(data, value.title))}>
                 <span>{value.title}</span>
