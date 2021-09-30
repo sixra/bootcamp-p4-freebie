@@ -22,7 +22,7 @@ const UserNavBar = () => {
         <div className="userImage">
           <img src={profilePicture} alt="profile" />
         </div>
-        <div className="userName">{`Hello ${user?.result.name}`}</div>
+        <div className="userName">{`Hello ${user?.result.firstName}`}</div>
       </div>
 
       <ul className="userSectionLinks">
