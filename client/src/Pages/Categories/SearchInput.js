@@ -4,10 +4,11 @@ import "./Categories.scss"
 import { filterAdsSearch } from '../../Redux/Actions/AdsAction'
 import { useDispatch } from 'react-redux'
 
-function SearchBar({ placeholder, data }) {
+function SearchInput({ placeholder, data, searchBarStyle }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
+  console.log(filteredData);
   const handleFilter = (event) => {
 
     const searchWord = event.target.value;
@@ -32,7 +33,7 @@ function SearchBar({ placeholder, data }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="searchBarContainer">
+    <div className={searchBarStyle}>
       <div >
         <input
           type="text"
@@ -51,6 +52,7 @@ function SearchBar({ placeholder, data }) {
       {filteredData.length !== 0 && (
         <div className="searchBarOutput">
           {filteredData.slice(0, 10).map((value) => {
+
             return (
               <div className="searchBarOutputItem" rel="noreferrer" target="_blank" onClick={() => dispatch(filterAdsSearch(data, value.title))}>
                 <span>{value.title}</span>
@@ -63,4 +65,4 @@ function SearchBar({ placeholder, data }) {
   );
 }
 
-export default SearchBar;
+export default SearchInput;

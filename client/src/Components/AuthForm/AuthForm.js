@@ -21,11 +21,13 @@ const AuthForm = () => {
   const submitSignUp = (e) => {
     e.preventDefault();
     dispatch(signup(formData, history));
+    e.target.reset();
   };
 
   const submitSignIn = (e) => {
     e.preventDefault();
     dispatch(signin(formData, history));
+    e.target.reset();
   };
 
   const handleChange = (e) =>

@@ -13,6 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import { loadUser } from "./Redux/Actions/AuthAction";
 import UserActivate from "./Components/UserActivated/UserActivate.js"
 
+
 const App = () => {
 
   useEffect(() => {
