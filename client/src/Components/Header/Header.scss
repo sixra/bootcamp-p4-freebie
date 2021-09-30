@@ -184,7 +184,10 @@
 }
 
 .heroImage {
-  background-image: url("./laura-davidson-QBAH4IldaZY-unsplash-3.jpg");
+  background-image: linear-gradient(
+          hsla(0, 0%, 0%, 0.767),
+          hsla(0, 0%, 47%, 0.377)
+        ), url("./hero-image.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -196,8 +199,8 @@
 
 .homeListingBtn {
   text-align: center;
-  margin: 3rem 0;
-  color: var(--text-colour-main-dark);
+  margin: 3rem 0 6rem 0;
+  color: var(--text-colour-main-light);
 
   h1 {
     font-size: 2.7rem;
