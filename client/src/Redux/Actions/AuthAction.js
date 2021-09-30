@@ -31,10 +31,10 @@ export const signin = (formData, router) => async (dispatch) => {
     }
     if(error.message === "Request failed with status code 404"){
       toastr["error"]("User doesn't exist, check your email address and make sure you have been verified!", "No user found!")
-      console.log("FAILURE");
+      console.log("FAILURE NO USER");
       } else if(error.message === "Request failed with status code 400"){
         toastr["error"]("You have not used valid credentials, please try again!", "Invalid Credentials!")
-        console.log("FAILURE");
+        console.log("FAILURE INVALID CREDENTIALS");
       }else {
         console.log(JSON.stringify(error));
       }
