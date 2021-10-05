@@ -11,14 +11,8 @@
   width: 100%;
 
   .navLogo {
-    font-size: 2rem;
-    font-weight: var(--font-medium-bold);
-    color: var(--details-colour-secondary);
+    width: 7.5rem;
 
-    &::after {
-      content: "bie";
-      color: var(--text-colour-main-dark);
-    }
   }
 
   .navList {
@@ -31,10 +25,10 @@
 
       a {
         text-decoration: none;
-        font-size: var(--h3-font-size);
-        color: var(--text-colour-main-dark);
+        font-size: var(--normal-font-size);
+        color: var(--text-colour-main-light);
         text-transform: uppercase;
-        font-weight: var(--font-medium-bold);
+        font-weight: var(--font-light-bold);
       }
     }
   }

@@ -2,6 +2,7 @@ import React from "react";
 import "./Navigation.scss";
 import { NavLink } from "react-router-dom";
 import AuthButton from "./AuthButton/AuthButton";
+import logo from "./freebie-logo.png"
 
 const Navigation = () => {
 
@@ -9,7 +10,7 @@ const Navigation = () => {
   return (
     <div>
       <div className="navContainer">
-        <span className="navLogo"> free</span>
+        <img className="navLogo" src={logo} alt="" />
         <ul className="navList">
           <li className="navListItem">
             <NavLink activeClassName="activePage" to="/home">

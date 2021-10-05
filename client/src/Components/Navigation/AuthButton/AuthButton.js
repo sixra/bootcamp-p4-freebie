@@ -28,6 +28,7 @@ const AuthButton = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
+  console.log(user)
 
   return (
     <>
