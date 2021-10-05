@@ -15,7 +15,7 @@ const AuthButton = () => {
   const history = useHistory();
   const location = useLocation();
 
-  console.log(user);
+  // console.log(user);
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
@@ -27,7 +27,7 @@ const AuthButton = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
-  console.log(user)
+  // console.log(user)
 
   return (
     <div className="authButton">

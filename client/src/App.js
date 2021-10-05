@@ -12,6 +12,8 @@ import ScrollUp from "./Components/ScrollUp/ScrollUp";
 import Footer from "./Components/Footer/Footer";
 import { loadUser } from "./Redux/Actions/AuthAction";
 import UserActivate from "./Components/UserActivated/UserActivate.js"
+import ForgotPassword from "./Components/Forgot-Reset-Password/ForgotPassword"
+import ResetPassword from "./Components/Forgot-Reset-Password/ResetPassword.js"
 
 
 const App = () => {
@@ -35,7 +37,9 @@ const App = () => {
           <Route path="/contact" exact component={Contact} />
           <Route path="/auth" exact component={AuthForm} />
           <Route path="/user" exact component={UserInterface} />
+          <Route path="/user/forgot" exact component={ForgotPassword} />
           <Route path="/Api/activate/user/:id" exact component={UserActivate} />
+          <Route path="/user/reset/:hash" exact component={ResetPassword} />
         </Switch>
         <ScrollUp />
         <Footer />

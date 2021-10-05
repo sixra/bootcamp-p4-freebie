@@ -60,9 +60,16 @@ export const signup = async (req, res) => {
     });
 
     const savedUser = await newUser.save();
+
+    const hash = savedUser._id
+    const url = `${process.env.DOMAIN}/Api/activate/user/${hash}`
+
     await sendConfirmationEmail({
       toUser: savedUser,
-      hash: savedUser._id,
+      url: url,
+      title: "Verify Your E-mail Address",
+      text: "Verify Your Email",
+      paragraph: "You're almost ready to get started. Please click on the button below to verify your email address and enjoy free items in your area!"
     });
     if (!savedUser) throw Error("Something went wrong saving the user");
 
@@ -88,3 +95,49 @@ export const signup = async (req, res) => {
     console.log(error);
   }
 };
+
+
+export const forgotPassword = async (req, res) => {
+  try {
+      const {email} = req.body
+      const user = await UserModal.findOne({email})
+      const pendingUser = await PendingUser.findOne({email})
+      if(pendingUser) return res.status(400).json({msg: "Please verify your email address first."})
+      if(!user) return res.status(400).json({msg: "This email does not exist."})
+    
+      const hash = user._id
+      const url = `${process.env.DOMAIN}/user/reset/${hash}`
+
+      await sendConfirmationEmail({
+        toUser: user,
+        url: url,
+        title: "Reset Your Password",
+        text: "Reset Your Password",
+        paragraph: "Seems like you have forgotten your password. Please click on the button below to update your password and enjoy the access to your account!"
+      })
+      res.json({msg: "Re-send the password, please check your email."})
+  } catch (err) {
+      return res.status(500).json({msg: err.message})
+  }
+}
+
+export const resetPassword = async (req, res) => {
+  try {
+      const { hash } = req.params;
+      console.log(hash);
+      const user = await UserModal.findOne({ _id: hash })
+      console.log(user)
+
+      const {password} = req.body
+      console.log(password)
+      const passwordHash = await bcrypt.hash(password, 12)
+
+      await UserModal.findOneAndUpdate({_id: hash}, {
+          password: passwordHash
+      })
+
+      res.json({msg: "Password successfully changed!"})
+  } catch (err) {
+      return res.status(500).json({msg: err.message})
+  }
+}
