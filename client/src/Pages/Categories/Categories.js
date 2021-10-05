@@ -39,6 +39,7 @@ const Categories = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
+  
   return (
     <div>
       <HeroImage height="15" minHeight="15" maxHeight="25" />

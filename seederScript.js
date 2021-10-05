@@ -9,7 +9,7 @@ connectDB();
 const importAdsData = async () => {
   try {
     await ads.deleteMany({});
-    
+    await ads.insertMany(adsData);
 
     console.log("Ads Data Imported Successfully");
     process.exit();

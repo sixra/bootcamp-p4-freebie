@@ -1,3 +1,5 @@
+@use "../../Styles.scss";
+
 .searchBar {
   background-color: rgba(232, 232, 232, 0.845);
   width: 50%;
@@ -6,8 +8,8 @@
   justify-content: space-around;
   border-radius: 5rem;
   z-index: 999;
-  height: 3.3rem;
-  margin: 5rem auto;
+  padding: 0.4rem;
+  margin: 4rem auto;
 
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
@@ -22,8 +24,6 @@
 
   .searchBarSelectContainer {
     width: 50%;
-    height: 2.5rem;
-    background-color: transparent;
     border: none;
     outline: none;
     display: flex;
@@ -49,9 +49,8 @@
   .selectContainerText {
     display: block;
     width: 90%;
-    line-height: 2.5rem;
+    line-height: 2.4rem;
     color: var(--text-colour-light);
-    font-size: 0.9rem;
     font-weight: 300;
   }
 
@@ -64,11 +63,9 @@
     border-radius: 1.5rem;
 
     div {
-      height: 2.5rem;
       border-top: 0.1rem solid rgba(128, 128, 128, 0.132);
       padding-left: 1rem;
       line-height: 2.5rem;
-      font-size: 0.9rem;
       text-transform: capitalize;
 
       &:first-of-type {
@@ -107,29 +104,12 @@
 
   .searchBarButton,
   .searchBarButtonDisabled {
-    width: 7rem;
-    height: 2.5rem;
-    border-radius: 5rem;
-    border: none;
-    margin-left: 1rem;
-    background: linear-gradient(
-      to right,
-      var(--details-colour-secondary),
-      var(--details-colour-main)
-    );
-    font-weight: var(--font-medium-bold);
-    text-transform: uppercase;
-    background-color: var(--details-colour-secondary);
-    color: var(--text-colour-main-light);
-    margin-right: 0.5rem;
-    padding: 0 0.5rem;
-    cursor: pointer;
-    font-size: 0.9rem;
+    @include Styles.btn-background;
+    height: 2.4rem;
 
-    @media only screen and (max-width: 1000px) {
-      height: 2.5rem;
-      width: 50%;
-    }
+    // @media only screen and (max-width: 1000px) {
+    //   width: 50%;
+    // }
   }
   .searchBarButtonDisabled {
     filter: grayscale(100%);
@@ -138,11 +118,12 @@
 
 .heroImage {
   background-image: linear-gradient(
-          hsla(0, 0%, 0%, 0.767),
-          hsla(0, 0%, 47%, 0.377)
-        ), url("./hero-image.jpg");
+      hsla(0, 0%, 0%, 0.822),
+      hsla(0, 0%, 47%, 0.377)
+    ),
+    url("./hero-image.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   width: 100%;
   max-width: 100rem;
   z-index: -1;
@@ -152,45 +133,38 @@
 
 .homeListingBtn {
   text-align: center;
-  margin: 3rem 0 6rem 0;
+  margin: 3rem auto 5rem auto;
   color: var(--text-colour-main-light);
+  max-width: 35rem;
+  padding: 1.5rem;
 
   h1 {
-    font-size: 2.7rem;
-    font-family: var(--title-font);
+    font-size: 2.3rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.8rem;
+    }
   }
 
   p {
     margin: 1rem 0;
-    font-size: var(--normal-font-size);
-    font-family: var(--subtitle-font);
+    line-height: 1.8rem;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
   }
 
   .headerBtn {
-    padding: 0 1rem;
-    height: 2.7rem;
-    border: none;
-    border-radius: 5rem;
-    font-weight: var(--font-medium-bold);
-    text-transform: uppercase;
-    background: linear-gradient(
-      to right,
-      var(--details-colour-secondary),
-      var(--details-colour-main)
-    );
-    font-size: var(--normal-font-size);
-    color: var(--text-colour-main-light);
+    @include Styles.btn-background;
     margin-top: 1rem;
-    cursor: pointer;
   }
 }
 
 .searchInputContainer {
   position: relative;
-  margin: 0 0.2rem;
-  height: 2.5rem;
+  height: 2.4rem;
   max-width: 20rem;
   width: 100%;
+
   @media only screen and (max-width: 1000px) {
     border: none;
     margin: 0.5rem auto;
@@ -204,12 +178,11 @@
     outline: none;
     width: 100%;
     margin-bottom: 2rem;
-    height: 2.5rem;
+    height: 2.4rem;
     padding-left: 1rem;
-    font-size: 0.9rem;
     border-radius: 1.5rem;
-    font-size: 0.9rem;
     font-weight: 300;
+    font-family: "Montserrat", sans-serif;
 
     @media only screen and (max-width: 1000px) {
       height: 3rem;
@@ -234,7 +207,6 @@
     position: absolute;
     top: 2.7rem;
     width: 100%;
-    font-size: 0.9rem;
     border-radius: 1.5rem;
 
     .searchBarOutputItem {

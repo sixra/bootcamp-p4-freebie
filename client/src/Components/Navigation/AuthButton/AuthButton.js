@@ -6,7 +6,6 @@ import { AiOutlineDashboard } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-import "./AuthButton.scss"
 //import { RiLogoutBoxLine } from "react-icons/ri"
 
 const AuthButton = () => {
@@ -31,7 +30,7 @@ const AuthButton = () => {
   console.log(user)
 
   return (
-    <>
+    <div className="authButton">
       {user?.result ? (
         <div className="userSectionDropdown" >
           <Link className="userSectionDropdownBtn" to="/user" alt={user?.result.firstName}>{user?.result.firstName.slice(0, 1).toUpperCase()}</Link>
@@ -67,15 +66,15 @@ const AuthButton = () => {
               </div>
             </li>
           </ul>
+          <Link to="/user/post" className="postAnAd">Post an Ad</Link>
         </div>
       ) : (
-        <>
-          <div className="signInContainer">
-            <Link to="/auth" >Sign In</Link>
-          </div>
-        </>
+          <>
+            <Link to="/auth" className="signIn">Sign in</Link>
+            <Link to="/auth" className="postAnAd">Post an Ad</Link>
+          </>
       )}
-    </>
+    </div>
   );
 };
 

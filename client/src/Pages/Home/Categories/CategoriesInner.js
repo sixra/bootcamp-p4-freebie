@@ -19,7 +19,7 @@ const CategoriesInner = () => {
             <div className="categoriesInnerListsContainer">
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <GiCarWheel size={56} />
+                        <GiCarWheel size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Vehicle Parts</button>
@@ -28,7 +28,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <GiSofa size={56} />
+                        <GiSofa size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Furnitures</button>
@@ -37,7 +37,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <IoTvSharp size={56} />
+                        <IoTvSharp size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Electronics</button>
@@ -46,7 +46,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaMobile size={56} />
+                        <FaMobile size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Mobiles</button>
@@ -55,7 +55,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaTshirt size={56} />
+                        <FaTshirt size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Clothing</button>
@@ -64,7 +64,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <GiWatch size={56} />
+                        <GiWatch size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Accessories</button>
@@ -73,7 +73,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaBriefcase size={56} />
+                        <FaBriefcase size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Jobs</button>
@@ -82,7 +82,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaConciergeBell size={56} />
+                        <FaConciergeBell size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Services</button>
@@ -91,7 +91,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <IoPawSharp size={56} />
+                        <IoPawSharp size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Animals</button>
@@ -100,7 +100,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <GiBookshelf size={56} />
+                        <GiBookshelf size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Books</button>
@@ -109,7 +109,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaBabyCarriage size={56} />
+                        <FaBabyCarriage size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Baby Products</button>
@@ -118,7 +118,7 @@ const CategoriesInner = () => {
 
                 <div className="categoriesInnerEachListContainer">
                     <div className="categoriesInnerListIcon">
-                        <FaHeart size={56} />
+                        <FaHeart size={52} />
                     </div>
                     <div className="categoriesInnerListTitle">
                         <button>Matrimony</button>

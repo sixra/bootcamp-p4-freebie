@@ -2,10 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-size: var(--normal-font-size);
+
+  @media only screen and (max-width: 600px) {
+    font-size: var(--small-font-size);
+  }
 }
 
 .App {

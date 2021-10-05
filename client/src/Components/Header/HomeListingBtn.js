@@ -4,10 +4,9 @@ import "./Header.scss";
 const HomeListingBtn = () => {
   return (
     <div className="homeListingBtn">
-      <h1>Listing made easy</h1>
+      <h1>Did you say it's free?</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi,
-        officiis.
+      Use our platform to find free stuff near you and help the community by offering some yourself.
       </p>
       <button className="headerBtn">start exploring</button>
     </div>
