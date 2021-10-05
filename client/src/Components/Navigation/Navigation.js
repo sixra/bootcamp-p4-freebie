@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navigation.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import AuthButton from "./AuthButton/AuthButton";
 import logo from "./freebie-logo.png"
 
@@ -8,9 +8,8 @@ const Navigation = () => {
 
 
   return (
-    <div>
       <div className="navContainer">
-        <img className="navLogo" src={logo} alt="" />
+        <Link to="/" className="navLogo"><img  src={logo} alt="" /></Link>
         <ul className="navList">
           <li className="navListItem">
             <NavLink activeClassName="activePage" to="/home">
@@ -30,7 +29,6 @@ const Navigation = () => {
         </ul>
         <AuthButton />
       </div>
-    </div>
   );
 };
 

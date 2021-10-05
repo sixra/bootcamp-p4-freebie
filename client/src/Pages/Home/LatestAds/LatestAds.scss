@@ -1,16 +1,14 @@
 @use "../../../Styles.scss";
 
-// * {
-//   outline: 1px solid black;
-// }
-
 .latestAdsTitle {
   margin: 2.5rem 0;
 
   & h2 {
     text-align: center;
     text-transform: capitalize;
-    color: var(--background-colour-dark-gray);
+    color: var(--text-colour-main-dark);
+    font-size: var(--h2-font-size);
+    letter-spacing: 0.07rem;
     &::after,
     &::before {
       display: inline-block;
@@ -48,7 +46,9 @@
   text-align: center;
   margin: 2rem 0 3rem 0;
 
-  & button {
+  a {
     @include Styles.btn-background;
+    background: linear-gradient(to right, black, rgb(43, 43, 43));
+    text-decoration: none;
   }
 }

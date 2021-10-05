@@ -26,27 +26,28 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-  
+
       h1 {
         margin-bottom: 1rem;
         font-size: 1.5rem;
-        color:rgb(43, 43, 43);
+        color: rgb(43, 43, 43);
       }
-  
+
       button {
         @include Styles.btn-background;
         margin-top: 1rem;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       }
     }
-  
+
     input {
       margin: 0.3rem 0;
       padding: 0.8rem;
       width: 100%;
       border: 1px solid lightgray;
       border-radius: 0.3rem;
-  
+
       &:focus {
         border: 1px solid #e20f55;
         outline: none;
@@ -58,7 +59,6 @@
     left: 0;
     width: 50%;
     z-index: 2;
-
   }
 
   .sign-up-container {
@@ -68,7 +68,7 @@
     z-index: 1;
     form {
       input:first-of-type {
-        display: inline-block;  
+        display: inline-block;
       }
     }
   }
@@ -125,11 +125,7 @@
       }
 
       button {
-        background: linear-gradient(
-          to right,
-          black,
-          rgb(43, 43, 43)
-        );
+        background: linear-gradient(to right, black, rgb(43, 43, 43));
         padding: 0.6rem 1.2rem;
         color: var(--text-colour-main-light);
         font-size: 0.9rem;
@@ -139,10 +135,11 @@
         text-transform: uppercase;
         transition: transform 80ms ease-in;
         cursor: pointer;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
         &:active {
-          transform: scale(0.90);
+          transform: scale(0.9);
         }
       }
     }

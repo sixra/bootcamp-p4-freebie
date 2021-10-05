@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getAds } from "../../../Redux/Actions/AdsAction";
-import "./LatestAds.scss";
 import LatestAd from "./LatestAd/LatestAd";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
+import "./LatestAds.scss";
 
 const LatestAds = () => {
   const ads = useSelector((state) => state.allAds.ads);
@@ -32,7 +33,7 @@ const LatestAds = () => {
       )}
 
       <div className="moreAdsButtonContainer">
-        <button>more ads</button>
+        <Link to="/categories">more ads</Link>
       </div>
     </section>
   );

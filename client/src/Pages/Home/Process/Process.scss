@@ -12,6 +12,8 @@
     & h2 {
         width: 100%;
         color: var(--text-colour-main-light);
+        font-size: var(--h2-font-size);
+        letter-spacing: 0.07rem;
         margin: 1.5rem;
         display: flex;
         flex-direction: row;
@@ -46,6 +48,7 @@
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    margin-bottom: 1.5rem;
     @media only screen and (max-width: 600px) {
       display: flex;
       flex-direction: column;
