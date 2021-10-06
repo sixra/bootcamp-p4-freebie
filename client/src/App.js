@@ -10,7 +10,9 @@ import AuthForm from "./Components/AuthForm/AuthForm";
 import ScrollUp from "./Components/ScrollUp/ScrollUp";
 import Footer from "./Components/Footer/Footer";
 import { loadUser } from "./Redux/Actions/AuthAction";
-import UserActivate from "./Components/UserActivated/UserActivate.js";
+import UserActivate from "./Components/UserActivated/UserActivate.js"
+import ForgotPassword from "./Components/Forgot-Reset-Password/ForgotPassword"
+import ResetPassword from "./Components/Forgot-Reset-Password/ResetPassword.js"
 import HeroImage from "./Components/Header/HeroImage";
 import Dashboard from "./Components/UserInterface/UserSections/Dashboard/Dashboard";
 import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
@@ -37,7 +39,9 @@ const App = () => {
           <Route path="/user/favorite" exact component={MyFavorites} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/auth" exact component={AuthForm} />
+          <Route path="/user/forgot" exact component={ForgotPassword} />
           <Route path="/Api/activate/user/:id" exact component={UserActivate} />
+          <Route path="/user/reset/:hash" exact component={ResetPassword} />
         </Switch>
         <ScrollUp />
         <Footer />
