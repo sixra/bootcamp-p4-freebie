@@ -6,7 +6,7 @@ import { AiOutlineDashboard } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-//import { RiLogoutBoxLine } from "react-icons/ri"
+import { FaUserCircle } from "react-icons/fa";
 
 const AuthButton = () => {
 
@@ -14,8 +14,6 @@ const AuthButton = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-
-  console.log(user);
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
@@ -27,52 +25,54 @@ const AuthButton = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
-  console.log(user)
-
   return (
     <div className="authButton">
       {user?.result ? (
-        <div className="userSectionDropdown" >
-          <Link className="userSectionDropdownBtn" to="/user" alt={user?.result.firstName}>{user?.result.firstName.slice(0, 1).toUpperCase()}</Link>
-          <ul className="userSectionLinks">
-            <li>
-              <NavLink className="listContainer" activeClassName="activeSection" to="/user/dashboard">
-                <AiOutlineDashboard size={18} />
-                <span> dashboard </span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="listContainer" activeClassName="activeSection" to="/user/post">
-                <RiSendPlaneLine size={18} />
-                <span> post an ad </span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="listContainer" activeClassName="activeSection" to="/user/ads">
-                <BsLayers size={18} />
-                <span> my ads </span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="listContainer" activeClassName="activeSection" to="/user/favorite">
-                <AiOutlineHeart size={18} />
-                <span> my favorites </span>
-              </NavLink>
-            </li>
-            <li>
-              <div className="listContainer">
-                {/* <RiLogoutBoxLine size={18} /> */}
-                <button className="userLogoutBtn" onClick={logout}>Logout</button>
-              </div>
-            </li>
-          </ul>
+        <>
+          <div className="userSectionDropdown" >
+            <Link className="userNameContainer" to="/user/dashboard" alt={user?.result.firstName}>
+              <FaUserCircle size={25}/>
+              <span className="userName">{user?.result.firstName}</span>
+            </Link>
+            <ul className="userSectionLinks">
+              <li>
+                <NavLink className="listContainer" activeClassName="activeSection" to="/user/dashboard">
+                  <AiOutlineDashboard size={18} />
+                  <span> dashboard </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="listContainer" activeClassName="activeSection" to="/user/post">
+                  <RiSendPlaneLine size={18} />
+                  <span> post an ad </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="listContainer" activeClassName="activeSection" to="/user/ads">
+                  <BsLayers size={18} />
+                  <span> my ads </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="listContainer" activeClassName="activeSection" to="/user/favorite">
+                  <AiOutlineHeart size={18} />
+                  <span> my favorites </span>
+                </NavLink>
+              </li>
+              <li>
+                <div className="listContainer">
+                  <button className="userLogoutBtn" onClick={logout}>Logout</button>
+                </div>
+              </li>
+            </ul>
+          </div>
           <Link to="/user/post" className="postAnAd">Post an Ad</Link>
-        </div>
+        </>
       ) : (
-          <>
-            <Link to="/auth" className="signIn">Sign in</Link>
-            <Link to="/auth" className="postAnAd">Post an Ad</Link>
-          </>
+        <>
+          <Link to="/auth" className="signIn">Sign in</Link>
+          <Link to="/auth" className="postAnAd">Post an Ad</Link>
+        </>
       )}
     </div>
   );
