@@ -3,6 +3,7 @@ import "./AuthForm.scss";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { signin, signup } from "../../Redux/Actions/AuthAction";
+import PathBanner from "../PathBanner/PathBanner"
 
 const initialState = {
   firstName: "",
@@ -38,6 +39,8 @@ const AuthForm = () => {
   };
 
   return (
+    <>
+    <PathBanner/>
     <div className={signIn ? "authContainer" : "authContainer right-panel-active"}>
 
       <div className="form-container sign-up-container">
@@ -138,6 +141,7 @@ const AuthForm = () => {
       </div>
 
     </div>
+    </>
   );
 };
 
