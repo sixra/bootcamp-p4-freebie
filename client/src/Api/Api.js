@@ -21,3 +21,11 @@ export const postAd = (newAd) => API.post("api/items", newAd);
 
 export const signIn = (formData) => API.post('api/user/signin', formData);
 export const signUp = (formData) => API.post('api/user/signup', formData);
+
+//////// API FOR RESET PASSWORD ////////
+
+// export async function resetPw (hash) {
+//   const response = await fetch(
+//     `http://localhost:4000/api/user/reset/${hash}}`
+//   );
+// }

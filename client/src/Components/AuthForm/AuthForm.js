@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { signin, signup } from "../../Redux/Actions/AuthAction";
 import PathBanner from "../PathBanner/PathBanner"
+import { Link } from "react-router-dom";
 
 const initialState = {
   firstName: "",
@@ -114,6 +115,7 @@ const AuthForm = () => {
             required
             onChange={handleChange}
           />
+          <Link className="forgotPasswordLink" to="/user/forgot">Forgot Password?</Link>
           <button type="submit">Sign In</button>
         </form>
       </div>
