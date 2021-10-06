@@ -1,0 +1,17 @@
+.pathBanner {
+  background: rgba(255, 255, 255, 0.712);
+  color: black;
+  text-transform: capitalize;
+  margin-top: 3.4rem;
+  padding: 1rem;
+  padding-left: 3.1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 7.5rem;
+  border-top: 0.2rem solid #c5c5c5d7;
+  border-bottom: 0.2rem solid #bbbbbbd7;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  max-width: 90rem;
+  width: 100%;
+}

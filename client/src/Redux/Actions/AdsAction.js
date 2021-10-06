@@ -20,17 +20,22 @@ export const postAd = (ad) => async (dispatch) => {
 };
 
 export const filterAds = (ads, cat) => {
-
   return {
     type: adsType.FILTER_BY_CATEGORY,
-    payload: { ads: cat === 'All products' ? ads : ads.filter(ad => ad.category === cat), category: cat }
+    payload: {
+      ads:
+        cat === "All products" ? ads : ads.filter((ad) => ad.category === cat),
+      category: cat,
+    },
   };
 };
 
 export const filterAdsSearch = (ads, title) => {
-
   return {
     type: adsType.FILTER_BY_SEARCH,
-    payload: { ads: title === "" ? ads : ads.filter(ad => ad.title === title), title: title }
+    payload: {
+      ads: title === "" ? ads : ads.filter((ad) => ad.title === title),
+      title: title,
+    },
   };
 };

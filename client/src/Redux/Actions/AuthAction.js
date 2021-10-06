@@ -10,7 +10,7 @@ export const signin = (formData, router) => async (dispatch) => {
 
     dispatch({ type: authType.AUTH, data });
 
-    router.push('/user');
+    router.push('/');
   } catch (error) {
     toastr.options = {
       "closeButton": true,
