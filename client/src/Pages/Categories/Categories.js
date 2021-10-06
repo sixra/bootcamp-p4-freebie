@@ -1,76 +1,90 @@
-import React, { useEffect, useState } from "react";
-import HeroImage from "../../Components/Header/HeroImage"
-import { HiOutlineViewGrid } from "react-icons/hi"
-import { HiViewList } from "react-icons/hi"
+import React, { useState } from "react";
+import { HiOutlineViewGrid } from "react-icons/hi";
+import { HiViewList } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
-import "./Categories.scss"
+import "./Categories.scss";
 import SingleAd from "./SingleAd";
 import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
 import SearchInput from "./SearchInput";
-import { RiArrowDropDownFill } from 'react-icons/ri'
-import { RiArrowDropUpFill } from 'react-icons/ri'
+import { RiArrowDropDownFill } from "react-icons/ri";
+import { RiArrowDropUpFill } from "react-icons/ri";
 import { getAds } from "../../Redux/Actions/AdsAction";
-const Categories = () => {
+import PathBanner from "../../Components/PathBanner/PathBanner";
 
+const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
   const dispatch = useDispatch();
 
-  const [gridToggle, setGridToggle] = useState(true)
+  const [gridToggle, setGridToggle] = useState(true);
   const buttonHandler = () => {
-    setGridToggle(current => !current)
-  }
+    setGridToggle((current) => !current);
+  };
 
-  const [categoriesDropdown, setCategoriesDropdown] = useState(false)
+  const [categoriesDropdown, setCategoriesDropdown] = useState(false);
   const dropdownHandler = () => {
-    setCategoriesDropdown(current => !current)
-  }
+    setCategoriesDropdown((current) => !current);
+  };
 
   /*   useEffect(() => {
       dispatch(getAds());
     }, [dispatch]); */
 
-  const [pageNumber, setPageNumber] = useState(0)
+  const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;
   const visitedPages = pageNumber * postsPerPage;
 
-  const pageCount = Math.ceil(ads.length / postsPerPage)
+  const pageCount = Math.ceil(ads.length / postsPerPage);
   const changePage = ({ selected }) => {
-    setPageNumber(selected)
-  }
-  
+    setPageNumber(selected);
+  };
+
   return (
     <div>
-      <HeroImage height="15" minHeight="15" maxHeight="25" />
+      <PathBanner />
       <section className="categoriesPageContainer">
         <div className="categoriesAndSearchContainer">
-          <SearchInput placeholder="Search..." data={ads} searchBarStyle="searchBarContainer" />
+          <SearchInput
+            placeholder="Search..."
+            data={ads}
+            searchBarStyle="searchBarContainer"
+          />
           <div className="categoriesContainer">
             <div className="titleAndDropdownContainer">
               <span>search by category</span>
               <div onClick={dropdownHandler} className="categoryDropdownArrow">
-                {categoriesDropdown
-                  ? <RiArrowDropUpFill size={40} />
-                  : <RiArrowDropDownFill size={40} />
-                }
+                {categoriesDropdown ? (
+                  <RiArrowDropUpFill size={40} />
+                ) : (
+                  <RiArrowDropDownFill size={40} />
+                )}
               </div>
             </div>
-            <div className="categoriesListsContainer" id={categoriesDropdown ? "showCategoryDropdown" : "hideCategoryDropdown"}>
+            <div
+              className="categoriesListsContainer"
+              id={
+                categoriesDropdown
+                  ? "showCategoryDropdown"
+                  : "hideCategoryDropdown"
+              }
+            >
               <Filter />
             </div>
           </div>
         </div>
         <div className="infoTabAndproductsList">
           <div className="infoTabContainer">
-            <span className="infoTabText">You are seeing total of {ads.length} ads.</span>
+            <span className="infoTabText">
+              You are seeing total of {ads.length} ads.
+            </span>
             <div className="gridListIconsContainer">
               <div>
-                {gridToggle ?
+                {gridToggle ? (
                   <HiViewList onClick={buttonHandler} size={30} />
-                  :
-                  <HiOutlineViewGrid onClick={buttonHandler} size={30}
-                  />}
+                ) : (
+                  <HiOutlineViewGrid onClick={buttonHandler} size={30} />
+                )}
               </div>
             </div>
           </div>
@@ -79,17 +93,30 @@ const Categories = () => {
               <LoadingSpinner />
             ) : (
               <div className={gridToggle ? "latestAdsContain" : null}>
-                {ads.slice(visitedPages, visitedPages + postsPerPage).map((adInfo) => (
-                  <SingleAd key={adInfo._id} adInfo={adInfo} gridToggle={gridToggle} />
-                ))}
+                {ads
+                  .slice(visitedPages, visitedPages + postsPerPage)
+                  .map((adInfo) => (
+                    <SingleAd
+                      key={adInfo._id}
+                      adInfo={adInfo}
+                      gridToggle={gridToggle}
+                    />
+                  ))}
               </div>
             )}
-            <ReactPaginate previousLabel={"<"} nextLabel={">"} pageCount={pageCount} onPageChange={changePage} containerClassName={"paginationBtn"} activeClassName={"paginationActivePage"} />
+            <ReactPaginate
+              previousLabel={"<"}
+              nextLabel={">"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"paginationBtn"}
+              activeClassName={"paginationActivePage"}
+            />
           </div>
         </div>
-      </section >
-    </div >
-  )
-}
+      </section>
+    </div>
+  );
+};
 
-export default Categories
+export default Categories;

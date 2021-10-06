@@ -1,11 +1,18 @@
 import React from "react";
+import UserNavBar from "../../UserNavBar/UserNavBar";
+import PathBanner from "../../../PathBanner/PathBanner";
+import "../../UserInterface.scss";
 
-const MyFavorites = () => {
+const MyAds = () => {
   return (
-    <div>
-      <h1>My Favorites</h1>
-    </div>
+    <>
+      <PathBanner />
+      <section className="userInterface">
+        <UserNavBar />
+        <main className="userSections">My Favorites</main>
+      </section>
+    </>
   );
 };
 
-export default MyFavorites;
+export default MyAds;

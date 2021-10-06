@@ -1,9 +1,18 @@
 import React from "react";
+import UserNavBar from "../../UserNavBar/UserNavBar";
+import PathBanner from "../../../PathBanner/PathBanner";
+import "../../UserInterface.scss"
 
 const MyAds = () => {
   return (
     <>
-      <h1>My Ads</h1>
+    <PathBanner/>
+    <section className="userInterface">
+      <UserNavBar/>
+        <main className="userSections">
+          My Ads
+        </main>
+    </section>
     </>
   );
 };
