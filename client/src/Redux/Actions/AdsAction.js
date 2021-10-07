@@ -49,6 +49,10 @@ export const filterPostedByUser = (ads) => {
     type: adsType.FILTER_POSTED_BY_USER,
     payload: {
       creator: ads.filter((ad) => ad.creator === userId)
+      
     },
+
+
   };
+
 };

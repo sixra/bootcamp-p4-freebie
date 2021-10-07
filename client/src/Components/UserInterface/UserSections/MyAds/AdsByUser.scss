@@ -1,0 +1,20 @@
+.adsByUserContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .adsByUserList {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: space-around;
+        text-transform: capitalize;
+
+        li {
+            margin: 0 .5rem;
+        }
+    }    
+    button {
+        margin: 0 .5rem;
+    }
+}

@@ -1,39 +1,30 @@
-import React, {useEffect} from "react";
-import { filterPostedByUser } from '../../../../Redux/Actions/AdsAction'
-import { useDispatch, useSelector } from 'react-redux'
-
+import React from "react";
+import "./AdsByUser.scss"
 
 const AdsByUser = ({ adInfo }) => {
 
-  const ads = useSelector((state) => state.allAds.ads)
-  const adsByUser = useSelector((state) => state.allAds.creator)
-  const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem("profile"));
-  const userId = user.result._id
-
-  const byUser = ads
-  .map((e) => {
-    return e.creator
-  })
-
   const {
+    image,
     _id,
     title,
-    creator
+    category,
   } = adInfo;
 
-  useEffect(() => {
-    dispatch(filterPostedByUser(ads, userId))  }, [dispatch]); 
-
   return (
-      <ul>
-
-
-          {adsByUser.map((e) => (
-          <li>{title}</li>
-        ))}
-
+    <div className="adsByUserContainer">
+      <ul className="adsByUserList">
+         <li className="listItemImageContainer">        
+           <img className="listItemImage" src={image} width="150px" alt="ad-img" />
+         </li>
+         <li>{title}</li>
+         <li className="listItemCategory">{category}</li>
       </ul>
+      <div>
+        <button>View</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
   );
 };
 
