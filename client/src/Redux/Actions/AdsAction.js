@@ -39,3 +39,16 @@ export const filterAdsSearch = (ads, title) => {
     },
   };
 };
+
+export const filterPostedByUser = (ads) => {
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const userId = user.result._id
+
+  return {
+    type: adsType.FILTER_POSTED_BY_USER,
+    payload: {
+      creator: ads.filter((ad) => ad.creator === userId)
+    },
+  };
+};

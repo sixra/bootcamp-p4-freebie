@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { HiViewList } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,9 +27,9 @@ const Categories = () => {
     setCategoriesDropdown((current) => !current);
   };
 
-  /*   useEffect(() => {
+     useEffect(() => {
       dispatch(getAds());
-    }, [dispatch]); */
+    }, [dispatch]); 
 
   const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;

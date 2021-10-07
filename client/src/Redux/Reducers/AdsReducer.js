@@ -17,7 +17,8 @@ const allAds = {
   ads: [],
   filteredAds: [],
   title: "",
-  category: "Select category"
+  category: "Select category",
+  creator: []
 }
 
 export const adsReducer = (state = allAds, action) => {
@@ -31,6 +32,8 @@ export const adsReducer = (state = allAds, action) => {
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
       return [...action.payload.ads, action.payload];
+    case adsType.FILTER_POSTED_BY_USER:
+      return { ...state, creator: action.payload.creator };
     default:
       return state;
   }

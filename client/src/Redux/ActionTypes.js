@@ -11,6 +11,7 @@ export const adsType = {
   POST_AD: "POST_AD",
   FILTER_BY_CATEGORY: "FILTER_BY_CATEGORY",
   FILTER_BY_SEARCH: "FILTER_BY_SEARCH",
+  FILTER_POSTED_BY_USER: "FILTER_POSTED_BY_USER"
 };
 
 export const errorType = {
