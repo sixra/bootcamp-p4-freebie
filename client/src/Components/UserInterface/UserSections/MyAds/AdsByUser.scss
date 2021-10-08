@@ -48,12 +48,18 @@
           cursor: pointer;
           display: flex;
           align-items: center;
+          color: rgb(75, 75, 75);
+
+          &:hover {
+            color: var(--details-colour-secondary)
+          }
 
           svg {
             margin: 0 0.3rem;
           }
 
           span {
+            text-transform: capitalize;
             @media only screen and (max-width: 600px) {
               display: none;
             }

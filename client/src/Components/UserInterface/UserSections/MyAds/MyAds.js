@@ -5,7 +5,6 @@ import "../../UserInterface.scss"
 import { useSelector, useDispatch } from "react-redux";
 import AdsByUser from "./AdsByUser";
 import { filterPostedByUser } from "../../../../Redux/Actions/AdsAction";
-
 const MyAds = () => {
 
   const dispatch = useDispatch();
@@ -13,9 +12,11 @@ const MyAds = () => {
   const ads = useSelector((state) => state.allAds.ads)
   const user = JSON.parse(localStorage.getItem("profile"));
   const userId = user.result._id
+  const adsads = JSON.parse(localStorage.getItem("adsByUser"));
 
   useEffect(() => {
-    dispatch(filterPostedByUser(ads, userId))  }, [dispatch]); 
+    dispatch(filterPostedByUser(ads, userId))
+  }, [ads, dispatch, userId]); 
 
   return (
     <>

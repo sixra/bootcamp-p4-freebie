@@ -31,27 +31,31 @@ export const filterAds = (ads, cat) => {
   };
 };
 
-export const filterAdsSearch = (ads, title) => {
-  return {
-    type: adsType.FILTER_BY_SEARCH,
-    payload: {
-      ads: title === "" ? ads : ads.filter((ad) => ad.title === title),
-      title: title,
-    },
-  };
+export const filterAdsSearch = (ads, title) => (dispatch) => {
+  try {
+    dispatch({
+      type: adsType.FILTER_BY_SEARCH,
+      payload: {
+        ads: title === "" ? ads : ads.filter((ad) => ad.title === title),
+        title: title,
+      },
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
-export const filterPostedByUser = (ads) => {
-
-  const user = JSON.parse(localStorage.getItem("profile"));
-  const userId = user.result._id
-
-  return {
-    type: adsType.FILTER_POSTED_BY_USER,
-    payload: {
-      creator: ads.filter((ad) => ad.creator === userId)
-    },
-  };
+export const filterPostedByUser = (ads, userId) => (dispatch) => {
+  try {
+    dispatch({
+      type: adsType.FILTER_POSTED_BY_USER,
+      payload: {
+        creator: ads.filter((ad) => ad.creator === userId),
+      },
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const deleteAdPostedByUser = (_id) => async (dispatch) => {

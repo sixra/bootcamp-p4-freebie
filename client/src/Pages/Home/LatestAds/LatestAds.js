@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getAds } from "../../../Redux/Actions/AdsAction";
 import LatestAd from "./LatestAd/LatestAd";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
 import "./LatestAds.scss";
 
 const LatestAds = () => {
   const ads = useSelector((state) => state.allAds.ads);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAds());
-  }, [dispatch]);
 
   return (
     <section>

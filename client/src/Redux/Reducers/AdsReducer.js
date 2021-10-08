@@ -33,7 +33,7 @@ export const adsReducer = (state = allAds, action) => {
     case adsType.POST_AD:
       return [...action.payload.ads, action.payload];
     case adsType.FILTER_POSTED_BY_USER:
-      return { ...state, creator: action.payload.creator };
+      return { ...state,  creator: action.payload.creator };
     case adsType.DELETE_AD_POSTED_BY_USER:
       return {
         ...state,  
