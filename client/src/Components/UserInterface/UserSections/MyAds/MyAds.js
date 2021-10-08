@@ -12,7 +12,6 @@ const MyAds = () => {
   const ads = useSelector((state) => state.allAds.ads)
   const user = JSON.parse(localStorage.getItem("profile"));
   const userId = user.result._id
-  const adsads = JSON.parse(localStorage.getItem("adsByUser"));
 
   useEffect(() => {
     dispatch(filterPostedByUser(ads, userId))
