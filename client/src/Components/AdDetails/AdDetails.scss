@@ -1,0 +1,76 @@
+// * {
+//   outline: 1px solid black;
+// }
+
+.adDetailsSection {
+  padding: 0 1rem;
+}
+
+.adDetailsContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 10rem auto 5rem auto;
+  display: flex;
+  justify-content: space-between;
+
+  .singleAdCard {
+    width: 65%;
+    padding: 2rem;
+    border: 1px solid lightgrey;
+
+    & > * {
+      margin-bottom: 1.3rem;
+    }
+
+    .singleAdImageGallery {
+      width: 100%;
+      height: 30rem;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .singleAdLocationCategory {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      & > * {
+        display: flex;
+        align-items: center;
+        margin-right: 1.2rem;
+      }
+
+      .singleAdCategory,
+      .singleAdLocation {
+        color: black;
+        font-size: 1rem;
+        text-transform: capitalize;
+        span {
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.5rem;
+      color: var(--text-colour-light);
+    }
+  }
+
+  .userAdCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+    border: 1px solid lightgrey;
+  }
+}

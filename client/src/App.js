@@ -18,6 +18,7 @@ import Dashboard from "./Components/UserInterface/UserSections/Dashboard/Dashboa
 import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
 import MyAds from "./Components/UserInterface/UserSections/MyAds/MyAds";
 import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyFavorites";
+import AdDetails from "./Components/AdDetails/AdDetails";
 
 const App = () => {
   useEffect(() => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/user/forgot" exact component={ForgotPassword} />
           <Route path="/Api/activate/user/:id" exact component={UserActivate} />
           <Route path="/user/reset/:hash" exact component={ResetPassword} />
+          <Route path="/ad/:id" exact component={AdDetails} />
         </Switch>
         <ScrollUp />
         <Footer />

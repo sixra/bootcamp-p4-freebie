@@ -1,16 +1,3 @@
-// import { adsType } from "../ActionTypes";
-
-// export const adsReducer = (ads = [], action) => {
-//   switch (action.type) {
-//     case adsType.FETCH_ADS:
-//       return action.payload;
-//     case adsType.POST_AD:
-//       return [...ads, action.payload];
-//     default:
-//       return ads;
-//   }
-// };
-
 import { adsType } from "../ActionTypes";
 
 const allAds = {
@@ -30,7 +17,17 @@ export const adsReducer = (state = allAds, action) => {
     case adsType.FILTER_BY_SEARCH:
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
-      return [...action.payload.ads, action.payload];
+      return { ...state, ads : [...state.ads, action.payload] };
+    default:
+      return state;
+  }
+};
+
+
+export const singleAdReducer = (state = [], action) => {
+  switch (action.type) {
+    case adsType.FETCH_AD:
+      return { ...state, ad: action.payload };
     default:
       return state;
   }

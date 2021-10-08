@@ -5,7 +5,7 @@ const ItemSchema = mongoose.Schema({
   title: String, 
   location: String, 
   category: String, 
-  image: String, 
+  image: Array, 
   description: String, 
   name: String, 
   creator: String, 

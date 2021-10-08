@@ -9,6 +9,7 @@ export const authType = {
 export const adsType = {
   FETCH_ADS: "FETCH_ADS",
   POST_AD: "POST_AD",
+  FETCH_AD: "FETCH_AD",
   FILTER_BY_CATEGORY: "FILTER_BY_CATEGORY",
   FILTER_BY_SEARCH: "FILTER_BY_SEARCH",
 };

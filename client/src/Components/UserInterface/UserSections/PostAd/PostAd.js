@@ -15,7 +15,7 @@ const PostAd = () => {
   const [adData, setAdData] = useState({
     title: "",
     category: "",
-    image: "https://live.staticflickr.com/65535/51506026332_c5054675e4_c.jpg",
+    image: "",
     location: "",
     description: "",
   });
@@ -24,6 +24,8 @@ const PostAd = () => {
     e.preventDefault();
     dispatch(postAd({ ...adData, name: user?.result?.name }));
   };
+
+  console.log(adData);
 
   console.log(ads);
 
@@ -85,8 +87,8 @@ const PostAd = () => {
 
             <FileBase
               type="file"
-              multiple={false}
-              onDone={({ base64 }) => setAdData({ ...adData, image: base64 })}
+              multiple={true}
+              onDone={( base64 ) => setAdData({ ...adData, image: base64 })}
             />
 
             <textarea

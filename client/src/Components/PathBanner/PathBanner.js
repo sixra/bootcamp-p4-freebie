@@ -12,6 +12,10 @@ const PathBanner = () => {
       pathname = location.pathname.slice(1, 5) + " / " + location.pathname.slice(6)
     }
 
+    if (pathname.includes("auth")) {
+      pathname = "Sign in / Sign up"
+    }
+
     return pathname
   };
 
