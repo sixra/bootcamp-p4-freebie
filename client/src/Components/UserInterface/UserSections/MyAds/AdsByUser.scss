@@ -1,20 +1,65 @@
 .adsByUserContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  @media only screen and (max-width: 545px) {
+    flex-direction: column;
+  }
 
-    .adsByUserList {
+  .adsByUserList {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    text-transform: capitalize;
+
+    li {
+      font-size: 0.9rem;
+      margin: 0 0.5rem;
+    }
+
+    .adsByUserInfoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        @media only screen and (max-width: 805px) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+      .listItemSubContainer {
         display: flex;
         list-style-type: none;
-        align-items: center;
-        justify-content: space-around;
-        text-transform: capitalize;
-
-        li {
-            margin: 0 .5rem;
+        flex-direction: row;
+        @media only screen and (max-width: 805px) {
+          flex-direction: column;
         }
-    }    
-    button {
-        margin: 0 .5rem;
+      }
+      .adsByUserBtnContainer {
+        display: flex;
+        flex-direction: row;
+
+        button {
+          margin: 0 0.1rem;
+          border: none;
+          padding: 0.2rem;
+          background: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin: 0 0.3rem;
+          }
+
+          span {
+            @media only screen and (max-width: 600px) {
+              display: none;
+            }
+          }
+        }
+      }
     }
+  }
 }
