@@ -37,7 +37,7 @@ export const adsReducer = (state = allAds, action) => {
     case adsType.DELETE_AD_POSTED_BY_USER:
       return {
         ...state,  
-        creator: state.creator.filter(({_id}) => _id !== action.payload)
+        ads: state.ads.filter(({_id}) => _id !== action.payload)
       }
   
     default:
