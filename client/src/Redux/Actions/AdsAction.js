@@ -1,3 +1,4 @@
+import axios from "axios";
 import * as api from "../../Api/Api";
 import { adsType } from "../ActionTypes";
 
@@ -49,10 +50,15 @@ export const filterPostedByUser = (ads) => {
     type: adsType.FILTER_POSTED_BY_USER,
     payload: {
       creator: ads.filter((ad) => ad.creator === userId)
-      
     },
-
-
   };
+};
 
+export const deleteAdPostedByUser = (_id) => async (dispatch) => {
+  try {
+    dispatch({ type: adsType.DELETE_AD_POSTED_BY_USER, payload: _id });
+    await api.deleteAd(_id);
+  } catch (error) {
+    console.log(error.message);
+  }
 };

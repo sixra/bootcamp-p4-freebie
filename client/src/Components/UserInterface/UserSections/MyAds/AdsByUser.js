@@ -1,8 +1,10 @@
 import React from "react";
 import "./AdsByUser.scss"
+import { useDispatch } from "react-redux";
+import { deleteAdPostedByUser } from "../../../../Redux/Actions/AdsAction";
 
-const AdsByUser = ({ adInfo }) => {
-
+const AdsByUser = ({ adInfo}) => {
+  const dispatch = useDispatch()
   const {
     image,
     _id,
@@ -16,13 +18,13 @@ const AdsByUser = ({ adInfo }) => {
          <li className="listItemImageContainer">        
            <img className="listItemImage" src={image} width="150px" alt="ad-img" />
          </li>
-         <li>{title}</li>
+         <li>{_id}</li>
          <li className="listItemCategory">{category}</li>
       </ul>
       <div>
         <button>View</button>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => dispatch(deleteAdPostedByUser(_id))}>Delete</button>
       </div>
     </div>
   );

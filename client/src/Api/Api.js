@@ -15,7 +15,7 @@ API.interceptors.request.use((req) => {
 
 export const fetchAds = () => API.get("api/items");
 export const postAd = (newAd) => API.post("api/items", newAd);
-
+export const deleteAd = (_id) => API.delete(`api/items/${_id}`);
 
 //////// API FOR SIGN IN - SIGN UP ////////
 

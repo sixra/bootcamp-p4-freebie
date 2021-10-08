@@ -15,7 +15,7 @@ const MyAds = () => {
   const userId = user.result._id
 
   useEffect(() => {
-    dispatch(filterPostedByUser(ads, userId))  }, [ads, dispatch, userId]); 
+    dispatch(filterPostedByUser(ads, userId))  }, [dispatch]); 
 
   return (
     <>
