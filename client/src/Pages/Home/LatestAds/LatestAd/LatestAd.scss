@@ -1,84 +1,76 @@
+
+
 .latestAdCard {
   grid-column-end: span 4;
   text-decoration: none;
-
-  @media only screen and (max-width: 63rem) {
-    grid-column-end: span 6;
-  }
-}
-
-.latestAdImageContainer {
-  overflow: hidden;
-  height: 15rem;
-  border-radius: 0.7rem;
-
   
-}
 
-.latestAdInfo {
-  font-size: 0.85rem;
+  // @media only screen and (max-width: 63rem) {
+  //   grid-column-end: span 6;
+  // }
 
-  padding-top: 1rem;
+  .latestAdImageContainer {
+    overflow: hidden;
+    width: 100%;
+    height: 15rem;
+    border-radius: 0.4rem;
 
-  & > * {
-    margin: 0.6rem 0.2rem;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 
-  .latestAdCategory {
-    color: var(--text-colour-light);
-    text-transform: capitalize;
-  }
-
-  .latestAdTitle {
-    font-size: 1rem;
-  }
-
-  .latestAdNameLocation {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  .latestAdInfo {
+    font-size: 0.85rem;
+    padding-top: 1rem;
 
     & > * {
-      display: flex;
-      align-items: center;
+      margin: 0.6rem 0.2rem;
     }
 
-    .latestAdName,
-    .latestAdLocation {
+    .latestAdCategory {
+      color: var(--text-colour-light);
       text-transform: capitalize;
-      span {
-        margin-left: 0.3rem;
+    }
+
+    .latestAdTitle {
+      font-size: 1rem;
+      color: #3B3B3B;
+    }
+
+    .latestAdNameLocation {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: black;
+
+      & > * {
+        display: flex;
+        align-items: center;
+      }
+
+      .latestAdName,
+      .latestAdLocation {
+        text-transform: capitalize;
+        span {
+          margin-left: 0.3rem;
+        }
+      }
+
+      .latestAdName {
+        margin-right: 0.5rem;
       }
     }
 
-    .latestAdName {
-      margin-right: 0.5rem;
+    .latestAdNameDescription {
+      line-height: 1.2rem;
+      color: var(--text-colour-light);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
-  }
-
-  .latestAdNameDescription {
-    line-height: 1.2rem;
-    color: var(--text-colour-light);
-  }
-}
-
-
-.mySwiper {
-  width: 100%;
-  height: 100%;
-  
-}
-
-.swiper-button-next { color: red; } 
-
-.swiper-slide {
-  
-  background-color: red;
-  img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-
   }
 }

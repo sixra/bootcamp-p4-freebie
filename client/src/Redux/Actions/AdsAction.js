@@ -28,6 +28,12 @@ export const postAd = (ad) => async (dispatch) => {
   }
 };
 
+export const removeAd = () => {
+  return {
+    type: adsType.REMOVE_AD,
+  };
+};
+
 export const filterAds = (ads, cat) => {
   return {
     type: adsType.FILTER_BY_CATEGORY,

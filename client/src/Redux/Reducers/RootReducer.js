@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
-import { adsReducer } from "./AdsReducer";
+import { adsReducer, adReducer } from "./AdsReducer";
 import { authReducer } from "./AuthReducer.js";
-import { singleAdReducer } from "./AdsReducer.js"
 
 const rootReducers = combineReducers({
   allAds: adsReducer,
-  singleAd: singleAdReducer, 
+  ad: adReducer, 
   auth: authReducer,
 });
 

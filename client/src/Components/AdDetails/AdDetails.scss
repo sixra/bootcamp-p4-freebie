@@ -1,68 +1,105 @@
-// * {
-//   outline: 1px solid black;
-// }
-
 .adDetailsSection {
-  padding: 0 1rem;
+  padding: 0 1rem; 
+}
+
+.adDetailsSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15rem 0 8rem 0;
 }
 
 .adDetailsContainer {
   max-width: 1200px;
   width: 100%;
-  margin: 10rem auto 5rem auto;
+  margin: 11rem auto 3rem auto;
   display: flex;
   justify-content: space-between;
 
   .singleAdCard {
     width: 65%;
-    padding: 2rem;
-    border: 1px solid lightgrey;
 
-    & > * {
+    & > *:not(:last-child) {
       margin-bottom: 1.3rem;
     }
 
-    .singleAdImageGallery {
+    .swiper {
       width: 100%;
       height: 30rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-      img {
-        object-fit: cover;
-        object-position: center;
-      }
-    }
+      .swiper-slide {
+        text-align: center;
+        background-color: #212121;
 
-
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    .singleAdLocationCategory {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      & > * {
-        display: flex;
-        align-items: center;
-        margin-right: 1.2rem;
-      }
-
-      .singleAdCategory,
-      .singleAdLocation {
-        color: black;
-        font-size: 1rem;
-        text-transform: capitalize;
-        span {
-          margin-left: 0.3rem;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
         }
       }
     }
 
-    p {
-      line-height: 1.5rem;
-      color: var(--text-colour-light);
+    .singleAdInfo {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: 0.5rem;
+      background-color: #ffffff;
+
+      h1 {
+        color: #2b2b2b;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 1.2rem;
+      }
+
+      .singleAdLocationCategory {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & > * {
+          display: flex;
+          align-items: center;
+          margin-right: 1.5rem;
+        }
+
+        .singleAdCategory,
+        .singleAdLocation {
+          color: black;
+          text-transform: capitalize;
+          span {
+            margin-left: 0.7rem;
+          }
+        }
+      }
+    }
+
+    .singleAdDescription {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      background-color: #ffffff;
+
+      h3 {
+        color: #2b2b2b;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        line-height: 1.7rem;
+        letter-spacing: 0.01rem;
+        color: var(--text-colour-light);
+      }
     }
   }
 
@@ -71,6 +108,7 @@
     flex-direction: column;
     align-items: center;
     width: 32%;
-    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
   }
 }

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postAd } from "../../../../Redux/Actions/AdsAction";
 import UserNavBar from "../../UserNavBar/UserNavBar";
 import PathBanner from "../../../PathBanner/PathBanner";
-import "../../UserInterface.scss"
+import "../../UserInterface.scss";
 import "./PostAd.scss";
 
 const PostAd = () => {
@@ -22,7 +22,7 @@ const PostAd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postAd({ ...adData, name: user?.result?.name }));
+    dispatch(postAd({ ...adData, name: user?.result?.firstName }));
   };
 
   console.log(adData);
@@ -88,7 +88,8 @@ const PostAd = () => {
             <FileBase
               type="file"
               multiple={true}
-              onDone={( base64 ) => setAdData({ ...adData, image: base64 })}
+              onDone={(base64) => setAdData({ ...adData, image: base64 })}
+              className="fileUploader"
             />
 
             <textarea

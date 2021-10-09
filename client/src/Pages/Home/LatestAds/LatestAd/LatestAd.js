@@ -2,15 +2,7 @@ import React from "react";
 import "./LatestAd.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
-
-import 'swiper/swiper-bundle.min.css'
-import "swiper/swiper.min.css";
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import SwiperCore, { Pagination, Navigation } from "swiper";
-SwiperCore.use([Pagination, Navigation]);
 
 const LatestAd = ({ adInfo }) => {
   const { name, category, title, image, description, location, _id } = adInfo;
@@ -18,16 +10,7 @@ const LatestAd = ({ adInfo }) => {
   return (
     <Link className="latestAdCard" to={`/ad/${_id}`}>
       <div className="latestAdImageContainer">
-        <Swiper
-          pagination={{
-            type: "fraction",
-          }}
-          navigation={true}
-          className="mySwiper"
-          style={{'--swiper-navigation-color': '#E52853'}}
-        >
-          {image.map(({base64}) => (<SwiperSlide><img src={base64} alt="" /></SwiperSlide> ))}
-        </Swiper>
+        <img src={image[0].base64} alt="" />
       </div>
       <div className="latestAdInfo">
         <span className="latestAdCategory">{category}</span>

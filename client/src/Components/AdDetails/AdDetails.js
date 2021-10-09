@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAd } from "../../Redux/Actions/AdsAction";
+import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
 import { IoAlbumsOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoTimeOutline } from "react-icons/io5";
@@ -18,62 +18,73 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
-  const singleAd = useSelector((state) => state.singleAd);
-  const { title, image, description} = singleAd.ad;
-
+  const singleAd = useSelector((state) => state.ad);
+  const {title, location, category, image, description, createdAt} = singleAd; 
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  console.log(singleAd.ad);
+  console.log(singleAd);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getAd(id));
+    dispatch(removeAd());
   }, [id]);
-
-  if (!singleAd) return null; 
 
   return (
     <>
-      {!singleAd?.length ? (
+      {!Object.keys(singleAd).length ? (
+        <section className="adDetailsSpinner">
         <LoadingSpinner />
+        </section>
       ) : (
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
             <div className="singleAdCard">
-              <div className="singleAdImageGallery">
-                {/* <Swiper
-          pagination={{
-            type: "fraction",
-          }}
-          navigation={true}
-          className="singleAdImageGallery"
-          style={{'--swiper-navigation-color': '#E52853'}}
-        >
-          {image.map(({base64}) => (<SwiperSlide><img src={base64} alt="ad" /></SwiperSlide> ))}
-        </Swiper> */}
-              </div>
+              <Swiper
+                cssMode={true}
+                navigation={true}
+                pagination={true}
+                mousewheel={true}
+                keyboard={true}
+                className="swiper"
+                style={{
+                  "--swiper-navigation-color": "#E52853",
+                  "--swiper-pagination-color": "#E52853",
+                }}
+              >
+                {image.map(({ base64 }) => (
+                  <SwiperSlide className="swiperSlide">
+                    <img className="singleAdImage" src={base64} alt="ad" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+
+               <div className="singleAdInfo">
               <h1>{title}</h1>
-              <div className="singleAdLocationCategory">
-                <div className="singleAdLocation">
+
+              <ul className="singleAdLocationCategory">
+                <li className="singleAdLocation">
                   <IoTimeOutline size={20} style={{ color: "#df0161" }} />
-                  <span>07 Jan, 10:10 am</span>
-                </div>
-                <div className="singleAdLocation">
+                  <span>{createdAt}</span>
+                </li>
+                <li className="singleAdLocation">
                   <IoLocationOutline size={20} style={{ color: "#df0161" }} />
-                  <span>Berlin, Germany</span>
-                </div>
-                <div className="singleAdCategory">
+                  <span>{location}</span>
+                </li>
+                <li className="singleAdCategory">
                   <IoAlbumsOutline size={20} style={{ color: "#df0161" }} />
-                  <span>category</span>
-                </div>
+                  <span>{category}</span>
+                </li>
+              </ul>
               </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum,
-                blanditiis cupiditate esse, repellat facere incidunt, similique
-                ducimus nesciunt necessitatibus error fuga explicabo id
-                molestiae ex?
-              </p>
+              
+
+              <div className="singleAdDescription">
+                <h3>description :</h3>
+                <p>{description}</p>
+              </div>
             </div>
 
             <div className="userAdCard">
