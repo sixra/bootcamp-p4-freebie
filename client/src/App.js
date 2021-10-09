@@ -19,10 +19,15 @@ import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
 import MyAds from "./Components/UserInterface/UserSections/MyAds/MyAds";
 import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyFavorites";
 import AdDetails from "./Components/AdDetails/AdDetails";
+import { getAds } from "./Redux/Actions/AdsAction";
 
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
+  }, []);
+
+  useEffect(() => {
+    store.dispatch(getAds());
   }, []);
 
   return (

@@ -4,7 +4,8 @@ const allAds = {
   ads: [],
   filteredAds: [],
   title: "",
-  category: "Select category"
+  category: "Select category",
+  creator: []
 }
 
 export const adsReducer = (state = allAds, action) => {
@@ -19,6 +20,7 @@ export const adsReducer = (state = allAds, action) => {
     case adsType.FILTER_BY_SEARCH:
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
+<<<<<<< HEAD
       return { ...state, ads: [...state.ads, action.payload] };
     default:
       return state;
@@ -31,6 +33,17 @@ export const adReducer = (state = {}, action) => {
       return { ...state, ...action.payload };
    case adsType.REMOVE_AD:
       return {};
+=======
+      return [...action.payload.ads, action.payload];
+    case adsType.FILTER_POSTED_BY_USER:
+      return { ...state,  creator: action.payload.creator };
+    case adsType.DELETE_AD_POSTED_BY_USER:
+      return {
+        ...state,  
+        creator: state.creator.filter(({_id}) => _id !== action.payload)
+      }
+  
+>>>>>>> ratko-trial-myads
     default:
       return state;
   }
