@@ -79,17 +79,15 @@ export const signup = async (req, res) => {
 
     res.status(200).json({
       msg: "Success!",
-      token,
+      
       user: {
         id: savedUser.id,
         firstName: savedUser.firstName,
         lastName: savedUser.lastName,
         email: savedUser.email,
+        token,
       },
     });
-    // const result = await UserModal.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
-    // const token = jwt.sign( { email: result.email, id: result._id }, secret, { expiresIn: "1h" } );
-    // res.status(201).json({ result, token });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
     console.log(error);
@@ -137,6 +135,21 @@ export const resetPassword = async (req, res) => {
       })
 
       res.json({msg: "Password successfully changed!"})
+  } catch (err) {
+      return res.status(500).json({msg: err.message})
+  }
+}
+
+export const updateUser = async (req, res) => {
+  
+  try {
+      const {firstName, lastName, avatar} = req.body
+      const token = req.headers.authorization.split(" ")[1];
+      const result = await UserModal.findOneAndUpdate({_id: req.userId}, {
+        firstName, lastName, avatar
+      })
+
+      res.json({result, token, msg: "Update Success!"})
   } catch (err) {
       return res.status(500).json({msg: err.message})
   }

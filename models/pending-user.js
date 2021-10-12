@@ -25,6 +25,10 @@ const PendingUserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  avatar: {
+    type: String,
+    default: "https://res.cloudinary.com/bbbrrriii/image/upload/v1633521219/avatar/avatar-profile_wwlmhk.jpg",
+  },
 });
 
 const pendingUser = mongoose.model("pending-users", PendingUserSchema);
