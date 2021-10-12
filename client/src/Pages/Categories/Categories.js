@@ -10,12 +10,12 @@ import { Filter } from "./Filter";
 import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
-import { getAds } from "../../Redux/Actions/AdsAction";
+//import { getAds } from "../../Redux/Actions/AdsAction";
 import PathBanner from "../../Components/PathBanner/PathBanner";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
 
   const [gridToggle, setGridToggle] = useState(true);
   const buttonHandler = () => {
@@ -27,9 +27,9 @@ const Categories = () => {
     setCategoriesDropdown((current) => !current);
   };
 
-     useEffect(() => {
-      dispatch(getAds());
-    }, [dispatch]); 
+    //  useEffect(() => {
+    //   dispatch(getAds());
+    // }, [dispatch]); 
 
   const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;
