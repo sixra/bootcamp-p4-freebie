@@ -63,7 +63,6 @@ const Contact = () => {
 
   return (
     <section className="contactContainer">
-      <PathBanner/>
       <div className="contactAllContainer">
         <div className="contactFormContainer">
           <div className="contactUs">

@@ -7,6 +7,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
+import decode from "jwt-decode";
 
 const AuthButton = () => {
 
@@ -15,8 +16,6 @@ const AuthButton = () => {
   const history = useHistory();
   const location = useLocation();
 
-  // console.log(user);
-
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");
@@ -24,10 +23,18 @@ const AuthButton = () => {
   };
 
   useEffect(() => {
+    const token = user?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
+
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
-  // console.log(user)
+  console.log(user)
 
   return (
     <div className="authButton">

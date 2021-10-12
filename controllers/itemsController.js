@@ -18,6 +18,24 @@ export const getItems = async (req, res) => {
 };
 
 /**
+ * @route   GET api/item
+ * @desc    Get single Item
+ * @access  Public
+ */
+
+ export const getItem = async (req, res) => {
+   const {id} = req.params; 
+
+  try {
+    const item = await Item.findById(id);
+
+    res.status(200).json(item);
+  } catch (e) {
+    res.status(404).json({ msg: e.message });
+  }
+};
+
+/**
  * @route   POST api/items
  * @desc    Create An Item
  * @access  Private

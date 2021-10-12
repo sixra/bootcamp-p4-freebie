@@ -1,67 +1,76 @@
+
+
 .latestAdCard {
   grid-column-end: span 4;
+  text-decoration: none;
+  
 
-  @media only screen and (max-width: 63rem) {
-    grid-column-end: span 6;
-  }
-}
+  // @media only screen and (max-width: 63rem) {
+  //   grid-column-end: span 6;
+  // }
 
-.latestAdImageContainer {
-  overflow: hidden;
-  max-height: 15rem;
-  border-radius: 0.7rem;
-
-  img {
-    height: 100%;
+  .latestAdImageContainer {
+    overflow: hidden;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-}
+    height: 15rem;
+    border-radius: 0.4rem;
 
-.latestAdInfo {
-  font-size: 0.85rem;
-
-  padding-top: 1rem;
-
-  & > * {
-    margin: 0.6rem 0.2rem;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 
-  .latestAdCategory {
-    color: var(--text-colour-light);
-    text-transform: capitalize;
-  }
-
-  .latestAdTitle {
-    font-size: 1rem;
-  }
-
-  .latestAdNameLocation {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  .latestAdInfo {
+    font-size: 0.85rem;
+    padding-top: 1rem;
 
     & > * {
-      display: flex;
-      align-items: center;
+      margin: 0.6rem 0.2rem;
     }
 
-    .latestAdName,
-    .latestAdLocation {
+    .latestAdCategory {
+      color: var(--text-colour-light);
       text-transform: capitalize;
-      span {
-        margin-left: 0.3rem;
+    }
+
+    .latestAdTitle {
+      font-size: 1rem;
+      color: #3B3B3B;
+    }
+
+    .latestAdNameLocation {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: black;
+
+      & > * {
+        display: flex;
+        align-items: center;
+      }
+
+      .latestAdName,
+      .latestAdLocation {
+        text-transform: capitalize;
+        span {
+          margin-left: 0.3rem;
+        }
+      }
+
+      .latestAdName {
+        margin-right: 0.5rem;
       }
     }
 
-    .latestAdName {
-      margin-right: 0.5rem;
+    .latestAdNameDescription {
+      line-height: 1.2rem;
+      color: var(--text-colour-light);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
-  }
-
-  .latestAdNameDescription {
-    line-height: 1.2rem;
-    color: var(--text-colour-light);
   }
 }
