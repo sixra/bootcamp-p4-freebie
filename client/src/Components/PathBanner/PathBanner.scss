@@ -1,17 +1,34 @@
-.pathBanner {
-  background: rgba(255, 255, 255, 0.712);
-  color: black;
-  text-transform: capitalize;
-  margin-top: 3.4rem;
-  padding: 1rem;
-  padding-left: 3.1rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  position: absolute;
-  top: 7.5rem;
-  border-top: 0.2rem solid #c5c5c5d7;
-  border-bottom: 0.2rem solid #bbbbbbd7;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  max-width: 90rem;
-  width: 100%;
+// * {
+//   outline: 1px solid black;
+// }
+
+.removePathBanner {
+  display: none;
+}
+
+.pathBannerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F4F4F4;
+  margin-top: 2rem;
+
+  .pathBanner {
+    display: flex;
+    align-items: center;
+    color: rgb(80, 80, 80);
+    text-transform: capitalize;
+    padding: 0.9rem;
+    padding-left: 4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 100%;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+    & > * {
+      margin-right: 0.5rem;
+    }
+  }
 }

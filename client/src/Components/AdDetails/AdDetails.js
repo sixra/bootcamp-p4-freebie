@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
@@ -7,6 +7,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
+import moment from 'moment';
+import Avatar from "./avatar-profile.jpg";
 import "./AdDetails.scss";
 
 //// Swiper Library imports ////
@@ -19,7 +21,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAd = useSelector((state) => state.ad);
-  const {title, location, category, image, description, createdAt} = singleAd; 
+  const { title, location, name, category, image, description, createdAt } = singleAd;
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -35,12 +37,12 @@ const AdDetails = () => {
     <>
       {!Object.keys(singleAd).length ? (
         <section className="adDetailsSpinner">
-        <LoadingSpinner />
+          <LoadingSpinner />
         </section>
       ) : (
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
-            <div className="singleAdCard">
+            <div className="adDetailsCard">
               <Swiper
                 cssMode={true}
                 navigation={true}
@@ -55,44 +57,58 @@ const AdDetails = () => {
               >
                 {image.map(({ base64 }) => (
                   <SwiperSlide className="swiperSlide">
-                    <img className="singleAdImage" src={base64} alt="ad" />
+                    <img className="adDetailsImage" src={base64} alt="ad" />
                   </SwiperSlide>
                 ))}
               </Swiper>
 
 
-               <div className="singleAdInfo">
-              <h1>{title}</h1>
+              <div className="adDetailsInfo">
+                <h1>{title}</h1>
 
-              <ul className="singleAdLocationCategory">
-                <li className="singleAdLocation">
-                  <IoTimeOutline size={20} style={{ color: "#df0161" }} />
-                  <span>{createdAt}</span>
-                </li>
-                <li className="singleAdLocation">
-                  <IoLocationOutline size={20} style={{ color: "#df0161" }} />
-                  <span>{location}</span>
-                </li>
-                <li className="singleAdCategory">
-                  <IoAlbumsOutline size={20} style={{ color: "#df0161" }} />
-                  <span>{category}</span>
-                </li>
-              </ul>
-              </div>
-              
-
-              <div className="singleAdDescription">
+                <ul className="adDetailsLocationCategory">
+                  <li className="adDetailsLocation">
+                    <IoTimeOutline size={20} style={{ color: "#df0161" }} />
+                    <span>{moment(createdAt).format("Do MMM YYYY")}</span>
+                  </li>
+                  <li className="adDetailsLocation">
+                    <IoLocationOutline size={20} style={{ color: "#df0161" }} />
+                    <span>{location}</span>
+                  </li>
+                  <li className="adDetailsCategory">
+                    <IoAlbumsOutline size={20} style={{ color: "#df0161" }} />
+                    <span>{category}</span>
+                  </li>
+                </ul>
                 <h3>description :</h3>
                 <p>{description}</p>
               </div>
+
             </div>
 
             <div className="userAdCard">
+
               <div className="userAdAvatar">
-                <img src="" alt="avatar" />
+                <div className="userAdAvatarImage">
+                  <img src={Avatar} alt="avatar" />
+                </div>
+                <div className="userAdAvatarName"> Posted by<span>{name}</span></div>
               </div>
-              <span>User Name</span>
+
+              <div className="userAdContactForm">
+                <h3>Inquire about the ad</h3>
+                <form action="" >
+                  <input type="text" placeholder="Your Name" name="email" required />
+                  <input type="email" placeholder="Your Email" name="email" required />
+                  <input type="text" placeholder="Your Phone" name="phone" required />
+                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                  <button type="submit" className="adSubmitButton">Send</button>
+                </form>
+              </div>
+
             </div>
+
+
           </div>
         </section>
       )}

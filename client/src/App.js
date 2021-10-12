@@ -20,6 +20,7 @@ import MyAds from "./Components/UserInterface/UserSections/MyAds/MyAds";
 import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyFavorites";
 import AdDetails from "./Components/AdDetails/AdDetails";
 import { getAds } from "./Redux/Actions/AdsAction";
+import PathBanner from "./Components/PathBanner/PathBanner";
 
 const App = () => {
   useEffect(() => {
@@ -34,7 +35,8 @@ const App = () => {
     <div className="App">
       <Router>
         <Navigation />
-        <HeroImage height="15" minHeight="15" maxHeight="25" />
+        <PathBanner />
+        <HeroImage height="45" minHeight="45" />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />

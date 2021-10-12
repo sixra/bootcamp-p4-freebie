@@ -26,16 +26,14 @@ const PostAd = () => {
   };
 
   console.log(adData);
-
   console.log(ads);
 
   return (
-    <>
-      <PathBanner />
-      <section className="userInterface">
+    <section className="userSection">
+      <div className="userInterface">
         <UserNavBar />
         <main className="userSections">
-          <h2 className="postAdHeader">Ad Details</h2>
+          <h2 className="postAdHeader">Post an Ad</h2>
           <form className="postAdForm" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -95,8 +93,7 @@ const PostAd = () => {
             <textarea
               name="description"
               placeholder="Description"
-              cols="30"
-              rows="10"
+              rows="8"
               onChange={(e) =>
                 setAdData({
                   ...adData,
@@ -110,8 +107,8 @@ const PostAd = () => {
             </button>
           </form>
         </main>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

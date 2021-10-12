@@ -112,25 +112,25 @@ const Footer = () => {
 
             <a rel="noreferrer" target="_blank" href="https://www.facebook.com/">
               <div className="footerSocialMediaFacebook">
-                <FaFacebookF size={24} className="icon" />
+                <FaFacebookF size={20} className="icon" />
               </div>
             </a>
 
             <a rel="noreferrer" target="_blank" href="https://www.instagram.com/">
               <div className="footerSocialMediaInstagram">
-                <FaInstagram size={24} className="icon" />
+                <FaInstagram size={20} className="icon" />
               </div>
             </a>
 
             <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/">
               <div className="footerSocialMediaLinkedin">
-                <FaLinkedinIn size={24} className="icon" />
+                <FaLinkedinIn size={20} className="icon" />
               </div>
             </a>
 
             <a rel="noreferrer" target="_blank" href="https://github.com/Ratko-Sim/brah">
               <div className="footerSocialMediaGithub">
-                <FiGithub size={24} className="icon" />
+                <FiGithub size={20} className="icon" />
               </div>
             </a>
 

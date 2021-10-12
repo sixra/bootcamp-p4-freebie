@@ -1,25 +1,38 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { IoIosArrowDropright } from "react-icons/io";
 import "./PathBanner.scss";
 
 const PathBanner = () => {
-  
+  const location = useLocation();
+  let pathname = location.pathname.slice(1);
+
   const usePathname = () => {
-    const location = useLocation();
-    let pathname = location.pathname.slice(1);
 
     if (pathname.includes("user")) {
-      pathname = location.pathname.slice(1, 5) + " / " + location.pathname.slice(6)
+      pathname = location.pathname.slice(1, 5) + " / " + location.pathname.slice(6);
     }
 
     if (pathname.includes("auth")) {
-      pathname = "Sign in / Sign up"
+      pathname = "Sign in / Sign up";
     }
 
-    return pathname
+    if (pathname.includes("ad/")) {
+      pathname = "Ad details";
+    }
+
+    return pathname;
   };
 
-  return <div className="pathBanner">{usePathname()}</div>;
+  return (
+    <div className={!pathname.length || pathname.includes("home")
+      ? "removePathBanner" : "pathBannerContainer"}>
+      <div className="pathBanner">
+        <IoIosArrowDropright style={{ color: "#E52853", fontSize: "1.7rem" }} />
+        <div>{usePathname()}</div>
+      </div>
+    </div>
+  );
 };
 
 export default PathBanner;

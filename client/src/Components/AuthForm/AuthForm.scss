@@ -1,16 +1,20 @@
 @use "../../Styles.scss";
 
+.authorizationSection {
+  background-color: #F4F4F4;
+  padding: 2rem 1rem;
+
+
 .authContainer {
   background: white;
   border-radius: 0.4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  position: relative;
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  
   overflow: hidden;
   max-width: 55rem;
   width: 100%;
-  min-height: 30rem;
-  margin: 10rem auto 3rem auto;
+  margin: 0 auto;
 
   .form-container {
     position: absolute;
@@ -40,6 +44,12 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       }
+
+      .forgotPasswordLink {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+      }
     }
 
     input {
@@ -62,7 +72,7 @@
     z-index: 2;
   }
 
-  .sign-in-container a{
+  .sign-in-container a {
     width: 100%;
     text-decoration: none;
     text-align: right;
@@ -72,7 +82,7 @@
     padding: 0.25rem 0 0.25rem 0.25rem;
   }
 
-  .sign-in-container a:hover{
+  .sign-in-container a:hover {
     color: var(--details-colour-main);
   }
 
@@ -200,4 +210,6 @@
   &.right-panel-active .overlay-right {
     transform: translateX(20%);
   }
+}
+
 }

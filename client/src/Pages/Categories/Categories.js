@@ -11,7 +11,6 @@ import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
 import { getAds } from "../../Redux/Actions/AdsAction";
-import PathBanner from "../../Components/PathBanner/PathBanner";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
@@ -27,9 +26,10 @@ const Categories = () => {
     setCategoriesDropdown((current) => !current);
   };
 
-     useEffect(() => {
-      dispatch(getAds());
-    }, [dispatch]); 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(getAds());
+  }, [dispatch]);
 
   const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;
@@ -41,81 +41,78 @@ const Categories = () => {
   };
 
   return (
-    <div>
-      <PathBanner />
-      <section className="categoriesPageContainer">
-        <div className="categoriesAndSearchContainer">
-          <SearchInput
-            placeholder="Search..."
-            data={ads}
-            searchBarStyle="searchBarContainer"
+    <section className="categoriesPageContainer">
+      <div className="categoriesAndSearchContainer">
+        <SearchInput
+          placeholder="Search..."
+          data={ads}
+          searchBarStyle="searchBarContainer"
+        />
+        <div className="categoriesContainer">
+          <div className="titleAndDropdownContainer">
+            <span>search by category</span>
+            <div onClick={dropdownHandler} className="categoryDropdownArrow">
+              {categoriesDropdown ? (
+                <RiArrowDropUpFill size={40} />
+              ) : (
+                <RiArrowDropDownFill size={40} />
+              )}
+            </div>
+          </div>
+          <div
+            className="categoriesListsContainer"
+            id={
+              categoriesDropdown
+                ? "showCategoryDropdown"
+                : "hideCategoryDropdown"
+            }
+          >
+            <Filter />
+          </div>
+        </div>
+      </div>
+      <div className="infoTabAndproductsList">
+        <div className="infoTabContainer">
+          <span className="infoTabText">
+            You are seeing total of {ads.length} ads.
+          </span>
+          <div className="gridListIconsContainer">
+            <div>
+              {gridToggle ? (
+                <HiViewList onClick={buttonHandler} size={30} />
+              ) : (
+                <HiOutlineViewGrid onClick={buttonHandler} size={30} />
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="productsListContainer">
+          {!ads.length ? (
+            <LoadingSpinner />
+          ) : (
+            <div className={gridToggle ? "latestAdsContain" : null}>
+              {ads
+                .slice(visitedPages, visitedPages + postsPerPage)
+                .map((adInfo) => (
+                  <SingleAd
+                    key={adInfo._id}
+                    adInfo={adInfo}
+                    gridToggle={gridToggle}
+                  />
+                ))}
+            </div>
+          )}
+          <ReactPaginate
+            previousLabel={"<"}
+            nextLabel={">"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationBtn"}
+            activeClassName={"paginationActivePage"}
           />
-          <div className="categoriesContainer">
-            <div className="titleAndDropdownContainer">
-              <span>search by category</span>
-              <div onClick={dropdownHandler} className="categoryDropdownArrow">
-                {categoriesDropdown ? (
-                  <RiArrowDropUpFill size={40} />
-                ) : (
-                  <RiArrowDropDownFill size={40} />
-                )}
-              </div>
-            </div>
-            <div
-              className="categoriesListsContainer"
-              id={
-                categoriesDropdown
-                  ? "showCategoryDropdown"
-                  : "hideCategoryDropdown"
-              }
-            >
-              <Filter />
-            </div>
-          </div>
         </div>
-        <div className="infoTabAndproductsList">
-          <div className="infoTabContainer">
-            <span className="infoTabText">
-              You are seeing total of {ads.length} ads.
-            </span>
-            <div className="gridListIconsContainer">
-              <div>
-                {gridToggle ? (
-                  <HiViewList onClick={buttonHandler} size={30} />
-                ) : (
-                  <HiOutlineViewGrid onClick={buttonHandler} size={30} />
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="productsListContainer">
-            {!ads.length ? (
-              <LoadingSpinner />
-            ) : (
-              <div className={gridToggle ? "latestAdsContain" : null}>
-                {ads
-                  .slice(visitedPages, visitedPages + postsPerPage)
-                  .map((adInfo) => (
-                    <SingleAd
-                      key={adInfo._id}
-                      adInfo={adInfo}
-                      gridToggle={gridToggle}
-                    />
-                  ))}
-              </div>
-            )}
-            <ReactPaginate
-              previousLabel={"<"}
-              nextLabel={">"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"paginationBtn"}
-              activeClassName={"paginationActivePage"}
-            />
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
