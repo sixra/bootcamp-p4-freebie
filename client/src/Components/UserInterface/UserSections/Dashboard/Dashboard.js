@@ -1,20 +1,15 @@
 import React from "react";
 import UserNavBar from "../../UserNavBar/UserNavBar";
-import PathBanner from "../../../PathBanner/PathBanner";
-import "../../UserInterface.scss"
+import "../../UserInterface.scss";
 
 const Dashboard = () => {
-
   return (
-    <>
-    <PathBanner/>
-    <section className="userInterface">
-      <UserNavBar/>
-        <main className="userSections">
-          DASHBOARD
-        </main>
+    <section className="userSection">
+      <div className="userInterface">
+        <UserNavBar />
+        <main className="userSections">DASHBOARD</main>
+      </div>
     </section>
-    </>
   );
 };
 

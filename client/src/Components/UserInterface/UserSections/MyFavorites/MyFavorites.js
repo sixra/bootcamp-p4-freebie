@@ -5,13 +5,12 @@ import "../../UserInterface.scss";
 
 const MyAds = () => {
   return (
-    <>
-      <PathBanner />
-      <section className="userInterface">
+    <section className="userSection">
+      <div className="userInterface">
         <UserNavBar />
-        <main className="userSections">My Favorites</main>
-      </section>
-    </>
+        <main className="userSections">Favorites</main>
+      </div>
+    </section>
   );
 };
 

@@ -15,7 +15,7 @@
       justify-content: space-between;
       align-items: center;
       align-content: center;
-      margin: 1rem 3rem 1rem 3rem;
+      margin: 0rem 3rem;
       border-bottom: solid 2px var(--details-color-gray);
       @media only screen and (max-width: 1000px) {
         display: grid;
@@ -152,7 +152,7 @@
       flex-direction: row;
       justify-content: center;
       background: var(--background-colour-light-gray);
-      padding: 1rem 0rem 2rem 0rem;
+      
       & a{
         color: var(--text-colour-main-light);
         @media only screen and (max-width: 600px) {
@@ -171,8 +171,8 @@
         justify-content: center;
         align-items: center;
         margin: 1rem;
-        width: 60px;
-        height: 60px;
+        width: 2.8rem;
+        height: 2.8rem;
         border-radius: 50%;
         border: 0.1rem solid var(--details-color-gray);
         
@@ -189,7 +189,7 @@
       justify-content: center;
       background: var(--background-colour-light-gray);
       color: var(--text-colour-main-light);
-      padding: 1rem;
+      padding-bottom: 1rem;
     }
   }
 }

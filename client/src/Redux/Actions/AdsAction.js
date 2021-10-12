@@ -11,13 +11,28 @@ export const getAds = () => async (dispatch) => {
   }
 };
 
+export const getAd = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchAd(id);
+    dispatch({ type: adsType.FETCH_AD, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const postAd = (ad) => async (dispatch) => {
   try {
     const { data } = await api.postAd(ad);
     dispatch({ type: adsType.POST_AD, payload: data });
   } catch (error) {
-    console.log("jfrru", error.message);
+    console.log(error.message);
   }
+};
+
+export const removeAd = () => {
+  return {
+    type: adsType.REMOVE_AD,
+  };
 };
 
 export const filterAds = (ads, cat) => {

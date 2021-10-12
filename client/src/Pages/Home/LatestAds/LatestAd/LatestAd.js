@@ -2,21 +2,15 @@ import React from "react";
 import "./LatestAd.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const LatestAd = ({ adInfo }) => {
-  const {
-    name,
-    category,
-    title,
-    description,
-    image,
-    location,
-  } = adInfo;
+  const { name, category, title, image, description, location, _id } = adInfo;
 
   return (
-    <div className="latestAdCard">
+    <Link className="latestAdCard" to={`/ad/${_id}`}>
       <div className="latestAdImageContainer">
-        <img src={image} alt="ad-img" />
+        <img src={image[0].base64} alt="" />
       </div>
       <div className="latestAdInfo">
         <span className="latestAdCategory">{category}</span>
@@ -34,7 +28,7 @@ const LatestAd = ({ adInfo }) => {
 
         <p className="latestAdNameDescription">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

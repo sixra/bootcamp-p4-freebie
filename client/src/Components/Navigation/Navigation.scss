@@ -1,184 +1,161 @@
 @use "../../Styles.scss";
 
-// * {
-//   outline: 1px solid white;
-// }
-
 /* NAVIGATION BAR */
 
-.navContainer {
-  display: grid;
-  grid-template-areas:
-    "navLogo authButton authButton"
-    "navList  navList navList  ";
-  margin: 1rem 0;
-  padding: 0 2rem;
+.navLogoAuthButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 78rem;
+  margin: 1rem auto;
+  padding: 0 0.7rem;
+}
+
+/* NAV LOGO */
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  width: 7.5rem;
+
+  img {
+    width: 100%;
+  }
 
   @media only screen and (max-width: 600px) {
-    padding: 0 0.5rem;
+    width: 5rem;
   }
+}
 
-  /* NAV LOGO */
+/* SIGN IN / SIGN UP / USER INTERFACE BUTTONS */
 
-  .navLogo {
-    grid-area: navLogo;
-    display: flex;
-    align-items: center;
+.authButton {
+  display: flex;
+  align-items: center;
+
+  .signIn,
+  .postAnAd {
     margin: 0.5rem;
-    width: 7.5rem;
-
-    img {
-      width: 100%;
-    }
+    padding: 0.5rem 1.1rem;
+    text-decoration: none;
+    color: white;
 
     @media only screen and (max-width: 600px) {
-      width: 5rem;
+      padding: 0.4rem;
     }
   }
 
-  /* NAV LINK PAGES */
+  .postAnAd {
+    border-radius: var(--btn-border-radius);
+    border: 3px solid #e52853;
 
-  .navList {
-    grid-area: navList;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-
-    .navListItem {
-      list-style-type: none;
-      margin: 0 1rem;
-
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        color: var(--text-colour-main-light);
-        text-transform: uppercase;
-        font-weight: var(--font-light-bold);
-        letter-spacing: 0.03rem;
-
-        @media only screen and (max-width: 600px) {
-          font-size: var(--small-font-size);
-        }
-      }
-      @media only screen and (max-width: 600px) {
-        margin: 0 0.5rem;
-      }
-    }
-
-    @media only screen and (max-width: 1000px) {
-      margin-bottom: 2rem;
+    @media only screen and (max-width: 500px) {
+      border: 2px solid #e52853;
     }
   }
 
-  /* SIGN IN / SIGN UP / USER INTERFACE BUTTONS */
+  .userSectionDropdown {
+    position: relative;
+    z-index: 2;
 
-  .authButton {
-    grid-area: authButton;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    .signIn,
-    .postAnAd {
-      padding: 0.5rem 1.1rem;
-      margin: 0.5rem;
+    .userNameContainer {
       text-decoration: none;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.7rem;
+
+      .userName {
+        margin-left: 0.4rem;
+      }
+    }
+
+    &:hover,
+    &:hover .userNameContainer {
+      background-color: white;
+      color: black;
+      border-radius: 0.6rem 0.6rem 0 0;
+    }
+
+    &:hover .userSectionLinks {
+      display: block;
+    }
+
+    .userSectionLinks {
+      display: none;
+      position: absolute;
+      list-style-type: none;
+      background-color: white;
+      left: 0;
+      width: 10rem;
+      text-transform: capitalize;
+      border-radius: 0 0.6rem 0.6rem 0.6rem;
+      border: 0.08rem solid rgba(128, 128, 128, 0.16);
+
+      & > * {
+        border-bottom: 0.08rem solid rgba(128, 128, 128, 0.16);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .listContainer {
+        color: black;
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        display: block;
+
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+          color: #e52853;
+        }
+
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .userLogoutBtn {
+      @include Styles.btn-background;
+      padding: 0.5rem 1.2rem;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* NAV LINK PAGES */
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navListItem {
+    list-style-type: none;
+    margin: 0 1rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--text-colour-main-light);
+      text-transform: uppercase;
+      font-weight: var(--font-light-bold);
+      letter-spacing: 0.03rem;
 
       @media only screen and (max-width: 600px) {
-        padding: 0.4rem;
+        font-size: var(--small-font-size);
       }
     }
-
-    .postAnAd {
-      border-radius: var(--btn-border-radius);
-      border: 3px solid #e52853;
-
-      @media only screen and (max-width: 500px) {
-        border: 2px solid #e52853;
-      }
-    }
-
-    .userSectionDropdown {
-      position: relative;
-      z-index: 2;
-
-      .userNameContainer {
-        text-decoration: none;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.9rem 1rem;
-
-        .userName {
-          margin-left: 0.4rem;
-        }
-      }
-
-      &:hover,
-      &:hover .userNameContainer {
-        background-color: white;
-        color: black;
-        border-radius: 0.6rem 0.6rem 0 0;
-      }
-
-      &:hover .userSectionLinks {
-        display: block;
-        opacity: 1;
-        transition: 0.2s;
-      }
-
-      .userSectionLinks {
-        display: none;
-        opacity: 0;
-        position: absolute;
-        list-style-type: none;
-        background-color: white;
-        left: 0;
-        width: 10rem;
-        text-transform: capitalize;
-        border-radius: 0 0.6rem 0.6rem 0.6rem;
-        border: 0.08rem solid rgba(128, 128, 128, 0.16);
-
-        & > * {
-          border-bottom: 0.08rem solid rgba(128, 128, 128, 0.16);
-
-          &:last-child {
-            border-bottom: none;
-          }
-        }
-        
-
-        .listContainer {
-          color: black;
-          padding: 0.8rem 1rem;
-          text-decoration: none;
-          display: block;
-          
-          font-size: 0.8rem;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-
-          
-          &:hover {
-            color: #e52853;
-          }
-
-          svg {
-            margin-right: 0.5rem;
-          }
-        }
-      }
-
-      .userLogoutBtn {
-        @include Styles.btn-background;
-        padding: 0.5rem 1.2rem;
-        margin-left: 1rem;
-        font-size: 0.8rem;
-      }
+    @media only screen and (max-width: 600px) {
+      margin: 0 0.5rem;
     }
   }
 }

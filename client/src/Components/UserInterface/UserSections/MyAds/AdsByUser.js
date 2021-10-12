@@ -15,7 +15,7 @@ const AdsByUser = ({ adInfo }) => {
         <li className="listItemImageContainer">
           <img
             className="listItemImage"
-            src={image}
+            src={image[0].base64}
             width="120px"
             alt="ad-img"
           />
