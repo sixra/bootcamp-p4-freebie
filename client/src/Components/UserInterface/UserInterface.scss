@@ -1,12 +1,21 @@
+.userSection {
+  background-color: #F4F4F4;
+  padding: 2rem 1rem;
+
 .userInterface {
   display: flex;
   max-width: 60rem;
-  margin: 12rem auto 6rem auto;
+  margin: 0 auto;
+  
 
   .userSections {
     width: 100%;
-    padding: 1.5rem;
-    border: 1px solid lightgrey;
+    padding: 2rem;
     border-radius: 0.5rem;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   }
+}
+
 }

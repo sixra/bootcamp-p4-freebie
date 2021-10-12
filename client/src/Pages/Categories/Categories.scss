@@ -3,7 +3,8 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 12rem;
+  padding-top: 2rem;
+  background-color: #F4F4F4;
 
   // CATEGORIES AND SEARCH CONTAINER
   .categoriesAndSearchContainer {
@@ -79,6 +80,7 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       margin-bottom: 1rem;
+      background: white;
 
       .titleAndDropdownContainer {
         border-bottom: 1px solid rgba(128, 128, 128, 0.195);
@@ -226,7 +228,7 @@
 
     .paginationActivePage {
       color: var(--text-colour-main-light);
-      background-color: var(--details-colour-secondary);
+      background-color: #E52853;
       padding: 0.6rem 0;
       margin-top: -0.6rem;
       border-radius: 0.3rem;
@@ -245,6 +247,7 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+  background: white;
 
   .singleAdImageContainer {
     overflow: hidden;
@@ -281,6 +284,7 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
+  background: white;
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }

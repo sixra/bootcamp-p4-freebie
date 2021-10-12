@@ -1,23 +1,11 @@
-// import { adsType } from "../ActionTypes";
-
-// export const adsReducer = (ads = [], action) => {
-//   switch (action.type) {
-//     case adsType.FETCH_ADS:
-//       return action.payload;
-//     case adsType.POST_AD:
-//       return [...ads, action.payload];
-//     default:
-//       return ads;
-//   }
-// };
-
 import { adsType } from "../ActionTypes";
 
 const allAds = {
   ads: [],
   filteredAds: [],
   title: "",
-  category: "Select category"
+  category: "Select category",
+  creator: []
 }
 
 export const adsReducer = (state = allAds, action) => {
@@ -25,12 +13,32 @@ export const adsReducer = (state = allAds, action) => {
   switch (action.type) {
     case adsType.FETCH_ADS:
       return { ...state, ads: action.payload, filteredAds: action.payload };
+    case adsType.FETCH_AD:
+      return { ...state, ad: action.payload };
     case adsType.FILTER_BY_CATEGORY:
       return { ...state, filteredAds: action.payload.ads, category: action.payload.category };
     case adsType.FILTER_BY_SEARCH:
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
-      return [...action.payload.ads, action.payload];
+      return { ...state, ads: [...state.ads, action.payload] };
+    case adsType.FILTER_POSTED_BY_USER:
+      return { ...state, creator: action.payload.creator };
+    case adsType.DELETE_AD_POSTED_BY_USER:
+      return {
+        ...state,  
+        ads: state.ads.filter(({_id}) => _id !== action.payload)
+      }
+    default:
+      return state;
+  }
+};
+
+export const adReducer = (state = {}, action) => {
+  switch (action.type) {
+    case adsType.FETCH_AD:
+      return { ...state, ...action.payload };
+    case adsType.REMOVE_AD:
+      return {};
     default:
       return state;
   }

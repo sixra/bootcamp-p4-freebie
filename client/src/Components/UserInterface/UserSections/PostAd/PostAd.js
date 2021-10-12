@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postAd } from "../../../../Redux/Actions/AdsAction";
 import UserNavBar from "../../UserNavBar/UserNavBar";
 import PathBanner from "../../../PathBanner/PathBanner";
-import "../../UserInterface.scss"
+import "../../UserInterface.scss";
 import "./PostAd.scss";
 
 const PostAd = () => {
@@ -15,25 +15,25 @@ const PostAd = () => {
   const [adData, setAdData] = useState({
     title: "",
     category: "",
-    image: "https://live.staticflickr.com/65535/51506026332_c5054675e4_c.jpg",
+    image: "",
     location: "",
     description: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postAd({ ...adData, name: user?.result?.name }));
+    dispatch(postAd({ ...adData, name: user?.result?.firstName }));
   };
 
+  console.log(adData);
   console.log(ads);
 
   return (
-    <>
-      <PathBanner />
-      <section className="userInterface">
+    <section className="userSection">
+      <div className="userInterface">
         <UserNavBar />
         <main className="userSections">
-          <h2 className="postAdHeader">Ad Details</h2>
+          <h2 className="postAdHeader">Post an Ad</h2>
           <form className="postAdForm" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -85,15 +85,15 @@ const PostAd = () => {
 
             <FileBase
               type="file"
-              multiple={false}
-              onDone={({ base64 }) => setAdData({ ...adData, image: base64 })}
+              multiple={true}
+              onDone={(base64) => setAdData({ ...adData, image: base64 })}
+              className="fileUploader"
             />
 
             <textarea
               name="description"
               placeholder="Description"
-              cols="30"
-              rows="10"
+              rows="8"
               onChange={(e) =>
                 setAdData({
                   ...adData,
@@ -107,8 +107,8 @@ const PostAd = () => {
             </button>
           </form>
         </main>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
