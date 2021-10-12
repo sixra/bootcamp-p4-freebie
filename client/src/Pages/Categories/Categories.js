@@ -14,7 +14,7 @@ import { getAds } from "../../Redux/Actions/AdsAction";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
 
   const [gridToggle, setGridToggle] = useState(true);
   const buttonHandler = () => {
@@ -26,10 +26,9 @@ const Categories = () => {
     setCategoriesDropdown((current) => !current);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(getAds());
-  }, [dispatch]);
+    //  useEffect(() => {
+    //   dispatch(getAds());
+    // }, [dispatch]); 
 
   const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;
