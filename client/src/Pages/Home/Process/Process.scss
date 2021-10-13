@@ -1,7 +1,13 @@
 @use "../../../Styles.scss";
 
 .processContainer {
-  background-color: var(--background-colour-dark-gray);
+  background: linear-gradient(
+    hsla(0, 0%, 0%, 0.623),
+    hsla(0, 0%, 0%, 0.623),
+  ), url("./typing.jpg");
+  
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
