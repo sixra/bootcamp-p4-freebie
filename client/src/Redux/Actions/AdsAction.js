@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as api from "../../Api/Api";
 import { adsType } from "../ActionTypes";
 

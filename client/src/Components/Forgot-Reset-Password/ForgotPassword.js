@@ -55,28 +55,30 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="authContainer">
-      <div className="form-container sign-in-container">
-        <form onSubmit={forgotPassword}>
-          <h1>Reset Password</h1>
-          <span>Please enter your email address</span>
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            label="Email Address"
-            value={email}
-            required
-            onChange={handleChangeInput}
-          />
-          <button type="submit">Send Reset Email</button>
-        </form>
-      </div>
+    <section className="authorizationSection">
+      <div className="authContainer">
+        <div className="form-container sign-in-container">
+          <form onSubmit={forgotPassword}>
+            <h1>Reset Password</h1>
+            <span>Please enter your email address</span>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              label="Email Address"
+              value={email}
+              required
+              onChange={handleChangeInput}
+            />
+            <button type="submit">Send Reset Email</button>
+          </form>
+        </div>
 
-      <div className="overlay-container">
-        <div className="overlay"></div>
+        <div className="overlay-container">
+          <div className="overlay"></div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

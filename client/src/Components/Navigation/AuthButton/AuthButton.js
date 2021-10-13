@@ -31,7 +31,8 @@ const AuthButton = () => {
     }
 
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [ location ] );
+    // eslint-disable-next-line
+  }, [location]);
 
   console.log(user)
 

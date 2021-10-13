@@ -3,7 +3,6 @@ import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { postAd } from "../../../../Redux/Actions/AdsAction";
 import UserNavBar from "../../UserNavBar/UserNavBar";
-import PathBanner from "../../../PathBanner/PathBanner";
 import "../../UserInterface.scss";
 import "./PostAd.scss";
 
@@ -93,7 +92,7 @@ const PostAd = () => {
             <textarea
               name="description"
               placeholder="Description"
-              rows="8"
+              rows="5"
               onChange={(e) =>
                 setAdData({
                   ...adData,

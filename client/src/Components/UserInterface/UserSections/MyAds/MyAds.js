@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import UserNavBar from "../../UserNavBar/UserNavBar";
-import PathBanner from "../../../PathBanner/PathBanner";
 import "../../UserInterface.scss";
 import { useSelector, useDispatch } from "react-redux";
 import AdsByUser from "./AdsByUser";
