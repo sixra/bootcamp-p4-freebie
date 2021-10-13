@@ -8,7 +8,6 @@ import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import moment from 'moment';
-import Avatar from "./avatar-profile.jpg";
 import "./AdDetails.scss";
 
 //// Swiper Library imports ////
@@ -21,17 +20,15 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAd = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt } = singleAd;
+  const { title, location, name, category, image, description, createdAt, avatar } = singleAd;
   const dispatch = useDispatch();
   const { id } = useParams();
-
-  console.log(singleAd);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getAd(id));
     dispatch(removeAd());
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [id]);
 
   return (
@@ -91,7 +88,7 @@ const AdDetails = () => {
 
               <div className="userAdAvatar">
                 <div className="userAdAvatarImage">
-                  <img src={Avatar} alt="avatar" />
+                  <img src={avatar} alt="avatar" />
                 </div>
                 <div className="userAdAvatarName"> Posted by<span>{name}</span></div>
               </div>

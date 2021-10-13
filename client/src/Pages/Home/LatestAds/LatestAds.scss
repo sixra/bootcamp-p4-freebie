@@ -1,20 +1,27 @@
 @use "../../../Styles.scss";
 
 .latestAdsTitle {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0 3rem 0;
 
   & h2 {
     text-align: center;
     text-transform: capitalize;
+    letter-spacing: 0.07rem;
     color: var(--background-colour-dark-gray);
     &::after,
     &::before {
       display: inline-block;
       content: "";
-      border-top: 0.2rem solid var(--details-colour-main);
-      width: 4rem;
+      border-top: 0.15rem solid var(--details-colour-main);
+      width: 3rem;
       margin: 0 1rem;
       transform: translateY(-0.4rem);
+    }
+    @media only screen and (max-width: 320px) {
+      &::after,
+      &::before {
+        display: none;
+      }
     }
   }
 }
@@ -24,24 +31,12 @@
   grid-template-columns: 1fr repeat(12, minmax(auto, 4rem)) 1fr;
   grid-gap: 2.5rem;
 
-  @media only screen and (max-width: 1200px) {
-    grid-gap: 2rem;
-  }
-
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 550px) {
     grid-gap: 1.5rem;
   }
 
-  @media only screen and (max-width: 900px) {
-    grid-gap: 1rem;
-  }
-
-  @media only screen and (max-width: 550px) {
-    grid-gap: 0.7rem;
-  }
-
   @media only screen and (max-width: 450px) {
-    grid-gap: 0.5rem;
+    grid-gap: 0.8rem;
   }
 }
 
@@ -62,7 +57,7 @@
 
 .moreAdsButtonContainer {
   text-align: center;
-  margin: 2rem 0 3rem 0;
+  margin: 3rem 0;
 
   a {
     @include Styles.btn-background;
