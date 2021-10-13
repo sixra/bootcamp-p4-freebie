@@ -22,8 +22,8 @@ export const signin = (formData, router) => async (dispatch) => {
       "onclick": null,
       "showDuration": "300",
       "hideDuration": "1000",
-      "timeOut": "0",
-      "extendedTimeOut": "0",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
       "showEasing": "swing",
       "hideEasing": "linear",
       "showMethod": "fadeIn",
@@ -57,8 +57,8 @@ export const signup = (formData, router) => async (dispatch) => {
       "onclick": null,
       "showDuration": "300",
       "hideDuration": "1000",
-      "timeOut": "0",
-      "extendedTimeOut": "0",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
       "showEasing": "swing",
       "hideEasing": "linear",
       "showMethod": "fadeIn",
@@ -79,8 +79,8 @@ export const signup = (formData, router) => async (dispatch) => {
       "onclick": null,
       "showDuration": "300",
       "hideDuration": "1000",
-      "timeOut": "0",
-      "extendedTimeOut": "0",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
       "showEasing": "swing",
       "hideEasing": "linear",
       "showMethod": "fadeIn",
@@ -141,4 +141,14 @@ export const tokenConfig = (getState) => {
   }
 
   return config;
+};
+
+export const updateUser = (user) => async (dispatch) => {
+  try {
+    const { data } = await api.updateUser(user);
+    console.log("data in auth action", data)
+    dispatch({ type: authType.USER_UPDATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
 };

@@ -25,6 +25,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  avatar: {
+    type: String,
+    default: "https://res.cloudinary.com/bbbrrriii/image/upload/v1633521219/avatar/avatar-profile_wwlmhk.jpg",
+  },
 });
 
 const User = mongoose.model("user", UserSchema);

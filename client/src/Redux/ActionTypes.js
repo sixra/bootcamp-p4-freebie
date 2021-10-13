@@ -4,6 +4,7 @@ export const authType = {
   USER_LOADING: "USER_LOADING",
   USER_LOADED: "USER_LOADED",
   AUTH_ERROR: "AUTH_ERROR",
+  USER_UPDATE: "USER_UPDATE"
 }
 
 export const adsType = {

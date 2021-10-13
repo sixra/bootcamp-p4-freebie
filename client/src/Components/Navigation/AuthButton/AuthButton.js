@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux"
 import { NavLink } from "react-router-dom";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -10,7 +10,6 @@ import { FaUserCircle } from "react-icons/fa";
 import decode from "jwt-decode";
 
 const AuthButton = () => {
-
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const history = useHistory();
@@ -42,9 +41,9 @@ const AuthButton = () => {
       {user?.result ? (
         <>
           <div className="userSectionDropdown" >
-            <Link className="userNameContainer" to="/user/dashboard" alt={user?.result.firstName}>
+            <Link className="userNameContainer" to="/user/dashboard" alt={user?.result?.firstName}>
               <FaUserCircle size={25}/>
-              <span className="userName">{user?.result.firstName}</span>
+              <span className="userName">{user?.result?.firstName}</span>
             </Link>
             <ul className="userSectionLinks">
               <li>
