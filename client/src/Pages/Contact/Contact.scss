@@ -250,7 +250,7 @@ $alert-extra-padding: 3.125rem;
   flex-direction: column;
   z-index: 9999;
   top: 20vh;
-  left: calc(50vw - #{($alert-width/2)});
+  // left: calc(50vw - #{($alert-width/2)});
   @media (max-width: $alert-width+$alert-extra-padding) {
     width: 90vw;
     left: 5vw;

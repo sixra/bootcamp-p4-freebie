@@ -6,9 +6,10 @@ import UserNavBar from "../../UserNavBar/UserNavBar";
 import PathBanner from "../../../PathBanner/PathBanner";
 import "../../UserInterface.scss"
 import "./Dashboard.scss"
-import { FcOldTimeCamera } from "react-icons/fc";
+import { RiImageEditFill } from "react-icons/ri";
 import toastr from "toastr";
 import { useHistory } from 'react-router-dom';
+import loadingImg from "./loading.gif"
 
 const initialState = {
   firstName: "",
@@ -153,64 +154,64 @@ const handleUpdate = () => {
 }
 
   return (
-    <>
-    <PathBanner/>
-    <section className="userInterface">
+    <section className="userSection">
+      <div className="userInterface">
       <UserNavBar/>
         <main className="userSections">
+          
+          <h2>User Profile</h2>
+          <div className="profilePage">
+          <div className="profilePageAvatar">
           <div>
-            {loading && <h3 className="loadingAvatar">Loading.....</h3>}
+            { loading && <img className="loadingAvatar" src={loadingImg} />}
           </div>
-          <div className="profile_page">
-          <div className="avatar">
-                <img src={avatar ? avatar : user?.result.avatar} alt=""/>
-                <span>
-                    <p>Change</p>
-                    <FcOldTimeCamera/>
-                    <input type="file" name="file" id="file_up" onChange={changeAvatar}/>
-                </span>
+            <img className="profileAvatar" src={avatar ? avatar : user?.result.avatar} alt=""/>
+              <span className="profilePageAvatarSpan">
+                <RiImageEditFill className="icon" size={20}/>
+                <input type="file" name="file" className="fileUp" onChange={changeAvatar}/>
+              </span>
             </div>
-          <div  className="col-left">
-            <h2>User Profile</h2>
 
+          <div className="colRight">
             
-
-            <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
+            <div className="inputFormGroup">
+                <label  htmlFor="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" defaultValue={user?.result.firstName}
-                placeholder="Your first name" onChange={handleChange}/>
+                autoComplete="off" placeholder="Your first name" onChange={handleChange}/>
             </div>
 
-            <div className="form-group">
+            <div className="inputFormGroup">
                 <label htmlFor="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName"
                 placeholder="Your Last Name" defaultValue={user?.result.lastName} onChange={handleChange}/>
+                
             </div>
 
-            <div className="form-group">
+            <div className="inputFormGroup">
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" id="email"
                 placeholder="Your email address" defaultValue={user?.result.email} disabled/>
             </div>
 
-            <div className="form-group">
+            <div className="inputFormGroup">
                 <label htmlFor="password">New Password</label>
                 <input type="password" name="password" id="password"
                 placeholder="Your password" value={password} onChange={handleChange} />
             </div>
 
-            <div className="form-group">
+            <div className="inputFormGroup">
                 <label htmlFor="cf_password">Confirm New Password</label>
                 <input type="password" name="cf_password" id="cf_password"
                 placeholder="Confirm password" value={cf_password} onChange={handleChange} />
             </div>
-
-            <button onClick={handleUpdate} type="submit" disabled={loading}>Update</button>
         </div>
-    </div>
+        </div>
+        <div>
+        <button onClick={handleUpdate} type="submit" disabled={loading}>Update</button>
+        </div>
         </main>
+        </div>
     </section>
-    </>
   );
 };
 
