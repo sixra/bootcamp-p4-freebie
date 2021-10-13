@@ -1,11 +1,12 @@
 import React from "react";
 import "./LatestAd.scss";
-import { AiOutlineUser } from "react-icons/ai";
+import { IoTimeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import moment from 'moment';
 
 const LatestAd = ({ adInfo }) => {
-  const { name, category, title, image, description, location, _id } = adInfo;
+  const { createdAt, category, title, image, location, _id } = adInfo;
 
   return (
     <Link className="latestAdCard" to={`/ad/${_id}`}>
@@ -15,18 +16,16 @@ const LatestAd = ({ adInfo }) => {
       <div className="latestAdInfo">
         <span className="latestAdCategory">{category}</span>
         <h4 className="latestAdTitle">{title}</h4>
-        <div className="latestAdNameLocation">
-          <div className="latestAdName">
-            <AiOutlineUser size={15} style={{ color: "#df0161" }} />
-            <span>{name}</span>
+        <div className="latestAdTimeLocation">
+          <div className="latestAdTime">
+            <IoTimeOutline size={15} style={{ color: "#df0161" }} />
+            <span>{moment(createdAt).format("Do MMM YYYY")}</span>
           </div>
           <div className="latestAdLocation">
             <IoLocationOutline size={15} style={{ color: "#df0161" }} />
             <span>{location}</span>
           </div>
         </div>
-
-        <p className="latestAdNameDescription">{description}</p>
       </div>
     </Link>
   );

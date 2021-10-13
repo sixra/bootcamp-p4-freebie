@@ -7,7 +7,6 @@ import { IoLocationSharp } from "react-icons/io5";
 import { CgPhone } from "react-icons/cg";
 import { MdEmail } from "react-icons/md";
 import toastr from "toastr";
-import PathBanner from "../../Components/PathBanner/PathBanner";
 
 const Contact = () => {
   const submitRequest = (e) => {

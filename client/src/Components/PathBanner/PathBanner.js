@@ -21,6 +21,14 @@ const PathBanner = () => {
       pathname = "Ad details";
     }
 
+    if (pathname.includes("forgot")) {
+      pathname = "Reset Password";
+    }
+
+    if (pathname.includes("reset")) {
+      pathname = "New Password";
+    }
+
     return pathname;
   };
 

@@ -1,76 +1,126 @@
-
-
 .latestAdCard {
   grid-column-end: span 4;
   text-decoration: none;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  @media only screen and (max-width: 750px) {
+    grid-column-end: span 6;
+  }
+}
+
+.latestAdImageContainer {
+  overflow: hidden;
+  height: 15rem;
+  width: 100%;
+  border-radius: 0.3rem;
   
+  
+  @media only screen and (max-width: 1200px) {
+    height: 14rem;
+  }
 
-  // @media only screen and (max-width: 63rem) {
-  //   grid-column-end: span 6;
-  // }
+  @media only screen and (max-width: 1100px) {
+    height: 13rem;
+  }
 
-  .latestAdImageContainer {
-    overflow: hidden;
+  @media only screen and (max-width: 1000px) {
+    height: 12rem;
+  }
+
+  @media only screen and (max-width: 900px) {
+    height: 10rem;
+  }
+
+  @media only screen and (max-width: 750px) {
+    height: 12rem;
+  }
+
+  @media only screen and (max-width: 650px) {
+    height: 11rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    height: 10rem;
+  }
+
+  @media only screen and (max-width: 470px) {
+    height: 9rem;
+  }
+
+  @media only screen and (max-width: 380px) {
+    height: 8rem;
+  }
+
+  @media only screen and (max-width: 350px) {
+    height: 7rem;
+  }
+
+  img {
+    height: 100%;
     width: 100%;
-    height: 15rem;
-    border-radius: 0.4rem;
+    object-fit: cover;
+    object-position: center;
+  }
+}
 
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: center;
+.latestAdInfo {
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+
+  @media only screen and (max-width: 820px) {
+    font-size: 0.8rem;
+  }
+
+
+  & > * {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .latestAdCategory {
+    color: var(--text-colour-light);
+    text-transform: uppercase;
+  }
+
+  .latestAdTitle {
+    text-transform: uppercase;
+    color: #3B3B3B;
+  }
+
+  .latestAdTimeLocation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: black;
+    
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+
+    .latestAdTime,
+    .latestAdLocation {
+      text-transform: capitalize;
+      margin-bottom: 0.3rem;
+      span {
+        margin-left: 0.3rem;
+        
+      }
+    }
+
+    .latestAdTime {
+      margin-right: 0.5rem;
+      
     }
   }
 
-  .latestAdInfo {
-    font-size: 0.85rem;
-    padding-top: 1rem;
-
-    & > * {
-      margin: 0.6rem 0.2rem;
-    }
-
-    .latestAdCategory {
-      color: var(--text-colour-light);
-      text-transform: capitalize;
-    }
-
-    .latestAdTitle {
-      font-size: 1rem;
-      color: #3B3B3B;
-    }
-
-    .latestAdNameLocation {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      color: black;
-
-      & > * {
-        display: flex;
-        align-items: center;
-      }
-
-      .latestAdName,
-      .latestAdLocation {
-        text-transform: capitalize;
-        span {
-          margin-left: 0.3rem;
-        }
-      }
-
-      .latestAdName {
-        margin-right: 0.5rem;
-      }
-    }
-
-    .latestAdNameDescription {
-      line-height: 1.2rem;
-      color: var(--text-colour-light);
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
+  .latestAdDescription {
+    line-height: 1.2rem;
+    color: var(--text-colour-light); 
+     
   }
 }
