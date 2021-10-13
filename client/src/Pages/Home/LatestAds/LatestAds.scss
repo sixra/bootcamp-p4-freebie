@@ -6,9 +6,7 @@
   & h2 {
     text-align: center;
     text-transform: capitalize;
-    color: var(--text-colour-main-dark);
-    font-size: var(--h2-font-size);
-    letter-spacing: 0.07rem;
+    color: var(--background-colour-dark-gray);
     &::after,
     &::before {
       display: inline-block;
@@ -23,22 +21,42 @@
 
 .latestAdsContainer {
   display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(auto, 3.75rem)) 1fr;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 4rem)) 1fr;
   grid-gap: 2.5rem;
 
-  @media only screen and (max-width: 44rem) {
+  @media only screen and (max-width: 1200px) {
+    grid-gap: 2rem;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    grid-gap: 1.5rem;
+  }
+
+  @media only screen and (max-width: 900px) {
     grid-gap: 1rem;
+  }
+
+  @media only screen and (max-width: 550px) {
+    grid-gap: 0.7rem;
+  }
+
+  @media only screen and (max-width: 450px) {
+    grid-gap: 0.5rem;
   }
 }
 
 .latestAds {
   display: grid;
   grid-column: 2 / span 12;
-  grid-template-columns: repeat(12, minmax(auto, 5rem));
-  grid-gap: 1.6rem;
+  grid-template-columns: repeat(12, minmax(auto, 6rem));
+  grid-gap: 1rem;
 
-  @media only screen and (max-width: 44rem) {
-    grid-gap: 1rem;
+  @media only screen and (max-width: 550px) {
+    grid-gap: 0.7rem;
+  }
+
+  @media only screen and (max-width: 450px) {
+    grid-gap: 0.5rem;
   }
 }
 

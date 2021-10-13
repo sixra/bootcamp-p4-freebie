@@ -31,6 +31,7 @@ const AdDetails = () => {
     window.scrollTo(0, 0);
     dispatch(getAd(id));
     dispatch(removeAd());
+  // eslint-disable-next-line
   }, [id]);
 
   return (
