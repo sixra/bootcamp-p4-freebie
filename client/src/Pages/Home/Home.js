@@ -9,7 +9,6 @@ import LatestAds from "./LatestAds/LatestAds";
 const Home = () => {
   return (
     <div className="Home">
-      <HeroImage minHeight="45" />
       <SearchBar />
       <HomeListingBtn />
       <CategoriesInner />

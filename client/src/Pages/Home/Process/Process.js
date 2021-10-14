@@ -1,8 +1,9 @@
 import React from "react";
 import "./Process.scss";
-import { RiAdvertisementFill } from "react-icons/ri";
-import { FaUsers } from "react-icons/fa";
-import { IoMdThumbsUp } from "react-icons/io";
+import { IoPeopleOutline } from "react-icons/io5";
+import { FiCheckSquare } from "react-icons/fi";
+import { GoThumbsup } from "react-icons/go";
+import {Link} from "react-router-dom";
 
 const Process = () => {
 
@@ -12,7 +13,7 @@ const Process = () => {
       <div className="processInnerContainer">
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <FaUsers size={48} />
+            <IoPeopleOutline size={48} />
           </div>
           <div className="processInnerEachTitle">
             <span>Register!</span>
@@ -21,7 +22,7 @@ const Process = () => {
 
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <RiAdvertisementFill size={48} />
+            <FiCheckSquare size={45}/>
           </div>
           <div className="processInnerEachTitle">
             <span>Post Free Ad!</span>
@@ -30,14 +31,14 @@ const Process = () => {
 
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <IoMdThumbsUp size={48} />
+            <GoThumbsup size={45} />
           </div>
           <div className="processInnerEachTitle">
             <span>Deal Done!</span>
           </div>
         </div>
       </div>
-      <button>Start Registration</button>
+      <Link to="/auth"><button>Start Registration</button></Link>
     </section>
   );
 };

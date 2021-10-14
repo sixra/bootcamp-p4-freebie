@@ -2,6 +2,7 @@ import React from "react";
 import "./Categories.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
+import {Link} from "react-router-dom";
 
 const SingleAd = ({ adInfo, gridToggle }) => {
   const {
@@ -11,10 +12,11 @@ const SingleAd = ({ adInfo, gridToggle }) => {
     description,
     image,
     location,
+    _id
   } = adInfo;
 
   return (
-    <div className={gridToggle ? "singleAdCardColumn" : "singleAdCardRow"}>
+    <Link to={`/ad/${_id}`} className={gridToggle ? "singleAdCardColumn" : "singleAdCardRow"}>
       <div className="singleAdImageContainer">
         <img src={image[0].base64} alt="ad-img" />
       </div>
@@ -34,7 +36,7 @@ const SingleAd = ({ adInfo, gridToggle }) => {
 
         <p className="singleAdNameDescription">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

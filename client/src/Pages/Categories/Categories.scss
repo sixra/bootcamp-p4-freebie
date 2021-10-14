@@ -248,6 +248,7 @@
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
   background: white;
+  text-decoration: none;
 
   .singleAdImageContainer {
     overflow: hidden;
@@ -285,6 +286,8 @@
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.3rem;
   background: white;
+  text-decoration: none;
+
   @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
@@ -328,12 +331,17 @@
   .singleAdTitle {
     font-size: 1rem;
     text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .singleAdNameLocation {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    color: black;
 
     & > * {
       display: flex;
@@ -357,5 +365,8 @@
     line-height: 1.2rem;
     margin-top: 1rem;
     color: var(--text-colour-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

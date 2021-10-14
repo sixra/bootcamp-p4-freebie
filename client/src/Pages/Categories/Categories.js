@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { HiViewList } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import "./Categories.scss";
 import SingleAd from "./SingleAd";
@@ -14,7 +14,7 @@ import { getAds } from "../../Redux/Actions/AdsAction";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
- // const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [gridToggle, setGridToggle] = useState(true);
   const buttonHandler = () => {
@@ -26,9 +26,13 @@ const Categories = () => {
     setCategoriesDropdown((current) => !current);
   };
 
-    //  useEffect(() => {
-    //   dispatch(getAds());
-    // }, [dispatch]); 
+  //  useEffect(() => {
+  //   dispatch(getAds());
+  // }, [dispatch]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [pageNumber, setPageNumber] = useState(0);
   const postsPerPage = 4;
