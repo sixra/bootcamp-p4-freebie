@@ -135,7 +135,7 @@ const Footer = () => {
 
           </div>
           <div className="footerCopyright">
-            <span> &copy; {(new Date().getFullYear())} Freebie GmbH. All Rights Reserved  <NavLink to="/privacy-policy">Privacy Policy</NavLink>.</span>
+            <span> &copy; {(new Date().getFullYear())} Freebie GmbH. All Rights Reserved  <NavLink to="/privacy-policy">- Privacy Policy</NavLink>.</span>
           </div>
         </div>
       </footer>
