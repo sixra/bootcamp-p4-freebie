@@ -1,5 +1,9 @@
 @use "../../Styles.scss";
 
+.userActivationSection {
+  background-color: #f4f4f4;
+  padding: 2rem 1rem;
+}
 
 .errorMessage {
   width: 100%;
@@ -31,18 +35,19 @@
   }
 }
 
-
 .errorContainer,
-.successContainer{
+.successContainer {
   height: 25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 3rem;
 }
 
-.loadingOutcome{
-height: 21rem;
+.loadingOutcome {
+  height: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .errorBox,
@@ -59,7 +64,7 @@ height: 21rem;
 }
 
 .errorIcon,
-.successIcon{
+.successIcon {
   width: 12rem;
 }
 

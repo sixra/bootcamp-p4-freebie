@@ -1,7 +1,7 @@
 import React from "react";
 import "./Process.scss";
 import { IoPeopleOutline } from "react-icons/io5";
-import { BsFolderCheck } from "react-icons/bs";
+import { FiCheckSquare } from "react-icons/fi";
 import { GoThumbsup } from "react-icons/go";
 import {Link} from "react-router-dom";
 
@@ -22,7 +22,7 @@ const Process = () => {
 
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <BsFolderCheck size={47}/>
+            <FiCheckSquare size={45}/>
           </div>
           <div className="processInnerEachTitle">
             <span>Post Free Ad!</span>
@@ -31,7 +31,7 @@ const Process = () => {
 
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <GoThumbsup size={47} />
+            <GoThumbsup size={45} />
           </div>
           <div className="processInnerEachTitle">
             <span>Deal Done!</span>
