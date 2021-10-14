@@ -3,7 +3,6 @@ import axios from "axios"
 import {useSelector, useDispatch} from "react-redux"
 import { updateUser } from "../../../../Redux/Actions/AuthAction"
 import UserNavBar from "../../UserNavBar/UserNavBar";
-import PathBanner from "../../../PathBanner/PathBanner";
 import "../../UserInterface.scss"
 import "./Dashboard.scss"
 import { RiImageEditFill } from "react-icons/ri";

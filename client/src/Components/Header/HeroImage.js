@@ -1,12 +1,17 @@
-import React from 'react'
-import "./Header.scss"
+import React from "react";
+import "./Header.scss";
 
 const Header = (props) => {
   return (
-    <div className="heroImage" style={{ height: props.height + "vh", maxHeight: props.maxHeight + "rem", minHeight: props.minHeight + "rem" }}>
+    <div
+      className="heroImage"
+      style={{
+        height: props.height + "vh",
+        maxHeight: props.maxHeight + "rem",
+        minHeight: props.minHeight + "rem",
+      }}
+    ></div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Header
+export default Header;
