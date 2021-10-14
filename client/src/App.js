@@ -21,6 +21,7 @@ import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyF
 import AdDetails from "./Components/AdDetails/AdDetails";
 import { getAds } from "./Redux/Actions/AdsAction";
 import PathBanner from "./Components/PathBanner/PathBanner";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy"
 
 const App = () => {
   useEffect(() => {
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/Api/activate/user/:id" exact component={UserActivate} />
           <Route path="/user/reset/:hash" exact component={ResetPassword} />
           <Route path="/ad/:id" exact component={AdDetails} />
+          <Route path="/privacy-policy" exact component={PrivacyPolicy} />
         </Switch>
         <ScrollUp />
         <Footer />
