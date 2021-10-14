@@ -14,14 +14,13 @@ const PostAd = () => {
   const [adData, setAdData] = useState({
     title: "",
     category: "",
-    image: "",
     location: "",
     description: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postAd({ ...adData, name: user?.result?.firstName }));
+    dispatch(postAd({ ...adData, name: user?.result?.firstName, avatar: user?.result?.avatar}));
   };
 
   console.log(adData);

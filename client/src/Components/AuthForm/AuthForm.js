@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AuthForm.scss";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -38,9 +38,17 @@ const AuthForm = () => {
     setSignIn(!signIn);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className="authorizationSection">
-      <div className={signIn ? "authContainer" : "authContainer right-panel-active"}>
+      <div
+        className={
+          signIn ? "authContainer" : "authContainer right-panel-active"
+        }
+      >
         <div className="form-container sign-up-container">
           <form onSubmit={submitSignUp}>
             <h1>Create an Account</h1>

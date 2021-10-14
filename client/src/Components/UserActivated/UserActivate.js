@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./UserActivate.scss";
 import { activateUser } from "../../Api/activate/user/hash.js";
-import error from "./images/error.gif"
-import success from "./images/success.gif"
-import { useHistory } from 'react-router-dom';
+import error from "./images/error.gif";
+import success from "./images/success.gif";
+import { useHistory } from "react-router-dom";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 
 const UserActivate = (props) => {
@@ -21,11 +21,12 @@ const UserActivate = (props) => {
   const history = useHistory();
   const handleClick = () => {
     history.push("/auth");
-}
+  };
   if (state.message === "Validation Done!") {
     return (
-      <div className="successContainer">
-        <div className="successBox">
+      <section className="userActivationSection">
+        <div className="successContainer">
+          <div className="successBox">
             <img className="successIcon" src={success} alt="" />
             <div className="successMessage">
               <h1 className="successAlert">YAY!</h1>
@@ -34,14 +35,15 @@ const UserActivate = (props) => {
             <button onClick={handleClick} class="successButtonBox">
               Sign in
             </button>
+          </div>
         </div>
-      </div>
+      </section>
     );
-  } 
-  else if (state.message === "Cannot Validate an User!") {
+  } else if (state.message === "Cannot Validate an User!") {
     return (
-      <div className="errorContainer">
-        <div className="errorBox">
+      <section className="userActivationSection">
+        <div className="errorContainer">
+          <div className="errorBox">
             <img className="errorIcon" src={error} alt="" />
             <div className="errorMessage">
               <h1 className="errorAlert">OOPS!</h1>
@@ -50,15 +52,17 @@ const UserActivate = (props) => {
             <button onClick={handleClick} class="errorButtonBox">
               Try Again
             </button>
+          </div>
         </div>
-      </div>
+      </section>
     );
-  } 
-  else {
+  } else {
     return (
-    <div className="loadingOutcome">
-      <LoadingSpinner/>
-    </div>
+      <section className="userActivationSection">
+        <div className="loadingOutcome">
+          <LoadingSpinner />
+        </div>
+      </section>
     );
   }
 };
