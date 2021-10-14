@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, {useState } from "react";
 import { NavLink } from "react-router-dom";
-import profilePicture from "./avatar-profile.jpg";
 import "./UserNavBar.scss";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
