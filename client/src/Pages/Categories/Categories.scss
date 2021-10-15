@@ -73,6 +73,9 @@
           }
         }
       }
+      .clearSearchBarOutput {
+        display: none;
+      }
     }
 
     // CATEGORIES CONTAINER WITH BUTTON FOR DROPDOWN FUNCTION
@@ -259,7 +262,7 @@
   .singleAdImageContainer {
     overflow: hidden;
     padding: 0.2rem;
-    max-height: 18rem;
+    max-height: 19rem;
     width: 100%;
 
     img {
@@ -268,10 +271,6 @@
       object-fit: cover;
       object-position: center;
       border-radius: 0.3rem;
-    }
-
-    @media only screen and (max-width: 680px) {
-      max-width: 100%;
     }
   }
 
