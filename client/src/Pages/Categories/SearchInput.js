@@ -3,12 +3,12 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import "./Categories.scss";
 import { filterAdsSearch } from "../../Redux/Actions/AdsAction";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 function SearchInput({ placeholder, data, searchBarStyle }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
-  const title = useSelector((state) => state.allAds.title);
+  //const title = useSelector((state) => state.allAds.title);
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
