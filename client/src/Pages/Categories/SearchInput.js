@@ -3,12 +3,12 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import "./Categories.scss";
 import { filterAdsSearch } from "../../Redux/Actions/AdsAction";
 import { useDispatch } from "react-redux";
-//import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function SearchInput({ placeholder, data, searchBarStyle }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
-  //const title = useSelector((state) => state.allAds.title);
+  const title = useSelector((state) => state.allAds.title);
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
@@ -23,7 +23,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
       setFilteredData(newFilter);
     }
   };
-
+  //s
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
@@ -37,7 +37,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
         <input
           type="text"
           placeholder={placeholder}
-          value={wordEntered}
+          value={title ? title : wordEntered}
           onChange={handleFilter}
         />
         <div>
@@ -49,7 +49,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
         </div>
       </div>
       {filteredData.length !== 0 && (
-        <div className="searchBarOutput">
+        <div className={title ? null : "searchBarOutput"}>
           {filteredData.slice(0, 10).map((value) => {
             return (
               <div
