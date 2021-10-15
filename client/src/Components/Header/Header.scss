@@ -211,9 +211,9 @@
   .searchBarOutput {
     background-color: rgb(245, 245, 245);
     position: absolute;
-    top: 2.4rem;
-    left: 1rem;
-    width: 90%;
+    top: 2rem;
+    left: 0.5rem;
+    width: 95%;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     z-index: 999;
@@ -228,7 +228,10 @@
 
       &:first-of-type {
         border: none;
-        padding-top: 1rem;
+        padding-top: 0.4rem;
+        @media only screen and (max-width: 1000px) {
+          padding-top: 0.8rem;
+        }
       }
 
       span {
