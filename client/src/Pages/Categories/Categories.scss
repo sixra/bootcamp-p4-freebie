@@ -262,7 +262,8 @@
   .singleAdImageContainer {
     overflow: hidden;
     padding: 0.2rem;
-    max-height: 19rem;
+    max-height: 17rem;
+    min-height: 17rem;
     width: 100%;
 
     img {
@@ -303,6 +304,8 @@
     max-height: 18rem;
     width: 100%;
     max-width: 24rem;
+    min-height: 17rem;
+
     @media only screen and (max-width: 680px) {
       max-width: 100%;
     }
