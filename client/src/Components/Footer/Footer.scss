@@ -1,12 +1,12 @@
 @use "../../Styles.scss";
 @import "toastr";
 
-.footerContainer{
-  background-color: var(--background-colour-dark-gray);
+.footerContainer {
+  background-color: rgb(39, 39, 39);
   @media only screen and (max-width: 350px) {
     width: 100%;
   }
-  .footerInputContainer{
+  .footerInputContainer {
     @media only screen and (max-width: 350px) {
     }
     .footerLogoContainer {
@@ -26,38 +26,39 @@
         flex-direction: column;
         margin: 0;
       }
-      .footerLogo{
+      .footerLogo {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 1rem 0 1rem 0;
         font-weight: var(--font-medium-bold);
         color: var(--text-colour-main-light);
         &::after {
-          content: 'bie';
+          content: "bie";
           color: var(--details-colour-main);
         }
-       
       }
       .footerAddress,
       .footerPhone,
-      .footerEmail{
-          text-align: center;
-          margin: 1rem 0 1rem 0;
-          color: var(--text-colour-main-light);
-          & h3 {
-            font-size: 1rem;
-            font-weight: 300;
-          }
-          & .icon {
-            color: var(--details-colour-main);
-            font-size: 1.7rem;
-          }
-          
+      .footerEmail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0 1rem 0;
+        color: var(--text-colour-main-light);
+        h3 {
+          font-weight: 300;
+          font-size: 0.9rem;
+        }
+        .icon {
+          color: var(--details-colour-main);
+          font-size: 1.2rem;
+          color: #E0156D;
+          margin-right: 0.7rem;
+        }
       }
-
     }
 
-    .footerDetailsContainer{
+    .footerDetailsContainer {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -73,20 +74,21 @@
       .footerDetailsTips,
       .footerDetailsLinks,
       .footerDetailsApps,
-      .footerDetailsSubscribe{
-        & h3{
-        color: var(--text-colour-main-light);
-        margin: 1rem 0 1rem 0;
+      .footerDetailsSubscribe {
+        & h3 {
+          color: var(--text-colour-main-light);
+          font-weight: var(--font-light-bold);
+          margin: 0.8rem 0;
         }
-        & ul{
-
-          & li{
+        & ul {
+          & li {
             list-style: none;
             margin: 0.25rem 0;
-            & a{
-              color: var(--text-colour-main-light);
+            & a {
+              color: rgb(235, 235, 235);
               text-decoration: none;
-              &:hover{
+              font-weight: 300;
+              &:hover {
                 color: var(--details-colour-main);
               }
             }
@@ -100,7 +102,7 @@
 
       .footerDetailsTips,
       .footerDetailsLinks,
-      .footerDetailsApps{
+      .footerDetailsApps {
         @media only screen and (max-width: 1000px) {
           display: flex;
           flex-direction: column;
@@ -109,30 +111,34 @@
       }
 
       .footerDetailsApps,
-      .footerDetailsSubscribe{
+      .footerDetailsSubscribe {
         display: flex;
         flex-direction: column;
-        & span{
+        & span {
           color: var(--text-colour-main-light);
-          margin: 0.5rem 0 0.5rem 0;
+          margin: 0.5rem 0;
         }
 
-        .footerDetailsSubscribeInput{
-          border: 1px solid var(--background-colour-dark-gray);
+        .footerDetailsSubscribeInput {
           background-color: var(--background-colour-main);
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin: 0.25rem 0;
-          & input{
-            padding: 0.5rem;
+          border-radius: 0.3rem;
+          margin: 0.2rem 1rem 0.5rem 0;
+
+          input {
+            padding-left: 1rem;
+            padding-bottom: 0.1rem;
             outline: none;
             border: none;
-            width: 100%
+            width: 100%;
+            background-color: transparent;
           }
-          & button{
+
+          button {
             @include Styles.btn-background;
-            padding: 0.6rem;
+            padding: 0.5rem 0.6rem 0.35rem 0.5rem;
             margin: 0.3rem;
             border-radius: 50%;
           }
@@ -144,16 +150,15 @@
           margin: 0.25rem 0;
         }
       }
-      
     }
 
-    .footerSocialMedia{
+    .footerSocialMedia {
       display: flex;
       flex-direction: row;
       justify-content: center;
       background: var(--background-colour-light-gray);
-      
-      & a{
+
+      & a {
         color: var(--text-colour-main-light);
         @media only screen and (max-width: 600px) {
           place-self: center;
@@ -166,7 +171,7 @@
       .footerSocialMediaFacebook,
       .footerSocialMediaInstagram,
       .footerSocialMediaLinkedin,
-      .footerSocialMediaGithub{
+      .footerSocialMediaGithub {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -175,26 +180,26 @@
         height: 2.8rem;
         border-radius: 50%;
         border: 0.1rem solid var(--details-color-gray);
-        
-        &:hover{
+
+        &:hover {
           background: var(--details-colour-main);
           cursor: pointer;
         }
       }
     }
 
-    .footerCopyright{
+    .footerCopyright {
       display: flex;
       flex-direction: row;
       justify-content: center;
       background: var(--background-colour-light-gray);
       color: var(--text-colour-main-light);
       padding-bottom: 1rem;
-      & a{
+      & a {
         color: var(--text-colour-main-light);
         text-decoration: none;
-        &:hover{
-        color: var(--details-colour-main);
+        &:hover {
+          color: var(--details-colour-main);
         }
       }
     }

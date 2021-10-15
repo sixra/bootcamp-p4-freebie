@@ -17,6 +17,7 @@ const AdsByUser = ({ adInfo }) => {
             className="listItemImage"
             src={image[0].base64}
             width="120px"
+            height="80px"
             alt="ad-img"
           />
         </li>
