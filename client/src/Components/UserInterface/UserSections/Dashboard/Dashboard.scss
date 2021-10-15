@@ -1,29 +1,28 @@
 @use "../../../../Styles.scss";
 
-.userSections{
+// * {
+//   outline: 1px solid black;
+// }
+
+.userDashboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h2{
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  color: #333;
-  margin: 10px 0;
-  }
-  button{
+
+  button {
     @include Styles.btn-background;
     margin-top: 2rem;
-    width: 8rem;
+    width: 7rem;
   }
 }
 
-.profilePage{
+.profilePage {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  .loadingAvatar{
+  .loadingAvatar {
     position: absolute;
     z-index: 1;
     top: 4rem;
@@ -35,86 +34,88 @@
     background: linear-gradient(
       to right,
       var(--details-colour-secondary),
-      var(--details-colour-main));
+      var(--details-colour-main)
+    );
     text-transform: uppercase;
     color: white;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-    }
-  .profilePageAvatar{
-    width: 17rem;
+  }
+  .profilePageAvatar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
     position: relative;
     .profileAvatar {
-    margin: 2rem;
-    border-radius: 50%;
+      margin: 1rem;
+      border-radius: 50%;
     }
-    .profilePageAvatarSpan{
-     position: absolute;
-     top: 4rem;
-     left: 12rem;
-     overflow: hidden;
-     width: 3rem;
-     border-radius: 50%;
-     height: 3rem;
-     background: linear-gradient(
-      to right,
-      var(--details-colour-secondary),
-      var(--details-colour-main));
-     text-transform: uppercase;
-     color: white;
-     display: flex;
-     justify-content: center;
-     align-content: center;
-     align-items: center;
-     .fileUp{
+    .profilePageAvatarSpan {
       position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-     }
+      top: 4.5rem;
+      left: 11rem;
+      overflow: hidden;
+      width: 3rem;
+      border-radius: 50%;
+      height: 3rem;
+      background: linear-gradient(
+        to right,
+        var(--details-colour-secondary),
+        var(--details-colour-main)
+      );
+      text-transform: uppercase;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      .fileUp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
     }
-    
   }
-  .colRight{
-    width: 17rem;
+  .colRight {
     margin-left: 2rem;
+    padding: 0 1rem; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    .inputFormGroup{
+
+    @media only screen and (max-width: 800px) {
+      margin-left: 0;
+    }
+    .inputFormGroup {
       display: flex;
       flex-direction: row;
     }
-    label{
+    label {
       display: block;
       margin-top: 5px;
       align-self: center;
-      width: 6rem;
+      width: 5rem;
+      font-size: 0.8rem;
     }
-    input{
+    input {
       width: 90%;
-      height: 3rem;
-      margin: 0.5rem;
+      margin: 0.5rem 0 0.5rem 0.7rem ;
       background: transparent;
       border: 1px solid lightgray;
       border-radius: 0.3rem;
       padding: 0.8rem;
     }
-    input:focus{
+    input:focus {
       outline: none;
       border: 1px solid var(--details-colour-main);
     }
-    
   }
-
 }

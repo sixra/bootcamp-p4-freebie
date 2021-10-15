@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./UserNavBar.scss";
 import { AiOutlineDashboard } from "react-icons/ai";
@@ -8,14 +8,19 @@ import { BsLayers } from "react-icons/bs";
 
 const UserNavBar = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
-  const [avatar, setAvatar] = useState(false)
+  const [avatar, setAvatar] = useState(false);
+
   return (
     <nav className="userNavbar">
       <div className="userInfo">
-        <div className="userImage">
-          <img src={avatar ? avatar : user?.result.avatar} alt="profile"/>
+        <div className="userImage-gradientBorder">
+          <div className="userImage">
+            <img src={avatar ? avatar : user?.result.avatar} alt="profile" />
+          </div>
         </div>
-        <div className="userName">{`Hello ${user?.result.firstName}`}</div>
+        <div className="userName">
+          Welcome<span>{` ${user?.result.firstName}`}</span>
+        </div>
       </div>
 
       <ul className="userSectionLinks">

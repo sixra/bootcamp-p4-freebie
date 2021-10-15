@@ -21,6 +21,8 @@ const MyAds = () => {
       <div className="userInterface">
         <UserNavBar />
         <main className="userSections">
+          <h2>My Ads</h2>
+          <div className="titleUnderline"></div>
           {adsByUser.map((adInfo) => (
             <AdsByUser key={adInfo._id} adInfo={adInfo} />
           ))}

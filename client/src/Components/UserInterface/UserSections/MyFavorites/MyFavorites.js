@@ -7,7 +7,10 @@ const MyAds = () => {
     <section className="userSection">
       <div className="userInterface">
         <UserNavBar />
-        <main className="userSections">Favorites</main>
+        <main className="userSections">
+        <h2>My Favorites</h2>
+          <div className="titleUnderline"></div>
+        </main>
       </div>
     </section>
   );
