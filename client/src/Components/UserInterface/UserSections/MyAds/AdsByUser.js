@@ -17,8 +17,6 @@ const AdsByUser = ({ adInfo }) => {
           <img
             className="listItemImage"
             src={image[0].base64}
-            width="110px"
-            height="75px"
             alt="ad-img"
           />
         </li>
@@ -29,15 +27,15 @@ const AdsByUser = ({ adInfo }) => {
           </ul>
           <div className="adsByUserBtnContainer">
             <Link to={`/ad/${_id}`}>
-              <BsEye size={25} />
+              <BsEye size={22} />
               <span>view</span>
             </Link>
             <Link to={"/"}>
-              <AiOutlineEdit size={25} />
+              <AiOutlineEdit size={22} />
               <span>edit</span>
             </Link>
             <button onClick={() => dispatch(deleteAdPostedByUser(_id))}>
-              <AiOutlineDelete size={25} />
+              <AiOutlineDelete size={22} />
               <span>delete</span>
             </button>
           </div>
