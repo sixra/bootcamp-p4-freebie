@@ -9,11 +9,13 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const title = useSelector((state) => state.allAds.title);
+  const ads = useSelector((state) => state.allAds.ads);
+
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
 
-    const newFilter = data.filter((value) => {
+    const newFilter = ads.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -23,7 +25,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
       setFilteredData(newFilter);
     }
   };
-  //s
+
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
@@ -61,7 +63,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
                 className="searchBarOutputItem"
                 rel="noreferrer"
                 target="_blank"
-                onClick={() => dispatch(filterAdsSearch(data, value.title))}
+                onClick={() => dispatch(filterAdsSearch(ads, value.title))}
               >
                 <span>{value.title}</span>
               </div>
