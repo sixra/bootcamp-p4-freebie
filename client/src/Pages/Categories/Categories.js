@@ -10,7 +10,7 @@ import { Filter } from "./Filter";
 import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
-import { getAds } from "../../Redux/Actions/AdsAction";
+//import { getAds } from "../../Redux/Actions/AdsAction";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
@@ -93,7 +93,7 @@ const Categories = () => {
           {!ads.length ? (
             <LoadingSpinner />
           ) : (
-            <div className={gridToggle ? "latestAdsContain" : null}>
+            <div className={gridToggle ? "latestAdsGrid" : "latestAdsColumn"}>
               {ads
                 .slice(visitedPages, visitedPages + postsPerPage)
                 .map((adInfo) => (

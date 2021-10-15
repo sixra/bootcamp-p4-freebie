@@ -8,6 +8,7 @@ import { CgPhone } from "react-icons/cg"
 import { MdEmail } from "react-icons/md"
 import { FiGithub } from "react-icons/fi"
 import { FaPaperPlane, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import {PrivacyPolicy} from "../PrivacyPolicy/PrivacyPolicy"
 
 
 const Footer = () => {
@@ -43,9 +44,7 @@ const Footer = () => {
       <footer className="footerContainer">
         <div className="footerInputContainer">
           <div className="footerLogoContainer">
-            {/* <div className="footerLogo"> */}
             <span className="footerLogo">free</span>
-            {/* </div> */}
             <div className="footerAddress">
               <IoLocationSharp className="icon" />
               <h3>10785 Mitte</h3>
@@ -136,7 +135,7 @@ const Footer = () => {
 
           </div>
           <div className="footerCopyright">
-            <span> &copy; {(new Date().getFullYear())} Freebie GmbH. All Rights Reserved. </span>
+            <span> &copy; {(new Date().getFullYear())} Freebie GmbH. All Rights Reserved  <NavLink to="/privacy-policy">- Privacy Policy</NavLink>.</span>
           </div>
         </div>
       </footer>

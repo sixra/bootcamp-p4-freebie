@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   margin: auto;
   padding-top: 2rem;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 
   // CATEGORIES AND SEARCH CONTAINER
   .categoriesAndSearchContainer {
@@ -175,7 +175,7 @@
         display: flex;
 
         div {
-          @media only screen and (max-width: 800px) {
+          @media only screen and (max-width: 680px) {
             display: none;
           }
         }
@@ -189,17 +189,23 @@
       justify-content: center;
       align-items: center;
 
-      .latestAdsContain {
+      .latestAdsGrid {
         display: flex;
         flex-wrap: wrap;
         width: 95%;
         margin: auto;
         justify-content: center;
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: 680px) {
           flex-direction: column;
           align-items: center;
         }
+      }
+
+      .latestAdsColumn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
       }
     }
 
@@ -228,7 +234,7 @@
 
     .paginationActivePage {
       color: var(--text-colour-main-light);
-      background-color: #E52853;
+      background-color: #e52853;
       padding: 0.6rem 0;
       margin-top: -0.6rem;
       border-radius: 0.3rem;
@@ -253,7 +259,7 @@
   .singleAdImageContainer {
     overflow: hidden;
     padding: 0.2rem;
-    max-height: 19rem;
+    max-height: 18rem;
     width: 100%;
 
     img {
@@ -264,12 +270,12 @@
       border-radius: 0.3rem;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 680px) {
       max-width: 100%;
     }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 680px) {
     flex-direction: column;
     width: 95%;
   }
@@ -288,17 +294,18 @@
   background: white;
   text-decoration: none;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 680px) {
     flex-direction: column;
   }
 
   .singleAdImageContainer {
     overflow: hidden;
     padding: 0.2rem;
-    max-height: 20rem;
-    width: 40rem;
-    @media only screen and (max-width: 800px) {
-      width: 100%;
+    max-height: 18rem;
+    width: 100%;
+    max-width: 24rem;
+    @media only screen and (max-width: 680px) {
+      max-width: 100%;
     }
 
     img {
@@ -309,15 +316,12 @@
       border-radius: 0.3rem;
     }
   }
-
-  /*  @media only screen and (max-width: 550px) {
-    width: 90%;
-  } */
 }
 
 .singleAdInfo {
   font-size: 0.85rem;
   padding: 1rem;
+  width: 100%;
 
   & > * {
     margin: 0.6rem 0.2rem;

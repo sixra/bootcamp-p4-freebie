@@ -2,7 +2,7 @@ import React from "react";
 import "./Categories.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SingleAd = ({ adInfo, gridToggle }) => {
   const {
