@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { deleteAdPostedByUser } from "../../../../Redux/Actions/AdsAction";
 import { BsEye } from "react-icons/bs";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const AdsByUser = ({ adInfo }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ const AdsByUser = ({ adInfo }) => {
           <img
             className="listItemImage"
             src={image[0].base64}
-            width="120px"
+            width="110px"
+            height="75px"
             alt="ad-img"
           />
         </li>
@@ -26,14 +28,14 @@ const AdsByUser = ({ adInfo }) => {
             <li className="listItemCategory">{category}</li>
           </ul>
           <div className="adsByUserBtnContainer">
-            <button>
+            <Link to={`/ad/${_id}`}>
               <BsEye size={25} />
-              <span>view</span> 
-            </button>
-            <button>
+              <span>view</span>
+            </Link>
+            <Link to={"/"}>
               <AiOutlineEdit size={25} />
               <span>edit</span>
-            </button>
+            </Link>
             <button onClick={() => dispatch(deleteAdPostedByUser(_id))}>
               <AiOutlineDelete size={25} />
               <span>delete</span>
