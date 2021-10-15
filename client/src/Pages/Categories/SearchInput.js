@@ -44,12 +44,17 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
           {!wordEntered ? (
             <AiOutlineSearch />
           ) : (
-            <AiOutlineClose id="clearBtn" onClick={clearInput} />
+            <AiOutlineClose id="clearBtn"
+              onClick={() => {
+                dispatch(filterAdsSearch(data, ""));
+                clearInput();
+              }}
+            />
           )}
         </div>
       </div>
       {filteredData.length !== 0 && (
-        <div className={title ? null : "searchBarOutput"}>
+        <div className={title ? "clearSearchBarOutput" : "searchBarOutput"}>
           {filteredData.slice(0, 10).map((value) => {
             return (
               <div
