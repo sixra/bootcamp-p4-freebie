@@ -83,7 +83,7 @@
   }
 
   #showDropdown {
-    background-color: rgba(232, 232, 232, 0.947);
+    background-color: rgb(245, 245, 245);
     transition: 0.4s all;
     visibility: visible;
   }
@@ -113,9 +113,9 @@
     @include Styles.btn-background;
     height: 2.4rem;
 
-    // @media only screen and (max-width: 1000px) {
-    //   width: 50%;
-    // }
+    @media only screen and (max-width: 1000px) {
+      width: 40%;
+    }
   }
   .searchBarButtonDisabled {
     filter: grayscale(100%);
@@ -196,12 +196,6 @@
     }
   }
 
-  .ratko {
-    position: absolute;
-    left: 5rem;
-    top: 0.6rem;
-  }
-
   svg {
     position: absolute;
     right: 0.4rem;
@@ -215,20 +209,29 @@
   }
 
   .searchBarOutput {
-    background-color: rgba(232, 232, 232, 0.947);
+    background-color: rgb(245, 245, 245);
     position: absolute;
-    top: 2.4rem;
-    left: 1rem;
-    width: 90%;
+    top: 2rem;
+    left: 0.5rem;
+    width: 95%;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     z-index: 999;
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      top: 1.9rem;
+      left: 0rem;
+    }
 
     .searchBarOutputItem {
       border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
 
       &:first-of-type {
         border: none;
+        padding-top: 0.4rem;
+        @media only screen and (max-width: 1000px) {
+          padding-top: 0.8rem;
+        }
       }
 
       span {
@@ -236,6 +239,9 @@
         padding: 0.6rem 1rem;
         text-transform: capitalize;
         cursor: pointer;
+        @media only screen and (max-width: 1000px) {
+          padding: 0.8rem 1rem;
+        }
 
         &:hover {
           color: var(--details-colour-secondary);

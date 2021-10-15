@@ -10,12 +10,9 @@ import { Filter } from "./Filter";
 import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
-//import { getAds } from "../../Redux/Actions/AdsAction";
 
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
-  // const dispatch = useDispatch();
-
   const [gridToggle, setGridToggle] = useState(true);
   const buttonHandler = () => {
     setGridToggle((current) => !current);
@@ -25,10 +22,6 @@ const Categories = () => {
   const dropdownHandler = () => {
     setCategoriesDropdown((current) => !current);
   };
-
-  //  useEffect(() => {
-  //   dispatch(getAds());
-  // }, [dispatch]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
