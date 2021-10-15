@@ -5,17 +5,21 @@
   margin-bottom: 1rem;
 }
 
-.postAdForm {
+.userPostAdSection {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 1rem;
+}
 
-  input,
-  select {
-    width: 48%;
-  }
+.postAdForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 23rem;
+  width: 100%;
+  padding: 0 2rem;
 
   select {
     option {
@@ -23,12 +27,7 @@
     }
   }
 
-  input[type="file"] {
-    padding: 0.6rem;
-  }
-
   textarea {
-    width: 97%;
     line-height: 1.3rem;
   }
 
@@ -39,6 +38,7 @@
     border-radius: 0.3rem;
     font-family: var(--title-font);
     font-size: var(--small-font-size);
+    width: 100%;
 
     &:focus {
       border: 1px solid #e20f55;
@@ -51,5 +51,26 @@
     width: 8rem;
     margin: 1rem auto 0 auto;
     font-size: 0.9rem;
+  }
+}
+
+// AD POSTED SUCCESSFULLY
+
+.adSuccessContainer {
+  text-align: center;
+
+  & > * {
+    margin-bottom: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    color: rgb(61, 61, 61);
+  }
+
+  span {
+    cursor: pointer;
+    font-weight: 500;
+    color: gray;
   }
 }
