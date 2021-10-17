@@ -13,6 +13,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import logo from "./freebie-logo.png"
 
 
 const Footer = () => {
@@ -48,7 +49,7 @@ const Footer = () => {
     <footer className="footerContainer">
       <div className="footerInputContainer">
         <div className="footerLogoContainer">
-          <span className="footerLogo">Free</span>
+          <div className="footerLogo"><img src={logo} alt="" /></div>
           <div className="footerAddress">
             <IoLocationSharp className="icon" />
             <h3>10785 Mitte, Berlin, DE</h3>
@@ -102,12 +103,12 @@ const Footer = () => {
           <div className="footerDetailsSubscribe">
             <h3>Subscribe</h3>
             <div >
-              
+
               <form className="footerDetailsSubscribeInput" action="" onSubmit={signNewsletter}>
                 <input id="email" type="email" placeholder="Email Address" />
                 <button type="submitButton"><FaPaperPlane size={16} /></button>
               </form>
-              
+
             </div>
             <span>Get the latest updates in your mailbox!</span>
           </div>
