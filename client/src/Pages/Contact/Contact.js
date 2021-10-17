@@ -4,6 +4,10 @@ import React from "react";
 import axios from "axios";
 import "./Contact.scss";
 import toastr from "toastr";
+import { CgPhone } from "react-icons/cg"
+import { MdEmail } from "react-icons/md"
+import { IoLocationSharp } from "react-icons/io5"
+
 
 const Contact = () => {
   const submitRequest = (e) => {
@@ -61,24 +65,29 @@ const Contact = () => {
     <section className="contactPage">
       <div className="contactMainContainer">
         <div className="contactInfo">
-          <div className="contactInfoTitle">
-            <h2>lets get in touch</h2>
-            <span>we are open for any suggestions or just to have a chat</span>
-          </div>
-          <div className="contactInfoBody">
-            <div>
-              <span>5464321354,21354</span>
+          <div className="overlay">
+            <div className="contactInfoTitle">
+              <h2>Let's get in touch</h2>
+              <p>We're open for any suggestions or just to have a chat</p>
             </div>
-            <div>
-              <span>info@freebie.com</span>
-            </div>
-            <div>
-              <span>10785 Mitte</span>
-              <span>Berlin, DE</span>
+            <div className="contactInfoBody">
+              <div>
+                <CgPhone size="20" />
+                <span>01575 141 615 </span>
+              </div>
+              <div>
+                <MdEmail size="20" />
+                <span>brah.freebie@gmail.com</span>
+              </div>
+              <div>
+                <IoLocationSharp size="20" />
+                <span>10785 Mitte Berlin, DE</span>
+              </div>
             </div>
           </div>
         </div>
         <form className="contactForm" onSubmit={submitRequest}>
+          <h1>Contact Us</h1>
           <div className="inputNameContainer">
             <input required id="contactName" type="text" />
             <label>Name</label>

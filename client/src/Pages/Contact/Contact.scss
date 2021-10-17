@@ -2,36 +2,83 @@
 @import "toastr";
 
 .contactPage {
-  background-color: white;
-  padding: 10rem 0;
+  padding: 2rem 0;
+  background-color: #f4f4f4;
 
   .contactMainContainer {
-    width: 70%;
+    max-width: 55rem;
+    width: 95%;
     margin: auto;
-    height: 25rem;
+    height: 30rem;
     display: flex;
     background-color: white;
     border-radius: 0.4rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
       rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 700px) {
+      flex-direction: column;
+      height: 100%;
+    }
 
     .contactInfo {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-start;
       width: 100%;
-      background-color: blue;
       height: 100%;
-      padding: 0 2rem;
-      .contactInfoBody {
-        height: 60%;
+      min-height: 20rem;
+      position: relative;
+
+      .overlay {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        background-color: yellow;
-        padding: 0 2rem;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(
+            hsla(0, 0%, 0%, 0.845),
+            hsla(0, 3%, 28%, 0.817)
+          ),
+          url("./freebieLocation.png");
+        background-position: center;
+        background-size: cover;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        position: absolute;
+        height: 100%;
         width: 100%;
+
+        .contactInfoTitle {
+          max-width: 15rem;
+
+          h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+            letter-spacing: 0.02rem;
+          }
+        }
+
+        .contactInfoBody {
+          margin-top: 1.5rem;
+          height: 10rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          font-size: 0.9rem;
+          letter-spacing: 0.02rem;
+
+          div {
+            display: flex;
+            align-items: center;
+
+            svg {
+              margin-right: 0.5rem;
+            }
+          }
+        }
       }
     }
 
@@ -39,17 +86,25 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       width: 100%;
+      padding: 2rem 0;
+
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: rgb(43, 43, 43);
+      }
 
       .inputNameContainer,
       .inputEmailContainer {
         position: relative;
         width: 80%;
+        margin-bottom: 0.5rem;
 
         label {
-          color: rgb(220, 220, 220);
+          color: rgb(191, 191, 191);
           position: absolute;
           pointer-events: none;
           left: 0.5rem;
@@ -63,7 +118,7 @@
           margin: 0.3rem 0;
           padding: 0.8rem;
           width: 100%;
-          border: 0.1rem solid rgb(220, 220, 220);
+          border: 0.1rem solid lightgray;
           border-radius: 0.3rem;
 
           &:focus {
@@ -92,9 +147,10 @@
       .textareaContainer {
         width: 80%;
         position: relative;
+        margin-bottom: 1.5rem;
 
         label {
-          color: rgb(220, 220, 220);
+          color: rgb(191, 191, 191);
           position: absolute;
           pointer-events: none;
           left: 0.5rem;
@@ -108,11 +164,11 @@
           margin: 0.3rem 0 0 0;
           padding: 0.8rem;
           width: 100%;
-          border: 0.1rem solid rgb(220, 220, 220);
+          border: 0.1rem solid lightgray;
           border-radius: 0.3rem;
           resize: none;
           transition: 0.5s ease all;
-          height: 6rem;
+          height: 5rem;
           color: var(--text-colour-light);
 
           &:focus {
@@ -142,7 +198,6 @@
       button {
         @include Styles.btn-background;
         width: 7rem;
-        margin-top: 1rem;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         margin: 0;
