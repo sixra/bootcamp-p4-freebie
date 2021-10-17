@@ -14,11 +14,21 @@ import { RiArrowDropUpFill } from "react-icons/ri";
 const Categories = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
   const [gridToggle, setGridToggle] = useState(true);
+  const [categoriesDropdown, setCategoriesDropdown] = useState(false);
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const postsPerPage = 4;
+  const visitedPages = pageNumber * postsPerPage;
+
+  const pageCount = Math.ceil(ads.length / postsPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   const buttonHandler = () => {
     setGridToggle((current) => !current);
   };
 
-  const [categoriesDropdown, setCategoriesDropdown] = useState(false);
   const dropdownHandler = () => {
     setCategoriesDropdown((current) => !current);
   };
@@ -27,14 +37,6 @@ const Categories = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [pageNumber, setPageNumber] = useState(0);
-  const postsPerPage = 4;
-  const visitedPages = pageNumber * postsPerPage;
-
-  const pageCount = Math.ceil(ads.length / postsPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   return (
     <section className="categoriesPageContainer">

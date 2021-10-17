@@ -3,9 +3,6 @@
 import React from "react";
 import axios from "axios";
 import "./Contact.scss";
-import { IoLocationSharp } from "react-icons/io5";
-import { CgPhone } from "react-icons/cg";
-import { MdEmail } from "react-icons/md";
 import toastr from "toastr";
 
 const Contact = () => {
@@ -61,52 +58,47 @@ const Contact = () => {
   };
 
   return (
-    <section className="contactContainer">
-      <div className="contactAllContainer">
-        <div className="contactFormContainer">
-          <div className="contactUs">
-            <div className="contactSideHeader">
-              <h1>⎯⎯⎯⎯&nbsp;&nbsp;CONTACT US</h1>
+    <section className="contactPage">
+      <div className="contactMainContainer">
+        <div className="contactInfo">
+          <div className="contactInfoTitle">
+            <h2>lets get in touch</h2>
+            <span>we are open for any suggestions or just to have a chat</span>
+          </div>
+          <div className="contactInfoBody">
+            <div>
+              <span>5464321354,21354</span>
+            </div>
+            <div>
+              <span>info@freebie.com</span>
+            </div>
+            <div>
+              <span>10785 Mitte</span>
+              <span>Berlin, DE</span>
             </div>
           </div>
-          <div className="contactHeader">
-            <h1>Get in Touch</h1>
-            <h2>Any Questions or remarks? Just write us a message!</h2>
-          </div>
-          <div className="contactAddress">
-            <IoLocationSharp className="icon" />
-            <h3>10785 Mitte</h3>
-            <h3>Berlin, DE</h3>
-          </div>
-          <div className="contactPhone">
-            <CgPhone className="icon" />
-            <h3>01575 141 615 </h3>
-          </div>
-          <div className="contactEmail">
-            <MdEmail className="icon" />
-            <h3>lorem@ipsum.com</h3>
-          </div>
-          <div className="contactForm">
-            <form onSubmit={submitRequest}>
-              <input required id="contactName" placeholder="Name" type="text" />
-              <input required id="email" placeholder="Email" type="email" />
-              <textarea
-                required
-                id="message"
-                placeholder="Write your message..."
-                maxLength="1000"
-                rows={4}
-                defaultValue={""}
-              />
-              <button type="submit">Send</button>
-            </form>
-          </div>
         </div>
+        <form className="contactForm" onSubmit={submitRequest}>
+          <div className="inputNameContainer">
+            <input required id="contactName" type="text" />
+            <label>Name</label>
+          </div>
+          <div className="inputEmailContainer">
+            <input required id="email" type="email" />
+            <label>Email</label>
+          </div>
+          <div className="textareaContainer">
+            <textarea
+              required
+              id="message"
+              maxLength="300"
+              defaultValue={""}
+            />
+            <label>Message</label>
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </div>
-      {/* <iframe
-        className="map"
-        src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"
-      ></iframe> */}
     </section>
   );
 };

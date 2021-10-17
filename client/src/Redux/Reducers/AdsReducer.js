@@ -20,7 +20,7 @@ export const adsReducer = (state = allAds, action) => {
     case adsType.FILTER_BY_SEARCH:
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
-      return { ...state, ads: [...state.ads, action.payload] };
+      return { ...state, ads: [...state.ads, action.payload], filteredAds: [...state.ads, action.payload] };
     case adsType.FILTER_POSTED_BY_USER:
       return { ...state, creator: action.payload.creator };
     case adsType.DELETE_AD_POSTED_BY_USER:
