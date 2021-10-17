@@ -30,7 +30,7 @@ const AdsByUser = ({ adInfo }) => {
               <BsEye size={22} />
               <span>view</span>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/user/post"}>
               <AiOutlineEdit size={22} />
               <span>edit</span>
             </Link>

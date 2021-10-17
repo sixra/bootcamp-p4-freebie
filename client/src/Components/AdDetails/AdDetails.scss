@@ -187,6 +187,8 @@
         color: rgb(121, 121, 121);
 
         span {
+          display: inline-block;
+          text-transform: capitalize;
           color: black;
           font-weight: 600;
           margin-left: 0.3rem;

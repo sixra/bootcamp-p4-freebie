@@ -12,7 +12,6 @@ const PostAd = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
   const dispatch = useDispatch();
   const [adPosted, setAdPosted] = useState(false);
-
   const [adData, setAdData] = useState({
     title: "",
     category: "",

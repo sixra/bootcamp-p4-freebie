@@ -22,12 +22,12 @@
     background-position: center;
     background-size: cover;
     background-image: linear-gradient(
-      hsla(0, 0%, 0%, 0.822),
-      hsla(0, 0%, 7%, 0.726)
-    ), url("./abstract-background.jpg");
+        hsla(0, 0%, 0%, 0.822),
+        hsla(0, 0%, 7%, 0.726)
+      ),
+      url("./abstract-background.jpg");
 
-
-    // background-image: linear-gradient(                     
+    // background-image: linear-gradient(
     //   hsla(334, 83%, 48%, 0.658),
     //   hsla(0, 80%, 57%, 0.76)
     // ), url("./abstract-background.jpg");
@@ -36,7 +36,7 @@
       border-radius: 50%;
       padding: 0.2rem;
       margin-bottom: 0.7rem;
-      // background: white; 
+      // background: white;
       background: linear-gradient(
         to right,
         var(--details-colour-secondary),
@@ -48,7 +48,6 @@
         width: 5.5rem;
         border-radius: 50%;
         overflow: hidden;
-        
 
         img {
           height: 100%;
@@ -61,6 +60,7 @@
       color: rgb(255, 255, 255);
       span {
         font-weight: 600;
+        text-transform: capitalize;
       }
     }
   }

@@ -27,7 +27,7 @@ export const adsReducer = (state = allAds, action) => {
       return {
         ...state,
         ads: state.ads.filter(({ _id }) => _id !== action.payload)
-      }
+      };
     default:
       return state;
   }
