@@ -36,6 +36,59 @@
           color: rgb(43, 43, 43);
         }
 
+        div {
+          position: relative;
+          width: 90%;
+          margin-bottom: 0.5rem;
+
+          label {
+            color: rgb(191, 191, 191);
+            position: absolute;
+            pointer-events: none;
+            left: 0.8rem;
+            top: 1.1rem;
+            transition: 0.3s ease all;
+            -moz-transition: 0.3s ease all;
+            -webkit-transition: 0.3s ease all;
+          }
+          input {
+            color: var(--text-colour-light);
+            margin: 0.3rem 0;
+            padding: 0.8rem;
+            width: 100%;
+            border: 0.1rem solid lightgray;
+            border-radius: 0.3rem;
+
+            &:focus {
+              outline: none;
+              border: 0.1rem solid var(--details-colour-secondary);
+            }
+            &:active {
+              border: 0.1rem solid var(--details-colour-secondary);
+              outline: none;
+            }
+
+            &:focus ~ label,
+            &:valid ~ label {
+              top: -0.2rem;
+              font-size: 0.7rem;
+              background-color: var(--background-colour-main);
+              padding: 0 0.4rem;
+            }
+
+            &:focus ~ label {
+              color: var(--details-colour-secondary);
+            }
+
+            &:valid ~ label {
+              color: rgb(0, 187, 0);
+            }
+            &:valid {
+              border: 0.1rem solid lightgray;
+            }
+          }
+        }
+
         button {
           @include Styles.btn-background;
           margin-top: 1rem;
@@ -47,19 +100,6 @@
           margin-top: 1rem;
           text-align: center;
           font-size: 0.9rem;
-        }
-      }
-
-      input {
-        margin: 0.3rem 0;
-        padding: 0.8rem;
-        width: 100%;
-        border: 1px solid lightgray;
-        border-radius: 0.3rem;
-
-        &:focus {
-          border: 1px solid #e20f55;
-          outline: none;
         }
       }
     }

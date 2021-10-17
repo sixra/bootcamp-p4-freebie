@@ -100,7 +100,7 @@
       .inputNameContainer,
       .inputEmailContainer {
         position: relative;
-        width: 80%;
+        width: 70%;
         margin-bottom: 0.5rem;
 
         label {
@@ -122,6 +122,10 @@
           border-radius: 0.3rem;
 
           &:focus {
+            outline: none;
+            border: 0.1rem solid var(--details-colour-secondary);
+          }
+          &:active {
             border: 0.1rem solid var(--details-colour-secondary);
             outline: none;
           }
@@ -141,11 +145,14 @@
           &:valid ~ label {
             color: rgb(0, 187, 0);
           }
+          &:valid {
+            border: 0.1rem solid lightgray;
+          }
         }
       }
 
       .textareaContainer {
-        width: 80%;
+        width: 70%;
         position: relative;
         margin-bottom: 1.5rem;
 
@@ -192,6 +199,10 @@
 
           &:valid ~ label {
             color: rgb(0, 187, 0);
+          }
+
+          &:valid {
+            border: 0.1rem solid lightgray;
           }
         }
       }
