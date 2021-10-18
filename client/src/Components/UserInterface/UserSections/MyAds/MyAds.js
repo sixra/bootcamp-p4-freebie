@@ -16,6 +16,8 @@ const MyAds = () => {
     dispatch(filterPostedByUser(ads, userId));
   }, [ads, dispatch, userId]);
 
+
+
   return (
     <section className="userSection">
       <div className="userInterface">

@@ -43,7 +43,7 @@ function SearchInput({ placeholder, data, searchBarStyle }) {
           onChange={handleFilter}
         />
         <div>
-          {!wordEntered ? (
+          {!title && !wordEntered ? (
             <AiOutlineSearch />
           ) : (
             <AiOutlineClose id="clearBtn"

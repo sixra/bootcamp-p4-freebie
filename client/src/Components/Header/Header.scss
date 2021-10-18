@@ -38,7 +38,7 @@
     cursor: pointer;
 
     @media only screen and (max-width: 1000px) {
-      padding-left: 3rem;
+      padding-left: 2rem;
       border: none;
       height: 3rem;
       margin: 0.5rem 0;
@@ -189,10 +189,16 @@
     border-radius: 1.5rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+    padding-right: 3rem;
 
     @media only screen and (max-width: 1000px) {
       height: 3rem;
-      padding-left: 3rem;
+      padding-left: 2rem;
     }
   }
 
@@ -239,8 +245,11 @@
         padding: 0.6rem 1rem;
         text-transform: capitalize;
         cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         @media only screen and (max-width: 1000px) {
-          padding: 0.8rem 1rem;
+          padding: 0.8rem 1.5rem;
         }
 
         &:hover {

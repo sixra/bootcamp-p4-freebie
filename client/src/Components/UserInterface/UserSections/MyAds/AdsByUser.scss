@@ -55,6 +55,7 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
+          font-weight: 400;
           @media only screen and (max-width: 860px) {
             width: 100%;
             max-width: 12rem;
@@ -64,6 +65,9 @@
             max-width: 7rem;
             text-overflow: ellipsis;
           }
+        }
+        .listItemCategory {
+          width: 100%;
         }
       }
       .adsByUserBtnContainer {

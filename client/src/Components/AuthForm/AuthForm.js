@@ -52,73 +52,87 @@ const AuthForm = () => {
         <div className="form-container sign-up-container">
           <form onSubmit={submitSignUp}>
             <h1>Create an Account</h1>
-            <input
-              type="text"
-              placeholder="First Name"
-              name="firstName"
-              label="First Name"
-              required
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="lastName"
-              label="Last Name"
-              required
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              label="Email Address"
-              required
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              label="Password"
-              required
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="confirmPassword"
-              label="Repeat Password"
-              required
-              onChange={handleChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="firstName"
+                label="First Name"
+                required
+                onChange={handleChange}
+              />
+              <label>First name</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="lastName"
+                label="Last Name"
+                required
+                onChange={handleChange}
+              />
+              <label>Last name</label>
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                label="Email Address"
+                required
+                onChange={handleChange}
+              />
+              <label>Email</label>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="password"
+                label="Password"
+                required
+                onChange={handleChange}
+              />
+              <label>Password</label>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="confirmPassword"
+                label="Repeat Password"
+                required
+                onChange={handleChange}
+              />
+              <label>Repeat password</label>
+            </div>
             <button type="submit">Sign Up</button>
           </form>
-          <div>
-            By signing up I agree to the <span>Terms and Conditions</span> and{" "}
-            <span>Private Policy</span>
+          <div className="userAgreement">
+            By signing up I agree to the Terms and Conditions and
+            Privacy Policy
           </div>
         </div>
 
         <div className="form-container sign-in-container">
           <form onSubmit={submitSignIn}>
             <h1>Sign In</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              label="Email Address"
-              required
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              label="Password"
-              required
-              onChange={handleChange}
-            />
+            <div>
+              <input
+                type="email"
+                name="email"
+                label="Email Address"
+                required
+                onChange={handleChange}
+              />
+              <label>Email</label>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="password"
+                label="Password"
+                required
+                onChange={handleChange}
+              />
+              <label>Password</label>
+            </div>
             <button type="submit">Sign In</button>
             <Link className="forgotPasswordLink" to="/user/forgot">
               Forgot your password?

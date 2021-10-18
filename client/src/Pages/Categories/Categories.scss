@@ -221,7 +221,7 @@
         width: 100%;
       }
     }
-
+    // PAGINATION
     .paginationBtn {
       margin: 3rem 0 1.5rem 0;
       display: flex;
@@ -247,7 +247,11 @@
 
     .paginationActivePage {
       color: var(--text-colour-main-light);
-      background-color: #e52853;
+      background: linear-gradient(
+        to right,
+        var(--details-colour-secondary),
+        var(--details-colour-main)
+      );
       padding: 0.6rem 0;
       margin-top: -0.6rem;
       border-radius: 0.3rem;

@@ -6,6 +6,7 @@ import logo from "./freebie-logo.png"
 
 const Navigation = () => {
 
+
   return (
     <nav>
 

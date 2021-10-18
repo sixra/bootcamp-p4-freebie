@@ -37,7 +37,7 @@ const App = () => {
       <Router>
         <Navigation />
         <PathBanner />
-        <HeroImage height="60" minHeight="60" />
+        <HeroImage height="50" minHeight="50" />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />

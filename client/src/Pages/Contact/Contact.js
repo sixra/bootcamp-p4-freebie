@@ -3,10 +3,11 @@
 import React from "react";
 import axios from "axios";
 import "./Contact.scss";
-import { IoLocationSharp } from "react-icons/io5";
-import { CgPhone } from "react-icons/cg";
-import { MdEmail } from "react-icons/md";
 import toastr from "toastr";
+import { CgPhone } from "react-icons/cg"
+import { MdEmail } from "react-icons/md"
+import { IoLocationSharp } from "react-icons/io5"
+
 
 const Contact = () => {
   const submitRequest = (e) => {
@@ -61,52 +62,52 @@ const Contact = () => {
   };
 
   return (
-    <section className="contactContainer">
-      <div className="contactAllContainer">
-        <div className="contactFormContainer">
-          <div className="contactUs">
-            <div className="contactSideHeader">
-              <h1>⎯⎯⎯⎯&nbsp;&nbsp;CONTACT US</h1>
+    <section className="contactPage">
+      <div className="contactMainContainer">
+        <div className="contactInfo">
+          <div className="overlay">
+            <div className="contactInfoTitle">
+              <h2>Let's get in touch</h2>
+              <p>We're open for any suggestions or just to have a chat</p>
+            </div>
+            <div className="contactInfoBody">
+              <div>
+                <CgPhone size="20" />
+                <span>01575 141 615 </span>
+              </div>
+              <div>
+                <MdEmail size="20" />
+                <span>brah.freebie@gmail.com</span>
+              </div>
+              <div>
+                <IoLocationSharp size="20" />
+                <span>10785 Mitte Berlin, DE</span>
+              </div>
             </div>
           </div>
-          <div className="contactHeader">
-            <h1>Get in Touch</h1>
-            <h2>Any Questions or remarks? Just write us a message!</h2>
-          </div>
-          <div className="contactAddress">
-            <IoLocationSharp className="icon" />
-            <h3>10785 Mitte</h3>
-            <h3>Berlin, DE</h3>
-          </div>
-          <div className="contactPhone">
-            <CgPhone className="icon" />
-            <h3>01575 141 615 </h3>
-          </div>
-          <div className="contactEmail">
-            <MdEmail className="icon" />
-            <h3>lorem@ipsum.com</h3>
-          </div>
-          <div className="contactForm">
-            <form onSubmit={submitRequest}>
-              <input required id="contactName" placeholder="Name" type="text" />
-              <input required id="email" placeholder="Email" type="email" />
-              <textarea
-                required
-                id="message"
-                placeholder="Write your message..."
-                maxLength="1000"
-                rows={4}
-                defaultValue={""}
-              />
-              <button type="submit">Send</button>
-            </form>
-          </div>
         </div>
+        <form className="contactForm" onSubmit={submitRequest}>
+          <h1>Contact Us</h1>
+          <div className="inputNameContainer">
+            <input required id="contactName" type="text" />
+            <label>Name</label>
+          </div>
+          <div className="inputEmailContainer">
+            <input required id="email" type="email" />
+            <label>Email</label>
+          </div>
+          <div className="textareaContainer">
+            <textarea
+              required
+              id="message"
+              maxLength="300"
+              defaultValue={""}
+            />
+            <label>Message</label>
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </div>
-      {/* <iframe
-        className="map"
-        src="https://www.mapquest.com/embed/germany/berlin-282238303?center=52.51716101425811,13.388900756835938&zoom=12&maptype=map"
-      ></iframe> */}
     </section>
   );
 };

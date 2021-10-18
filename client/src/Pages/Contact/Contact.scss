@@ -1,234 +1,219 @@
 @use "../../Styles.scss";
 @import "toastr";
 
-.contactContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background-color: #F4F4F4;
-  padding: 2rem 1rem; 
+.contactPage {
+  padding: 2rem 0;
+  background-color: #f4f4f4;
 
-  & iframe {
-    width: 50%;
-    height: 600px;
-    border: none;
-    z-index: 1;
-    filter: grayscale(1);
-    @media only screen and (max-width: 850px) {
-      display: none;
-    }
-  }
-  .contactAllContainer {
+  .contactMainContainer {
+    max-width: 55rem;
+    width: 95%;
+    margin: auto;
+    height: 30rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    background-color: white;
+    border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    overflow: hidden;
 
-    .contactFormContainer {
-      background: var(--details-color-gray);
-      font-family: var(--title-font);
+    @media only screen and (max-width: 700px) {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .contactInfo {
       width: 100%;
-      height: 600px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 0.5fr 0.5fr 2fr;
-      grid-template-areas: "contactUs contactHeader contactHeader contactHeader" "contactUs contactAddress contactPhone contactEmail" "contactUs contactForm contactForm contactForm";
-      @media only screen and (max-width: 1200px) {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 0.5fr 2fr;
-        grid-template-areas: "contactHeader contactHeader contactHeader" "contactAddress contactPhone contactEmail" "contactForm contactForm contactForm";
-      }
-      @media only screen and (max-width: 1000px) {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr 1fr 1fr;
-        grid-template-areas: "contactHeader contactHeader contactHeader" "contactAddress contactForm contactForm" "contactPhone contactForm contactForm" "contactEmail contactForm contactForm";
-      }
-      @media only screen and (max-width: 530px) {
+      height: 100%;
+      min-height: 15rem;
+      position: relative;
+
+      .overlay {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        padding-bottom: 2rem;
-      }
-
-      .contactUs {
-        position: relative;
-        width: 12rem;
-        background: var(--background-colour-dark-gray);
-        overflow: hidden;
-        @media only screen and (max-width: 1200px) {
-          display: none;
-        }
-        &:before {
-          position: absolute;
-          content: "";
-          bottom: -3.125rem;
-          left: -6.25rem;
-          height: 15.625rem;
-          width: 25rem;
-          background: linear-gradient(
-            to right,
-            var(--details-colour-secondary),
-            var(--details-colour-main)
-          );
-          transform: rotate(25deg);
-        }
-
-        &:after {
-          position: absolute;
-          content: "";
-          bottom: -5rem;
-          right: -6.25rem;
-          height: 16.875rem;
-          width: 25rem;
-          background: linear-gradient(
-            to left,
-            var(--details-colour-secondary),
-            var(--details-colour-main)
-          );
-          transform: rotate(-25deg);
-        }
-      }
-
-      .contactSideHeader {
-        color: var(--background-colour-main);
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(
+            hsla(0, 0%, 0%, 0.845),
+            hsla(0, 3%, 28%, 0.817)
+          ),
+          url("./freebieLocation.png");
+        background-position: center;
+        background-size: cover;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
         position: absolute;
-        transform: rotate(-90deg);
-        top: 7.5rem;
-        left: -2.5rem;
-        & h1 {
-          font-size: 1.5rem;
-        }
-      }
+        height: 100%;
+        width: 100%;
+        padding: 1.5rem 0;
 
-      .contactHeader {
-        text-align: center;
-        margin: 1rem;
-        color: var(--text-colour-main-dark);
-        & h1 {
-          font-weight: var(--font-medium-bold);
-        }
-        & h2 {
-          margin: 1rem;
-          font-weight: var(--font-light-bold);
-        }
-      }
+        .contactInfoTitle {
+          max-width: 15rem;
 
-      .contactAddress,
-      .contactEmail,
-      .contactPhone {
-        text-align: center;
-        margin: 1rem;
-        color: #444;
-        & h3 {
-          font-size: 1rem;
-          font-weight: 300;
-        }
-        & .icon {
-          color: var(--details-colour-main);
-          font-size: 1.7rem;
-        }
-      }
+          h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
 
-      form {
-        position: relative;
-        width: 25rem;
-        margin: 0 auto;
-        padding: 1.25rem;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        background: white;
+          p {
+            font-size: 0.9rem;
+            letter-spacing: 0.02rem;
+          }
+        }
 
-        @media only screen and (max-width: 1000px) {
-          width: 85%;
-          height: 100%;
+        .contactInfoBody {
+          margin-top: 2.5rem;
+          height: 6rem;
           display: flex;
           flex-direction: column;
-        }
+          justify-content: space-between;
+          font-size: 0.9rem;
+          letter-spacing: 0.02rem;
 
-        @media only screen and (max-width: 530px) {
-          width: 85%;
-          margin: 0;
-          height: 24rem;
-          padding: 0;
-        }
+          div {
+            display: flex;
+            align-items: center;
 
-        & input,
-        & textarea {
-          background: white;
-          display: block;
-          margin: 1.25rem auto;
-          width: 100%;
-          border: 0;
-          padding-left: 1rem;
-        }
-        & input {
-          height: 40px;
-          line-height: 40px;
-          outline: 0;
-          border-bottom: 1px solid rgba(68, 68, 68, 0.3);
-          font-size: 1rem;
-          color: rgba(68, 68, 68, 0.8);
-        }
-        & textarea {
-          border-bottom: 1px solid rgba(68, 68, 68, 0.3);
-          resize: none;
-          outline: none;
-          font-size: 1rem;
-          font-family: lato;
-          color: rgba(68, 68, 68, 0.8);
-          @media only screen and (max-width: 1000px) {
-            height: 11rem;
-          }
-          @media only screen and (max-width: 530px) {
-            height: 8rem;
-          }
-        }
-        & button {
-          @include Styles.btn-background;
-          position: absolute;
-          width: 14rem;
-          left: 5.5rem;
-          bottom: -1.25rem;
-          @media only screen and (max-width: 1000px) {
-            width: 8rem;
-            left: 6rem;
-          }
-          @media only screen and (max-width: 530px) {
-            width: 8rem;
-            left: 5rem;
+            svg {
+              margin-right: 0.5rem;
+            }
           }
         }
       }
-
-      .contactForm {
-        padding-bottom: 2.5rem;
-        @media only screen and (max-width: 530px) {
-          display: flex;
-          justify-content: center;
-        }
-      }
-    }
-    // /* Layout Stuff */
-    .contactUs {
-      grid-area: contactUs;
     }
 
-    .contactHeader {
-      grid-area: contactHeader;
-    }
-    .contactAddress {
-      grid-area: contactAddress;
-    }
-    .contactPhone {
-      grid-area: contactPhone;
-    }
-    .contactEmail {
-      grid-area: contactEmail;
-    }
     .contactForm {
-      grid-area: contactForm;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 2rem 0;
+
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: rgb(43, 43, 43);
+      }
+
+      .inputNameContainer,
+      .inputEmailContainer {
+        position: relative;
+        width: 70%;
+        margin-bottom: 0.5rem;
+
+        label {
+          color: rgb(191, 191, 191);
+          position: absolute;
+          pointer-events: none;
+          left: 0.8rem;
+          top: 1.1rem;
+          transition: 0.3s ease all;
+          -moz-transition: 0.3s ease all;
+          -webkit-transition: 0.3s ease all;
+        }
+        input {
+          color: var(--text-colour-light);
+          margin: 0.3rem 0;
+          padding: 0.8rem;
+          width: 100%;
+          border: 0.1rem solid lightgray;
+          border-radius: 0.3rem;
+
+          &:focus {
+            outline: none;
+            border: 0.1rem solid var(--details-colour-secondary);
+          }
+          &:active {
+            border: 0.1rem solid var(--details-colour-secondary);
+            outline: none;
+          }
+
+          &:focus ~ label,
+          &:valid ~ label {
+            top: -0.2rem;
+            font-size: 0.7rem;
+            background-color: var(--background-colour-main);
+            padding: 0 0.4rem;
+          }
+
+          &:focus ~ label {
+            color: var(--details-colour-secondary);
+          }
+
+          &:valid ~ label {
+            color: rgb(0, 187, 0);
+          }
+          &:valid {
+            border: 0.1rem solid lightgray;
+          }
+        }
+      }
+
+      .textareaContainer {
+        width: 70%;
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        label {
+          color: rgb(191, 191, 191);
+          position: absolute;
+          pointer-events: none;
+          left: 0.8rem;
+          top: 1.1rem;
+          transition: 0.3s ease all;
+          -moz-transition: 0.3s ease all;
+          -webkit-transition: 0.3s ease all;
+        }
+
+        textarea {
+          margin: 0.3rem 0 0 0;
+          padding: 0.8rem;
+          width: 100%;
+          border: 0.1rem solid lightgray;
+          border-radius: 0.3rem;
+          resize: none;
+          transition: 0.5s ease all;
+          height: 5rem;
+          color: var(--text-colour-light);
+
+          &:focus {
+            border: 0.1rem solid var(--details-colour-secondary);
+            outline: none;
+            height: 11rem;
+            margin: 0;
+          }
+
+          &:focus ~ label,
+          &:valid ~ label {
+            top: -0.5rem;
+            font-size: 0.7rem;
+            background-color: var(--background-colour-main);
+            padding: 0 0.4rem;
+          }
+
+          &:focus ~ label {
+            color: var(--details-colour-secondary);
+          }
+
+          &:valid ~ label {
+            color: rgb(0, 187, 0);
+          }
+
+          &:valid {
+            border: 0.1rem solid lightgray;
+          }
+        }
+      }
+      button {
+        @include Styles.btn-background;
+        width: 7rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        margin: 0;
+      }
     }
   }
 }
