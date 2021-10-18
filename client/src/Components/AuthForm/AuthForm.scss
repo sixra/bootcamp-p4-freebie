@@ -13,6 +13,9 @@
     max-width: 55rem;
     width: 100%;
     margin: 0 auto;
+    @media only screen and (max-width: 700px) {
+      height: 60rem;
+    }
 
     .form-container {
       position: absolute;
@@ -29,6 +32,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        @media only screen and (max-width: 700px) {
+          height: 27rem;
+        }
 
         h1 {
           margin-bottom: 1rem;
@@ -40,6 +46,10 @@
           position: relative;
           width: 90%;
           margin-bottom: 0.5rem;
+          @media only screen and (max-width: 700px) {
+            width: 100%;
+            max-width: 22rem;
+          }
 
           label {
             color: rgb(191, 191, 191);
@@ -102,12 +112,22 @@
           font-size: 0.9rem;
         }
       }
+      .userAgreement {
+        @media only screen and (max-width: 700px) {
+          width: 80%;
+          margin: auto;
+          text-align: center;
+        }
+      }
     }
 
     .sign-in-container {
       left: 0;
       width: 50%;
       z-index: 2;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
     }
 
     .sign-in-container a {
@@ -134,6 +154,9 @@
           display: inline-block;
         }
       }
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
     }
 
     .overlay-container {
@@ -147,6 +170,12 @@
       z-index: 100;
       h1 {
         font-size: 1.5rem;
+      }
+
+      @media only screen and (max-width: 700px) {
+        height: 100%;
+        width: 100%;
+        left: 0;
       }
 
       .overlay {
@@ -164,6 +193,10 @@
         width: 200%;
         transform: translateX(0);
         transition: transform 0.6s ease-in-out;
+        @media only screen and (max-width: 700px) {
+          height: 50%;
+          top: 30rem;
+        }
       }
 
       .overlay-panel {
@@ -179,6 +212,10 @@
         text-align: center;
         transform: translateX(0);
         transition: transform 0.6s ease-in-out;
+        @media only screen and (max-width: 700px) {
+          height: 100%;
+          width: 80%;
+        }
 
         p {
           font-size: 0.9rem;
@@ -210,10 +247,18 @@
       .overlay-right {
         right: 0;
         transform: translateX(0);
+        @media only screen and (max-width: 700px) {
+          transform: translateY(100%);
+          transform: translateX(20%);
+        }
       }
 
       .overlay-left {
         transform: translateX(-20%);
+        @media only screen and (max-width: 700px) {
+          transform: translateX(50%);
+          transform: translateY(0%);
+        }
       }
     }
 
@@ -221,12 +266,19 @@
 
     /* Move sign in to the right */
     &.right-panel-active .sign-in-container {
-      transform: translateX(100%);
+      transform: translateX(50%);
+      @media only screen and (max-width: 700px) {
+        transform: translateY(100%);
+      }
     }
 
     /* Move overlay to the left */
     &.right-panel-active .overlay-container {
       transform: translateX(-100%);
+      @media only screen and (max-width: 700px) {
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+      }
     }
 
     /* Bring sign up over sign in */
@@ -234,19 +286,35 @@
       transform: translateX(100%);
       opacity: 1;
       z-index: 5;
+      @media only screen and (max-width: 700px) {
+        transform: translateX(0%);
+        transform: translateY(50%);
+      }
     }
 
     /* Move overlay back to the right */
     &.right-panel-active .overlay {
       transform: translateX(50%);
+      @media only screen and (max-width: 700px) {
+        transform: translateY(0%);
+        transform: translateX(35%);
+      }
     }
 
     &.right-panel-active .overlay-left {
       transform: translateX(0);
+      @media only screen and (max-width: 700px) {
+        transform: translateX(100%);
+        transform: translateY(-0%);
+      }
     }
 
     &.right-panel-active .overlay-right {
       transform: translateX(20%);
+      @media only screen and (max-width: 700px) {
+        transform: translateX(0%);
+        transform: translateY(-50%);
+      }
     }
   }
 }

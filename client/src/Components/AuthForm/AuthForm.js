@@ -104,9 +104,9 @@ const AuthForm = () => {
             </div>
             <button type="submit">Sign Up</button>
           </form>
-          <div>
-            By signing up I agree to the <span>Terms and Conditions</span> and{" "}
-            <span>Private Policy</span>
+          <div className="userAgreement">
+            By signing up I agree to the Terms and Conditions and
+            Privacy Policy
           </div>
         </div>
 
