@@ -22,8 +22,8 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li className="navListItem">
-          <NavLink activeClassName="activePage" to="/categories">
-            categories
+          <NavLink activeClassName="activePage" to="/freebies">
+            Freebies
           </NavLink>
         </li>
         <li className="navListItem">
