@@ -73,7 +73,7 @@ export const updateItem = async (req, res) => {
     const updatedItem = await Item.findByIdAndUpdate(_id, { ...wholeItem, _id }, { new: true });
     if (!updatedItem) throw Error("Something went wrong while trying to update the item");
 
-    res.status(200).json({ success: true });
+    res.status(200).json(updatedItem);
   } catch (e) {
     res.status(400).json({ msg: e.message, success: false });
   }
