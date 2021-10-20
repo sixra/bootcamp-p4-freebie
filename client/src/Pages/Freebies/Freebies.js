@@ -3,7 +3,7 @@ import { HiOutlineViewGrid } from "react-icons/hi";
 import { HiViewList } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
-import "./Categories.scss";
+import "./Freebies.scss";
 import SingleAd from "./SingleAd";
 import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
@@ -11,7 +11,7 @@ import SearchInput from "./SearchInput";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
 
-const Categories = () => {
+const Freebies = () => {
   const ads = useSelector((state) => state.allAds.filteredAds);
   const [gridToggle, setGridToggle] = useState(true);
   const [categoriesDropdown, setCategoriesDropdown] = useState(false);
@@ -114,4 +114,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Freebies;

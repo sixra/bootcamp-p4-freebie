@@ -10075,6 +10075,13 @@ react-file-base64@^1.0.3:
   dependencies:
     react "^15.6.1"
 
+react-glitch-effect@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-glitch-effect/-/react-glitch-effect-3.1.0.tgz#b8a14d57888b9d47182cfbc3c408c340269077f8"
+  integrity sha512-qBjCTTSWPKTkvifWzJtO/tNDxEdtihJvshp5LYW+noiATloai679vHer4Vb/ipSPu9Yvu7xa+gB254WfNlpaaA==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-icons@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-4.2.0.tgz"
@@ -10235,6 +10242,11 @@ react-select@^4.3.1:
     prop-types "^15.6.0"
     react-input-autosize "^3.0.0"
     react-transition-group "^4.3.0"
+
+react-simple-snake@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/react-simple-snake/-/react-simple-snake-0.2.2.tgz#171f39c3003c1c86c2e2a2f46c5f2c4007da185e"
+  integrity sha512-MP5s3IDs6+9S0GrxBYi0oGjvm2/vFMq7GmYhVbjEhRjJUlH3kAxoyOBLTfFpGq3+Fkx2OUSFBbR3l8n1iG5qkg==
 
 react-store-badges@^1.5.1:
   version "1.5.1"

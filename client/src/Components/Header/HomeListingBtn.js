@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import {Link} from "react-router-dom";
 
 const HomeListingBtn = () => {
   return (
@@ -8,7 +9,7 @@ const HomeListingBtn = () => {
       <p>
       Use our platform to find free stuff near you and help the community by offering some yourself.
       </p>
-      <button className="headerBtn">start exploring</button>
+      <Link to="/freebies"><button className="headerBtn">start exploring</button></Link>
     </div>
   );
 };
