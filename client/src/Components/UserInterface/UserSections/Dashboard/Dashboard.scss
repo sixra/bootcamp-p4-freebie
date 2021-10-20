@@ -1,9 +1,5 @@
 @use "../../../../Styles.scss";
 
-// * {
-//   outline: 1px solid black;
-// }
-
 .userDashboard {
   display: flex;
   flex-direction: column;
@@ -19,44 +15,18 @@
 
 .profilePage {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  .loadingAvatar {
-    position: absolute;
-    z-index: 1;
-    top: 4rem;
-    left: 12rem;
-    overflow: hidden;
-    width: 3rem;
-    border-radius: 50%;
-    height: 3rem;
-    background: linear-gradient(
-      to right,
-      var(--details-colour-secondary),
-      var(--details-colour-main)
-    );
-    text-transform: uppercase;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+
   .profilePageAvatar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
     position: relative;
-    .profileAvatar {
-      margin: 1rem;
-      border-radius: 50%;
-    }
-    .profilePageAvatarSpan {
+
+    .loadingAvatar {
       position: absolute;
-      top: 4.5rem;
-      left: 11rem;
+      top: 0.2rem;
+      right: 0.2rem;
       overflow: hidden;
       width: 3rem;
       border-radius: 50%;
@@ -72,20 +42,56 @@
       justify-content: center;
       align-content: center;
       align-items: center;
-      .fileUp {
-        position: absolute;
-        top: 0;
-        left: 0;
+    }
+
+    .profileAvatar {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 12rem;
+      height: 12rem;
+      margin-bottom: 1.5rem;
+
+      .imageAvatar {
+        object-fit: cover;
+        object-position: center;
         width: 100%;
         height: 100%;
-        opacity: 0;
-        cursor: pointer;
+      }
+
+      .profilePageAvatarSpan {
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        overflow: hidden;
+        width: 3rem;
+        border-radius: 50%;
+        height: 3rem;
+        background: linear-gradient(
+          to right,
+          var(--details-colour-secondary),
+          var(--details-colour-main)
+        );
+        text-transform: uppercase;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        .fileUp {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+        }
       }
     }
   }
+
   .colRight {
     margin-left: 2rem;
-    padding: 0 1rem; 
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,6 +104,7 @@
       display: flex;
       flex-direction: row;
     }
+
     label {
       display: block;
       margin-top: 5px;
@@ -105,14 +112,16 @@
       width: 5rem;
       font-size: 0.8rem;
     }
+
     input {
       width: 90%;
-      margin: 0.5rem 0 0.5rem 0.7rem ;
+      margin: 0.5rem 0 0.5rem 0.7rem;
       background: transparent;
       border: 1px solid lightgray;
       border-radius: 0.3rem;
       padding: 0.8rem;
     }
+
     input:focus {
       outline: none;
       border: 1px solid var(--details-colour-main);

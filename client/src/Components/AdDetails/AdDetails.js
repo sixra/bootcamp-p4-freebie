@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
@@ -7,7 +7,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
-import moment from 'moment';
+import moment from "moment";
+import axios from "axios";
 import "./AdDetails.scss";
 
 //// Swiper Library imports ////
@@ -16,11 +17,23 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import TickAnimation from "../TickAnimation/TickAnimation";
 SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAd = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt, avatar } = singleAd;
+  const {
+    title,
+    location,
+    name,
+    category,
+    image,
+    description,
+    createdAt,
+    avatar,
+    email,
+  } = singleAd;
+  const [sendInquiry, setSendInquiry] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -30,6 +43,29 @@ const AdDetails = () => {
     dispatch(removeAd());
     // eslint-disable-next-line
   }, [id]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSendInquiry(true);
+    const { senderName, senderEmail, senderPhone, senderMessage } =
+      e.target.elements;
+
+    axios({
+      method: "POST",
+      url: "http://localhost:4000/api/contact/user",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        adTitle: title,
+        receiverEmail: email,
+        senderName: senderName.value,
+        senderEmail: senderEmail.value,
+        senderPhone: senderPhone.value,
+        senderMessage: senderMessage.value,
+      },
+    });
+  };
 
   return (
     <>
@@ -60,7 +96,6 @@ const AdDetails = () => {
                 ))}
               </Swiper>
 
-
               <div className="adDetailsInfo">
                 <h1>{title}</h1>
 
@@ -81,32 +116,65 @@ const AdDetails = () => {
                 <h3>description :</h3>
                 <p>{description}</p>
               </div>
-
             </div>
 
             <div className="userAdCard">
-
               <div className="userAdAvatar">
                 <div className="userAdAvatarImage">
                   <img src={avatar} alt="avatar" />
                 </div>
-                <div className="userAdAvatarName"> Posted by<span>{name}</span></div>
+                <div className="userAdAvatarName">
+                  {" "}
+                  Posted by<span>{name}</span>
+                </div>
               </div>
 
               <div className="userAdContactForm">
-                <h3>Inquire about the ad</h3>
-                <form action="" >
-                  <input type="text" placeholder="Your Name" name="email" required />
-                  <input type="email" placeholder="Your Email" name="email" required />
-                  <input type="text" placeholder="Your Phone" name="phone" required />
-                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                  <button type="submit" className="adSubmitButton">Send</button>
-                </form>
+                {sendInquiry ? (
+                  <div className="userAdContactSuccess">
+                    <TickAnimation />
+                    <h3>Inquiry sent successfully</h3>
+                  </div>
+                ) : (
+                  <>
+                    <h3>Inquire about the ad</h3>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        name="name"
+                        id="senderName"
+                        required
+                      />
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        name="email"
+                        id="senderEmail"
+                        required
+                      />
+                      <input
+                        type="text"
+                        placeholder="Your Phone"
+                        name="phone"
+                        id="senderPhone"
+                        required
+                      />
+                      <textarea
+                        placeholder="Your Message"
+                        name="message"
+                        id="senderMessage"
+                        rows="5"
+                        required
+                      ></textarea>
+                      <button type="submit" className="adSubmitButton">
+                        Send
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
-
             </div>
-
-
           </div>
         </section>
       )}
