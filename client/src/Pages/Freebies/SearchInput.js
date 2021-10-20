@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
-import "./Categories.scss";
+import "./Freebies.scss";
 import { filterAdsSearch } from "../../Redux/Actions/AdsAction";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";

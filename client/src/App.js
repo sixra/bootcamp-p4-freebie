@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import store from "./Redux/Store";
 import Navigation from "./Components/Navigation/Navigation";
 import Home from "./Pages/Home/Home";
-import Categories from "./Pages/Categories/Categories";
+import Freebies from "./Pages/Freebies/Freebies";
 import Contact from "./Pages/Contact/Contact";
 import AuthForm from "./Components/AuthForm/AuthForm";
 import ScrollUp from "./Components/ScrollUp/ScrollUp";
@@ -22,8 +22,11 @@ import AdDetails from "./Components/AdDetails/AdDetails";
 import { getAds } from "./Redux/Actions/AdsAction";
 import PathBanner from "./Components/PathBanner/PathBanner";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy"
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
 const App = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
@@ -41,18 +44,19 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />
-          <Route path="/categories" exact component={Categories} />
-          <Route path="/user/ads" exact component={MyAds} />
-          <Route path="/user/dashboard" exact component={Dashboard} />
-          <Route path="/user/post" exact component={PostAd} />
-          <Route path="/user/favorite" exact component={MyFavorites} />
+          <Route path="/freebies" exact component={Freebies} />
+          <Route path="/user/ads" exact component={user?.result ? MyAds : AuthForm} />
+          <Route path="/user/dashboard" exact component={ user?.result ? Dashboard : AuthForm} />
+          <Route path="/user/post" exact component={user?.result ? PostAd : AuthForm} />
+          <Route path="/user/favorite" exact component={user?.result ? MyFavorites : AuthForm} />
           <Route path="/contact" exact component={Contact} />
-          <Route path="/auth" exact component={AuthForm} />
+          <Route path="/auth" exact component={user?.result ? PageNotFound : AuthForm} />
           <Route path="/user/forgot" exact component={ForgotPassword} />
           <Route path="/Api/activate/user/:id" exact component={UserActivate} />
           <Route path="/user/reset/:hash" exact component={ResetPassword} />
-          <Route path="/ad/:id" exact component={AdDetails} />
+          <Route path="/ad/:id" exact component={ user?.result ? AdDetails : AuthForm} />
           <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+          <Route path="*" exact component={PageNotFound} />
         </Switch>
         <ScrollUp />
         <Footer />
