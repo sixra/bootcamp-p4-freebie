@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./LatestAd.scss";
 import { IoTimeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
@@ -7,11 +7,10 @@ import moment from 'moment';
 import AuthForm from "../../../../Components/AuthForm/AuthForm";
 
 const LatestAd = ({ adInfo }) => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const { createdAt, category, title, image, location, _id } = adInfo;
 
   return (
-    <Link className="latestAdCard" to={ user?.result ? `/ad/${_id}` : `/auth`}>
+    <Link className="latestAdCard" to={`/ad/${_id}`}>
       <div className="latestAdImageContainer">
         <img src={image[0].base64} alt="" />
       </div>

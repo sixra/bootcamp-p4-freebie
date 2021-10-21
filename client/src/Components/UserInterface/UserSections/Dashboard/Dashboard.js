@@ -169,6 +169,12 @@ const Dashboard = () => {
     }
   };
 
+  useEffect(() => {
+
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    // eslint-disable-next-line
+  }, [location]);
+
   const handleUpdate = () => {
     if (firstName || lastName || avatar) {
       updateInfor();

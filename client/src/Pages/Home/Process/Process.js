@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 import "./Process.scss";
 import { IoPeopleOutline } from "react-icons/io5";
 import { FiCheckSquare } from "react-icons/fi";
@@ -6,7 +6,7 @@ import { GoThumbsup } from "react-icons/go";
 import {Link} from "react-router-dom";
 
 const Process = () => {
-
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   return (
     <section className="processContainer">
       <h2>How It Works?</h2>
