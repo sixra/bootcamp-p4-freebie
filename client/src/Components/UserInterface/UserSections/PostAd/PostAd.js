@@ -54,31 +54,34 @@ const PostAd = () => {
               <h2 className="postAdHeader">Post an Ad</h2>
               <div className="titleUnderline"></div>
               <form className="postAdForm" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="title"
-                  placeholder="Title"
-                  required
-                  onChange={(e) =>
-                    setAdData({
-                      ...adData,
-                      title: e.target.value,
-                    })
-                  }
-                />
-                <input
-                  type="text"
-                  name="location"
-                  placeholder="Location"
-                  required
-                  onChange={(e) =>
-                    setAdData({
-                      ...adData,
-                      location: e.target.value,
-                    })
-                  }
-                />
-
+                <div>
+                  <input
+                    type="text"
+                    name="title"
+                    required
+                    onChange={(e) =>
+                      setAdData({
+                        ...adData,
+                        title: e.target.value,
+                      })
+                    }
+                  />
+                  <label>Title</label>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="location"
+                    required
+                    onChange={(e) =>
+                      setAdData({
+                        ...adData,
+                        location: e.target.value,
+                      })
+                    }
+                  />
+                  <label>Location</label>
+                </div>
                 <select
                   name="categories"
                   placeholder="categories"
@@ -113,19 +116,20 @@ const PostAd = () => {
                   className="fileUploader"
                 />
 
-                <textarea
-                  name="description"
-                  placeholder="Description"
-                  rows="5"
-                  required
-                  onChange={(e) =>
-                    setAdData({
-                      ...adData,
-                      description: e.target.value,
-                    })
-                  }
-                ></textarea>
-
+                <div>
+                  <textarea
+                    name="description"
+                    rows="5"
+                    required
+                    onChange={(e) =>
+                      setAdData({
+                        ...adData,
+                        description: e.target.value,
+                      })
+                    }
+                  ></textarea>
+                  <label>Description</label>
+                </div>
                 <button type="submit" className="adSubmitButton">
                   Submit
                 </button>

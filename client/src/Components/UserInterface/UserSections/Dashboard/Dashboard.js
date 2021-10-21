@@ -162,7 +162,7 @@ const Dashboard = () => {
           <div className="profilePage">
             <div className="profilePageAvatar">
               <div>
-                {loading && <img className="loadingAvatar" src={loadingImg} alt="profile"/>}
+                {loading && <img className="loadingAvatar" src={loadingImg} alt="profile" />}
               </div>
               <img className="profileAvatar" src={avatar ? avatar : user?.result.avatar} alt="" />
               <span className="profilePageAvatarSpan">
@@ -174,33 +174,33 @@ const Dashboard = () => {
             <div className="colRight">
 
               <div className="inputFormGroup">
-                <label htmlFor="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" defaultValue={user?.result.firstName}
-                  autoComplete="off" placeholder="Your first name" onChange={handleChange} />
+                  autoComplete="off" onChange={handleChange} />
+                <label htmlFor="firstName">First Name</label>
               </div>
 
               <div className="inputFormGroup">
-                <label htmlFor="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName"
-                  placeholder="Your Last Name" defaultValue={user?.result.lastName} onChange={handleChange} />
+                  defaultValue={user?.result.lastName} onChange={handleChange} />
+                <label htmlFor="lastName">Last Name</label>
               </div>
 
               <div className="inputFormGroup">
-                <label htmlFor="email">Email</label>
                 <input type="email" name="email" id="email"
-                  placeholder="Your email address" defaultValue={user?.result.email} disabled />
+                  defaultValue={user?.result.email} disabled />
+                <label htmlFor="email">Email</label>
               </div>
 
               <div className="inputFormGroup">
-                <label htmlFor="password">New Password</label>
                 <input type="password" name="password" id="password"
-                  placeholder="Your password" value={password} onChange={handleChange} />
+                  value={password} onChange={handleChange} />
+                <label htmlFor="password">New password</label>
               </div>
 
               <div className="inputFormGroup">
-                <label htmlFor="cf_password">Confirm New Password</label>
                 <input type="password" name="cf_password" id="cf_password"
-                  placeholder="Confirm password" value={cf_password} onChange={handleChange} />
+                  value={cf_password} onChange={handleChange} />
+                <label htmlFor="cf_password">Confirm password</label>
               </div>
             </div>
           </div>

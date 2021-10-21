@@ -96,10 +96,22 @@ const AdDetails = () => {
               <div className="userAdContactForm">
                 <h3>Inquire about the ad</h3>
                 <form action="" >
-                  <input type="text" placeholder="Your Name" name="email" required />
-                  <input type="email" placeholder="Your Email" name="email" required />
-                  <input type="text" placeholder="Your Phone" name="phone" required />
-                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                  <div>
+                    <input type="text" name="email" required />
+                    <label>Name</label>
+                  </div>
+                  <div>
+                    <input type="email" name="email" required />
+                    <label>Email</label>
+                  </div>
+                  <div>
+                    <input type="text" name="phone" required />
+                    <label>Phone</label>
+                  </div>
+                  <div>
+                    <textarea name="message" rows="5" required></textarea>
+                    <label>Message</label>
+                  </div>
                   <button type="submit" className="adSubmitButton">Send</button>
                 </form>
               </div>
