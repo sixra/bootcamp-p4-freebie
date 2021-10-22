@@ -66,7 +66,7 @@ const MyAds = () => {
     dispatch(filterPostedByUser(ads, userId));
   }, [individualAds, ads, dispatch, userId]);
 
-  console.log(individualAds);
+  console.log("test", individualAds);
 
   return (
     <section className="userSection">

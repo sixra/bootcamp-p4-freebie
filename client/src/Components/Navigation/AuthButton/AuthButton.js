@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { AiOutlineDashboard } from "react-icons/ai";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-import { FaUserCircle } from "react-icons/fa";
 import decode from "jwt-decode";
 import "../Navigation.scss";
 
@@ -42,7 +41,7 @@ const AuthButton = () => {
           <div className="userSectionDropdown">
             <Link
               className="userNameContainer"
-              to="/user/dashboard"
+              to="/user/profile"
               alt={user?.result?.firstName}
             >
               {/* <FaUserCircle size={25} /> */}
@@ -54,10 +53,10 @@ const AuthButton = () => {
                 <NavLink
                   className="listContainer"
                   activeClassName="activeSection"
-                  to="/user/dashboard"
+                  to="/user/profile"
                 >
-                  <AiOutlineDashboard size={18} />
-                  <span> dashboard </span>
+                  <HiOutlineUserCircle size={20} />
+                  <span> profile </span>
                 </NavLink>
               </li>
               <li>

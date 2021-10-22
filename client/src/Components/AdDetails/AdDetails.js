@@ -7,6 +7,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Favorite from "./Favorite";
 import moment from "moment";
 import axios from "axios";
 import "./AdDetails.scss";
@@ -21,21 +22,18 @@ import TickAnimation from "../TickAnimation/TickAnimation";
 SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
-  const singleAd = useSelector((state) => state.ad);
-  const {
-    title,
-    location,
-    name,
-    category,
-    image,
-    description,
-    createdAt,
-    avatar,
-    email,
-  } = singleAd;
+  const singleAdInfo = useSelector((state) => state.ad);
+  const { title, location, name, category, image, description, createdAt, avatar, email,} = singleAdInfo;
   const [sendInquiry, setSendInquiry] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const { id } = useParams();
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    // eslint-disable-next-line
+  }, [location]);
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,7 +67,7 @@ const AdDetails = () => {
 
   return (
     <>
-      {!Object.keys(singleAd).length ? (
+      {!Object.keys(singleAdInfo).length ? (
         <section className="adDetailsSpinner">
           <LoadingSpinner />
         </section>
@@ -77,6 +75,9 @@ const AdDetails = () => {
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
             <div className="adDetailsCard">
+
+              {user?.result ? <Favorite singleAdInfo={singleAdInfo} className="favoriteContainer" /> : null}
+
               <Swiper
                 cssMode={true}
                 navigation={true}
@@ -88,7 +89,7 @@ const AdDetails = () => {
                   "--swiper-navigation-color": "#E52853",
                   "--swiper-pagination-color": "#E52853",
                 }}
-              >
+              > 
                 {image.map(({ base64 }) => (
                   <SwiperSlide className="swiperSlide">
                     <img className="adDetailsImage" src={base64} alt="ad" />
@@ -96,6 +97,7 @@ const AdDetails = () => {
                 ))}
               </Swiper>
 
+              
               <div className="adDetailsInfo">
                 <h1>{title}</h1>
 

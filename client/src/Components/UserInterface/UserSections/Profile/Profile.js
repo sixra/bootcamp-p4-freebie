@@ -4,10 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../../../Redux/Actions/AuthAction";
 import UserNavBar from "../../UserNavBar/UserNavBar";
 import "../../UserInterface.scss";
-import "./Dashboard.scss";
+import "./Profile.scss";
 import { RiImageEditFill } from "react-icons/ri";
 import toastr from "toastr";
-import { useHistory } from "react-router-dom";
 import loadingImg from "./loading.gif";
 
 const initialState = {
@@ -16,20 +15,18 @@ const initialState = {
   avatar: "",
 };
 
-const Dashboard = () => {
+const Profile = () => {
   const auth = useSelector((state) => state?.auth);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const [data, setData] = useState(initialState);
   const { firstName, lastName, password, cf_password } = data;
   const [avatar, setAvatar] = useState(false);
   const [loading, setLoading] = useState(false);
-  // const [callback, setCallback] = useState(false)
   const dispatch = useDispatch();
-  const history = useHistory();
   const token = user?.token;
   const hash = user?.result._id;
 
-  console.log(auth);
+  // console.log(auth);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -170,7 +167,6 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-
     setUser(JSON.parse(localStorage.getItem("profile")));
     // eslint-disable-next-line
   }, [location]);
@@ -189,14 +185,12 @@ const Dashboard = () => {
     <section className="userSection">
       <div className="userInterface">
         <UserNavBar />
-        <main className="userSections userDashboard ">
+        <main className="userSections userProfile ">
           <h2>User Profile</h2>
           <div className="titleUnderline"></div>
 
           <div className="profilePage">
-
             <div className="profilePageAvatar">
-
               <div className="profileAvatar">
                 <span className="profilePageAvatarSpan">
                   <RiImageEditFill className="icon" size={20} />
@@ -207,8 +201,18 @@ const Dashboard = () => {
                     onChange={changeAvatar}
                   />
                 </span>
-                < img className="imageAvatar" src={avatar ? avatar : user?.result.avatar} alt="" />
-                {loading && <img className="loadingAvatar" src={loadingImg} alt="profile" />}
+                <img
+                  className="imageAvatar"
+                  src={avatar ? avatar : user?.result.avatar}
+                  alt=""
+                />
+                {loading && (
+                  <img
+                    className="loadingAvatar"
+                    src={loadingImg}
+                    alt="profile"
+                  />
+                )}
               </div>
             </div>
 
@@ -286,4 +290,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Profile;

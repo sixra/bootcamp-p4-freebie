@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./UserNavBar.scss";
-import { AiOutlineDashboard } from "react-icons/ai";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
@@ -25,9 +25,9 @@ const UserNavBar = () => {
 
       <ul className="userSectionLinks">
         <li>
-          <NavLink activeClassName="activeSection" to="/user/dashboard">
-            <AiOutlineDashboard size={18} />
-            <span> dashboard </span>
+          <NavLink activeClassName="activeSection" to="/user/profile">
+            <HiOutlineUserCircle size={20} />
+            <span> profile </span>
           </NavLink>
         </li>
         <li>
