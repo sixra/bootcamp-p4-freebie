@@ -144,7 +144,6 @@ const AdDetails = () => {
                       <div>
                         <input
                           type="text"
-                          placeholder="Your Name"
                           name="name"
                           id="senderName"
                           required
@@ -154,7 +153,6 @@ const AdDetails = () => {
                       <div>
                         <input
                           type="email"
-                          placeholder="Your Email"
                           name="email"
                           id="senderEmail"
                           required
@@ -164,7 +162,6 @@ const AdDetails = () => {
                       <div>
                         <input
                           type="text"
-                          placeholder="Your Phone"
                           name="phone"
                           id="senderPhone"
                           required
@@ -173,7 +170,6 @@ const AdDetails = () => {
                       </div>
                       <div>
                         <textarea
-                          placeholder="Your Message"
                           name="message"
                           id="senderMessage"
                           rows="5"
