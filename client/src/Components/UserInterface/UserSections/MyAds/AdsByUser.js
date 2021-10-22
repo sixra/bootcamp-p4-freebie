@@ -7,7 +7,7 @@ import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const AdsByUser = ({ adInfo, setCurrentId, setEditForm }) => {
-  // const [currentId, setCurrentId] = useState(null)
+
   const dispatch = useDispatch();
   const { title, category, image, _id } = adInfo;
 
@@ -17,7 +17,6 @@ const AdsByUser = ({ adInfo, setCurrentId, setEditForm }) => {
   } 
 
   return (
-    <>
       <div className="adsByUserContainer">
         <ul className="adsByUserList">
           <li className="listItemImageContainer">
@@ -47,7 +46,6 @@ const AdsByUser = ({ adInfo, setCurrentId, setEditForm }) => {
           </div>
         </ul>
       </div>
-    </>
   );
 };
 

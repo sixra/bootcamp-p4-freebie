@@ -11,6 +11,7 @@ import contactRoutes from "./routes/api/contact.js";
 import contactUserRoutes from "./routes/api/contactUser.js";
 import activateRoutes from "./routes/api/activate.js";
 import avatarRoutes from "./routes/api/upload.js";
+import favoriteRoute from "./routes/api/favorite.js";
 
 connectDB();
 
@@ -32,6 +33,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/contact/user", contactUserRoutes);
 app.use("/api/activate/user", activateRoutes);
 app.use("/api/avatar", avatarRoutes);
+app.use("/api/favorite", favoriteRoute);
 
 const PORT = process.env.PORT || 4000;
 
