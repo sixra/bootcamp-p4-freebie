@@ -279,7 +279,6 @@
     max-height: 17rem;
     min-height: 17rem;
     width: 100%;
-    position: relative;
 
     img {
       height: 100%;
@@ -320,7 +319,6 @@
     width: 100%;
     max-width: 24rem;
     min-height: 17rem;
-    position: relative;
 
     @media only screen and (max-width: 680px) {
       max-width: 100%;
@@ -392,4 +390,3 @@
     text-overflow: ellipsis;
   }
 }
-

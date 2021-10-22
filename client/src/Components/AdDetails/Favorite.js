@@ -16,7 +16,7 @@ const Favorite = ({ singleAdInfo }) => {
     itemCategory: singleAdInfo.category,
   };
 
-  console.log(variable);
+  // console.log(variable);
 
   useEffect(() => {
     axios.post("/api/favorite/favoriteNumber", variable).then((response) => {
@@ -34,6 +34,7 @@ const Favorite = ({ singleAdInfo }) => {
         alert("Failed to get Favorite Info");
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   const onClickFavorite = () => {
@@ -69,9 +70,15 @@ const Favorite = ({ singleAdInfo }) => {
     <div className="favoriteContainer">
       <button onClick={onClickFavorite}>
         {Favorited ? (
-          <> <AiFillHeart size="18" color="#E52951" /> <span>Favorite</span></>
+          <>
+            {" "}
+            <AiFillHeart size="18" color="#E52951" /> <span>Favorite</span>
+          </>
         ) : (
-          <> <AiOutlineHeart size="18" color="#E52951" /> <span>Favorite</span></>
+          <>
+            {" "}
+            <AiOutlineHeart size="18" color="#E52951" /> <span>Favorite</span>
+          </>
         )}
       </button>
       {/* <span>{FavoriteNumber}</span> */}

@@ -37,7 +37,6 @@ const Freebies = () => {
     window.scrollTo(0, 0);
   }, []);
 
-
   return (
     <section className="categoriesPageContainer">
       <div className="categoriesAndSearchContainer">

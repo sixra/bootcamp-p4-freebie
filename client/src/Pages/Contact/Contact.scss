@@ -115,6 +115,7 @@
           -webkit-transition: 0.3s ease all;
         }
         input {
+          font-family: "Montserrat", sans-serif;
           color: var(--text-colour-light);
           margin: 0.3rem 0;
           padding: 0.8rem;
@@ -178,6 +179,8 @@
           transition: 0.5s ease all;
           height: 5rem;
           color: var(--text-colour-light);
+          font-family: "Montserrat", sans-serif;
+          font-size: 0.85rem;
 
           &:focus {
             border: 0.1rem solid var(--details-colour-secondary);

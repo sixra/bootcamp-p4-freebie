@@ -15,6 +15,7 @@ const FavoritePage = () => {
 
   useEffect(() => {
     fetchFavoritedItems();
+    // eslint-disable-next-line
   }, []);
 
   const fetchFavoritedItems = () => {

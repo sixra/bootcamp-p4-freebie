@@ -9,7 +9,7 @@ const PathBanner = () => {
 
   const usePathname = () => {
     if (
-      pathname.includes("dashboard") ||
+      pathname.includes("profile") ||
       pathname.includes("post") ||
       pathname.includes("ads") ||
       pathname.includes("favorite")

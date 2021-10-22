@@ -19,15 +19,15 @@ const LatestAds = () => {
       ) : (
         <div className="latestAdsContainer">
           <div className="latestAds">
-            {ads.map((adInfo) => (
-              <LatestAd key={adInfo._id} adInfo={adInfo} />
-            )).slice(0, 6)}
+            {ads
+              .map((adInfo) => <LatestAd key={adInfo._id} adInfo={adInfo} />)
+              .slice(0, 6)}
           </div>
         </div>
       )}
 
       <div className="moreAdsButtonContainer">
-        <Link to="/categories">more ads</Link>
+        <Link to="/freebies">more ads</Link>
       </div>
     </section>
   );

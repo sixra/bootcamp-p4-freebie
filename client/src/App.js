@@ -14,7 +14,6 @@ import UserActivate from "./Components/UserActivated/UserActivate.js"
 import ForgotPassword from "./Components/Forgot-Reset-Password/ForgotPassword"
 import ResetPassword from "./Components/Forgot-Reset-Password/ResetPassword.js"
 import HeroImage from "./Components/Header/HeroImage";
-import Dashboard from "./Components/UserInterface/UserSections/Dashboard/Dashboard";
 import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
 import MyAds from "./Components/UserInterface/UserSections/MyAds/MyAds";
 import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyFavorites";
@@ -23,6 +22,7 @@ import { getAds } from "./Redux/Actions/AdsAction";
 import PathBanner from "./Components/PathBanner/PathBanner";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy"
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import Profile from "./Components/UserInterface/UserSections/Profile/Profile";
 
 const App = () => {
 
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/home" exact component={Home} />
           <Route path="/freebies" exact component={Freebies} />
           <Route path="/user/ads" exact component={ MyAds } />
-          <Route path="/user/dashboard" exact component={ Dashboard } />
+          <Route path="/user/profile" exact component={ Profile } />
           <Route path="/user/post" exact component={ PostAd } />
           <Route path="/user/favorite" exact component={ MyFavorites } />
           <Route path="/contact" exact component={ Contact } />
