@@ -12,6 +12,7 @@ const ItemSchema = mongoose.Schema({
   description: String, 
   name: String, 
   avatar: String,
+  email: String,
   creator: String, 
   createdAt: {
     type: Date,

@@ -3,7 +3,7 @@ import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { postAd } from "../../../../Redux/Actions/AdsAction";
 import UserNavBar from "../../UserNavBar/UserNavBar";
-import TickAnimation from "./TickAnimation/TickAnimation";
+import TickAnimation from "../../../TickAnimation/TickAnimation";
 import "../../UserInterface.scss";
 import "./PostAd.scss";
 
@@ -27,6 +27,7 @@ const PostAd = () => {
         ...adData,
         name: user?.result?.firstName,
         avatar: user?.result?.avatar,
+        email: user?.result?.email,
       })
     );
   };

@@ -4,10 +4,9 @@ import React from "react";
 import axios from "axios";
 import "./Contact.scss";
 import toastr from "toastr";
-import { CgPhone } from "react-icons/cg"
-import { MdEmail } from "react-icons/md"
-import { IoLocationSharp } from "react-icons/io5"
-
+import { CgPhone } from "react-icons/cg";
+import { MdEmail } from "react-icons/md";
+import { IoLocationSharp } from "react-icons/io5";
 
 const Contact = () => {
   const submitRequest = (e) => {
@@ -97,12 +96,7 @@ const Contact = () => {
             <label>Email</label>
           </div>
           <div className="textareaContainer">
-            <textarea
-              required
-              id="message"
-              maxLength="300"
-              defaultValue={""}
-            />
+            <textarea required id="message" maxLength="300" defaultValue={""} />
             <label>Message</label>
           </div>
           <button type="submit">Send</button>

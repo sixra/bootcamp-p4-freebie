@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { AiOutlineDashboard } from "react-icons/ai";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-import { FaUserCircle } from "react-icons/fa";
 import decode from "jwt-decode";
+import "../Navigation.scss";
 
 const AuthButton = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -34,55 +34,82 @@ const AuthButton = () => {
     // eslint-disable-next-line
   }, [location]);
 
-  console.log(user)
-
   return (
     <div className="authButton">
       {user?.result ? (
         <>
-          <div className="userSectionDropdown" >
-            <Link className="userNameContainer" to="/user/dashboard" alt={user?.result?.firstName}>
-              <FaUserCircle size={25}/>
+          <div className="userSectionDropdown">
+            <Link
+              className="userNameContainer"
+              to="/user/profile"
+              alt={user?.result?.firstName}
+            >
+              {/* <FaUserCircle size={25} /> */}
+              <img src={user.result.avatar} alt="userPhoto" />
               <span className="userName">{user?.result?.firstName}</span>
             </Link>
             <ul className="userSectionLinks">
               <li>
-                <NavLink className="listContainer" activeClassName="activeSection" to="/user/dashboard">
-                  <AiOutlineDashboard size={18} />
-                  <span> dashboard </span>
+                <NavLink
+                  className="listContainer"
+                  activeClassName="activeSection"
+                  to="/user/profile"
+                >
+                  <HiOutlineUserCircle size={20} />
+                  <span> profile </span>
                 </NavLink>
               </li>
               <li>
-                <NavLink className="listContainer" activeClassName="activeSection" to="/user/post">
+                <NavLink
+                  className="listContainer"
+                  activeClassName="activeSection"
+                  to="/user/post"
+                >
                   <RiSendPlaneLine size={18} />
                   <span> post an ad </span>
                 </NavLink>
               </li>
               <li>
-                <NavLink className="listContainer" activeClassName="activeSection" to="/user/ads">
+                <NavLink
+                  className="listContainer"
+                  activeClassName="activeSection"
+                  to="/user/ads"
+                >
                   <BsLayers size={18} />
                   <span> my ads </span>
                 </NavLink>
               </li>
               <li>
-                <NavLink className="listContainer" activeClassName="activeSection" to="/user/favorite">
+                <NavLink
+                  className="listContainer"
+                  activeClassName="activeSection"
+                  to="/user/favorite"
+                >
                   <AiOutlineHeart size={18} />
                   <span> my favorites </span>
                 </NavLink>
               </li>
               <li>
                 <div className="listContainer">
-                  <button className="userLogoutBtn" onClick={logout}>Logout</button>
+                  <button className="userLogoutBtn" onClick={logout}>
+                    Logout
+                  </button>
                 </div>
               </li>
             </ul>
           </div>
-          <Link to="/user/post" className="postAnAd">Post an Ad</Link>
+          <Link to="/user/post" className="postAnAd">
+            Post an Ad
+          </Link>
         </>
       ) : (
         <>
-          <Link to="/auth" className="signIn">Sign in</Link>
-          <Link to="/auth" className="postAnAd">Post an Ad</Link>
+          <Link to="/auth" className="signIn">
+            Sign in
+          </Link>
+          <Link to="/auth" className="postAnAd">
+            Post an Ad
+          </Link>
         </>
       )}
     </div>

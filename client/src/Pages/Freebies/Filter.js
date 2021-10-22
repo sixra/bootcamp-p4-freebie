@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterAds } from '../../Redux/Actions/AdsAction'
-import "./Categories.scss"
+import "./Freebies.scss"
 
 export const Filter = () => {
   const dispatch = useDispatch();

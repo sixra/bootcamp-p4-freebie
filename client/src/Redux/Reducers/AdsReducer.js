@@ -21,6 +21,8 @@ export const adsReducer = (state = allAds, action) => {
       return { ...state, filteredAds: action.payload.ads, title: action.payload.title };
     case adsType.POST_AD:
       return { ...state, ads: [...state.ads, action.payload], filteredAds: [...state.ads, action.payload] };
+    case adsType.UPDATE_AD:
+      return { ...state, ads: state.ads.map((individualAds) => individualAds._id === action.payload._id ? action.payload : individualAds ) }
     case adsType.FILTER_POSTED_BY_USER:
       return { ...state, creator: action.payload.creator };
     case adsType.DELETE_AD_POSTED_BY_USER:
@@ -31,6 +33,7 @@ export const adsReducer = (state = allAds, action) => {
     default:
       return state;
   }
+  
 };
 
 export const adReducer = (state = {}, action) => {

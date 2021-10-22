@@ -3,10 +3,9 @@ import "./Process.scss";
 import { IoPeopleOutline } from "react-icons/io5";
 import { FiCheckSquare } from "react-icons/fi";
 import { GoThumbsup } from "react-icons/go";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Process = () => {
-
   return (
     <section className="processContainer">
       <h2>How It Works?</h2>
@@ -22,7 +21,7 @@ const Process = () => {
 
         <div className="processInnerEachContainer">
           <div className="processInnerEachIcon">
-            <FiCheckSquare size={45}/>
+            <FiCheckSquare size={45} />
           </div>
           <div className="processInnerEachTitle">
             <span>Post Free Ad!</span>
@@ -38,7 +37,9 @@ const Process = () => {
           </div>
         </div>
       </div>
-      <Link to="/auth"><button>Start Registration</button></Link>
+      <Link to="/auth">
+        <button>Start Registration</button>
+      </Link>
     </section>
   );
 };

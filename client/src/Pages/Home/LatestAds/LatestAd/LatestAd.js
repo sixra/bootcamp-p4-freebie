@@ -3,7 +3,7 @@ import "./LatestAd.scss";
 import { IoTimeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import moment from 'moment';
+import moment from "moment";
 
 const LatestAd = ({ adInfo }) => {
   const { createdAt, category, title, image, location, _id } = adInfo;

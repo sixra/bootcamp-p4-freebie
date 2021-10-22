@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterAds } from '../../Redux/Actions/AdsAction'
 import { useHistory } from "react-router-dom";
-import SearchInput from '../../Pages/Categories/SearchInput';
+import SearchInput from '../../Pages/Freebies/SearchInput';
 
 const SearchBar = () => {
 

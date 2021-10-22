@@ -1,0 +1,83 @@
+.pageNotFoundContainer{
+  background: white;
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  @media only screen and (max-width: 1200px) {
+    overflow:hidden;
+    margin:0px;
+    background: rgb(31, 31, 31);
+    box-shadow:0px 0px 122px 25px black inset;
+    background-image:url('https://i.imgur.com/eg7VIun.jpg');
+    background-repeat:repeat;
+    animation:noise 230ms steps(6) infinite;
+  }
+  @keyframes noise{
+    0% {background-position-y: 0px;}
+    100% {background-position-y: -420px;}
+  }
+}
+
+.pageNotFoundTitleContainer{
+  width: 50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.pageNotFoundGlitchTitle{
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.pageNotFoundGlitchLink{
+  text-decoration: none;
+  color: var(--details-colour-main);
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.pageNotFoundTitleContainer p {
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.pageNotFoundGlitchImg{
+  width: 60%;
+  margin: 1rem;
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.pageNotFoundGameContainer{
+  width: 50%;
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.scoreContainer{
+  height: 50px;
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+#GameBoard{
+  width: 592px !important;
+  height: 402px !important;
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+}

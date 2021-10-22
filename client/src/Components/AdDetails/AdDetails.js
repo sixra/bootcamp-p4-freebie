@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
@@ -7,7 +7,9 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
-import moment from 'moment';
+import Favorite from "./Favorite";
+import moment from "moment";
+import axios from "axios";
 import "./AdDetails.scss";
 
 //// Swiper Library imports ////
@@ -16,13 +18,22 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import TickAnimation from "../TickAnimation/TickAnimation";
 SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
-  const singleAd = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt, avatar } = singleAd;
+  const singleAdInfo = useSelector((state) => state.ad);
+  const { title, location, name, category, image, description, createdAt, avatar, email, } = singleAdInfo;
+  const [sendInquiry, setSendInquiry] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const { id } = useParams();
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    // eslint-disable-next-line
+  }, [location]);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,9 +42,32 @@ const AdDetails = () => {
     // eslint-disable-next-line
   }, [id]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSendInquiry(true);
+    const { senderName, senderEmail, senderPhone, senderMessage } =
+      e.target.elements;
+
+    axios({
+      method: "POST",
+      url: "http://localhost:4000/api/contact/user",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        adTitle: title,
+        receiverEmail: email,
+        senderName: senderName.value,
+        senderEmail: senderEmail.value,
+        senderPhone: senderPhone.value,
+        senderMessage: senderMessage.value,
+      },
+    });
+  };
+
   return (
     <>
-      {!Object.keys(singleAd).length ? (
+      {!Object.keys(singleAdInfo).length ? (
         <section className="adDetailsSpinner">
           <LoadingSpinner />
         </section>
@@ -41,6 +75,9 @@ const AdDetails = () => {
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
             <div className="adDetailsCard">
+
+              {user?.result ? <Favorite singleAdInfo={singleAdInfo} className="favoriteContainer" /> : null}
+
               <Swiper
                 cssMode={true}
                 navigation={true}
@@ -81,44 +118,77 @@ const AdDetails = () => {
                 <h3>description :</h3>
                 <p>{description}</p>
               </div>
-
             </div>
 
             <div className="userAdCard">
-
               <div className="userAdAvatar">
                 <div className="userAdAvatarImage">
                   <img src={avatar} alt="avatar" />
                 </div>
-                <div className="userAdAvatarName"> Posted by<span>{name}</span></div>
+                <div className="userAdAvatarName">
+                  {" "}
+                  Posted by<span>{name}</span>
+                </div>
               </div>
-
               <div className="userAdContactForm">
-                <h3>Inquire about the ad</h3>
-                <form action="" >
-                  <div>
-                    <input type="text" name="email" required />
-                    <label>Name</label>
+
+                {sendInquiry ? (
+                  <div className="userAdContactSuccess">
+                    <TickAnimation />
+                    <h3>Inquiry sent successfully</h3>
                   </div>
-                  <div>
-                    <input type="email" name="email" required />
-                    <label>Email</label>
-                  </div>
-                  <div>
-                    <input type="text" name="phone" required />
-                    <label>Phone</label>
-                  </div>
-                  <div>
-                    <textarea name="message" rows="5" required></textarea>
-                    <label>Message</label>
-                  </div>
-                  <button type="submit" className="adSubmitButton">Send</button>
-                </form>
+                ) : (
+                  <>
+                    <h3>Inquire about the ad</h3>
+                    <form onSubmit={handleSubmit}>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="Your Name"
+                          name="name"
+                          id="senderName"
+                          required
+                        />
+                        <label>Name</label>
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          placeholder="Your Email"
+                          name="email"
+                          id="senderEmail"
+                          required
+                        />
+                        <label >Email</label>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="Your Phone"
+                          name="phone"
+                          id="senderPhone"
+                          required
+                        />
+                        <label >Phone</label>
+                      </div>
+                      <div>
+                        <textarea
+                          placeholder="Your Message"
+                          name="message"
+                          id="senderMessage"
+                          rows="5"
+                          required
+                        ></textarea>
+                        <label>Message</label>
+                      </div>
+                      <button type="submit" className="adSubmitButton">
+                        Send
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
-
             </div>
-
-
           </div>
         </section>
       )}

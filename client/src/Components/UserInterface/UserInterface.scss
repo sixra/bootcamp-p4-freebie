@@ -2,16 +2,16 @@
   background-color: #f4f4f4;
   padding: 2rem;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     padding: 1rem;
   }
 
   .userInterface {
     display: flex;
-    max-width: 60rem;
+    max-width: 65rem;
     margin: 0 auto;
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -25,7 +25,7 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-      @media only screen and (max-width: 700px) {
+      @media only screen and (max-width: 800px) {
         margin-top: 1rem;
         max-width: 30rem;
       }

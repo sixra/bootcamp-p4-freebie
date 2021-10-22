@@ -95,9 +95,8 @@
 
   .adSubmitButton {
     @include Styles.btn-background;
-    width: 8rem;
     margin: 1rem auto 0 auto;
-    font-size: 0.9rem;
+    width: 7rem;
   }
 }
 

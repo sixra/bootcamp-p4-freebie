@@ -28,6 +28,16 @@ export const postAd = (ad) => async (dispatch) => {
   }
 };
 
+export const updateAd = (id, ad) => async (dispatch) => {
+  try {
+    const { data } = await api.updateAd(id, ad);
+    dispatch({ type: adsType.UPDATE_AD, payload: data });
+    // console.log(data)
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const removeAd = () => {
   return {
     type: adsType.REMOVE_AD,

@@ -77,7 +77,7 @@ const Footer = () => {
             <h3>Quick Links</h3>
             <ul>
               <li> <NavLink to="/home">Home</NavLink> </li>
-              <li> <NavLink to="/categories">Categories</NavLink> </li>
+              <li> <NavLink to="/freebies">Freebies</NavLink> </li>
               <li> <NavLink to="/contact">Contact Us</NavLink> </li>
             </ul>
           </div>
