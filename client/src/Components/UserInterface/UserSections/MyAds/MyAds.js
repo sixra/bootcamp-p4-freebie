@@ -127,9 +127,7 @@ const MyAds = () => {
                         onChange={handleChange}
                       ></textarea>
 
-                      <button type="submit">
-                        Update
-                      </button>
+                      <button type="submit">Update</button>
                     </form>
                   </div>
                 </>
@@ -139,14 +137,20 @@ const MyAds = () => {
             <>
               <h2>My Ads</h2>
               <div className="titleUnderline"></div>
-              {adsByUser.map((adInfo) => (
-                <AdsByUser
-                  key={adInfo._id}
-                  adInfo={adInfo}
-                  setCurrentId={setCurrentId}
-                  setEditForm={setEditForm}
-                />
-              ))}{" "}
+              {!adsByUser.length ? (
+                <span className="noAdsSpan">
+                  Your ads list is empty
+                </span>
+              ) : (
+                adsByUser.map((adInfo) => (
+                  <AdsByUser
+                    key={adInfo._id}
+                    adInfo={adInfo}
+                    setCurrentId={setCurrentId}
+                    setEditForm={setEditForm}
+                  />
+                ))
+              )}{" "}
             </>
           )}
         </main>

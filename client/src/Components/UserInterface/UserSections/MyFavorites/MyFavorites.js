@@ -11,12 +11,13 @@ const FavoritePage = () => {
   const userFrom = user.result._id;
 
   const [FavoritedItems, setFavoritedItems] = useState([]);
-  console.log(FavoritedItems);
 
   useEffect(() => {
     fetchFavoritedItems();
     // eslint-disable-next-line
   }, []);
+
+  console.log(FavoritedItems);
 
   const fetchFavoritedItems = () => {
     const variable = {
@@ -49,8 +50,6 @@ const FavoritePage = () => {
   };
 
   const renderBody = FavoritedItems.map((item) => {
-    console.log(item);
-
     return (
       <div className="favoritesByUserContainer">
         <ul className="favoritesByUserList">
@@ -89,7 +88,13 @@ const FavoritePage = () => {
         <main className="userSections">
           <h2>My Favorites</h2>
           <div className="titleUnderline"></div>
-          {renderBody}
+          {!FavoritedItems.length ? (
+            <span className="noFavoritesSpan">
+              Your favorites list is empty
+            </span>
+          ) : (
+            renderBody
+          )}
         </main>
       </div>
     </section>
