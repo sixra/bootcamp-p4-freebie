@@ -17,7 +17,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const routeChange = () => {
-    history.push("/categories");
+    history.push("/freebies");
   }
 
   const allAds = useSelector((state) => state.allAds)
