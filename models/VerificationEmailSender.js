@@ -28,7 +28,7 @@ export const sendConfirmationEmail = function ({
   paragraph,
 }) {
   const message = {
-    from: process.env.GOOGLE_USER,
+    from: process.env.EMAIL,
     to: toUser.email,
     subject: "Your App - Activate Account",
     html: `
