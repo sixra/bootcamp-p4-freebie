@@ -1,5 +1,5 @@
 import express from "express";
-
+import path from "path";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import fileUpload from "express-fileupload";
@@ -34,6 +34,19 @@ app.use("/api/contact/user", contactUserRoutes);
 app.use("/api/activate/user", activateRoutes);
 app.use("/api/avatar", avatarRoutes);
 app.use("/api/favorite", favoriteRoute);
+
+if (process.env.NODE_ENV === "production") {
+  // Set static folder path
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Api running");
+  });
+}
 
 const PORT = process.env.PORT || 4000;
 
