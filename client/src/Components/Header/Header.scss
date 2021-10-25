@@ -64,11 +64,12 @@
     border-radius: 1rem;
 
     div {
-      border-top: 0.1rem solid var(--border-color-secondary);
       padding-left: 1rem;
       line-height: 2.5rem;
       text-transform: capitalize;
       cursor: pointer;
+      transition: border .1s ease-in;
+      transition-delay: border .1s;
 
       &:hover {
         color: var(--details-colour-secondary);
@@ -84,16 +85,23 @@
 
   #showDropdown {
     background-color: var(--background-color-main);
-    transition: 0.4s all;
+    transition: 0.3s ease;
     visibility: visible;
+    div {
+      border-top: 0.1rem solid var(--border-color-secondary);
+
+    }
   }
 
   #hideDropdown {
     background-color: transparent;
     visibility: collapse;
-    transition: 0.3s all;
+    transition: 0.3s ease;
     color: transparent;
     border: none;
+    div {
+      border-top: hidden;
+    }
   }
 
   .selectContainerArrow {
