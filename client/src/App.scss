@@ -7,7 +7,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: var(--normal-font-size);
-  background-color: #f4f4f4;
+  background-color: var(--background-color-main);
   @media only screen and (max-width: 600px) {
     font-size: var(--small-font-size);
   }

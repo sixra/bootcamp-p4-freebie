@@ -17,9 +17,9 @@
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
-    background: rgb(53, 53, 53);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background: var(--background-color-dark);
+    box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+      var(--box-shadow-secondary) 0px 1px 2px 0px;
     background-position: center;
     background-size: cover;
     background-image: linear-gradient(
@@ -58,9 +58,9 @@
     }
 
     .userName {
-      color: rgb(255, 255, 255);
+      color: var(--text-color-light);
       span {
-        font-weight: 600;
+        font-weight: var(--font-medium-bold);
         text-transform: capitalize;
       }
     }
@@ -78,15 +78,15 @@
       a {
         display: flex;
         text-decoration: none;
-        color: black;
+        color: var(--text-color-dark);
         width: 100%;
-        font-size: 0.9rem;
+        font-size: var(--normal-font-size);
         text-transform: capitalize;
         padding: 1rem;
-        border-radius: 0.5rem;
-        background: white;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        border-radius: var(--border-radius-primary);
+        background: var(--background-color-content);
+        box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+          var(--box-shadow-secondary) 0px 1px 2px 0px;
 
         span {
           margin-left: 1rem;
@@ -94,9 +94,9 @@
       }
 
       .activeSection {
-        background: rgb(133, 133, 133);
-        color: white;
-        border: 1px solid rgb(133, 133, 133);
+        background: var(--background-color-dark-secondary);
+        color: var(--text-color-light);
+        border: 1px solid var(--border-color-primary);
       }
     }
   }

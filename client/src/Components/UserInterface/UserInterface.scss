@@ -1,5 +1,5 @@
 .userSection {
-  background-color: #f4f4f4;
+  background-color: var(--background-color-main);
   padding: 2rem;
 
   @media only screen and (max-width: 800px) {
@@ -21,9 +21,9 @@
       width: 100%;
       padding: 1rem 0 2rem 0;
       border-radius: 0.5rem;
-      background: white;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      background: var(--background-color-content);
+      box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+        var(--box-shadow-secondary) 0px 1px 2px 0px;
 
       @media only screen and (max-width: 800px) {
         margin-top: 1rem;
@@ -32,16 +32,16 @@
 
       h2 {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: var(--h3-font-size);
         text-transform: uppercase;
-        color: #333;
+        color: var(--text-color-dark-secondary);
         margin: 0.3rem 0;
       }
 
       .titleUnderline {
         height: 0.06rem;
         width: 100%;
-        background-color: #d3d3d3;
+        background-color: var(--background-color-main);
         margin: 1rem auto 2rem auto;
       }
     }

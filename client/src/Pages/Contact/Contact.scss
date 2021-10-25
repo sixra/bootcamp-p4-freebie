@@ -3,7 +3,7 @@
 
 .contactPage {
   padding: 2rem 0;
-  background-color: #f4f4f4;
+  background-color: var( --background-color-main);
 
   .contactMainContainer {
     max-width: 55rem;
@@ -11,10 +11,10 @@
     margin: auto;
     height: 30rem;
     display: flex;
-    background-color: white;
-    border-radius: 0.4rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background-color: var(--background-color-content);
+    border-radius: var(--border-radius-primary);
+    box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+    var(--box-shadow-secondary) 0px 1px 2px 0px;
     overflow: hidden;
 
     @media only screen and (max-width: 700px) {
@@ -33,7 +33,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(
+        background: linear-gradient(
             hsla(0, 0%, 0%, 0.845),
             hsla(0, 3%, 28%, 0.817)
           ),
@@ -42,7 +42,7 @@
         background-size: cover;
         background-position: center;
         background-size: cover;
-        color: #fff;
+        color: var(--text-color-light);
         position: absolute;
         height: 100%;
         width: 100%;
@@ -52,12 +52,12 @@
           max-width: 15rem;
 
           h2 {
-            font-size: 1.5rem;
+            font-size: var(--h2-font-size);
             margin-bottom: 0.5rem;
           }
 
           p {
-            font-size: 0.9rem;
+            font-size: var(--normal-font-size);
             letter-spacing: 0.02rem;
           }
         }
@@ -68,7 +68,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          font-size: 0.9rem;
+          font-size: var(--normal-font-size);
           letter-spacing: 0.02rem;
 
           div {
@@ -94,34 +94,45 @@
 
       h1 {
         margin-bottom: 1rem;
-        font-size: 1.5rem;
-        color: rgb(43, 43, 43);
+        font-size: var(--h2-font-size);
+        color: var(--title-color-dark);
       }
 
       .inputNameContainer,
-      .inputEmailContainer {
+      .inputEmailContainer,
+      .textareaContainer {
         position: relative;
         width: 70%;
         margin-bottom: 0.5rem;
 
         label {
-          color: rgb(191, 191, 191);
+          color: var(--text-color-light-secondary);
           position: absolute;
           pointer-events: none;
           left: 0.8rem;
-          top: 1.1rem;
+          top: 1rem;
           transition: 0.3s ease all;
           -moz-transition: 0.3s ease all;
           -webkit-transition: 0.3s ease all;
         }
-        input {
+        input,
+        textarea {
           font-family: "Montserrat", sans-serif;
           color: var(--text-colour-light);
           margin: 0.3rem 0;
           padding: 0.8rem;
           width: 100%;
-          border: 0.1rem solid lightgray;
-          border-radius: 0.3rem;
+          border: 0.1rem solid var(--border-color-primary);
+          border-radius: var(--border-radius-primary);
+          resize: none;
+          letter-spacing: 0.02rem;
+
+          &:-webkit-autofill {
+            -webkit-text-fill-color: rgb(0, 0, 0) !important;
+            transition: background-color 500000s ease-in-out 0s;
+            -webkit-box-shadow: 0 0 0 30px
+              white inset !important;
+          }
 
           &:focus {
             outline: none;
@@ -134,8 +145,8 @@
           &:focus ~ label,
           &:valid ~ label {
             top: -0.2rem;
-            font-size: 0.7rem;
-            background-color: var(--background-colour-main);
+            font-size: var(--small-font-size);
+            background-color: var(--background-color-content);
             padding: 0 0.4rem;
           }
 
@@ -144,71 +155,25 @@
           }
 
           &:valid ~ label {
-            color: rgb(0, 187, 0);
+            color: var(--text-color-valid);
           }
           &:valid {
-            border: 0.1rem solid lightgray;
+            border: 0.1rem solid var(--border-color-primary);
           }
         }
       }
 
       .textareaContainer {
-        width: 70%;
-        position: relative;
-        margin-bottom: 1.5rem;
-
-        label {
-          color: rgb(191, 191, 191);
-          position: absolute;
-          pointer-events: none;
-          left: 0.8rem;
-          top: 1.1rem;
-          transition: 0.3s ease all;
-          -moz-transition: 0.3s ease all;
-          -webkit-transition: 0.3s ease all;
-        }
-
         textarea {
-          margin: 0.3rem 0 0 0;
-          padding: 0.8rem;
-          width: 100%;
-          border: 0.1rem solid rgb(211, 211, 211);
-          border-radius: 0.3rem;
-          resize: none;
-          transition: 0.5s ease all;
-          height: 5rem;
-          color: var(--text-colour-light);
-          font-family: "Montserrat", sans-serif;
-          font-size: 0.85rem;
+          transition: .3s;
+          height: 7rem;
 
           &:focus {
-            border: 0.1rem solid var(--details-colour-secondary);
-            outline: none;
             height: 11rem;
-            margin: 0;
-          }
-
-          &:focus ~ label,
-          &:valid ~ label {
-            top: -0.5rem;
-            font-size: 0.7rem;
-            background-color: var(--background-colour-main);
-            padding: 0 0.4rem;
-          }
-
-          &:focus ~ label {
-            color: var(--details-colour-secondary);
-          }
-
-          &:valid ~ label {
-            color: rgb(0, 187, 0);
-          }
-
-          &:valid {
-            border: 0.1rem solid lightgray;
           }
         }
       }
+
       button {
         @include Styles.btn-background;
         width: 7rem;
@@ -230,7 +195,7 @@ $alert-extra-padding: 3.125rem;
   width: $alert-width;
   margin: auto;
   position: fixed;
-  background-color: white;
+  background-color: var(--background-color-content);
   min-height: 12.5rem;
   display: flex;
   align-items: center;
@@ -262,11 +227,10 @@ $alert-extra-padding: 3.125rem;
   display: flex;
   justify-content: center;
   text-decoration: none;
-  color: white;
-  border-radius: 2.5rem;
+  color: var(--text-color-light);
   font-size: 1.063rem;
   font-weight: 600;
-  border-radius: 1.875rem;
+  border-radius: var(--border-radius-primary);
   align-items: center;
   position: relative;
   margin-top: 1.875rem;

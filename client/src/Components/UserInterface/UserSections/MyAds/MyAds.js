@@ -95,37 +95,47 @@ const MyAds = () => {
                     </div>
 
                     <form onSubmit={handleSubmit}>
-                      <input
-                        type="text"
-                        name="title"
-                        // placeholder={individualAds?.title}
-                        defaultValue={individualAds?.title}
-                        onChange={handleChange}
-                      />
-                      <input
-                        type="text"
-                        name="location"
-                        // placeholder={individualAds?.location}
-                        defaultValue={individualAds?.location}
-                        onChange={handleChange}
-                      />
-
-                      <FileBase
-                        type="file"
-                        name="images"
-                        multiple={true}
-                        defaultValue={individualAds?.image}
-                        onDone={(base64) => setData({ ...data, image: base64 })}
-                        className="fileUploader"
-                      />
-
-                      <textarea
-                        name="description"
-                        placeholder="Description"
-                        rows="5"
-                        defaultValue={individualAds?.description}
-                        onChange={handleChange}
-                      ></textarea>
+                      <div>
+                        <input
+                          type="text"
+                          name="title"
+                          // placeholder={individualAds?.title}
+                          defaultValue={individualAds?.title}
+                          onChange={handleChange}
+                        />
+                        <label>Title</label>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="location"
+                          // placeholder={individualAds?.location}
+                          defaultValue={individualAds?.location}
+                          onChange={handleChange}
+                        />
+                        <label>Location</label>
+                      </div>
+                      <div>
+                        <FileBase
+                          type="file"
+                          name="images"
+                          multiple={true}
+                          defaultValue={individualAds?.image}
+                          onDone={(base64) => setData({ ...data, image: base64 })}
+                          className="fileUploader"
+                        />
+                        <label>Image</label>
+                      </div>
+                      <div>
+                        <textarea
+                          name="description"
+                          placeholder="Description"
+                          rows="5"
+                          defaultValue={individualAds?.description}
+                          onChange={handleChange}
+                        ></textarea>
+                        <label>Description</label>
+                      </div>
 
                       <button type="submit">Update</button>
                     </form>

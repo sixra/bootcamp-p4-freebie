@@ -1,12 +1,12 @@
 @use "../../Styles.scss";
 
 .searchBar {
-  background-color: rgba(232, 232, 232, 0.845);
+  background-color: var(--background-color-light);
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 5rem;
+  border-radius: var(--btn-border-radius);
   z-index: 999;
   padding: 0.4rem;
   margin: 4rem auto;
@@ -30,10 +30,10 @@
     align-items: center;
     padding-left: 1rem;
     position: relative;
-    background-color: rgb(245, 245, 245);
-    border-radius: 5rem;
+    background-color: var(--background-color-main);
+    border-radius: var(--btn-border-radius);
     margin: 0 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    box-shadow: var(--box-shadow-primary) 0px 2px 4px 0px inset;
     min-width: 12rem;
     cursor: pointer;
 
@@ -43,7 +43,7 @@
       height: 3rem;
       margin: 0.5rem 0;
       width: 90%;
-      border-radius: 5rem;
+      border-radius: var(--btn-border-radius);
     }
   }
 
@@ -51,20 +51,20 @@
     display: block;
     width: 90%;
     line-height: 2.4rem;
-    color: var(--text-colour-light);
-    font-weight: 300;
+    color: var(--text-color-dark);
+    font-weight: var(--font-normal-light);
   }
 
   .selectListContainer {
     width: 100%;
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 1rem;
 
     div {
-      border-top: 0.1rem solid rgba(128, 128, 128, 0.132);
+      border-top: 0.1rem solid var(--border-color-secondary);
       padding-left: 1rem;
       line-height: 2.5rem;
       text-transform: capitalize;
@@ -83,7 +83,7 @@
   }
 
   #showDropdown {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--background-color-main);
     transition: 0.4s all;
     visibility: visible;
   }
@@ -100,7 +100,7 @@
     position: absolute;
     top: 0rem;
     right: 0;
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
 
     @media only screen and (max-width: 1000px) {
       top: 0.3rem;
@@ -140,7 +140,7 @@
 .homeListingBtn {
   text-align: center;
   margin: 3rem auto 5rem auto;
-  color: var(--text-colour-main-light);
+  color: var(--text-color-light);
   max-width: 35rem;
   padding: 1.5rem;
 
@@ -154,8 +154,8 @@
   p {
     margin: 1rem 0;
     line-height: 1.8rem;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: var(--font-light-bold);
+    font-size: var(--h4-font-size);
     letter-spacing: 0.02rem;
   }
 
@@ -174,12 +174,12 @@
   @media only screen and (max-width: 1000px) {
     border: none;
     margin: 0.5rem auto;
-    border-radius: 5rem;
+    border-radius: var(--btn-border-radius);
     max-width: 95%;
   }
 
   input {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--background-color-main);
     border: none;
     outline: none;
     width: 100%;
@@ -187,13 +187,12 @@
     height: 2.4rem;
     padding-left: 1rem;
     border-radius: 1.5rem;
-    font-weight: 300;
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.9rem;
+    font-weight: var(--font-normal-light);
+    font-family: var(--title-font);
+    font-size: var(--normal-font-size);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-weight: 300;
     padding-right: 3rem;
 
     @media only screen and (max-width: 1000px) {
@@ -206,7 +205,7 @@
     position: absolute;
     right: 0.4rem;
     top: 0.7rem;
-    color: rgb(155, 155, 155);
+    color: var(--text-color-dark-secondary);
     cursor: pointer;
     width: 2rem;
     @media only screen and (max-width: 1000px) {
@@ -215,7 +214,7 @@
   }
 
   .searchBarOutput {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--background-color-main);
     position: absolute;
     top: 2rem;
     left: 0.5rem;
@@ -230,7 +229,7 @@
     }
 
     .searchBarOutputItem {
-      border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
+      border-top: 0.1rem solid var(--border-color-secondary);
 
       &:first-of-type {
         border: none;

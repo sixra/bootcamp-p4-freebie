@@ -2,7 +2,7 @@
 
 .adDetailsSection {
   padding: 2rem;
-  background-color: #f4f4f4;
+  background-color: var(--background-color-main);
 
   @media only screen and (max-width: 500px) {
     padding: 1rem;
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
-  background-color: #f4f4f4;
+  background-color: var(--background-color-main);
 }
 
 .adDetailsContainer {
@@ -44,9 +44,9 @@
     .swiper {
       width: 100%;
       height: 30rem;
-      border-radius: 0.5rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: var( --border-radius-primary);
+      box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+        var(--box-shadow-secondary) 0px 1px 2px 0px;
       margin-bottom: 1.3rem;
 
       @media only screen and (max-width: 1100px) {
@@ -64,7 +64,7 @@
 
       .swiper-slide {
         text-align: center;
-        background-color: #212121;
+        background-color: var(--background-color-dark);
 
         img {
           display: block;
@@ -77,10 +77,10 @@
     }
 
     .adDetailsInfo {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-      border-radius: 0.5rem;
-      background-color: #ffffff;
+      box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+        var(--box-shadow-secondary) 0px 1px 2px 0px;
+        border-radius: var(--border-radius-primary);
+        background-color: var(--background-color-content);
       padding: 1.5rem;
 
       & > *:not(:last-child) {
@@ -88,16 +88,16 @@
       }
 
       h1 {
-        color: #2b2b2b;
-        font-size: 1.6rem;
-        font-weight: 700;
+        color: var(--text-color-dark);
+        font-size: var(--h1-font-size);
+        font-weight: var(--font-medium-bold);
         text-transform: capitalize;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
 
         @media only screen and (max-width: 500px) {
-          font-size: 1.2rem;
+          font-size: var(--h3-font-size);
         }
       }
 
@@ -113,9 +113,8 @@
         }
 
         .adDetailsCategory,
-        .adDetailsLocation,
-        .adDetailsFavoriteNumber {
-          color: black;
+        .adDetailsLocation {
+          color: var(--text-color-dark-secondary);
           text-transform: capitalize;
           span {
             margin-left: 0.7rem;
@@ -129,10 +128,10 @@
       }
 
       h3 {
-        color: #2b2b2b;
-        font-weight: 600;
+        color: var(--text-color-dark);
+        font-weight: var(--font-medium-bold);
         text-transform: capitalize;
-        font-size: 1rem;
+        font-size: var(--h4-font-size);
         margin-top: 0.5rem;
       }
 
@@ -166,16 +165,16 @@
       align-items: center;
       background-color: white;
       padding: 1.5rem 1rem;
-      border-radius: 0.5rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: var(--border-radius-primary);
+      box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+        var(--box-shadow-secondary) 0px 1px 2px 0px;
 
       .userAdAvatarImage {
         max-width: 6rem;
         max-height: 6rem;
         border-radius: 50%;
         overflow: hidden;
-        border: 0.2rem solid #e52853;
+        border: 0.2rem solid var(--details-colour-secondary);
         margin-bottom: 1rem;
 
         img {
@@ -187,25 +186,25 @@
       }
 
       .userAdAvatarName {
-        color: rgb(121, 121, 121);
+        color: var(--text-color-dark-secondary);
 
         span {
           display: inline-block;
           text-transform: capitalize;
-          color: black;
-          font-weight: 600;
+          color: var(--text-color-dark);
+          font-weight: var(--font-medium-bold);
           margin-left: 0.3rem;
         }
       }
     }
 
     .userAdContactForm {
-      background-color: white;
+      background-color: var(--background-color-content);
       margin-top: 1.3rem;
       padding: 2rem 1rem 1rem 1rem;
-      border-radius: 0.5rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: var(--border-radius-primary);
+      box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+        var(--box-shadow-secondary) 0px 1px 2px 0px;
 
       @media only screen and (max-width: 500px) {
         margin-top: 0.7rem;
@@ -215,15 +214,15 @@
         padding-bottom: 2rem;
         h3 {
           margin-top: 1rem;
-          font-weight: 600;
-          color: #2b2b2b;
-          font-size: 1rem;
+          font-weight: var(--font-medium-bold);
+          color: var(--text-color-dark);
+          font-size: var(--h4-font-size);
         }
       }
 
       h3 {
         text-align: center;
-        color: #2b2b2b;
+        color: var(--text-color-dark);
         font-size: 1.1rem;
       }
 
@@ -238,7 +237,7 @@
           position: relative;
 
           label {
-            color: rgb(191, 191, 191);
+            color: var(--text-color-light-secondary);
             position: absolute;
             pointer-events: none;
             left: 0.8rem;
@@ -253,11 +252,11 @@
             margin: 0.3rem 0;
             padding: 0.8rem;
             width: 100%;
-            border: 0.1rem solid lightgray;
-            border-radius: 0.3rem;
+            border: 0.1rem solid var(--border-color-primary);
+            border-radius: var(--border-radius-primary);
             font-family: var(--title-font);
             font-size: var(--normal-font-size);
-
+            
             &:focus {
               outline: none;
               border: 0.1rem solid var(--details-colour-secondary);
@@ -271,7 +270,7 @@
             &:valid ~ label {
               top: -0.2rem;
               font-size: 0.7rem;
-              background-color: var(--background-colour-main);
+              background-color: var(--background-color-content);
               padding: 0 0.4rem;
             }
 
@@ -283,7 +282,7 @@
               color: rgb(0, 187, 0);
             }
             &:valid {
-              border: 0.1rem solid lightgray;
+              border: 0.1rem solid var(--border-color-primary);
             }
           }
         }
@@ -305,12 +304,12 @@
   right: 0;
   margin: 0.8rem;
   background-color: transparent;
-  border-radius: 0.5rem;
-  background-color: white;
+  border-radius: var(--border-radius-primary);
+  background-color: var(--background-color-content);
   padding: 0.6rem 1rem;
   z-index: 5;
   transition: 0.1s;
-  border: 0.01rem solid rgb(206, 206, 206);
+  border: 0.01rem solid var(--border-color-primary);
 
   &:active {
     transform: scale(0.93);
