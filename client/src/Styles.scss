@@ -1,12 +1,11 @@
 // ================================================= Import Google Fonts =======================================================
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-// ================================================= Default colours =======================================================
+// === Default colours ===
 
 $black: hsl(0, 0%, 0%);
 $black-2: rgba(0, 0, 0, 0.1);
 $black-3: rgba(0, 0, 0, 0.06);
-
 
 $white: hsl(0, 0%, 100%);
 $white-2: #f4f4f4;
@@ -25,8 +24,7 @@ $pink-2: hsl(0, 80%, 57%);
 $title-font: "Montserrat", sans-serif;
 $subtitle-paragraph-font: "Montserrat", sans-serif;
 
-
-// ================================================= Root Colours, Font Variables etc. =======================================================
+// ==== Root Colours, Font Variables etc. ===
 
 :root {
   --background-color-main: #{$white-2};
@@ -49,7 +47,7 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
 
   --text-color-valid: #{$green};
 
-  --title-color-dark: #{rgb(39, 39, 39)};
+  --title-color-dark: #{$gray-5};
 
   --border-color-primary: #{$gray-2};
   --border-color-secondary: #{$gray-1};
@@ -76,7 +74,7 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
 }
 
 
-// ================================================= Mixins for styling =======================================================
+// === Mixins for styling ===
 
 @mixin btn-background {
   background: linear-gradient(
