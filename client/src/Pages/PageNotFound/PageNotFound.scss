@@ -1,12 +1,12 @@
 .pageNotFoundContainer{
-  background: white;
+  background: var(--background-color-content);
   display: flex;
   flex-direction: row;
   height: 450px;
   @media only screen and (max-width: 1200px) {
     overflow:hidden;
     margin:0px;
-    background: rgb(31, 31, 31);
+    background: var(--background-color-dark);
     box-shadow:0px 0px 122px 25px black inset;
     background-image:url('https://i.imgur.com/eg7VIun.jpg');
     background-repeat:repeat;

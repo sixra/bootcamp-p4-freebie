@@ -1,7 +1,7 @@
 @use "../../Styles.scss";
 
 .userActivationSection {
-  background-color: #f4f4f4;
+  background-color:var(--background-color-main);
   padding: 2rem 1rem;
 }
 
@@ -10,12 +10,12 @@
   text-align: center;
   padding: 1rem;
   .errorAlert {
-    font-weight: 600;
+    font-weight: var(--font-medium-bold);
     letter-spacing: 5px;
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
   }
   p {
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
     padding: 0.5rem;
   }
 }
@@ -25,12 +25,12 @@
   text-align: center;
   padding: 1rem;
   .successAlert {
-    font-weight: 600;
+    font-weight: var(--font-medium-bold);
     letter-spacing: 5px;
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
   }
   p {
-    color: var(--text-colour-main-dark);
+    color: var(--text-color-dark);
     padding: 0.5rem;
   }
 }
@@ -55,8 +55,8 @@
   width: 20rem;
   height: 100%;
   right: 12%;
-  border-radius: 20px;
-  box-shadow: 5px 5px 20px var(--background-colour-light-gray-transparent);
+  border-radius: var(--border-radius-primary);
+  box-shadow: 5px 5px 20px var(--box-shadow-secondary);
   display: flex;
   flex-direction: column;
   justify-content: center;

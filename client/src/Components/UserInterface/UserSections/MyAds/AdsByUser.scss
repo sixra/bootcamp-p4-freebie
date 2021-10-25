@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   padding: 0.5rem 2rem; 
-  border-bottom: 0.01rem solid #f0f0f0;
+  border-bottom: 0.01rem solid var(--border-color-secondary);
 
   @media only screen and (max-width: 545px) {
     flex-direction: column;
@@ -18,9 +18,9 @@
     text-transform: capitalize;
 
     li {
-      font-size: 0.8rem;
+      font-size: var(--normal-font-size);
       margin: 0 0.5rem;
-      font-weight: 300;
+      font-weight: var(--font-normal-bold);
     }
 
     .listItemImageContainer {
@@ -70,8 +70,8 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
-          font-weight: 500;
-          font-size: 0.9rem;
+          font-weight: var(--font-light-bold);
+          font-size: var(--normal-font-size);
           padding-left: 0.5rem;
           
 
@@ -86,9 +86,9 @@
           }
         }
         .listItemCategory {
-          font-size: 0.9rem;
+          font-size: var(--normal-font-size);
           width: 6rem;
-          color: rgb(95, 95, 95);
+          color: var(--text-color-dark-secondary);
           padding-left: 0.5rem;
         }
       }
@@ -104,11 +104,11 @@
           cursor: pointer;
           display: flex;
           align-items: center;
-          color: rgb(75, 75, 75);
+          color: var(--text-color-dark-secondary);
           text-decoration: none;
           justify-content: center;
-          font-size: 0.8rem;
-          color: var(--text-colour-light);
+          font-size: var(--normal-font-size);
+          color: var(--text-color-dark);
 
           @media only screen and (max-width: 400px) {
             flex-direction: column;
@@ -127,7 +127,7 @@
           span {
             text-transform: capitalize;
             @media only screen and (max-width: 500px) {
-              font-size: 0.7rem;
+              font-size: var(--small-font-size);
             }
           }
         }

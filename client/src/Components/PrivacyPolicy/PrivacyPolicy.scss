@@ -1,7 +1,7 @@
 @use "../../Styles.scss";
 
 .privacyContainer{
-  background: white;
+  background: var(--background-color-content);
   padding: 2rem;
   display: flex;
   flex-direction: column;

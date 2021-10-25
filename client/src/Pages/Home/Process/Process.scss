@@ -15,7 +15,7 @@
 
   & h2 {
     width: 100%;
-    color: var(--text-colour-main-light);
+    color: var(--text-color-light);
     letter-spacing: 0.07rem;
     margin: 1.5rem;
     display: flex;
@@ -86,17 +86,17 @@
         align-items: center;
         justify-items: center;
         border-radius: 50%;
-        background-color: var(--background-colour-main);
-        border: 0.7rem solid var(--details-color-gray);
+        background-color: var(--background-color-main);
+        border: 0.7rem solid var(--border-color-secondary);
         margin-bottom: 1rem;
-        color: rgb(85, 85, 85);
+        color: var(--text-color-dark-secondary);
       }
 
       .processInnerEachTitle {
         text-align: center;
         & span {
           border: none;
-          color: var(--text-colour-main-light);
+          color: var(--text-color-light);
           font-size: 1.05rem;
           font-family: var(--subtitle-font);
           &:hover {

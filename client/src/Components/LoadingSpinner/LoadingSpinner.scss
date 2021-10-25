@@ -15,7 +15,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #df0161;
+  background: var(--details-colour-main);
   animation: loadingSpinner 1.25s linear infinite;
 }
 .loadingSpinner div:nth-child(1) > div {

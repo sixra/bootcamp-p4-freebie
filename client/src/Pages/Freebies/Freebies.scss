@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   margin: auto;
   padding-top: 2rem;
-  background-color: #f4f4f4;
+  background-color: var(--background-color-main);
 
   // CATEGORIES AND SEARCH CONTAINER
   .categoriesAndSearchContainer {
@@ -27,8 +27,8 @@
       input {
         border: none;
         outline: none;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+          var(--box-shadow-secondary) 0px 1px 2px 0px;
         width: 100%;
         margin-bottom: 2rem;
         height: 2.5rem;
@@ -38,30 +38,30 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-weight: 300;
+        font-weight: var(--font-normal-light);
       }
 
       svg {
         position: absolute;
         right: 0.4rem;
         top: 0.8rem;
-        color: rgb(155, 155, 155);
+        color: var(--text-color-dark-secondary);
         cursor: pointer;
         width: 2rem;
       }
 
       .searchBarOutput {
-        background-color: #f4f4f4;
+        background-color: var(--background-color-content);
         position: absolute;
         top: 2.4rem;
         width: 100%;
         padding: 0 1rem;
-        font-size: 0.9rem;
-        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
-          rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        font-size: var(--normal-font-size);
+        box-shadow: var(--box-shadow-primary) 0px 2px 5px 0px,
+          var(--box-shadow-secondary) 0px 1px 1px 0px;
 
         .searchBarOutputItem {
-          border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
+          border-top: 0.1rem solid var(--border-color-secondary);
           width: 100%;
 
           &:first-of-type {
@@ -90,13 +90,13 @@
 
     // CATEGORIES CONTAINER WITH BUTTON FOR DROPDOWN FUNCTION
     .categoriesContainer {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      box-shadow: var(--box-shadow-primary) 0px 2px 5px 0px,
+          var(--box-shadow-secondary) 0px 1px 1px 0px;
       margin-bottom: 1rem;
-      background: white;
+      background: var(--background-color-content);
 
       .titleAndDropdownContainer {
-        border-bottom: 1px solid rgba(128, 128, 128, 0.195);
+        border-bottom: 0.1rem solid var(--border-color-secondary);
         padding: 0.2rem 1rem;
         display: flex;
         justify-content: space-between;
@@ -105,8 +105,8 @@
         span {
           display: block;
           text-transform: capitalize;
-          font-weight: 500;
-          font-size: 1.1rem;
+          font-weight: var(--font-light-bold);
+          font-size: var(--h4-font-size);
           padding: 0.5rem 0;
         }
 
@@ -136,8 +136,8 @@
             display: flex;
             align-items: center;
             text-transform: capitalize;
-            font-weight: 300;
-            color: var(--text-colour-light);
+            font-weight: var(--font-normal-light);
+            color: var(--text-color-dark);
 
             &:hover {
               color: var(--details-colour-secondary);
@@ -179,7 +179,7 @@
       align-items: center;
 
       .infoTabText {
-        font-size: 0.9rem;
+        font-size: var(--normal-font-size);
         color: var(--text-colour-light);
       }
 
@@ -228,7 +228,7 @@
       justify-content: center;
       width: 35rem;
       list-style-type: none;
-      font-weight: 500;
+      font-weight: var(--font-light-bold);
 
       li {
         margin-right: 2rem;
@@ -238,15 +238,15 @@
         a {
           outline: none;
           padding: 0.6rem 0.9rem;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-          border-radius: 0.3rem;
+          box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+    var(--box-shadow-secondary) 0px 1px 2px 0px;
+          border-radius: var(--border-radius-primary);
         }
       }
     }
 
     .paginationActivePage {
-      color: var(--text-colour-main-light);
+      color: var(--text-color-light);
       background: linear-gradient(
         to right,
         var(--details-colour-secondary),
@@ -254,7 +254,7 @@
       );
       padding: 0.6rem 0;
       margin-top: -0.6rem;
-      border-radius: 0.3rem;
+      border-radius: var(--border-radius-primary);
     }
   }
 }
@@ -267,10 +267,10 @@
   flex-direction: column;
   width: 47%;
   margin: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  border-radius: 0.3rem;
-  background: white;
+  box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+    var(--box-shadow-secondary) 0px 1px 2px 0px;
+  border-radius: var(--border-radius-primary);
+  background: var(--background-color-content);
   text-decoration: none;
 
   .singleAdImageContainer {
@@ -285,7 +285,7 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
-      border-radius: 0.3rem;
+      border-radius: var(--border-radius-primary);
     }
   }
 
@@ -302,10 +302,10 @@
   flex-direction: row;
   width: 90%;
   margin: 0.5rem auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  border-radius: 0.3rem;
-  background: white;
+  box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+  var(--box-shadow-secondary) 0px 1px 2px 0px;
+  border-radius: var(--border-radius-primary);
+  background: var(--background-color-content);
   text-decoration: none;
 
   @media only screen and (max-width: 680px) {
@@ -346,14 +346,14 @@
   }
 
   .singleAdCategory {
-    color: var(--text-colour-light);
+    color: var(--text-color-dark-secondary);
     text-transform: uppercase;
   }
 
   .singleAdTitle {
     font-size: 1rem;
     text-transform: uppercase;
-    color: black;
+    color: var(--text-color-dark);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -363,7 +363,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    color: black;
+    color: var(--text-color-dark);
 
     & > * {
       display: flex;
@@ -386,7 +386,7 @@
   .singleAdNameDescription {
     line-height: 1.2rem;
     margin-top: 1rem;
-    color: var(--text-colour-light);
+    color: var(--text-color-dark-secondary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
