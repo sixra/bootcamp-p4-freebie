@@ -8,6 +8,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Favorite from "./Favorite";
+import { AiOutlineHeart } from "react-icons/ai";
 import moment from "moment";
 import axios from "axios";
 import "./AdDetails.scss";
@@ -23,7 +24,8 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt, avatar, email, } = singleAdInfo;
+  const [FavoriteNumber, setFavoriteNumber] = useState(0);
+  const { title, location, name, category, image, description, createdAt, avatar, email} = singleAdInfo;
   const [sendInquiry, setSendInquiry] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
@@ -33,7 +35,6 @@ const AdDetails = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
     // eslint-disable-next-line
   }, [location]);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -75,8 +76,14 @@ const AdDetails = () => {
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
             <div className="adDetailsCard">
-
-              {user?.result ? <Favorite singleAdInfo={singleAdInfo} className="favoriteContainer" /> : null}
+              {user?.result ? (
+                <Favorite
+                  singleAdInfo={singleAdInfo}
+                  FavoriteNumber={FavoriteNumber}
+                  setFavoriteNumber={setFavoriteNumber}
+                  className="favoriteContainer"
+                />
+              ) : null}
 
               <Swiper
                 cssMode={true}
@@ -97,7 +104,6 @@ const AdDetails = () => {
                 ))}
               </Swiper>
 
-
               <div className="adDetailsInfo">
                 <h1>{title}</h1>
 
@@ -113,6 +119,11 @@ const AdDetails = () => {
                   <li className="adDetailsCategory">
                     <IoAlbumsOutline size={20} style={{ color: "#df0161" }} />
                     <span>{category}</span>
+                  </li>
+                  <li className="adDetailsFavoriteNumber">
+                    <AiOutlineHeart size="18" color="#E52951" />
+                    <span>interested: </span>
+                    <span className="FavoriteNumber">{FavoriteNumber}</span>
                   </li>
                 </ul>
                 <h3>description :</h3>
@@ -131,7 +142,6 @@ const AdDetails = () => {
                 </div>
               </div>
               <div className="userAdContactForm">
-
                 {sendInquiry ? (
                   <div className="userAdContactSuccess">
                     <TickAnimation />
@@ -157,7 +167,7 @@ const AdDetails = () => {
                           id="senderEmail"
                           required
                         />
-                        <label >Email</label>
+                        <label>Email</label>
                       </div>
                       <div>
                         <input
@@ -166,7 +176,7 @@ const AdDetails = () => {
                           id="senderPhone"
                           required
                         />
-                        <label >Phone</label>
+                        <label>Phone</label>
                       </div>
                       <div>
                         <textarea
