@@ -1,6 +1,6 @@
 Final project of Full-stack Web Development 1 year Course!
 
-<h2>E-COMMERCE SHOP</h2>
+<h2>Freebie</h2>
 
 ![SASS](https://img.shields.io/badge/Sass-333333?style=flat&logo=sass&logoColor=CC6699)
 ![React](https://img.shields.io/badge/-React-333333?style=flat&logo=react)
