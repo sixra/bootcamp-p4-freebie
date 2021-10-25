@@ -1,0 +1,81 @@
+@use "../../Styles.scss";
+
+.userActivationSection {
+  background-color: #f4f4f4;
+  padding: 2rem 1rem;
+}
+
+.errorMessage {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  .errorAlert {
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--text-colour-main-dark);
+  }
+  p {
+    color: var(--text-colour-main-dark);
+    padding: 0.5rem;
+  }
+}
+
+.successMessage {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  .successAlert {
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--text-colour-main-dark);
+  }
+  p {
+    color: var(--text-colour-main-dark);
+    padding: 0.5rem;
+  }
+}
+
+.errorContainer,
+.successContainer {
+  height: 25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.loadingOutcome {
+  height: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorBox,
+.successBox {
+  width: 20rem;
+  height: 100%;
+  right: 12%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px var(--background-colour-light-gray-transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorIcon,
+.successIcon {
+  width: 12rem;
+}
+
+.errorButtonBox {
+  @include Styles.btn-background;
+  background: linear-gradient(to bottom right, #cc0000bd 40%, #cc0000 100%);
+  margin-bottom: 2rem;
+}
+
+.successButtonBox {
+  @include Styles.btn-background;
+  background: linear-gradient(to bottom right, #42cd6ebd 40%, #42cd6e 100%);
+  margin-bottom: 2rem;
+}

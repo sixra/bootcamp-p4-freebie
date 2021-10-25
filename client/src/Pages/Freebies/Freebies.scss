@@ -1,0 +1,394 @@
+.categoriesPageContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-top: 2rem;
+  background-color: #f4f4f4;
+
+  // CATEGORIES AND SEARCH CONTAINER
+  .categoriesAndSearchContainer {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 15rem;
+    justify-content: space-around;
+    height: 100%;
+    padding-left: 2rem;
+
+    @media only screen and (max-width: 1000px) {
+      width: 90%;
+      padding-left: 0;
+    }
+
+    .searchBarContainer {
+      position: relative;
+
+      input {
+        border: none;
+        outline: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        width: 100%;
+        margin-bottom: 2rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+        padding-right: 2.5rem;
+        font-size: 0.9rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 300;
+      }
+
+      svg {
+        position: absolute;
+        right: 0.4rem;
+        top: 0.8rem;
+        color: rgb(155, 155, 155);
+        cursor: pointer;
+        width: 2rem;
+      }
+
+      .searchBarOutput {
+        background-color: #f4f4f4;
+        position: absolute;
+        top: 2.4rem;
+        width: 100%;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+          rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+
+        .searchBarOutputItem {
+          border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
+          width: 100%;
+
+          &:first-of-type {
+            border: none;
+          }
+
+          span {
+            display: block;
+            padding: 0.7rem 0;
+            text-transform: capitalize;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:hover {
+              color: var(--details-colour-secondary);
+            }
+          }
+        }
+      }
+      .clearSearchBarOutput {
+        display: none;
+      }
+    }
+
+    // CATEGORIES CONTAINER WITH BUTTON FOR DROPDOWN FUNCTION
+    .categoriesContainer {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      margin-bottom: 1rem;
+      background: white;
+
+      .titleAndDropdownContainer {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.195);
+        padding: 0.2rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          display: block;
+          text-transform: capitalize;
+          font-weight: 500;
+          font-size: 1.1rem;
+          padding: 0.5rem 0;
+        }
+
+        .categoryDropdownArrow {
+          cursor: pointer;
+          line-height: 0.5rem;
+          @media only screen and (min-width: 1000px) {
+            display: none;
+          }
+        }
+      }
+
+      // LIST OF ALL CATEGORIES
+      .categoriesListsContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        // FROM FILTER.JS
+        ul {
+          list-style-type: none;
+
+          li {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            font-weight: 300;
+            color: var(--text-colour-light);
+
+            &:hover {
+              color: var(--details-colour-secondary);
+            }
+          }
+        }
+      }
+
+      // CATEGORIES DROPDOWN MENU
+      #hideCategoryDropdown {
+        display: none;
+        @media only screen and (min-width: 1000px) {
+          display: block;
+        }
+      }
+
+      #showCategoryDropdown {
+        display: block;
+      }
+    }
+  }
+
+  // INFO TAB WITH GRID SWITCH VIEW BUTTON
+  .infoTabAndproductsList {
+    display: flex;
+    flex-direction: column;
+    min-width: 35rem;
+    width: 75%;
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .infoTabContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: auto;
+      align-items: center;
+
+      .infoTabText {
+        font-size: 0.9rem;
+        color: var(--text-colour-light);
+      }
+
+      .gridListIconsContainer {
+        cursor: pointer;
+        display: flex;
+
+        div {
+          @media only screen and (max-width: 680px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // LIST OF ALL PRODUCTS
+    .productsListContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .latestAdsGrid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+
+        @media only screen and (max-width: 680px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .latestAdsColumn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+    // PAGINATION
+    .paginationBtn {
+      margin: 3rem 0 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      width: 35rem;
+      list-style-type: none;
+      font-weight: 500;
+
+      li {
+        margin-right: 2rem;
+        cursor: pointer;
+        outline: none;
+
+        a {
+          outline: none;
+          padding: 0.6rem 0.9rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+
+    .paginationActivePage {
+      color: var(--text-colour-main-light);
+      background: linear-gradient(
+        to right,
+        var(--details-colour-secondary),
+        var(--details-colour-main)
+      );
+      padding: 0.6rem 0;
+      margin-top: -0.6rem;
+      border-radius: 0.3rem;
+    }
+  }
+}
+
+// SINGLE PRODUCT STYLING
+
+// SINGLE ADD IN COLUMN VIEW
+.singleAdCardColumn {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  margin: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+  background: white;
+  text-decoration: none;
+
+  .singleAdImageContainer {
+    overflow: hidden;
+    padding: 0.2rem;
+    max-height: 17rem;
+    min-height: 17rem;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.3rem;
+    }
+  }
+
+  @media only screen and (max-width: 680px) {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+// SINGLE ADD IN ROW VIEW
+
+.singleAdCardRow {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0.5rem auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.3rem;
+  background: white;
+  text-decoration: none;
+
+  @media only screen and (max-width: 680px) {
+    flex-direction: column;
+  }
+
+  .singleAdImageContainer {
+    overflow: hidden;
+    padding: 0.2rem;
+    max-height: 18rem;
+    width: 50%;
+    min-height: 17rem;
+
+    @media only screen and (max-width: 680px) {
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.3rem;
+    }
+  }
+}
+
+.singleAdInfo {
+  font-size: 0.85rem;
+  padding: 1rem;
+  width: 50%;
+  @media only screen and (max-width: 680px) {
+    width: 100%;
+  }
+
+  & > * {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .singleAdCategory {
+    color: var(--text-colour-light);
+    text-transform: uppercase;
+  }
+
+  .singleAdTitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .singleAdNameLocation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: black;
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+
+    .singleAdName,
+    .singleAdLocation {
+      text-transform: capitalize;
+      span {
+        margin-left: 0.3rem;
+      }
+    }
+
+    .singleAdName {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .singleAdNameDescription {
+    line-height: 1.2rem;
+    margin-top: 1rem;
+    color: var(--text-colour-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,265 @@
+@use "../../Styles.scss";
+
+.searchBar {
+  background-color: rgba(232, 232, 232, 0.845);
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5rem;
+  z-index: 999;
+  padding: 0.4rem;
+  margin: 4rem auto;
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.9rem;
+    width: 90%;
+    max-width: 30rem;
+    border-radius: 2rem;
+    height: 13rem;
+    margin-top: 3rem;
+  }
+
+  .searchBarSelectContainer {
+    width: 50%;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5rem;
+    margin: 0 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    min-width: 12rem;
+    cursor: pointer;
+
+    @media only screen and (max-width: 1000px) {
+      padding-left: 2rem;
+      border: none;
+      height: 3rem;
+      margin: 0.5rem 0;
+      width: 90%;
+      border-radius: 5rem;
+    }
+  }
+
+  .selectContainerText {
+    display: block;
+    width: 90%;
+    line-height: 2.4rem;
+    color: var(--text-colour-light);
+    font-weight: 300;
+  }
+
+  .selectListContainer {
+    width: 100%;
+    color: var(--text-colour-main-dark);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 1rem;
+
+    div {
+      border-top: 0.1rem solid rgba(128, 128, 128, 0.132);
+      padding-left: 1rem;
+      line-height: 2.5rem;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--details-colour-secondary);
+      }
+
+      &:first-of-type {
+        height: 5rem;
+        padding-top: 2.5rem;
+        border: none;
+      }
+    }
+  }
+
+  #showDropdown {
+    background-color: rgb(245, 245, 245);
+    transition: 0.4s all;
+    visibility: visible;
+  }
+
+  #hideDropdown {
+    background-color: transparent;
+    visibility: collapse;
+    transition: 0.3s all;
+    color: transparent;
+    border: none;
+  }
+
+  .selectContainerArrow {
+    position: absolute;
+    top: 0rem;
+    right: 0;
+    color: var(--text-colour-main-dark);
+
+    @media only screen and (max-width: 1000px) {
+      top: 0.3rem;
+      right: 0.3rem;
+    }
+  }
+
+  .searchBarButton,
+  .searchBarButtonDisabled {
+    @include Styles.btn-background;
+    height: 2.4rem;
+
+    @media only screen and (max-width: 1000px) {
+      width: 40%;
+    }
+  }
+  .searchBarButtonDisabled {
+    filter: grayscale(100%);
+  }
+}
+
+.heroImage {
+  background-image: linear-gradient(
+      hsla(0, 0%, 0%, 0.822),
+      hsla(0, 0%, 28%, 0.493)
+    ),
+    url("./hero-image.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  max-width: 90rem;
+  z-index: -5;
+  position: absolute;
+  top: 0;
+}
+
+.homeListingBtn {
+  text-align: center;
+  margin: 3rem auto 5rem auto;
+  color: var(--text-colour-main-light);
+  max-width: 35rem;
+  padding: 1.5rem;
+
+  h1 {
+    font-size: 2.3rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    margin: 1rem 0;
+    line-height: 1.8rem;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+  }
+
+  .headerBtn {
+    @include Styles.btn-background;
+    margin-top: 1rem;
+  }
+}
+
+.searchInputContainer {
+  position: relative;
+  height: 2.4rem;
+  max-width: 20rem;
+  width: 100%;
+
+  @media only screen and (max-width: 1000px) {
+    border: none;
+    margin: 0.5rem auto;
+    border-radius: 5rem;
+    max-width: 95%;
+  }
+
+  input {
+    background-color: rgb(245, 245, 245);
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 2.4rem;
+    padding-left: 1rem;
+    border-radius: 1.5rem;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+    padding-right: 3rem;
+
+    @media only screen and (max-width: 1000px) {
+      height: 3rem;
+      padding-left: 2rem;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 0.4rem;
+    top: 0.7rem;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+    width: 2rem;
+    @media only screen and (max-width: 1000px) {
+      top: 1rem;
+    }
+  }
+
+  .searchBarOutput {
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    top: 2rem;
+    left: 0.5rem;
+    width: 95%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    z-index: 999;
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      top: 1.9rem;
+      left: 0rem;
+    }
+
+    .searchBarOutputItem {
+      border-top: 0.1rem solid rgba(135, 135, 135, 0.187);
+
+      &:first-of-type {
+        border: none;
+        padding-top: 0.4rem;
+        @media only screen and (max-width: 1000px) {
+          padding-top: 0.8rem;
+        }
+      }
+
+      span {
+        display: block;
+        padding: 0.6rem 1rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @media only screen and (max-width: 1000px) {
+          padding: 0.8rem 1.5rem;
+        }
+
+        &:hover {
+          color: var(--details-colour-secondary);
+        }
+      }
+    }
+  }
+
+  .clearSearchBarOutput {
+    display: none;
+  }
+}

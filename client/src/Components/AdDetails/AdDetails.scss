@@ -1,0 +1,354 @@
+@use "../../Styles.scss";
+
+// * {
+//   outline: 1px solid black;
+// }
+
+.adDetailsSection {
+  padding: 2rem;
+  background-color: #f4f4f4;
+
+  @media only screen and (max-width: 500px) {
+    padding: 1rem;
+  }
+}
+
+.adDetailsSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  background-color: #f4f4f4;
+}
+
+.adDetailsContainer {
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 40em;
+  }
+
+  .adDetailsCard {
+    width: 65%;
+    position: relative;
+
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 30rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      margin-bottom: 1.3rem;
+
+      @media only screen and (max-width: 1100px) {
+        height: 25rem;
+      }
+
+      @media only screen and (max-width: 900px) {
+        height: 22rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        height: 15rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        background-color: #212121;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    .adDetailsInfo {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-radius: 0.5rem;
+      background-color: #ffffff;
+      padding: 1.5rem;
+
+      & > *:not(:last-child) {
+        margin-bottom: 0.9rem;
+      }
+
+      h1 {
+        color: #2b2b2b;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        @media only screen and (max-width: 500px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .adDetailsLocationCategory {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & > * {
+          display: flex;
+          align-items: center;
+          margin: 0 1.2rem 0.5rem 0;
+        }
+
+        .adDetailsCategory,
+        .adDetailsLocation {
+          color: black;
+          text-transform: capitalize;
+          span {
+            margin-left: 0.7rem;
+          }
+        }
+      }
+
+      h3 {
+        color: #2b2b2b;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      p {
+        line-height: 1.5rem;
+        letter-spacing: 0.01rem;
+        color: var(--text-colour-light);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .userAdCard {
+    width: 33%;
+
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      margin-top: 1.3rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+      margin-top: 0.7rem;
+    }
+
+    .userAdAvatar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 1.5rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+      .userAdAvatarImage {
+        max-width: 6rem;
+        max-height: 6rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0.2rem solid #e52853;
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .userAdAvatarName {
+        color: rgb(121, 121, 121);
+
+        span {
+          display: inline-block;
+          text-transform: capitalize;
+          color: black;
+          font-weight: 600;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+    .userAdContactForm {
+      background-color: white;
+      margin-top: 1.3rem;
+      padding: 2rem 1rem 1rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+      @media only screen and (max-width: 500px) {
+        margin-top: 0.7rem;
+      }
+
+      .userAdContactSuccess {
+        padding-bottom: 2rem;
+        h3 {
+          margin-top: 1rem;
+          font-weight: 600;
+          color: #2b2b2b;
+          font-size: 1rem;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        color: #2b2b2b;
+        font-size: 1.1rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 19rem;
+        padding: 1rem;
+        margin: 0 auto;
+
+        div {
+          position: relative;
+
+          label {
+            color: rgb(191, 191, 191);
+            position: absolute;
+            pointer-events: none;
+            left: 0.8rem;
+            top: 1rem;
+            transition: 0.3s ease all;
+            -moz-transition: 0.3s ease all;
+            -webkit-transition: 0.3s ease all;
+          }
+          input,
+          textarea {
+            color: var(--text-colour-light);
+            margin: 0.3rem 0;
+            padding: 0.8rem;
+            width: 100%;
+            border: 0.1rem solid lightgray;
+            border-radius: 0.3rem;
+
+            &:focus {
+              outline: none;
+              border: 0.1rem solid var(--details-colour-secondary);
+            }
+            &:active {
+              border: 0.1rem solid var(--details-colour-secondary);
+              outline: none;
+            }
+
+            &:focus ~ label,
+            &:valid ~ label {
+              top: -0.2rem;
+              font-size: 0.7rem;
+              background-color: var(--background-colour-main);
+              padding: 0 0.4rem;
+            }
+
+            &:focus ~ label {
+              color: var(--details-colour-secondary);
+            }
+
+            &:valid ~ label {
+              color: rgb(0, 187, 0);
+            }
+            &:valid {
+              border: 0.1rem solid lightgray;
+            }
+          }
+        }
+        .adSubmitButton {
+          @include Styles.btn-background;
+          width: 6rem;
+          margin: 0.7rem auto 0 auto;
+        }
+      }
+    }
+  }
+}
+
+// FAVORITE BUTTON STYLING
+
+.favoriteContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.8rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  z-index: 5;
+  transition: 0.1s;
+  border: 0.01rem solid rgb(206, 206, 206);
+
+  &:active {
+    transform: scale(0.93);
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+
+    span {
+      font-size: 0.9rem;
+      color: rgb(41, 41, 41);
+      font-weight: 500;
+      margin-left: 0.3rem;
+      margin-right: 0.1rem;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 0.02rem;
+    }
+  }
+
+  // span {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0.2rem;
+  //   width: 1.3rem;
+  //   height: 1.5rem;
+  //   line-height: 1.5rem;
+  //   border-radius: 0.2rem;
+  //   font-size: 1rem;
+  //   text-align: center;
+  //   color: rgb(61, 61, 61);
+  //   font-weight: 500;
+  //   background-color: white;
+  //   outline: 1px sold black;
+  //   z-index: 5;
+  // }
+}
+
+// * {
+//   outline: 1px solid black;
+// }

@@ -1,0 +1,109 @@
+@use "../../../Styles.scss";
+
+.processContainer {
+  background: linear-gradient(hsla(0, 0%, 0%, 0.747), hsla(0, 0%, 18%, 0.712)),
+    url("./typing.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+
+  & h2 {
+    width: 100%;
+    color: var(--text-colour-main-light);
+    letter-spacing: 0.07rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    &::after,
+    &::before {
+      display: inline-block;
+      content: "";
+      border-top: 0.15rem solid var(--details-colour-main);
+      width: 3rem;
+      margin: 0 1rem;
+      transform: translateY(-0.02rem);
+    }
+
+    @media only screen and (max-width: 320px) {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  & button {
+    @include Styles.btn-background;
+    @media only screen and (max-width: 600px) {
+      margin-top: 1rem;
+    }
+  }
+
+  .processInnerContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    @media only screen and (max-width: 700px) {
+      transform: scale(0.85);
+    }
+
+    @media only screen and (max-width: 550px) {
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.9);
+      margin-bottom: 0;
+    }
+
+    .processInnerEachContainer {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: 550px) {
+        margin: 1.5rem;
+      }
+
+      .processInnerEachIcon {
+        width: 9rem;
+        height: 9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        border-radius: 50%;
+        background-color: var(--background-colour-main);
+        border: 0.7rem solid var(--details-color-gray);
+        margin-bottom: 1rem;
+        color: rgb(85, 85, 85);
+      }
+
+      .processInnerEachTitle {
+        text-align: center;
+        & span {
+          border: none;
+          color: var(--text-colour-main-light);
+          font-size: 1.05rem;
+          font-family: var(--subtitle-font);
+          &:hover {
+            color: var(--details-colour-main);
+          }
+        }
+      }
+    }
+  }
+}

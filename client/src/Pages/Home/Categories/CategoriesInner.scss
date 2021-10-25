@@ -1,0 +1,90 @@
+@use "../../../Styles.scss";
+
+.categoriesInnerContainer {
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 2rem 1rem;
+
+  & h2 {
+    margin: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.07rem;
+    color: var(--background-colour-dark-gray);
+    &::after,
+    &::before {
+      display: inline-block;
+      content: "";
+      border-top: 0.15rem solid var(--details-colour-main);
+      width: 3rem;
+      margin: 0 1rem;
+      transform: translateY(-0.4rem);
+    }
+    @media only screen and (max-width: 320px) {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  & span {
+    margin-bottom: 1rem;
+    color: var(--text-colour-main-dark);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: var(--font-light-bold);
+    font-family: var(--subtitle-font);
+    text-align: center;
+  }
+
+  .categoriesInnerListsContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    @media only screen and (max-width: 1100px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media only screen and (max-width: 740px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (max-width: 600px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categoriesInnerEachListContainer {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+
+      @media only screen and (max-width: 400px) {
+        margin: 1.5rem;
+      }
+
+      .categoriesInnerListIcon {
+        margin-bottom: 0.75rem;
+        color: var(--background-colour-light-gray);
+      }
+
+      .categoriesInnerListTitle {
+        & button {
+          border: none;
+          color: var(--text-colour-main-dark);
+          background-color: #f4f4f4;
+          font-size: var(--normal-font-size);
+          font-weight: var(--font-light-bold);
+          font-family: var(--subtitle-font);
+          &:hover {
+            color: var(--details-colour-main);
+          }
+        }
+      }
+    }
+  }
+}

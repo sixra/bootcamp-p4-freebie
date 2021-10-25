@@ -1,0 +1,194 @@
+@use "../../Styles.scss";
+
+/* NAVIGATION BAR */
+
+.navLogoAuthButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 78rem;
+  margin: 1rem auto;
+  padding: 0 0.7rem;
+}
+
+/* NAV LOGO */
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  width: 7.5rem;
+
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 5rem;
+  }
+}
+
+/* SIGN IN / SIGN UP / USER INTERFACE BUTTONS */
+
+.authButton {
+  display: flex;
+  align-items: center;
+
+  .signIn,
+  .postAnAd {
+    margin: 0.5rem;
+    padding: 0.5rem 1.1rem;
+    text-decoration: none;
+    color: white;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0.4rem;
+    }
+  }
+
+  .postAnAd {
+    border-radius: var(--btn-border-radius);
+    border: 3px solid #e52853;
+
+    @media only screen and (max-width: 500px) {
+      border: 2px solid #e52853;
+    }
+  }
+
+  .userSectionDropdown {
+    position: relative;
+    z-index: 5;
+
+    .userNameContainer {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.7rem;
+
+      .userName {
+        margin-left: 0.4rem;
+        text-transform: capitalize;
+      }
+    }
+
+    &:hover,
+    &:hover .userNameContainer {
+      background-color: white;
+      color: black;
+      border-radius: 0.6rem 0.6rem 0 0;
+    }
+
+    &:hover .userSectionLinks {
+      display: block;
+    }
+
+    .userSectionLinks {
+      display: none;
+      position: absolute;
+      list-style-type: none;
+      background-color: white;
+      left: 0;
+      width: 10rem;
+      text-transform: capitalize;
+      border-radius: 0 0.6rem 0.6rem 0.6rem;
+      border: 0.08rem solid rgba(128, 128, 128, 0.16);
+
+      & > * {
+        border-bottom: 0.08rem solid rgba(128, 128, 128, 0.16);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .listContainer {
+        color: black;
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        display: block;
+
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+          color: #e52853;
+        }
+
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .userLogoutBtn {
+      @include Styles.btn-background;
+      padding: 0.5rem 1.2rem;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* NAV LINK PAGES */
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navListItem {
+    list-style-type: none;
+    margin: 0 1rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--text-colour-main-light);
+      text-transform: uppercase;
+      font-weight: var(--font-normal-bold);
+      letter-spacing: 0.03rem;
+      position: relative;
+      padding-bottom: 0.15rem;
+
+      &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 0.15rem;
+        left: 50%;
+        position: absolute;
+        background: linear-gradient(
+          to right,
+          var(--details-colour-secondary),
+          var(--details-colour-main)
+        );
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      &:hover:after {
+        width: 100%;
+        left: 0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: var(--small-font-size);
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      margin: 0 0.5rem;
+    }
+
+    .activePage {
+      font-weight: var(--font-medium-bold);
+    }
+  }
+}
+
+.userNameContainer img {
+  width: 1.8rem;
+  border-radius: 50%;
+}

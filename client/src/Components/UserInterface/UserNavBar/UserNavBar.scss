@@ -1,0 +1,103 @@
+.userNavbar {
+  max-width: 15rem;
+  min-width: 15rem;
+  margin-right: 1.5rem;
+
+  @media only screen and (max-width: 800px) {
+    max-width: 30rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgb(53, 53, 53);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(
+        hsla(0, 0%, 0%, 0.822),
+        hsla(0, 0%, 7%, 0.726)
+      ),
+      url("./abstract-background.jpg");
+
+    // background-image: linear-gradient(
+    //   hsla(334, 83%, 48%, 0.658),
+    //   hsla(0, 80%, 57%, 0.76)
+    // ), url("./abstract-background.jpg");
+
+    .userImage-gradientBorder {
+      border-radius: 50%;
+      padding: 0.2rem;
+      margin-bottom: 0.7rem;
+      // background: white;
+      background: linear-gradient(
+        to right,
+        var(--details-colour-secondary),
+        var(--details-colour-main)
+      );
+
+      .userImage {
+        height: 5.5rem;
+        width: 5.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .userName {
+      color: rgb(255, 255, 255);
+      span {
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .userSectionLinks {
+    li {
+      list-style-type: none;
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        font-size: 0.9rem;
+        text-transform: capitalize;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+        span {
+          margin-left: 1rem;
+        }
+      }
+
+      .activeSection {
+        background: rgb(133, 133, 133);
+        color: white;
+        border: 1px solid rgb(133, 133, 133);
+      }
+    }
+  }
+}

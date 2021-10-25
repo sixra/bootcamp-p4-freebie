@@ -1,0 +1,12 @@
+@use "../../Styles.scss";
+
+.scrollToTop {
+  & div {
+  @include Styles.btn-background;
+  position: fixed;
+  padding: 0.5rem;
+  bottom: 2%;
+  right: 2%;
+  border-radius: 0.5rem;
+  }
+}
