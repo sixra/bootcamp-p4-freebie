@@ -124,7 +124,7 @@
         }
 
         .footerDetailsSubscribeInput {
-          background-color: var(--background-colour-main);
+          background-color: var(--background-color-content);
           display: flex;
           flex-direction: row;
           justify-content: space-between;
@@ -138,6 +138,7 @@
             border: none;
             width: 100%;
             background-color: transparent;
+            
           }
 
           button {
