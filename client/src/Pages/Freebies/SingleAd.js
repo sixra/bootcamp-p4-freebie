@@ -1,12 +1,13 @@
 import React from "react";
 import "./Freebies.scss";
-import { AiOutlineUser } from "react-icons/ai";
+import { IoTimeOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const SingleAd = ({ adInfo, gridToggle }) => {
   const {
-    name,
+    createdAt,
     category,
     title,
     description,
@@ -25,8 +26,8 @@ const SingleAd = ({ adInfo, gridToggle }) => {
         <h4 className="singleAdTitle">{title}</h4>
         <div className="singleAdNameLocation">
           <div className="singleAdName">
-            <AiOutlineUser size={15} style={{ color: "#df0161" }} />
-            <span>{name}</span>
+            <IoTimeOutline size={15} style={{ color: "#df0161" }} />
+            <span>{moment(createdAt).format("Do MMM YYYY")}</span>
           </div>
           <div className="singleAdLocation">
             <IoLocationOutline size={15} style={{ color: "#df0161" }} />

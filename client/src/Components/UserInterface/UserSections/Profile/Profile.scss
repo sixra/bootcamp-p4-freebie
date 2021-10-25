@@ -100,31 +100,43 @@
     @media only screen and (max-width: 800px) {
       margin-left: 0;
     }
-    .inputFormGroup {
-      display: flex;
-      flex-direction: row;
-    }
+    div {
+      position: relative;
 
-    label {
-      display: block;
-      margin-top: 5px;
-      align-self: center;
-      width: 5rem;
-      font-size: 0.8rem;
-    }
+      label {
+        color: rgb(130, 130, 130);
+        position: absolute;
+        pointer-events: none;
+        top: -0.2rem;
+        left: 1rem;
+        background-color: var(--background-colour-main);
+        padding: 0rem 0.3rem;
+        font-size: 0.7rem;
+        transition: 0.3s ease all;
+        -moz-transition: 0.3s ease all;
+        -webkit-transition: 0.3s ease all;
+      }
+      input,
+      textarea {
+        color: var(--text-colour-light);
+        margin: 0.3rem 0;
+        padding: 0.8rem;
+        width: 100%;
+        border: 0.1rem solid lightgray;
+        border-radius: 0.3rem;
 
-    input {
-      width: 90%;
-      margin: 0.5rem 0 0.5rem 0.7rem;
-      background: transparent;
-      border: 1px solid lightgray;
-      border-radius: 0.3rem;
-      padding: 0.8rem;
-    }
-
-    input:focus {
-      outline: none;
-      border: 1px solid var(--details-colour-main);
+        &:focus {
+          outline: none;
+          border: 0.1rem solid var(--details-colour-secondary);
+        }
+        &:active {
+          border: 0.1rem solid var(--details-colour-secondary);
+          outline: none;
+        }
+        &:focus ~ label {
+          color: var(--details-colour-secondary);
+        }
+      }
     }
   }
 }
