@@ -23,7 +23,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt, avatar, email,} = singleAdInfo;
+  const { title, location, name, category, image, description, createdAt, avatar, email, } = singleAdInfo;
   const [sendInquiry, setSendInquiry] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const AdDetails = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
     // eslint-disable-next-line
   }, [location]);
-  
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -89,7 +89,7 @@ const AdDetails = () => {
                   "--swiper-navigation-color": "#E52853",
                   "--swiper-pagination-color": "#E52853",
                 }}
-              > 
+              >
                 {image.map(({ base64 }) => (
                   <SwiperSlide className="swiperSlide">
                     <img className="adDetailsImage" src={base64} alt="ad" />
@@ -97,7 +97,7 @@ const AdDetails = () => {
                 ))}
               </Swiper>
 
-              
+
               <div className="adDetailsInfo">
                 <h1>{title}</h1>
 
@@ -130,8 +130,8 @@ const AdDetails = () => {
                   Posted by<span>{name}</span>
                 </div>
               </div>
-
               <div className="userAdContactForm">
+
                 {sendInquiry ? (
                   <div className="userAdContactSuccess">
                     <TickAnimation />
@@ -141,34 +141,42 @@ const AdDetails = () => {
                   <>
                     <h3>Inquire about the ad</h3>
                     <form onSubmit={handleSubmit}>
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        name="name"
-                        id="senderName"
-                        required
-                      />
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        name="email"
-                        id="senderEmail"
-                        required
-                      />
-                      <input
-                        type="text"
-                        placeholder="Your Phone"
-                        name="phone"
-                        id="senderPhone"
-                        required
-                      />
-                      <textarea
-                        placeholder="Your Message"
-                        name="message"
-                        id="senderMessage"
-                        rows="5"
-                        required
-                      ></textarea>
+                      <div>
+                        <input
+                          type="text"
+                          name="name"
+                          id="senderName"
+                          required
+                        />
+                        <label>Name</label>
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          id="senderEmail"
+                          required
+                        />
+                        <label >Email</label>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          name="phone"
+                          id="senderPhone"
+                          required
+                        />
+                        <label >Phone</label>
+                      </div>
+                      <div>
+                        <textarea
+                          name="message"
+                          id="senderMessage"
+                          rows="5"
+                          required
+                        ></textarea>
+                        <label>Message</label>
+                      </div>
                       <button type="submit" className="adSubmitButton">
                         Send
                       </button>

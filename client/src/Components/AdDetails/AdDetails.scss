@@ -7,7 +7,6 @@
 .adDetailsSection {
   padding: 2rem;
   background-color: #f4f4f4;
-  
 
   @media only screen and (max-width: 500px) {
     padding: 1rem;
@@ -233,17 +232,55 @@
         padding: 1rem;
         margin: 0 auto;
 
-        & > * {
-          margin: 0.3rem 0;
-          padding: 0.8rem;
-          border: 1px solid lightgray;
-          border-radius: 0.3rem;
-          font-family: var(--title-font);
-          font-size: var(--small-font-size);
+        div {
+          position: relative;
 
-          &:focus {
-            border: 1px solid #e20f55;
-            outline: none;
+          label {
+            color: rgb(191, 191, 191);
+            position: absolute;
+            pointer-events: none;
+            left: 0.8rem;
+            top: 1rem;
+            transition: 0.3s ease all;
+            -moz-transition: 0.3s ease all;
+            -webkit-transition: 0.3s ease all;
+          }
+          input,
+          textarea {
+            color: var(--text-colour-light);
+            margin: 0.3rem 0;
+            padding: 0.8rem;
+            width: 100%;
+            border: 0.1rem solid lightgray;
+            border-radius: 0.3rem;
+
+            &:focus {
+              outline: none;
+              border: 0.1rem solid var(--details-colour-secondary);
+            }
+            &:active {
+              border: 0.1rem solid var(--details-colour-secondary);
+              outline: none;
+            }
+
+            &:focus ~ label,
+            &:valid ~ label {
+              top: -0.2rem;
+              font-size: 0.7rem;
+              background-color: var(--background-colour-main);
+              padding: 0 0.4rem;
+            }
+
+            &:focus ~ label {
+              color: var(--details-colour-secondary);
+            }
+
+            &:valid ~ label {
+              color: rgb(0, 187, 0);
+            }
+            &:valid {
+              border: 0.1rem solid lightgray;
+            }
           }
         }
         .adSubmitButton {
@@ -292,8 +329,6 @@
       font-family: "Montserrat", sans-serif;
       letter-spacing: 0.02rem;
     }
-
-    
   }
 
   // span {
