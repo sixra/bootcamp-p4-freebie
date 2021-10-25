@@ -316,12 +316,11 @@
     overflow: hidden;
     padding: 0.2rem;
     max-height: 18rem;
-    width: 100%;
-    max-width: 24rem;
+    width: 50%;
     min-height: 17rem;
 
     @media only screen and (max-width: 680px) {
-      max-width: 100%;
+      width: 100%;
     }
 
     img {
@@ -337,7 +336,10 @@
 .singleAdInfo {
   font-size: 0.85rem;
   padding: 1rem;
-  width: 100%;
+  width: 50%;
+  @media only screen and (max-width: 680px) {
+    width: 100%;
+  }
 
   & > * {
     margin: 0.6rem 0.2rem;
