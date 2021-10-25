@@ -77,7 +77,7 @@
       &:focus ~ label,
       &:valid ~ label {
         top: -0.2rem;
-        font-size: 0.7rem;
+        font-size: var(--small-font-size);
         background-color: var(--background-colour-main);
         padding: 0 0.4rem;
       }
