@@ -113,7 +113,8 @@
         }
 
         .adDetailsCategory,
-        .adDetailsLocation {
+        .adDetailsLocation,
+        .adDetailsFavoriteNumber {
           color: var(--text-color-dark-secondary);
           text-transform: capitalize;
           span {

@@ -112,7 +112,8 @@
           text-decoration: none;
           justify-content: center;
           font-size: var(--normal-font-size);
-          color: var(--text-colour-light);
+          color: var(--text-color-dark);
+          font-family: var(--title-font);
 
           @media only screen and (max-width: 400px) {
             flex-direction: column;
