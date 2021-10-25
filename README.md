@@ -1,4 +1,4 @@
-Final project of Full-stack Web Development 1 year Course!
+Final project of one year Full-stack Web Development Course!
 
 <h2>Freebie</h2>
 
