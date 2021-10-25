@@ -121,7 +121,7 @@ const AdDetails = () => {
                     <span>{category}</span>
                   </li>
                   <li className="adDetailsFavoriteNumber">
-                    <AiOutlineHeart size="18" color="#E52951" />
+                    <AiOutlineHeart size={20} style={{ color: "#E52951" }} />
                     <span>interested: </span>
                     <span className="FavoriteNumber">{FavoriteNumber}</span>
                   </li>
