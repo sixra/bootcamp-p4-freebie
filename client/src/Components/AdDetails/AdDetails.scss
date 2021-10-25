@@ -1,9 +1,5 @@
 @use "../../Styles.scss";
 
-// * {
-//   outline: 1px solid black;
-// }
-
 .adDetailsSection {
   padding: 2rem;
   background-color: #f4f4f4;
@@ -117,12 +113,18 @@
         }
 
         .adDetailsCategory,
-        .adDetailsLocation {
+        .adDetailsLocation,
+        .adDetailsFavoriteNumber {
           color: black;
           text-transform: capitalize;
           span {
             margin-left: 0.7rem;
           }
+        }
+
+        .FavoriteNumber {
+          font-weight: 600;
+          color: rgb(49, 49, 49);
         }
       }
 
@@ -253,6 +255,8 @@
             width: 100%;
             border: 0.1rem solid lightgray;
             border-radius: 0.3rem;
+            font-family: var(--title-font);
+            font-size: var(--normal-font-size);
 
             &:focus {
               outline: none;
@@ -330,25 +334,4 @@
       letter-spacing: 0.02rem;
     }
   }
-
-  // span {
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0.2rem;
-  //   width: 1.3rem;
-  //   height: 1.5rem;
-  //   line-height: 1.5rem;
-  //   border-radius: 0.2rem;
-  //   font-size: 1rem;
-  //   text-align: center;
-  //   color: rgb(61, 61, 61);
-  //   font-weight: 500;
-  //   background-color: white;
-  //   outline: 1px sold black;
-  //   z-index: 5;
-  // }
 }
-
-// * {
-//   outline: 1px solid black;
-// }

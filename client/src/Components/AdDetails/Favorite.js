@@ -3,8 +3,7 @@ import axios from "axios";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 
-const Favorite = ({ singleAdInfo }) => {
-  const [FavoriteNumber, setFavoriteNumber] = useState(0);
+const Favorite = ({ singleAdInfo, FavoriteNumber, setFavoriteNumber }) => {
   const [Favorited, setFavorited] = useState(false);
   const userId = JSON.parse(localStorage.getItem("profile")).result._id;
 
@@ -81,7 +80,6 @@ const Favorite = ({ singleAdInfo }) => {
           </>
         )}
       </button>
-      {/* <span>{FavoriteNumber}</span> */}
     </div>
   );
 };
