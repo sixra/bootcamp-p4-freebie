@@ -18,6 +18,7 @@ We included many features, like:
 - Sign up 
 - Login 
 - Reset password
+- Email confirmation
 - Edit user profile
 - Post ads 
 - Update ads
