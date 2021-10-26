@@ -16,7 +16,8 @@ const Contact = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:4000/api/contact",
+      // url: "http://localhost:4000/api/contact",
+      url: "/api/contact",
       headers: {
         "Content-Type": "application/json",
       },
