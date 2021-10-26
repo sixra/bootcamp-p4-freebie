@@ -13,6 +13,8 @@ import activateRoutes from "./routes/api/activate.js";
 import avatarRoutes from "./routes/api/upload.js";
 import favoriteRoute from "./routes/api/favorite.js";
 
+//Define __dirname
+
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
