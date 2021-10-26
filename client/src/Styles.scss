@@ -1,26 +1,80 @@
 // ================================================= Import Google Fonts =======================================================
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-// ================================================= Default colours =======================================================
+// === Default colours ===
 
 $black: hsl(0, 0%, 0%);
+$black-2: rgba(0, 0, 0, 0.1);
+$black-3: rgba(0, 0, 0, 0.06);
+
 $white: hsl(0, 0%, 100%);
+$white-2: #f4f4f4;
 
-$intense-pink: hsl(334, 83%, 48%);
-$intense-pink-red: hsl(0, 80%, 57%);
+$gray-1: rgb(215, 215, 215);
+$gray-2: rgb(194, 194, 194); //
+$gray-3: hsl(0, 0%, 42%);
+$gray-4: hsla(0, 3%, 28%, 0.817);
+$gray-5: rgb(39, 39, 39);
 
-$gray-dark: hsl(0, 0%, 23%);
-$gray-light: hsl(0, 0%, 34%);
-$gray-light-secondary: hsl(0, 0%, 67%);
-$gray-light-transparent: hsl(213, 5%, 41%);
-$gray-light-transparent-secondary: hsl(0, 0%, 86%);
-$gray-details-light: hsl(0, 0%, 92%);
+$green: rgb(0, 187, 0);
 
-// $title-font: 'Source Serif Pro', serif;
+$pink-1: hsl(334, 83%, 48%);
+$pink-2: hsl(0, 80%, 57%);
+
 $title-font: "Montserrat", sans-serif;
 $subtitle-paragraph-font: "Montserrat", sans-serif;
 
-// ================================================= Mixins for styling =======================================================
+// ==== Root Colours, Font Variables etc. ===
+
+:root {
+  --background-color-main: #{$white-2};
+  --background-color-content: #{$white};
+  --background-color-light: #{$gray-1};
+  --background-color-dark: #{$gray-5};
+  --background-color-dark-secondary: #{$gray-3};
+
+  --details-colour-main: #{$pink-1};
+  --details-colour-secondary: #{$pink-2};
+
+  --box-shadow-primary: #{$black-2};
+  --box-shadow-secondary: #{$black-3};
+
+  --text-color-light: #{$white};
+  --text-color-light-secondary: #{$gray-2};
+
+  --text-color-dark: #{$gray-5};
+  --text-color-dark-secondary: #{$gray-3};
+
+  --text-color-valid: #{$green};
+
+  --title-color-dark: #{$gray-5};
+
+  --border-color-primary: #{$gray-2};
+  --border-color-secondary: #{$gray-1};
+
+  --border-radius-primary: .4rem;
+  --btn-border-radius: 5rem;
+
+  --big-font-size: #{2.25rem};
+  --h1-font-size: #{1.7rem};
+  --h2-font-size: #{1.5rem};
+  --h3-font-size: #{1.25rem};
+  --h4-font-size: #{1rem};
+  --normal-font-size: #{0.9rem};
+  --small-font-size: #{0.7rem};
+
+  --font-normal-light: 300;
+  --font-normal-bold: 400;
+  --font-light-bold: 500;
+  --font-medium-bold: 600;
+
+  --title-font: #{$title-font};
+  --subtitle-font: #{$subtitle-paragraph-font};
+  --paragraph-font: #{$subtitle-paragraph-font};
+}
+
+
+// === Mixins for styling ===
 
 @mixin btn-background {
   background: linear-gradient(
@@ -29,7 +83,7 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
     var(--details-colour-main)
   );
   padding: 0.5rem 1.2rem;
-  color: var(--text-colour-main-light);
+  color: var(--text-color-light);
   font-size: var(--normal-font-size);
   font-weight: var(--font-light-bold);
   letter-spacing: 0.03rem;
@@ -48,38 +102,3 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
   }
 }
 
-// ================================================= Root Colours, Font Variables etc. =======================================================
-
-:root {
-  --text-colour-main-dark: #{$gray-dark};
-  --text-colour-main-light: #{$white};
-  --text-colour-light: #{$gray-light};
-  --text-colour-light-secondary: #{$gray-light-secondary};
-
-  --background-colour-main: #{$white};
-  --background-colour-dark-gray: #{$gray-dark};
-  --background-colour-light-gray: #{$gray-light};
-  --background-colour-light-gray-transparent: #{$gray-light-transparent};
-  --background-colour-light-gray-transparent-secondary: #{$gray-light-transparent-secondary};
-
-  --details-colour-main: #{$intense-pink};
-  --details-colour-secondary: #{$intense-pink-red};
-  --details-color-gray: #{$gray-details-light};
-
-  --title-font: #{$title-font};
-  --subtitle-font: #{$subtitle-paragraph-font};
-  --paragraph-font: #{$subtitle-paragraph-font};
-
-  --big-font-size: #{2.25rem};
-  --h1-font-size: #{1.75rem};
-  --h2-font-size: #{1.5rem};
-  --h3-font-size: #{1.25rem};
-  --normal-font-size: #{0.9rem};
-  --small-font-size: #{0.8rem};
-
-  --font-normal-bold: 400;
-  --font-light-bold: 500;
-  --font-medium-bold: 600;
-  --btn-border-radius: 5rem;
-  --input-border-radius: 3rem;
-}

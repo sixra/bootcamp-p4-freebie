@@ -38,7 +38,7 @@
     margin: 0.5rem;
     padding: 0.5rem 1.1rem;
     text-decoration: none;
-    color: white;
+    color: var(--text-color-light);
 
     @media only screen and (max-width: 600px) {
       padding: 0.4rem;
@@ -47,10 +47,10 @@
 
   .postAnAd {
     border-radius: var(--btn-border-radius);
-    border: 3px solid #e52853;
+    border: 3px solid var(--details-colour-main);
 
     @media only screen and (max-width: 500px) {
-      border: 2px solid #e52853;
+      border: 2px solid var(--details-colour-secondary);
     }
   }
 
@@ -60,7 +60,7 @@
 
     .userNameContainer {
       text-decoration: none;
-      color: white;
+      color: var(--text-color-light);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,7 +74,7 @@
 
     &:hover,
     &:hover .userNameContainer {
-      background-color: white;
+      background-color: var(--background-color-content);
       color: black;
       border-radius: 0.6rem 0.6rem 0 0;
     }
@@ -87,15 +87,15 @@
       display: none;
       position: absolute;
       list-style-type: none;
-      background-color: white;
+      background-color: var(--background-color-content);
       left: 0;
       width: 10rem;
       text-transform: capitalize;
       border-radius: 0 0.6rem 0.6rem 0.6rem;
-      border: 0.08rem solid rgba(128, 128, 128, 0.16);
+      border: 0.08rem solid var(--border-color-primary);
 
       & > * {
-        border-bottom: 0.08rem solid rgba(128, 128, 128, 0.16);
+        border-bottom: 0.08rem solid var(--border-color-primary);
 
         &:last-child {
           border-bottom: none;
@@ -103,7 +103,7 @@
       }
 
       .listContainer {
-        color: black;
+        color: var(--text-color-dark);
         padding: 0.8rem 1rem;
         text-decoration: none;
         display: block;
@@ -114,7 +114,7 @@
         justify-content: flex-start;
 
         &:hover {
-          color: #e52853;
+          color: var(--details-colour-secondary);
         }
 
         svg {
@@ -127,7 +127,7 @@
       @include Styles.btn-background;
       padding: 0.5rem 1.2rem;
       margin-left: 1rem;
-      font-size: 0.8rem;
+      font-size: var(--normal-font-size);
     }
   }
 }
@@ -146,7 +146,7 @@
     a {
       text-decoration: none;
       font-size: 1rem;
-      color: var(--text-colour-main-light);
+      color: var(--text-color-light);
       text-transform: uppercase;
       font-weight: var(--font-normal-bold);
       letter-spacing: 0.03rem;

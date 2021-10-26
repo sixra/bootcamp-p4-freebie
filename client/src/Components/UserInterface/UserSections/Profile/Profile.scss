@@ -37,7 +37,7 @@
         var(--details-colour-main)
       );
       text-transform: uppercase;
-      color: white;
+      color: var(--text-color-light);
       display: flex;
       justify-content: center;
       align-content: center;
@@ -72,7 +72,7 @@
           var(--details-colour-main)
         );
         text-transform: uppercase;
-        color: white;
+        color: var(--text-color-light);
         display: flex;
         justify-content: center;
         align-content: center;
@@ -104,12 +104,12 @@
       position: relative;
 
       label {
-        color: rgb(130, 130, 130);
+        color: var(--text-color-dark-secondary);
         position: absolute;
         pointer-events: none;
         top: -0.2rem;
         left: 1rem;
-        background-color: var(--background-colour-main);
+        background-color: var(--background-color-content);
         padding: 0rem 0.3rem;
         font-size: 0.7rem;
         transition: 0.3s ease all;
@@ -118,12 +118,12 @@
       }
       input,
       textarea {
-        color: var(--text-colour-light);
+        color: var(--text-color-dark);
         margin: 0.3rem 0;
         padding: 0.8rem;
         width: 100%;
-        border: 0.1rem solid lightgray;
-        border-radius: 0.3rem;
+        border: 0.1rem solid var(--border-color-primary);
+        border-radius: var(--border-radius-primary);
 
         &:focus {
           outline: none;

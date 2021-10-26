@@ -12,7 +12,7 @@ import { RiArrowDropDownFill } from "react-icons/ri";
 import { RiArrowDropUpFill } from "react-icons/ri";
 
 const Freebies = () => {
-  const ads = useSelector((state) => state.allAds.filteredAds);
+ const ads = useSelector((state) => state.allAds.filteredAds);
   const [gridToggle, setGridToggle] = useState(true);
   const [categoriesDropdown, setCategoriesDropdown] = useState(false);
   const [pageNumber, setPageNumber] = useState(0);
@@ -35,7 +35,8 @@ const Freebies = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+  }, [ads]);
 
   return (
     <section className="categoriesPageContainer">

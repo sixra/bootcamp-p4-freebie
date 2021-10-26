@@ -8,6 +8,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Favorite from "./Favorite";
+import { AiOutlineHeart } from "react-icons/ai";
 import moment from "moment";
 import axios from "axios";
 import "./AdDetails.scss";
@@ -23,6 +24,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
+  const [FavoriteNumber, setFavoriteNumber] = useState(0);
   const {
     title,
     location,
@@ -88,6 +90,8 @@ const AdDetails = () => {
               {user?.result ? (
                 <Favorite
                   singleAdInfo={singleAdInfo}
+                  FavoriteNumber={FavoriteNumber}
+                  setFavoriteNumber={setFavoriteNumber}
                   className="favoriteContainer"
                 />
               ) : null}
@@ -126,6 +130,11 @@ const AdDetails = () => {
                   <li className="adDetailsCategory">
                     <IoAlbumsOutline size={20} style={{ color: "#df0161" }} />
                     <span>{category}</span>
+                  </li>
+                  <li className="adDetailsFavoriteNumber">
+                    <AiOutlineHeart size={20} style={{ color: "#E52951" }} />
+                    <span>interested: </span>
+                    <span className="FavoriteNumber">{FavoriteNumber}</span>
                   </li>
                 </ul>
                 <h3>description :</h3>

@@ -6,22 +6,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #F4F4F4;
+  background-color: var(--background-color-main);
   margin-top: 2rem;
 
   .pathBanner {
     display: flex;
     align-items: center;
-    color: rgb(80, 80, 80);
+    color: var(--text-color-dark-secondary);
     text-transform: capitalize;
     padding: 0.9rem;
     padding-left: 4rem;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium-bold);
     width: 100%;
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background: var(--background-color-content);
+    box-shadow: var(--box-shadow-primary) 0px 1px 3px 0px,
+      var(--box-shadow-secondary) 0px 1px 2px 0px;
 
       @media only screen and (max-width: 500px) {
         padding-left: 1rem;
