@@ -4,9 +4,14 @@ function sendEmail(message) {
   return new Promise((res, rej) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
+      // auth: {
+      //   user: process.env.EMAIL,
+      //   pass: process.env.PASSWORD,
+      // },
       auth: {
+        type: "OAuth2",
         user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        accessToken: process.env.ACCESS_TOKEN,
       },
     });
 
