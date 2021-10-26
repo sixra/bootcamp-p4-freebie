@@ -75,7 +75,7 @@
     &:hover,
     &:hover .userNameContainer {
       background-color: var(--background-color-content);
-      color: black;
+      color: var(--text-color-dark);
       border-radius: 0.6rem 0.6rem 0 0;
 
     }
@@ -93,11 +93,11 @@
       width: 10rem;
       text-transform: capitalize;
       border-radius: 0 0.6rem 0.6rem 0.6rem;
-      border: 0.08rem solid var(--border-color-primary);
+      border: 0.08rem solid var(--border-color-secondary);
 
 
       & > * {
-        border-bottom: 0.08rem solid var(--border-color-primary);
+        border-bottom: 0.08rem solid var(--border-color-secondary);
 
         &:last-child {
           border-bottom: none;
