@@ -23,7 +23,17 @@ SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
-  const { title, location, name, category, image, description, createdAt, avatar, email, } = singleAdInfo;
+  const {
+    title,
+    location,
+    name,
+    category,
+    image,
+    description,
+    createdAt,
+    avatar,
+    email,
+  } = singleAdInfo;
   const [sendInquiry, setSendInquiry] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
@@ -33,7 +43,6 @@ const AdDetails = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
     // eslint-disable-next-line
   }, [location]);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,7 +59,8 @@ const AdDetails = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:4000/api/contact/user",
+      // url: "http://localhost:4000/api/contact/user",
+      url: "/api/contact/user",
       headers: {
         "Content-Type": "application/json",
       },
@@ -75,8 +85,12 @@ const AdDetails = () => {
         <section className="adDetailsSection">
           <div className="adDetailsContainer">
             <div className="adDetailsCard">
-
-              {user?.result ? <Favorite singleAdInfo={singleAdInfo} className="favoriteContainer" /> : null}
+              {user?.result ? (
+                <Favorite
+                  singleAdInfo={singleAdInfo}
+                  className="favoriteContainer"
+                />
+              ) : null}
 
               <Swiper
                 cssMode={true}
@@ -96,7 +110,6 @@ const AdDetails = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-
 
               <div className="adDetailsInfo">
                 <h1>{title}</h1>
@@ -131,7 +144,6 @@ const AdDetails = () => {
                 </div>
               </div>
               <div className="userAdContactForm">
-
                 {sendInquiry ? (
                   <div className="userAdContactSuccess">
                     <TickAnimation />
@@ -157,7 +169,7 @@ const AdDetails = () => {
                           id="senderEmail"
                           required
                         />
-                        <label >Email</label>
+                        <label>Email</label>
                       </div>
                       <div>
                         <input
@@ -166,7 +178,7 @@ const AdDetails = () => {
                           id="senderPhone"
                           required
                         />
-                        <label >Phone</label>
+                        <label>Phone</label>
                       </div>
                       <div>
                         <textarea
