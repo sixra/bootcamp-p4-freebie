@@ -72,7 +72,7 @@ export const signup = async (req, res) => {
 
     const hash = savedUser._id;
     // const url = `${process.env.DOMAIN}/Api/activate/user/${hash}`;
-    const url = `https://finalfreebie.herokuapp.com/Api/activate/user/${hash}`;
+    const url = `/api/activate/user/${hash}`;
     // const url = `/${hash}`
 
     await sendConfirmationEmail({
