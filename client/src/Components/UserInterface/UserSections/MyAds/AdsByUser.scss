@@ -1,12 +1,12 @@
 .adsByUserContainer {
   display: flex;
   flex-direction: row;
-  padding: 0.5rem 2rem; 
+  padding: 0.5rem 2rem;
   border-bottom: 0.01rem solid var(--border-color-secondary);
 
   @media only screen and (max-width: 545px) {
     flex-direction: column;
-    padding: 0.5rem; 
+    padding: 0.5rem;
   }
 
   .adsByUserList {
@@ -43,11 +43,10 @@
       flex-direction: row;
       width: 100%;
       margin-left: 1.5rem;
-      
+
       & > * {
         margin: 0.2rem 0;
       }
-
 
       @media only screen and (max-width: 860px) {
         flex-direction: column;
@@ -57,7 +56,7 @@
         display: flex;
         list-style-type: none;
         flex-direction: row;
-        
+
         & > * {
           margin: 0.2rem 0;
         }
@@ -73,7 +72,6 @@
           font-weight: var(--font-light-bold);
           font-size: var(--normal-font-size);
           padding-left: 0.5rem;
-          
 
           @media only screen and (max-width: 860px) {
             width: 100%;
@@ -87,6 +85,7 @@
         }
         .listItemCategory {
           font-size: var(--normal-font-size);
+          font-weight: var(--font-normal-light);
           width: 6rem;
           color: var(--text-color-dark);
           padding-left: 0.5rem;
@@ -109,6 +108,7 @@
           justify-content: center;
           font-size: var(--normal-font-size);
           color: var(--text-color-dark);
+          font-family: var(--title-font);
 
           @media only screen and (max-width: 400px) {
             flex-direction: column;
@@ -135,4 +135,3 @@
     }
   }
 }
-
