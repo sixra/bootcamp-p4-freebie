@@ -37,7 +37,7 @@ function ForgotPassword() {
       hideMethod: "fadeOut",
     };
 
-    const res = axios.post("http://localhost:4000/api/user/forgot", { email });
+    const res = axios.post("/api/user/forgot", { email });
     e.target.reset();
     if (res) {
       toastr["success"](
