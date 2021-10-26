@@ -1,6 +1,7 @@
 export async function activateUser(hash) {
   const response = await fetch(
-    `http://localhost:4000/api/activate/user/${hash}`
+    //`http://localhost:4000/api/activate/user/${hash}`
+    `${process.env.DOMAIN}/api/activate/user/${hash}`
   );
 
   if (response.status >= 400) {
