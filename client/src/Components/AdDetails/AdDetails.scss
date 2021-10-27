@@ -139,7 +139,7 @@
       p {
         line-height: 1.5rem;
         letter-spacing: 0.01rem;
-        color: var(--text-colour-light);
+        color: var(--text-color-dark-secondary);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -242,7 +242,7 @@
             position: absolute;
             pointer-events: none;
             left: 0.8rem;
-            top: 1rem;
+            top: 1.2rem;
             transition: 0.3s ease all;
             -moz-transition: 0.3s ease all;
             -webkit-transition: 0.3s ease all;
@@ -253,7 +253,7 @@
             margin: 0.3rem 0;
             padding: 0.8rem;
             width: 100%;
-            border: 0.1rem solid var(--border-color-primary);
+            border: 0.1rem solid var(--border-color-secondary);
             border-radius: var(--border-radius-primary);
             font-family: var(--title-font);
             font-size: var(--normal-font-size);
@@ -283,7 +283,7 @@
               color: rgb(0, 187, 0);
             }
             &:valid {
-              border: 0.1rem solid var(--border-color-primary);
+              border: 0.1rem solid var(--border-color-secondary);
             }
           }
         }

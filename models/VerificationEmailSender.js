@@ -1,39 +1,47 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-import { clientId, clientSecret, refreshToken } from "../config/config.js";
-const OAuth2 = google.auth.OAuth2;
+const { OAuth2 } = google.auth;
 
-const OAuth2_client = new OAuth2(clientId, clientSecret, refreshToken);
-OAuth2_client.setCredentials({ refreshToken: refreshToken });
+const {
+  MAILING_SERVICE_CLIENT_ID,
+  MAILING_SERVICE_CLIENT_SECRET,
+  MAILING_SERVICE_REFRESH_TOKEN,
+  EMAIL,
+} = process.env;
+
+const oauth2Client = new OAuth2(
+  MAILING_SERVICE_CLIENT_ID,
+  MAILING_SERVICE_CLIENT_SECRET,
+  MAILING_SERVICE_REFRESH_TOKEN
+);
 
 function sendEmail(message) {
-  const accessToken = OAuth2_client.getAccessToken();
+  return new Promise((res, rej) => {
+    oauth2Client.setCredentials({
+      refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
+    });
+    const accessToken = oauth2Client.getAccessToken();
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: EMAIL,
+        clientId: MAILING_SERVICE_CLIENT_ID,
+        clientSecret: MAILING_SERVICE_CLIENT_SECRET,
+        refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
+        accessToken,
+      },
+    });
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      type: "OAuth2",
-      user: process.env.EMAIL,
-      clientId: clientId,
-      clientSecret: clientSecret,
-      refreshToken: refreshToken,
-      accessToken: accessToken,
-    },
-  });
-
-  transporter.sendMail(message, function (error, result) {
-    if (error) {
-      console.log("Error: ", error);
-    } else {
-      console.log("Success: ", result);
-    }
-    transporter.close();
+    transporter.sendMail(message, function (err, info) {
+      if (err) {
+        rej(err);
+      } else {
+        res(info);
+      }
+    });
   });
 }
-
-// function get_html_message(name) {
-//   return ` <h3> ${name}! you are Awesom</h3>`;
-// }
 
 export const sendConfirmationEmail = function ({
   toUser,

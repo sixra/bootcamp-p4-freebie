@@ -1,7 +1,7 @@
 @use "../../Styles.scss";
 
 .searchBar {
-  background-color: var(--background-color-light-secondary);
+  background-color: rgb(210, 210, 210);
   width: 50%;
   display: flex;
   align-items: center;
@@ -37,6 +37,7 @@
     min-width: 12rem;
     cursor: pointer;
 
+
     @media only screen and (max-width: 1000px) {
       padding-left: 2rem;
       border: none;
@@ -62,6 +63,7 @@
     top: 0;
     right: 0;
     border-radius: 1rem;
+    z-index: 99;
 
     div {
       padding-left: 1rem;
@@ -70,6 +72,7 @@
       cursor: pointer;
       transition: border .1s ease-in;
       transition-delay: border .1s;
+      
 
       &:hover {
         color: var(--details-colour-secondary);
