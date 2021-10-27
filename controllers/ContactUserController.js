@@ -1,9 +1,9 @@
-import { sendEmailUser } from "../models/EmailSenderUser.js";
+import emailSender from "../models/EmailSenderUser.js";
 
 export const contactUserEmailSend = (req, res) => {
   console.log(req.body);
 
-  sendEmailUser.sendEmail(
+  emailSender.sendEmail(
     req.body.adTitle,
     req.body.receiverEmail,
     req.body.senderName,

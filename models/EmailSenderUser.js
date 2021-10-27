@@ -1,55 +1,25 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-// import { clientId, clientSecret, refreshToken } from "../config/config.js";
-const OAuth2 = google.auth.OAuth2;
+const { OAuth2 } = google.auth;
+const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground";
 
 const {
   MAILING_SERVICE_CLIENT_ID,
   MAILING_SERVICE_CLIENT_SECRET,
   MAILING_SERVICE_REFRESH_TOKEN,
   EMAIL,
+  GOOGLE_USER,
 } = process.env;
 
 const oauth2Client = new OAuth2(
   MAILING_SERVICE_CLIENT_ID,
   MAILING_SERVICE_CLIENT_SECRET,
-  MAILING_SERVICE_REFRESH_TOKEN
+  MAILING_SERVICE_REFRESH_TOKEN,
+  OAUTH_PLAYGROUND,
+  EMAIL
 );
-function sendEmail(mailOption) {
-  return new Promise((res, rej) => {
-    oauth2Client.setCredentials({
-      refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
-    });
-    const accessToken = oauth2Client.getAccessToken();
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        type: "OAuth2",
-        user: EMAIL,
-        clientId: MAILING_SERVICE_CLIENT_ID,
-        clientSecret: MAILING_SERVICE_CLIENT_SECRET,
-        refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
-        accessToken,
-      },
-      tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false,
-      },
-    });
 
-    transporter.sendMail(message, function (err, info) {
-      if (error) {
-        rej(error);
-        callback(false);
-      } else {
-        res(info.response);
-        callback(true);
-      }
-    });
-  });
-}
-
-export const sendEmailUser = function (
+function sendEmail(
   adTitle,
   receiverEmail,
   senderName,
@@ -58,8 +28,24 @@ export const sendEmailUser = function (
   senderMessage,
   callback
 ) {
+  oauth2Client.setCredentials({
+    refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
+  });
+  const accessToken = oauth2Client.getAccessToken();
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: EMAIL,
+      pass: process.env.PASSWORD,
+      clientId: MAILING_SERVICE_CLIENT_ID,
+      clientSecret: MAILING_SERVICE_CLIENT_SECRET,
+      refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
+      accessToken,
+    },
+  });
   const mailOption = {
-    from: `Back Office <$process.env.EMAIL>`,
+    from: "brah.freebie@gmail.com",
     to: receiverEmail,
     subject: `Inquiry for your ad "${adTitle}"`,
     text:
@@ -86,5 +72,6 @@ export const sendEmailUser = function (
       callback(true);
     }
   });
-  return sendEmail(mailOption);
-};
+}
+
+export default { sendEmail };

@@ -1,8 +1,8 @@
-import { sendEmailConf } from "../models/EmailSender.js";
+import emailSender from "../models/EmailSender.js";
 
 export const contactEmailSend = (req, res) => {
   console.log(req.body);
-  sendEmailConf.sendEmail(
+  emailSender.sendEmail(
     req.body.contactName,
     req.body.email,
     req.body.message,
