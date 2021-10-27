@@ -34,8 +34,8 @@ function ResetPassword(props) {
       onclick: null,
       showDuration: "300",
       hideDuration: "1000",
-      timeOut: "0",
-      extendedTimeOut: "0",
+      timeOut: "5000",
+      extendedTimeOut: "1000",
       showEasing: "swing",
       hideEasing: "linear",
       showMethod: "fadeIn",
@@ -70,22 +70,26 @@ function ResetPassword(props) {
         <div className="form-container sign-up-container">
           <form onSubmit={handleResetPass}>
             <h1>Create New Password</h1>
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              label="Password"
-              required
-              onChange={handleChangeInput}
-            />
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="cf_password"
-              label="Repeat Password"
-              required
-              onChange={handleChangeInput}
-            />
+            <div>
+              <input
+                type="password"
+                name="password"
+                label="Password"
+                required
+                onChange={handleChangeInput}
+              />
+              <label>Password</label>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="cf_password"
+                label="Repeat Password"
+                required
+                onChange={handleChangeInput}
+              />
+              <label>Password</label>
+            </div>
             <button type="submit">Update</button>
           </form>
         </div>
