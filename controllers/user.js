@@ -71,10 +71,8 @@ export const signup = async (req, res) => {
     const savedUser = await newUser.save();
 
     const hash = savedUser._id;
-    const url = `Api/activate/user/${hash}`;
+    const url = `${process.env.DOMAIN}/Api/activate/user/${hash}`;
     // const url = `http://localhost:3000/Api/activate/user/${hash}`;
-    // const url = `/api/activate/user/${hash}`;
-    // const url = `/${hash}`
 
     await sendConfirmationEmail({
       toUser: savedUser,
