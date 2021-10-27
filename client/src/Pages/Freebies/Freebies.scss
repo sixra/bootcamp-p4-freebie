@@ -39,13 +39,14 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         font-weight: var(--font-normal-light);
+        
       }
 
       svg {
         position: absolute;
         right: 0.4rem;
         top: 0.8rem;
-        color: var(--text-color-dark-secondary);
+        color: var(--text-color-light-secondary);
         cursor: pointer;
         width: 2rem;
       }

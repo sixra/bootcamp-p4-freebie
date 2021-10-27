@@ -161,7 +161,7 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      background: var(--background-color-dark-secondary);
+      background: var(--background-color-dark-tertiary);
 
       & a {
         color: var(--text-color-light);
@@ -205,7 +205,7 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      background: var(--background-color-dark-secondary);
+      background: var(--background-color-dark-tertiary);
       color: var(--text-color-light);
       padding-bottom: 1rem;
       & a {

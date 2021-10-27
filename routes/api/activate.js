@@ -3,6 +3,6 @@ import { activateUser } from "../../controllers/activate.js";
 
 const router = Router();
 
-router.get("/:hash", activateUser);
+router.post("/:hash", activateUser);
 
 export default router;

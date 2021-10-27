@@ -10,10 +10,10 @@ $black-3: rgba(0, 0, 0, 0.06);
 $white: hsl(0, 0%, 100%);
 $white-2: #f4f4f4;
 
-$gray-1: rgb(215, 215, 215);
-$gray-2: rgb(194, 194, 194); //
+$gray-1: rgb(233, 233, 233);
+$gray-2: rgb(186, 186, 186); 
 $gray-3: hsl(0, 0%, 42%);
-$gray-4: hsla(0, 3%, 28%, 0.817);
+$gray-4: hsla(0, 0%, 32%, 0.817);
 $gray-5: rgb(39, 39, 39);
 
 $green: rgb(0, 187, 0);
@@ -30,8 +30,10 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
   --background-color-main: #{$white-2};
   --background-color-content: #{$white};
   --background-color-light: #{$gray-1};
+  --background-color-light-secondary: #{$gray-2};
   --background-color-dark: #{$gray-5};
   --background-color-dark-secondary: #{$gray-3};
+  --background-color-dark-tertiary: #{$gray-4};
 
   --details-colour-main: #{$pink-1};
   --details-colour-secondary: #{$pink-2};
@@ -41,6 +43,7 @@ $subtitle-paragraph-font: "Montserrat", sans-serif;
 
   --text-color-light: #{$white};
   --text-color-light-secondary: #{$gray-2};
+  --text-color-light-tertiary: #{$gray-1};
 
   --text-color-dark: #{$gray-5};
   --text-color-dark-secondary: #{$gray-3};

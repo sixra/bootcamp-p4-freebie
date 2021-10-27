@@ -129,7 +129,6 @@ const MyAds = () => {
                       <div>
                         <textarea
                           name="description"
-                          placeholder="Description"
                           rows="5"
                           defaultValue={individualAds?.description}
                           onChange={handleChange}

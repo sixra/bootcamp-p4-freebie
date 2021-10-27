@@ -25,7 +25,7 @@ SwiperCore.use([Pagination, Navigation]);
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
   const [FavoriteNumber, setFavoriteNumber] = useState(0);
-  const { title, location, name, category, image, description, createdAt, avatar, email} = singleAdInfo;
+  const { title, location, name, category, image, description, createdAt, avatar, email } = singleAdInfo;
   const [sendInquiry, setSendInquiry] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
@@ -51,7 +51,8 @@ const AdDetails = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:4000/api/contact/user",
+      //url: "http://localhost:4000/api/contact/user",
+      url: "/api/contact/user",
       headers: {
         "Content-Type": "application/json",
       },

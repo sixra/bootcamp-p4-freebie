@@ -11,7 +11,6 @@ const initialState = {
 
 function ResetPassword(props) {
   const hash = props.match.params.hash;
-  // console.log(hash)
   const [data, setData] = useState(initialState);
 
   const history = useHistory();
