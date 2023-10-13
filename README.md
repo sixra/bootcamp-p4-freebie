@@ -29,7 +29,7 @@ We included many features, like:
 
 Completed: October 2021
 
-freebie-brah.herokuapp.com
+https://freebie-brah.herokuapp.com
 
 Other contributors: 
 - Arty (https://github.com/awartanian);
