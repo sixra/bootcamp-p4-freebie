@@ -6,7 +6,8 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "build": "cd client && yarn install && yarn run build"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,6 @@
   },
   "type": "module",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   }
 }
