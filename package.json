@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "build": "yarn install && cd client && yarn install && yarn run build"
+    "build": "pnpm install && cd client && pnpm install && pnpm run build",
+    "dev-install": "pnpm install && cd client && pnpm install"
   },
   "keywords": [],
   "author": "",
