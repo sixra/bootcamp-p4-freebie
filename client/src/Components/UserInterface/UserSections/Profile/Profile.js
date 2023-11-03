@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
-import { updateUser } from "../../../../Redux/Actions/AuthAction";
-import UserNavBar from "../../UserNavBar/UserNavBar";
-import "../../UserInterface.scss";
-import "./Profile.scss";
+import React, { useEffect, useState } from "react";
 import { RiImageEditFill } from "react-icons/ri";
+import { useDispatch } from "react-redux";
 import toastr from "toastr";
+import { updateUser } from "../../../../Redux/Actions/AuthAction";
+import "../../UserInterface.scss";
+import UserNavBar from "../../UserNavBar/UserNavBar";
+import "./Profile.scss";
 import loadingImg from "./loading.gif";
 
 const initialState = {
@@ -16,7 +16,6 @@ const initialState = {
 };
 
 const Profile = () => {
-  const auth = useSelector((state) => state?.auth);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const [data, setData] = useState(initialState);
   const { firstName, lastName, password, cf_password } = data;
@@ -25,8 +24,6 @@ const Profile = () => {
   const dispatch = useDispatch();
   const token = user?.token;
   const hash = user?.result._id;
-
-  // console.log(auth);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -121,9 +118,8 @@ const Profile = () => {
       : user?.result?.firstName;
     existing.result["lastName"] = lastName ? lastName : user?.result?.lastName;
     existing.result["avatar"] = avatar ? avatar : user?.result?.avatar;
-    // existing.result["password"] = password? password : user?.result?.password;
+    existing.result["password"] = password ? password : user?.result?.password;
     window.localStorage.setItem("profile", JSON.stringify(existing));
-    // console.log("updated")
   });
 
   const updatePassword = async () => {
@@ -168,8 +164,7 @@ const Profile = () => {
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("profile")));
-    // eslint-disable-next-line
-  }, [location]);
+  }, []);
 
   const handleUpdate = () => {
     if (firstName || lastName || avatar) {
@@ -177,7 +172,7 @@ const Profile = () => {
     } else if (password) {
       updatePassword();
     } else {
-      console.log("no update");
+      console.error("no update");
     }
   };
 

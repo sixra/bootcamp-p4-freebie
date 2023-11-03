@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Favorite = ({ singleAdInfo, FavoriteNumber, setFavoriteNumber }) => {
   const [Favorited, setFavorited] = useState(false);
@@ -14,8 +13,6 @@ const Favorite = ({ singleAdInfo, FavoriteNumber, setFavoriteNumber }) => {
     itemImage: singleAdInfo.image[0].base64,
     itemCategory: singleAdInfo.category,
   };
-
-  // console.log(variable);
 
   useEffect(() => {
     axios.post("/api/favorite/favoriteNumber", variable).then((response) => {
@@ -33,18 +30,14 @@ const Favorite = ({ singleAdInfo, FavoriteNumber, setFavoriteNumber }) => {
         alert("Failed to get Favorite Info");
       }
     });
-    // eslint-disable-next-line
   }, []);
 
   const onClickFavorite = () => {
     if (Favorited) {
-      // When already added
-
       axios
         .post("/api/favorite/removeFromFavorite", variable)
         .then((response) => {
           if (response.data.success) {
-            console.log(response.data);
             setFavoriteNumber(FavoriteNumber - 1);
             setFavorited(!Favorited);
           } else {
@@ -52,8 +45,6 @@ const Favorite = ({ singleAdInfo, FavoriteNumber, setFavoriteNumber }) => {
           }
         });
     } else {
-      //When Not adding yet
-
       axios.post("/api/favorite/addToFavorite", variable).then((response) => {
         if (response.data.success) {
           setFavoriteNumber(FavoriteNumber + 1);

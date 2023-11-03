@@ -208,7 +208,7 @@ function PrivacyPolicy() {
         using the following details:{" "}
       </p>
       <p>
-        Brisilda Bushi
+        Ratko Simidzija
         <br />
         brah.freebie@gmail.com{" "}
       </p>

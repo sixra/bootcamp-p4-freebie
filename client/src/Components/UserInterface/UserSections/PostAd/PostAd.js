@@ -36,9 +36,6 @@ const PostAd = () => {
     setAdPosted(false);
   };
 
-  console.log(adData);
-  console.log(ads);
-
   return (
     <section className="userSection">
       <div className="userInterface">

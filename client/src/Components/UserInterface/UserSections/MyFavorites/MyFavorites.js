@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import "./MyFavorites.scss";
 import Axios from "axios";
-import UserNavBar from "../../UserNavBar/UserNavBar";
-import { BsEye } from "react-icons/bs";
+import React, { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
+import { BsEye } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import UserNavBar from "../../UserNavBar/UserNavBar";
+import "./MyFavorites.scss";
 
 const FavoritePage = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -14,10 +14,7 @@ const FavoritePage = () => {
 
   useEffect(() => {
     fetchFavoritedItems();
-    // eslint-disable-next-line
   }, []);
-
-  console.log(FavoritedItems);
 
   const fetchFavoritedItems = () => {
     const variable = {

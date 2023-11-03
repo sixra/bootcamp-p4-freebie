@@ -1,28 +1,28 @@
 import React, { useEffect } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import store from "./Redux/Store";
-import Navigation from "./Components/Navigation/Navigation";
-import Home from "./Pages/Home/Home";
-import Freebies from "./Pages/Freebies/Freebies";
-import Contact from "./Pages/Contact/Contact";
+import AdDetails from "./Components/AdDetails/AdDetails";
 import AuthForm from "./Components/AuthForm/AuthForm";
-import ScrollUp from "./Components/ScrollUp/ScrollUp";
 import Footer from "./Components/Footer/Footer";
-import { loadUser } from "./Redux/Actions/AuthAction";
-import UserActivate from "./Components/UserActivated/UserActivate.js"
-import ForgotPassword from "./Components/Forgot-Reset-Password/ForgotPassword"
-import ResetPassword from "./Components/Forgot-Reset-Password/ResetPassword.js"
+import ForgotPassword from "./Components/Forgot-Reset-Password/ForgotPassword";
+import ResetPassword from "./Components/Forgot-Reset-Password/ResetPassword.js";
 import HeroImage from "./Components/Header/HeroImage";
-import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
+import Navigation from "./Components/Navigation/Navigation";
+import PathBanner from "./Components/PathBanner/PathBanner";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import ScrollUp from "./Components/ScrollUp/ScrollUp";
+import UserActivate from "./Components/UserActivated/UserActivate.js";
 import MyAds from "./Components/UserInterface/UserSections/MyAds/MyAds";
 import MyFavorites from "./Components/UserInterface/UserSections/MyFavorites/MyFavorites";
-import AdDetails from "./Components/AdDetails/AdDetails";
-import { getAds } from "./Redux/Actions/AdsAction";
-import PathBanner from "./Components/PathBanner/PathBanner";
-import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy"
-import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import PostAd from "./Components/UserInterface/UserSections/PostAd/PostAd";
 import Profile from "./Components/UserInterface/UserSections/Profile/Profile";
+import Contact from "./Pages/Contact/Contact";
+import Freebies from "./Pages/Freebies/Freebies";
+import Home from "./Pages/Home/Home";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import { getAds } from "./Redux/Actions/AdsAction";
+import { loadUser } from "./Redux/Actions/AuthAction";
+import store from "./Redux/Store";
 
 const App = () => {
 
@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/contact" exact component={ Contact } />
           <Route path="/auth" exact component={ AuthForm } />
           <Route path="/user/forgot" exact component={ForgotPassword} />
-          <Route path="/Api/activate/user/:id" exact component={UserActivate} />
+          <Route path="/api/activate/user/:id" exact component={UserActivate} />
           <Route path="/user/reset/:hash" exact component={ResetPassword} />
           <Route path="/ad/:id" exact component={ AdDetails } />
           <Route path="/privacy-policy" exact component={PrivacyPolicy} />

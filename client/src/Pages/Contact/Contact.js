@@ -1,12 +1,10 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-/* eslint-disable react/jsx-no-comment-textnodes */
-import React from "react";
 import axios from "axios";
-import "./Contact.scss";
-import toastr from "toastr";
+import React from "react";
 import { CgPhone } from "react-icons/cg";
-import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import toastr from "toastr";
+import "./Contact.scss";
 
 const Contact = () => {
   const submitRequest = (e) => {
@@ -16,9 +14,6 @@ const Contact = () => {
 
     axios({
       method: "POST",
-
-      // url: "http://localhost:4000/api/contact",
-
       url: "/api/contact",
       headers: {
         "Content-Type": "application/json",
@@ -51,14 +46,12 @@ const Contact = () => {
           "We have received your message and will get back to you as soon as possible!",
           "Thank you!"
         );
-        console.log("Email has been sent");
         e.target.reset();
       } else if (!response) {
         toastr["error"](
           "There was an issue sending your message to us, please try again later!",
           "Message not sent!"
         );
-        console.log("FAILURE");
       }
     });
   };

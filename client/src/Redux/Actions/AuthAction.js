@@ -1,8 +1,7 @@
-import { authType } from '../ActionTypes';
-import * as api from "../../Api/Api"
 import axios from "axios";
-import { errorType } from "../ActionTypes";
 import toastr from "toastr";
+import * as api from "../../Api/Api";
+import { authType, errorType } from "../ActionTypes";
 
 export const signin = (formData, router) => async (dispatch) => {
   try {
@@ -10,34 +9,38 @@ export const signin = (formData, router) => async (dispatch) => {
 
     dispatch({ type: authType.AUTH, data });
 
-    router.push('/');
+    router.push("/");
   } catch (error) {
     toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
+      closeButton: true,
+      debug: false,
+      newestOnTop: false,
+      progressBar: true,
+      positionClass: "toast-top-center",
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: "300",
+      hideDuration: "1000",
+      timeOut: "5000",
+      extendedTimeOut: "1000",
+      showEasing: "swing",
+      hideEasing: "linear",
+      showMethod: "fadeIn",
+      hideMethod: "fadeOut",
+    };
+    if (error.message === "Request failed with status code 404") {
+      toastr["error"](
+        "User doesn't exist, check your email address and make sure you have been verified!",
+        "No user found!"
+      );
+    } else if (error.message === "Request failed with status code 400") {
+      toastr["error"](
+        "You have not used valid credentials, please try again!",
+        "Invalid Credentials!"
+      );
+    } else {
+      console.error(JSON.stringify(error));
     }
-    if(error.message === "Request failed with status code 404"){
-      toastr["error"]("User doesn't exist, check your email address and make sure you have been verified!", "No user found!")
-      console.log("FAILURE NO USER");
-      } else if(error.message === "Request failed with status code 400"){
-        toastr["error"]("You have not used valid credentials, please try again!", "Invalid Credentials!")
-        console.log("FAILURE INVALID CREDENTIALS");
-      }else {
-        console.log(JSON.stringify(error));
-      }
   }
 };
 
@@ -48,59 +51,57 @@ export const signup = (formData, router) => async (dispatch) => {
     dispatch({ type: authType.AUTH, data });
 
     toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-    toastr["success"]("Your registration is complete! Please check your email address for a verification code!", "Thank you!")
-    console.log("SUCCESS! EMAIL SENT");
+      closeButton: true,
+      debug: false,
+      newestOnTop: false,
+      progressBar: true,
+      positionClass: "toast-top-center",
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: "300",
+      hideDuration: "1000",
+      timeOut: "5000",
+      extendedTimeOut: "1000",
+      showEasing: "swing",
+      hideEasing: "linear",
+      showMethod: "fadeIn",
+      hideMethod: "fadeOut",
+    };
+    toastr["success"](
+      "Your registration is complete! Please check your email address for a verification code!",
+      "Thank you!"
+    );
 
-    router.push('/auth');
+    router.push("/auth");
   } catch (error) {
     toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-    if(error.message === "Request failed with status code 403"){
-    toastr["error"]("Repeat Password has to match Password!", "No Match!")
-    console.log("FAILURE RE-PASSWORD");
-    } else if(error.message === "Request failed with status code 409"){
-      toastr["error"]("User already exists, try to login!", "User Exists!")
-      console.log("FAILURE USER EXISTS");
-    }else {
-      console.log(JSON.stringify(error));
+      closeButton: true,
+      debug: false,
+      newestOnTop: false,
+      progressBar: true,
+      positionClass: "toast-top-center",
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: "300",
+      hideDuration: "1000",
+      timeOut: "5000",
+      extendedTimeOut: "1000",
+      showEasing: "swing",
+      hideEasing: "linear",
+      showMethod: "fadeIn",
+      hideMethod: "fadeOut",
+    };
+    if (error.message === "Request failed with status code 403") {
+      toastr["error"]("Repeat Password has to match Password!", "No Match!");
+    } else if (error.message === "Request failed with status code 409") {
+      toastr["error"]("User already exists, try to login!", "User Exists!");
+    } else {
+      console.error(JSON.stringify(error));
     }
   }
-  
 };
 
 export const loadUser = () => (dispatch, getState) => {
-  // User loading
   dispatch({ type: authType.USER_LOADING });
 
   axios
@@ -125,17 +126,14 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 export const tokenConfig = (getState) => {
-  // Get token from localstorage
   const token = getState().auth.token;
 
-  // Headers
   const config = {
     headers: {
       "Content-type": "application/json",
     },
   };
 
-  // If token, add to headers
   if (token) {
     config.headers["x-auth-token"] = token;
   }
@@ -146,9 +144,8 @@ export const tokenConfig = (getState) => {
 export const updateUser = (user) => async (dispatch) => {
   try {
     const { data } = await api.updateUser(user);
-    console.log("data in auth action", data)
     dispatch({ type: authType.USER_UPDATE, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };

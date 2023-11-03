@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-// Create Schema
 const favoriteSchema = new Schema({
   userFrom: {
     type: Schema.Types.ObjectId,

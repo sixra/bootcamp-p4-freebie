@@ -43,10 +43,7 @@ export const getItems = async (req, res) => {
 
 export const postItem = async (req, res) => {
   const item = req.body;
-
   const newItem = new Item({ ...item, creator: req.userId, createdAt: new Date().toISOString() })
-
-  console.log(item);
 
   try {
     await newItem.save();
@@ -56,7 +53,6 @@ export const postItem = async (req, res) => {
     res.status(400).json({ msg: e.message });
   }
 };
-
 
 /**
  * @route   UPDATE api/items/:id

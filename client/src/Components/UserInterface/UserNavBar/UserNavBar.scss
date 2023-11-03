@@ -28,16 +28,10 @@
       ),
       url("./abstract-background.jpg");
 
-    // background-image: linear-gradient(
-    //   hsla(334, 83%, 48%, 0.658),
-    //   hsla(0, 80%, 57%, 0.76)
-    // ), url("./abstract-background.jpg");
-
     .userImage-gradientBorder {
       border-radius: 50%;
       padding: 0.2rem;
       margin-bottom: 0.7rem;
-      // background: white;
       background: linear-gradient(
         to right,
         var(--details-colour-secondary),

@@ -1,20 +1,16 @@
-// User & pendingUser Model
-import User from "../models/user.js";
 import PendingUser from "../models/pending-user.js";
+import User from "../models/user.js";
 
 export const activateUser = async (req, res) => {
   const { hash } = req.params;
-  console.log(hash);
   try {
     const user = await PendingUser.findOne({ _id: hash });
-    console.log("this is user ", user);
     const newUser = new User({
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
       password: user.password,
     });
-    console.log("this is newUser ", newUser);
     await newUser.save();
     await user.remove();
     res.json({

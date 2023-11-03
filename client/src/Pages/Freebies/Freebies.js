@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { HiOutlineViewGrid } from "react-icons/hi";
-import { HiViewList } from "react-icons/hi";
+import React, { useEffect, useState } from "react";
+import { HiOutlineViewGrid, HiViewList } from "react-icons/hi";
+import { RiArrowDropDownFill, RiArrowDropUpFill } from "react-icons/ri";
+import ReactPaginate from "react-paginate";
 import { useSelector } from "react-redux";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
-import "./Freebies.scss";
-import SingleAd from "./SingleAd";
-import ReactPaginate from "react-paginate";
 import { Filter } from "./Filter";
+import "./Freebies.scss";
 import SearchInput from "./SearchInput";
-import { RiArrowDropDownFill } from "react-icons/ri";
-import { RiArrowDropUpFill } from "react-icons/ri";
+import SingleAd from "./SingleAd";
 
 const Freebies = () => {
  const ads = useSelector((state) => state.allAds.filteredAds);

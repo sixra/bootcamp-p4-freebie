@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import "./ScrollUp.scss";
+import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-
+import "./ScrollUp.scss";
 
 const ScrollUp = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,13 +8,13 @@ const ScrollUp = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 250) {
+      if (window.scrollY > 250) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -27,10 +26,10 @@ const ScrollUp = () => {
     <div className="scrollToTop scrollToTopHide">
       {isVisible && (
         <div onClick={scrollToTop}>
-          <FaArrowUp size={24}/>
+          <FaArrowUp size={24} />
         </div>
       )}
     </div>
   );
-}
-export default ScrollUp
+};
+export default ScrollUp;

@@ -10,10 +10,7 @@ const initialState = {};
 const store = createStore(
   rootReducer,
   initialState,
-  composeWithDevTools(
-    // eslint-disable-next-line no-undef
-    middleware
-  )
+  composeWithDevTools(middleware)
 );
 
 export default store;

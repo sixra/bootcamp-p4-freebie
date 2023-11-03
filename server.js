@@ -1,23 +1,16 @@
-import express from "express";
-import path from "path";
 import cors from "cors";
-import connectDB from "./config/db.js";
+import express from "express";
 import fileUpload from "express-fileupload";
-
-// routes
-import itemRoutes from "./routes/api/items.js";
-import userRoutes from "./routes/api/users.js";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+import connectDB from "./config/db.js";
+import activateRoutes from "./routes/api/activate.js";
 import contactRoutes from "./routes/api/contact.js";
 import contactUserRoutes from "./routes/api/contactUser.js";
-import activateRoutes from "./routes/api/activate.js";
-import avatarRoutes from "./routes/api/upload.js";
 import favoriteRoute from "./routes/api/favorite.js";
-
-
-//Define __dirname
-
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import itemRoutes from "./routes/api/items.js";
+import avatarRoutes from "./routes/api/upload.js";
+import userRoutes from "./routes/api/users.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -35,7 +28,6 @@ app.use(
 );
 app.use(cors());
 
-// Use Routes
 app.use("/api/items", itemRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/contact", contactRoutes);
@@ -45,7 +37,6 @@ app.use("/api/avatar", avatarRoutes);
 app.use("/api/favorite", favoriteRoute);
 
 if (process.env.NODE_ENV === "production") {
-  // Set static folder path
   app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {
@@ -62,6 +53,3 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT} `)
 );
-
-// ???
-// app.use(bodyParser.json());

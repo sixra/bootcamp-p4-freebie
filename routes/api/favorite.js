@@ -9,8 +9,6 @@ import {
   getFavoritedItem,
 } from "../../controllers/favoriteController.js";
 
-import { auth } from "../../middleware/auth.js";
-
 router.post("/favoriteNumber", findFavorite);
 router.post("/favorited", favorited);
 router.post("/addToFavorite", addToFavorite);

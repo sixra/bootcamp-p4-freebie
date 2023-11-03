@@ -8,29 +8,33 @@ import { sendConfirmationEmail } from "../models/VerificationEmailSender.js";
 
 dotenv.config();
 
-const secret = "test";
+const SECRET = process.env.JWT_SECRET || "test";
 
-export const signin = async (req, res) => {
+const createToken = (id, expiresIn) => {
+  return jwt.sign({ id }, SECRET, { expiresIn });
+};
+
+export const signin = async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
-    const oldUser = await UserModal.findOne({ email });
+    const user = await UserModal.findOne({ email });
 
-    if (!oldUser)
+    if (!user) {
       return res.status(404).json({ message: "User doesn't exist" });
+    }
 
-    const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
-    if (!isPasswordCorrect)
+    if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
+    }
 
-    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
-      expiresIn: "24h",
-    });
+    const token = createToken(user._id, 86400);
 
-    res.status(200).json({ result: oldUser, token });
+    res.status(200).json({ result: user, token });
   } catch (err) {
-    res.status(500).json({ message: "Something went wrong" });
+    next(err);
   }
 };
 
@@ -72,7 +76,6 @@ export const signup = async (req, res) => {
 
     const hash = savedUser._id;
     const url = `${process.env.DOMAIN}/Api/activate/user/${hash}`;
-    // const url = `http://localhost:3000/Api/activate/user/${hash}`;
 
     await sendConfirmationEmail({
       toUser: savedUser,
@@ -101,7 +104,7 @@ export const signup = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -137,12 +140,8 @@ export const forgotPassword = async (req, res) => {
 export const resetPassword = async (req, res) => {
   try {
     const { hash } = req.params;
-    console.log(hash);
     const user = await UserModal.findOne({ _id: hash });
-    console.log(user);
-
     const { password } = req.body;
-    console.log(password);
     const passwordHash = await bcrypt.hash(password, 12);
 
     await UserModal.findOneAndUpdate(

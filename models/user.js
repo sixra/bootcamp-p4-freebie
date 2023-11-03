@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-// Create Schema
 const UserSchema = new Schema({
   firstName: {
     type: String,
@@ -27,7 +26,8 @@ const UserSchema = new Schema({
   },
   avatar: {
     type: String,
-    default: "https://res.cloudinary.com/bbbrrriii/image/upload/v1633521219/avatar/avatar-profile_wwlmhk.jpg",
+    default:
+      "https://res.cloudinary.com/bbbrrriii/image/upload/v1633521219/avatar/avatar-profile_wwlmhk.jpg",
   },
 });
 

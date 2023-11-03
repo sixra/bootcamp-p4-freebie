@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { RiSendPlaneLine } from "react-icons/ri";
-import { BsLayers } from "react-icons/bs";
 import decode from "jwt-decode";
+import React, { useEffect, useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsLayers } from "react-icons/bs";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { RiSendPlaneLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { Link, NavLink, useHistory, useLocation } from "react-router-dom";
 import "../Navigation.scss";
 
 const AuthButton = () => {
@@ -31,7 +30,6 @@ const AuthButton = () => {
     }
 
     setUser(JSON.parse(localStorage.getItem("profile")));
-    // eslint-disable-next-line
   }, [location]);
 
   return (

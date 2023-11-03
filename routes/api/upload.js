@@ -1,9 +1,8 @@
 import express from "express";
-const router = express.Router();
 import { uploadImage } from "../../middleware/uploadImage.js"
 import { uploadController } from "../../controllers/UploadController.js"
-// import auth from "../../middleware/auth"
 
+const router = express.Router();
 router.post("/upload_avatar", uploadImage, uploadController)
 
 export default router;

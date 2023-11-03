@@ -11,12 +11,10 @@ const UserActivate = (props) => {
   useEffect(() => {
     async function fetchData() {
       const result = await activateUser(props.match.params.id);
-      console.log(result);
       setState({ message: result.message });
     }
     fetchData();
   }, [props.match.params.id]);
-  console.log(props.match.params.id);
 
   const history = useHistory();
   const handleClick = () => {

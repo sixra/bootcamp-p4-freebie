@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import AdsByUser from "./AdsByUser";
-import { filterPostedByUser } from "../../../../Redux/Actions/AdsAction";
 import FileBase from "react-file-base64";
-import UserNavBar from "../../UserNavBar/UserNavBar";
-import { updateAd } from "../../../../Redux/Actions/AdsAction";
 import { IoChevronBack } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  filterPostedByUser,
+  updateAd,
+} from "../../../../Redux/Actions/AdsAction";
 import TickAnimation from "../../../TickAnimation/TickAnimation";
 import "../../UserInterface.scss";
+import UserNavBar from "../../UserNavBar/UserNavBar";
+import AdsByUser from "./AdsByUser";
 import "./MyAds.scss";
 
 const initialState = {
@@ -58,15 +60,13 @@ const MyAds = () => {
         })
       );
     } else {
-      console.log("error updating");
+      console.error("error updating");
     }
   };
 
   useEffect(() => {
     dispatch(filterPostedByUser(ads, userId));
   }, [individualAds, ads, dispatch, userId]);
-
-  console.log("test", individualAds);
 
   return (
     <section className="userSection">
@@ -99,7 +99,7 @@ const MyAds = () => {
                         <input
                           type="text"
                           name="title"
-                          // placeholder={individualAds?.title}
+                          placeholder={individualAds?.title}
                           defaultValue={individualAds?.title}
                           onChange={handleChange}
                         />
@@ -109,7 +109,7 @@ const MyAds = () => {
                         <input
                           type="text"
                           name="location"
-                          // placeholder={individualAds?.location}
+                          placeholder={individualAds?.location}
                           defaultValue={individualAds?.location}
                           onChange={handleChange}
                         />
@@ -121,7 +121,9 @@ const MyAds = () => {
                           name="images"
                           multiple={true}
                           defaultValue={individualAds?.image}
-                          onDone={(base64) => setData({ ...data, image: base64 })}
+                          onDone={(base64) =>
+                            setData({ ...data, image: base64 })
+                          }
                           className="fileUploader"
                         />
                         <label>Image</label>
@@ -147,9 +149,7 @@ const MyAds = () => {
               <h2>My Ads</h2>
               <div className="titleUnderline"></div>
               {!adsByUser.length ? (
-                <span className="noAdsSpan">
-                  Your ads list is empty
-                </span>
+                <span className="noAdsSpan">Your ads list is empty</span>
               ) : (
                 adsByUser.map((adInfo) => (
                   <AdsByUser

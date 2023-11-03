@@ -1,32 +1,44 @@
+import axios from "axios";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import {
+  IoAlbumsOutline,
+  IoLocationOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
-import { IoAlbumsOutline } from "react-icons/io5";
-import { IoLocationOutline } from "react-icons/io5";
-import { IoTimeOutline } from "react-icons/io5";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Favorite from "./Favorite";
-import { AiOutlineHeart } from "react-icons/ai";
-import moment from "moment";
-import axios from "axios";
+import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./AdDetails.scss";
+import Favorite from "./Favorite";
 
-//// Swiper Library imports ////
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import SwiperCore, { Pagination, Navigation } from "swiper";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 import TickAnimation from "../TickAnimation/TickAnimation";
+
 SwiperCore.use([Pagination, Navigation]);
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
   const [FavoriteNumber, setFavoriteNumber] = useState(0);
 
-  const { title, location, name, category, image, description, createdAt, avatar, email } = singleAdInfo;
+  const {
+    title,
+    location,
+    name,
+    category,
+    image,
+    description,
+    createdAt,
+    avatar,
+    email,
+  } = singleAdInfo;
 
   const [sendInquiry, setSendInquiry] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -35,15 +47,13 @@ const AdDetails = () => {
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("profile")));
-    // eslint-disable-next-line
   }, [location]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getAd(id));
     dispatch(removeAd());
-    // eslint-disable-next-line
-  }, [id]);
+  }, [dispatch, id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,9 +63,6 @@ const AdDetails = () => {
 
     axios({
       method: "POST",
-
-      // url: "http://localhost:4000/api/contact/user",
-
       url: "/api/contact/user",
       headers: {
         "Content-Type": "application/json",

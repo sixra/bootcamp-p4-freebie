@@ -6,7 +6,7 @@ export const getAds = () => async (dispatch) => {
     const { data } = await api.fetchAds();
     dispatch({ type: adsType.FETCH_ADS, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -15,7 +15,7 @@ export const getAd = (id) => async (dispatch) => {
     const { data } = await api.fetchAd(id);
     dispatch({ type: adsType.FETCH_AD, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -24,7 +24,7 @@ export const postAd = (ad) => async (dispatch) => {
     const { data } = await api.postAd(ad);
     dispatch({ type: adsType.POST_AD, payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -32,9 +32,8 @@ export const updateAd = (id, ad) => async (dispatch) => {
   try {
     const { data } = await api.updateAd(id, ad);
     dispatch({ type: adsType.UPDATE_AD, payload: data });
-    // console.log(data)
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -65,7 +64,7 @@ export const filterAdsSearch = (ads, title) => (dispatch) => {
       },
     });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -78,7 +77,7 @@ export const filterPostedByUser = (ads, userId) => (dispatch) => {
       },
     });
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -87,6 +86,6 @@ export const deleteAdPostedByUser = (_id) => async (dispatch) => {
     dispatch({ type: adsType.DELETE_AD_POSTED_BY_USER, payload: _id });
     await api.deleteAd(_id);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };

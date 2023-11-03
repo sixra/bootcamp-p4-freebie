@@ -1,6 +1,5 @@
 import emailSender from "../models/EmailSenderUser.js";
 export const contactUserEmailSend = (req, res) => {
-  console.log(req.body);
   emailSender.sendEmail(
     req.body.adTitle,
     req.body.receiverEmail,

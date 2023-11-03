@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import {
   getItems,
   getItem,
@@ -7,7 +6,6 @@ import {
   updateItem,
   deleteItem,
 } from "../../controllers/itemsController.js";
-
 import { auth } from "../../middleware/auth.js";
 
 const router = Router();
