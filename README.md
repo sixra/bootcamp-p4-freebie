@@ -12,6 +12,8 @@ Final project of one year Full-stack Web Development Course!
 
 Group project of 4. 
 
+[Freebie DEMO](https://freebie-o262.onrender.com)
+
 Application where users can offer items they no longer need to others (For Free). 
 
 We included many features, like:
