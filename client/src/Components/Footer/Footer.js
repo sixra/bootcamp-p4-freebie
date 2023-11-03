@@ -13,43 +13,46 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import logo from "./freebie-logo.png"
-
+import logo from "./freebie-logo.webp";
 
 const Footer = () => {
-
   const signNewsletter = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const { email } = e.target.elements;
     toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-bottom-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
+      closeButton: true,
+      debug: false,
+      newestOnTop: false,
+      progressBar: true,
+      positionClass: "toast-bottom-center",
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: "300",
+      hideDuration: "1000",
+      timeOut: "5000",
+      extendedTimeOut: "1000",
+      showEasing: "swing",
+      hideEasing: "linear",
+      showMethod: "fadeIn",
+      hideMethod: "fadeOut",
+    };
     if (email.value) {
-      toastr["success"]("For Subscribing to our Newsletter!", "Thank You!")
+      toastr["success"]("For Subscribing to our Newsletter!", "Thank You!");
     } else {
-      toastr["error"]("Please try again, with a valid email!", "Something went wrong")
+      toastr["error"](
+        "Please try again, with a valid email!",
+        "Something went wrong"
+      );
     }
-  }
+  };
 
   return (
     <footer className="footerContainer">
       <div className="footerInputContainer">
         <div className="footerLogoContainer">
-          <div className="footerLogo"><img src={logo} alt="" /></div>
+          <div className="footerLogo">
+            <img src={logo} alt="" />
+          </div>
           <div className="footerAddress">
             <IoLocationSharp className="icon" />
             <h3>10785 Mitte, Berlin, DE</h3>
@@ -67,54 +70,97 @@ const Footer = () => {
           <div className="footerDetailsTips">
             <h3>Tips And Help</h3>
             <ul>
-              <li><a rel="noreferrer" target="_blank" href="https://stackoverflow.com/">Help</a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://reactjs.org/docs/create-a-new-react-app.html">Information</a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json">Blog</a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://developers.google.com/newsletter">Newsletter</a></li>
+              <li>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://stackoverflow.com/"
+                >
+                  Help
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://reactjs.org/docs/create-a-new-react-app.html"
+                >
+                  Information
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://developers.google.com/newsletter"
+                >
+                  Newsletter
+                </a>
+              </li>
             </ul>
           </div>
           <div className="footerDetailsLinks">
             <h3>Quick Links</h3>
             <ul>
-              <li> <NavLink to="/home">Home</NavLink> </li>
-              <li> <NavLink to="/freebies">Freebies</NavLink> </li>
-              <li> <NavLink to="/contact">Contact Us</NavLink> </li>
+              <li>
+                {" "}
+                <NavLink to="/home">Home</NavLink>{" "}
+              </li>
+              <li>
+                {" "}
+                <NavLink to="/freebies">Freebies</NavLink>{" "}
+              </li>
+              <li>
+                {" "}
+                <NavLink to="/contact">Contact Us</NavLink>{" "}
+              </li>
             </ul>
           </div>
           <div className="footerDetailsApps">
             <h3>Check Our App</h3>
             <ReactStoreBadges
-              platform={'ios'}
-              url={'https://www.apple.com/app-store/'}
-              locale={'en-us'}
+              platform={"ios"}
+              url={"https://www.apple.com/app-store/"}
+              locale={"en-us"}
               className="footerDetailsAppsApple"
               target="_blank"
             />
 
             <ReactStoreBadges
-              platform={'android'}
-              url={'https://play.google.com/store'}
-              locale={'en-us'}
+              platform={"android"}
+              url={"https://play.google.com/store"}
+              locale={"en-us"}
               className="footerDetailsAppsAndroid"
               target="_blank"
             />
-
           </div>
           <div className="footerDetailsSubscribe">
             <h3>Subscribe</h3>
-            <div >
-
-              <form className="footerDetailsSubscribeInput" action="" onSubmit={signNewsletter}>
+            <div>
+              <form
+                className="footerDetailsSubscribeInput"
+                action=""
+                onSubmit={signNewsletter}
+              >
                 <input id="email" type="email" placeholder="Email Address" />
-                <button type="submitButton"><FaPaperPlane size={16} /></button>
+                <button type="submitButton">
+                  <FaPaperPlane size={16} />
+                </button>
               </form>
-
             </div>
             <span>Get the latest updates in your mailbox!</span>
           </div>
         </div>
         <div className="footerSocialMedia">
-
           <a rel="noreferrer" target="_blank" href="https://www.facebook.com/">
             <div className="footerSocialMediaFacebook">
               <FaFacebookF size={20} className="icon" />
@@ -133,19 +179,26 @@ const Footer = () => {
             </div>
           </a>
 
-          <a rel="noreferrer" target="_blank" href="https://github.com/Ratko-Sim/brah">
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://github.com/Ratko-Sim/brah"
+          >
             <div className="footerSocialMediaGithub">
               <FiGithub size={20} className="icon" />
             </div>
           </a>
-
         </div>
         <div className="footerCopyright">
-          <span> &copy; {(new Date().getFullYear())} Freebie GmbH. All Rights Reserved  <NavLink to="/privacy-policy">- Privacy Policy</NavLink>.</span>
+          <span>
+            {" "}
+            &copy; {new Date().getFullYear()} Freebie GmbH. All Rights Reserved{" "}
+            <NavLink to="/privacy-policy">- Privacy Policy</NavLink>.
+          </span>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
