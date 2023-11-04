@@ -25,25 +25,37 @@ const UserNavBar = () => {
 
       <ul className="userSectionLinks">
         <li>
-          <NavLink activeClassName="activeSection" to="/user/profile">
+          <NavLink
+            className={`${({ isActive }) => (isActive ? "activeSection" : "")}`}
+            to="/user/profile"
+          >
             <HiOutlineUserCircle size={20} />
             <span> profile </span>
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="activeSection" to="/user/post">
+          <NavLink
+            className={`${({ isActive }) => (isActive ? "activeSection" : "")}`}
+            to="/user/post"
+          >
             <RiSendPlaneLine size={18} />
             <span> post an ad </span>
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="activeSection" to="/user/ads">
+          <NavLink
+            className={`${({ isActive }) => (isActive ? "activeSection" : "")}`}
+            to="/user/ads"
+          >
             <BsLayers size={18} />
             <span> my ads </span>
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="activeSection" to="/user/favorite">
+          <NavLink
+            className={`${({ isActive }) => (isActive ? "activeSection" : "")}`}
+            to="/user/favorite"
+          >
             <AiOutlineHeart size={18} />
             <span> my favorites </span>
           </NavLink>

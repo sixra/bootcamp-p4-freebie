@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.scss";
 import AdDetails from "./Components/AdDetails/AdDetails";
 import AuthForm from "./Components/AuthForm/AuthForm";
@@ -25,7 +25,6 @@ import { loadUser } from "./Redux/Actions/AuthAction";
 import store from "./Redux/Store";
 
 const App = () => {
-
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
@@ -40,23 +39,23 @@ const App = () => {
         <Navigation />
         <PathBanner />
         <HeroImage height="50" minHeight="50" />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/freebies" exact component={Freebies} />
-          <Route path="/user/ads" exact component={ MyAds } />
-          <Route path="/user/profile" exact component={ Profile } />
-          <Route path="/user/post" exact component={ PostAd } />
-          <Route path="/user/favorite" exact component={ MyFavorites } />
-          <Route path="/contact" exact component={ Contact } />
-          <Route path="/auth" exact component={ AuthForm } />
-          <Route path="/user/forgot" exact component={ForgotPassword} />
-          <Route path="/api/activate/user/:id" exact component={UserActivate} />
-          <Route path="/user/reset/:hash" exact component={ResetPassword} />
-          <Route path="/ad/:id" exact component={ AdDetails } />
-          <Route path="/privacy-policy" exact component={PrivacyPolicy} />
-          <Route path="*" exact component={PageNotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/freebies" element={<Freebies />} />
+          <Route path="/user/ads" element={<MyAds />} />
+          <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/post" element={<PostAd />} />
+          <Route path="/user/favorite" element={<MyFavorites />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/auth" element={<AuthForm />} />
+          <Route path="/user/forgot" element={<ForgotPassword />} />
+          <Route path="/api/activate/user/:id" element={<UserActivate />} />
+          <Route path="/user/reset/:hash" element={<ResetPassword />} />
+          <Route path="/ad/:id" element={<AdDetails />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
         <ScrollUp />
         <Footer />
       </Router>

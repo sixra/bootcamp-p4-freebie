@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import toastr from "toastr";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ForgotPassword.scss";
 
 const initialState = {
@@ -13,7 +13,7 @@ function ResetPassword(props) {
   const hash = props.match.params.hash;
   const [data, setData] = useState(initialState);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const { password, cf_password } = data;
 
@@ -54,7 +54,7 @@ function ResetPassword(props) {
           "Your password is now updated, You can now sign in with your new Password!",
           "Password Changed!"
         );
-        history.push("/auth");
+        navigate("/signin");
       } else {
         toastr["error"](
           "There was an issue resetting your password, please try again later!",

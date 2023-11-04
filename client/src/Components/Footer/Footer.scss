@@ -3,12 +3,13 @@
 
 .footerContainer {
   background-color: var(--background-color-dark);
+
   @media only screen and (max-width: 350px) {
     width: 100%;
   }
+
   .footerInputContainer {
-    @media only screen and (max-width: 350px) {
-    }
+
     .footerLogoContainer {
       display: flex;
       flex-direction: row;
@@ -17,15 +18,18 @@
       align-content: center;
       margin: 0rem 3rem;
       border-bottom: solid 2px var(--details-color-gray);
+
       @media only screen and (max-width: 1000px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
       }
+
       @media only screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
         margin: 0;
       }
+
       .footerLogo {
         display: flex;
         align-items: center;
@@ -54,6 +58,7 @@
           font-weight: var(--font-normal-light);
           font-size: 0.9rem;
         }
+
         .icon {
           color: var(--details-colour-main);
           font-size: var(--h3-font-size);
@@ -67,14 +72,17 @@
       flex-direction: row;
       justify-content: space-between;
       margin: 1rem 3rem 4rem 3rem;
+
       @media only screen and (max-width: 1000px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
       }
+
       @media only screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
       }
+
       .footerDetailsTips,
       .footerDetailsLinks,
       .footerDetailsApps,
@@ -84,20 +92,24 @@
           font-weight: var(--font-light-bold);
           margin: 0.8rem 0;
         }
+
         & ul {
           & li {
             list-style: none;
             margin: 0.25rem 0;
+
             & a {
               color: var(--text-color-light);
               text-decoration: none;
               font-weight: var(--font-normal-light);
+
               &:hover {
                 color: var(--details-colour-main);
               }
             }
           }
         }
+
         @media only screen and (max-width: 1000px) {
           display: flex;
           flex-direction: column;
@@ -118,6 +130,7 @@
       .footerDetailsSubscribe {
         display: flex;
         flex-direction: column;
+
         & span {
           color: var(--text-color-light);
           margin: 0.5rem 0;
@@ -138,7 +151,6 @@
             border: none;
             width: 100%;
             background-color: transparent;
-            
           }
 
           button {
@@ -161,7 +173,6 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      background: var(--background-color-dark-tertiary);
 
       & a {
         color: var(--text-color-light);
@@ -182,10 +193,12 @@
           place-self: center;
         }
       }
+
       @media only screen and (max-width: 600px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
       }
+
       .footerSocialMediaFacebook,
       .footerSocialMediaInstagram,
       .footerSocialMediaLinkedin,
@@ -205,12 +218,13 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      background: var(--background-color-dark-tertiary);
       color: var(--text-color-light);
       padding-bottom: 1rem;
+
       & a {
         color: var(--text-color-light);
         text-decoration: none;
+
         &:hover {
           color: var(--details-colour-main);
         }

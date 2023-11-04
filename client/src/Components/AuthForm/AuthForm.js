@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AuthForm.scss";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signin, signup } from "../../Redux/Actions/AuthAction";
 import { Link } from "react-router-dom";
 
@@ -17,17 +17,17 @@ const AuthForm = () => {
   const [signIn, setSignIn] = useState(true);
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const submitSignUp = (e) => {
     e.preventDefault();
-    dispatch(signup(formData, history));
+    dispatch(signup(formData, navigate));
     e.target.reset();
   };
 
   const submitSignIn = (e) => {
     e.preventDefault();
-    dispatch(signin(formData, history));
+    dispatch(signin(formData, navigate));
     e.target.reset();
   };
 
@@ -105,8 +105,7 @@ const AuthForm = () => {
             <button type="submit">Sign Up</button>
           </form>
           <div className="userAgreement">
-            By signing up I agree to the Terms and Conditions and
-            Privacy Policy
+            By signing up I agree to the Terms and Conditions and Privacy Policy
           </div>
         </div>
 

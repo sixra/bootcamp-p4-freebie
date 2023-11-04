@@ -9,20 +9,19 @@ import {
 } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import { getAd, removeAd } from "../../Redux/Actions/AdsAction";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./AdDetails.scss";
 import Favorite from "./Favorite";
 
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import TickAnimation from "../TickAnimation/TickAnimation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-SwiperCore.use([Pagination, Navigation]);
+import TickAnimation from "../TickAnimation/TickAnimation";
 
 const AdDetails = () => {
   const singleAdInfo = useSelector((state) => state.ad);
@@ -98,16 +97,12 @@ const AdDetails = () => {
               ) : null}
 
               <Swiper
-                cssMode={true}
+                modules={[Navigation, Pagination]}
                 navigation={true}
                 pagination={true}
                 mousewheel={true}
                 keyboard={true}
                 className="swiper"
-                style={{
-                  "--swiper-navigation-color": "#E52853",
-                  "--swiper-pagination-color": "#E52853",
-                }}
               >
                 {image.map(({ base64 }) => (
                   <SwiperSlide className="swiperSlide">

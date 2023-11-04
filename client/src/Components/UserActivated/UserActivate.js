@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./UserActivate.scss";
+import { useNavigate } from "react-router-dom";
 import { activateUser } from "../../Api/activate/user/hash.js";
+import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
+import "./UserActivate.scss";
 import error from "./images/error.gif";
 import success from "./images/success.gif";
-import { useHistory } from "react-router-dom";
-import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 
 const UserActivate = (props) => {
   const [state, setState] = useState({ message: "pending..." });
@@ -16,9 +16,9 @@ const UserActivate = (props) => {
     fetchData();
   }, [props.match.params.id]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleClick = () => {
-    history.push("/auth");
+    navigate("/auth");
   };
   if (state.message === "Validation Done!") {
     return (

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import FileBase from "react-file-base64";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postAd } from "../../../../Redux/Actions/AdsAction";
-import UserNavBar from "../../UserNavBar/UserNavBar";
 import TickAnimation from "../../../TickAnimation/TickAnimation";
 import "../../UserInterface.scss";
+import UserNavBar from "../../UserNavBar/UserNavBar";
 import "./PostAd.scss";
 
 const PostAd = () => {
-  const ads = useSelector((state) => state.allAds.ads);
   const user = JSON.parse(localStorage.getItem("profile"));
   const dispatch = useDispatch();
   const [adPosted, setAdPosted] = useState(false);

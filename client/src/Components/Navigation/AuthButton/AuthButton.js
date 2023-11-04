@@ -1,22 +1,22 @@
-import decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsLayers } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { Link, NavLink, useHistory, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../Navigation.scss";
 
 const AuthButton = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
-    history.push("/");
+    navigate("/");
     setUser(null);
   };
 
@@ -24,7 +24,7 @@ const AuthButton = () => {
     const token = user?.token;
 
     if (token) {
-      const decodedToken = decode(token);
+      const decodedToken = jwtDecode(token);
 
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
@@ -49,8 +49,11 @@ const AuthButton = () => {
             <ul className="userSectionLinks">
               <li>
                 <NavLink
-                  className="listContainer"
-                  activeClassName="activeSection"
+                  className={`listContainer ${({ isActive }) =>
+                    isActive ? "activeSection" : ""}`}
+                  style={(isActive) => ({
+                    fontWeight: isActive ? "700" : "",
+                  })}
                   to="/user/profile"
                 >
                   <HiOutlineUserCircle size={20} />
@@ -59,8 +62,8 @@ const AuthButton = () => {
               </li>
               <li>
                 <NavLink
-                  className="listContainer"
-                  activeClassName="activeSection"
+                  className={`listContainer ${({ isActive }) =>
+                    isActive ? "activeSection" : ""}`}
                   to="/user/post"
                 >
                   <RiSendPlaneLine size={18} />
@@ -69,8 +72,8 @@ const AuthButton = () => {
               </li>
               <li>
                 <NavLink
-                  className="listContainer"
-                  activeClassName="activeSection"
+                  className={`listContainer ${({ isActive }) =>
+                    isActive ? "activeSection" : ""}`}
                   to="/user/ads"
                 >
                   <BsLayers size={18} />
@@ -79,8 +82,8 @@ const AuthButton = () => {
               </li>
               <li>
                 <NavLink
-                  className="listContainer"
-                  activeClassName="activeSection"
+                  className={`listContainer ${({ isActive }) =>
+                    isActive ? "activeSection" : ""}`}
                   to="/user/favorite"
                 >
                   <AiOutlineHeart size={18} />
