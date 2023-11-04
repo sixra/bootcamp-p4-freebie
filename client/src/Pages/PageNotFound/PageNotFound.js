@@ -10,20 +10,21 @@ function PageNotFound() {
           <h2 className="pageNotFoundGlitchTitle">
             404
             <br />
+            <br />
             PAGE NOT FOUND
             <br />
-            Go back to
+            <br />
+            Go back to{" "}
             <Link className="pageNotFoundGlitchLink" to="/">
-              Home
+              Home{" "}
             </Link>
             Page
-            <br />
           </h2>
         </div>
       </div>
       <div className="pageNotFoundGameContainer">
         <Link to="/" className="navLogo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="logo" className="logo" />
         </Link>
       </div>
     </div>

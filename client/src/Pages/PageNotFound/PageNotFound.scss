@@ -62,8 +62,18 @@
 
 .pageNotFoundGameContainer{
   width: 50%;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media only screen and (max-width: 1200px) {
     display: none;
+  }
+
+  .logo {
+    width: 100%;
+    transform: scale(3);
   }
 }
 

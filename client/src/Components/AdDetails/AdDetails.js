@@ -105,7 +105,7 @@ const AdDetails = () => {
                 className="swiper"
               >
                 {image.map(({ base64 }) => (
-                  <SwiperSlide className="swiperSlide">
+                  <SwiperSlide key={base64} className="swiperSlide">
                     <img className="adDetailsImage" src={base64} alt="ad" />
                   </SwiperSlide>
                 ))}

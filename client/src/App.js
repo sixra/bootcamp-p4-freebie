@@ -21,39 +21,39 @@ import Freebies from "./Pages/Freebies/Freebies";
 import Home from "./Pages/Home/Home";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import { getAds } from "./Redux/Actions/AdsAction";
-import { loadUser } from "./Redux/Actions/AuthAction";
 import store from "./Redux/Store";
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser());
     store.dispatch(getAds());
   }, []);
 
   return (
     <div className="App">
       <Router>
-        <Navigation />
-        <PathBanner />
-        <HeroImage height="50" minHeight="50" />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/freebies" element={<Freebies />} />
-          <Route path="/user/ads" element={<MyAds />} />
-          <Route path="/user/profile" element={<Profile />} />
-          <Route path="/user/post" element={<PostAd />} />
-          <Route path="/user/favorite" element={<MyFavorites />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/auth" element={<AuthForm />} />
-          <Route path="/user/forgot" element={<ForgotPassword />} />
-          <Route path="/api/activate/user/:id" element={<UserActivate />} />
-          <Route path="/user/reset/:hash" element={<ResetPassword />} />
-          <Route path="/ad/:id" element={<AdDetails />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        <ScrollUp />
+        <div>
+          <Navigation />
+          <PathBanner />
+          <HeroImage height="50" minHeight="50" />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/freebies" element={<Freebies />} />
+            <Route path="/user/ads" element={<MyAds />} />
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/post" element={<PostAd />} />
+            <Route path="/user/favorite" element={<MyFavorites />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/auth" element={<AuthForm />} />
+            <Route path="/user/forgot" element={<ForgotPassword />} />
+            <Route path="/api/activate/user/:id" element={<UserActivate />} />
+            <Route path="/user/reset/:hash" element={<ResetPassword />} />
+            <Route path="/ad/:id" element={<AdDetails />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          <ScrollUp />
+        </div>
         <Footer />
       </Router>
     </div>

@@ -1,7 +1,6 @@
-import axios from "axios";
 import toastr from "toastr";
 import * as api from "../../Api/Api";
-import { authType, errorType } from "../ActionTypes";
+import { authType } from "../ActionTypes";
 
 export const signin = (formData, router) => async (dispatch) => {
   try {
@@ -99,30 +98,6 @@ export const signup = (formData, router) => async (dispatch) => {
       console.error(JSON.stringify(error));
     }
   }
-};
-
-export const loadUser = () => (dispatch, getState) => {
-  dispatch({ type: authType.USER_LOADING });
-
-  axios
-    .get("/api/auth/user", tokenConfig(getState))
-    .then((res) =>
-      dispatch({
-        type: authType.USER_LOADED,
-        payload: res.data,
-      })
-    )
-    .catch((err) => {
-      dispatch((msg, status, id = null) => {
-        return {
-          type: errorType.GET_ERRORS,
-          payload: { msg, status, id },
-        };
-      });
-      dispatch({
-        type: authType.AUTH_ERROR,
-      });
-    });
 };
 
 export const tokenConfig = (getState) => {

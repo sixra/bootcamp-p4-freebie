@@ -2,9 +2,10 @@
 @import "toastr";
 
 .contactPage {
-  padding: 2rem 0;
+  padding: 4rem 0;
   background-color: var( --background-color-main);
-
+  min-height: 52rem;
+  
   .contactMainContainer {
     max-width: 55rem;
     width: 95%;
