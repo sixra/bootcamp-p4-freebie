@@ -1,7 +1,8 @@
 .userSection {
   background-color: var(--background-color-main);
   padding: 2rem;
-
+  min-height: 52rem;
+  
   @media only screen and (max-width: 800px) {
     padding: 1rem;
   }
