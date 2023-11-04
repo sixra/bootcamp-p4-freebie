@@ -19,7 +19,7 @@ const oauth2Client = new OAuth2(
   EMAIL
 );
 
-function sendEmail(
+async function sendEmail(
   adTitle,
   receiverEmail,
   senderName,
@@ -31,24 +31,30 @@ function sendEmail(
   oauth2Client.setCredentials({
     refresh_token: MAILING_SERVICE_REFRESH_TOKEN,
   });
-  const accessToken = oauth2Client.getAccessToken();
+
+  const accessToken = await new Promise((resolve, reject) => {
+    oauth2Client.getAccessToken((err, token) => {
+      if (err) {
+        reject("Failed to create access token");
+      }
+      resolve(token);
+    });
+  });
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
       type: "OAuth2",
       user: EMAIL,
-      pass: process.env.PASSWORD,
       clientId: MAILING_SERVICE_CLIENT_ID,
       clientSecret: MAILING_SERVICE_CLIENT_SECRET,
       refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
-
       accessToken,
     },
   });
 
   const mailOption = {
-    from: "sixra.dev@gmail.com",
+    from: EMAIL,
     to: receiverEmail,
     subject: `Inquiry for your ad "${adTitle}"`,
     text:

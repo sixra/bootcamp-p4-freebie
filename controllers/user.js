@@ -87,7 +87,7 @@ export const signup = async (req, res) => {
     });
     if (!savedUser) throw Error("Something went wrong saving the user");
 
-    const token = jwt.sign({ id: savedUser._id }, process.env.jwtSecret, {
+    const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET, {
       expiresIn: 3600,
     });
 

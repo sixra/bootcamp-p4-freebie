@@ -27,9 +27,6 @@ import store from "./Redux/Store";
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-  }, []);
-
-  useEffect(() => {
     store.dispatch(getAds());
   }, []);
 

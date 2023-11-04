@@ -27,11 +27,10 @@ function sendEmail(contactName, email, message, callback) {
   const accessToken = oauth2Client.getAccessToken();
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "Gmail",
     auth: {
       type: "OAuth2",
       user: EMAIL,
-      pass: process.env.PASSWORD,
       clientId: MAILING_SERVICE_CLIENT_ID,
       clientSecret: MAILING_SERVICE_CLIENT_SECRET,
       refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
