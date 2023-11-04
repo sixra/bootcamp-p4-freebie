@@ -72,7 +72,7 @@ const Contact = () => {
               </div>
               <div>
                 <MdEmail size="20" />
-                <span>brah.freebie@gmail.com</span>
+                <span>sixra.dev@gmail.com</span>
               </div>
               <div>
                 <IoLocationSharp size="20" />

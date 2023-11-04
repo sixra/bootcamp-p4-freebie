@@ -41,7 +41,7 @@ function sendEmail(contactName, email, message, callback) {
   });
 
   const mailOption = {
-    from: "brah.freebie@gmail.com",
+    from: "sixra.dev@gmail.com",
     to: GOOGLE_USER,
     subject: "Message from Freebie",
     text:

@@ -48,7 +48,7 @@ function sendEmail(
   });
 
   const mailOption = {
-    from: "brah.freebie@gmail.com",
+    from: "sixra.dev@gmail.com",
     to: receiverEmail,
     subject: `Inquiry for your ad "${adTitle}"`,
     text:
